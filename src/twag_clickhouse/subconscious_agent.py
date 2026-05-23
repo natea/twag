@@ -49,7 +49,16 @@ NYTW_EVENT_DATA_PATTERN = re.compile(
     re.IGNORECASE,
 )
 NYTW_LOCATION_PATTERN = re.compile(
-    r"\b(soho|tribeca|brooklyn|manhattan|williamsburg)\b",
+    r"\b("
+    r"soho|tribeca|brooklyn|manhattan|williamsburg|"
+    r"upper\s+west\s+side|uws|upper\s+east\s+side|ues|"
+    r"chelsea|flatiron|midtown|downtown|chinatown|"
+    r"east\s+village|west\s+village|lower\s+east\s+side"
+    r")\b",
+    re.IGNORECASE,
+)
+EVENT_LOCATION_SEARCH_PATTERN = re.compile(
+    r"\bevents?\b.*\b(in|near|around|at)\b|\b(in|near|around|at)\b.*\bevents?\b",
     re.IGNORECASE,
 )
 COUNT_PATTERN = re.compile(r"\b(how many|count|total|number of)\b", re.IGNORECASE)
@@ -241,7 +250,13 @@ def requested_event_limit(question: str, default: int = 5) -> int:
 
 
 def likely_event_list_question(question: str) -> bool:
-    return bool(EVENT_LIST_COMMAND_PATTERN.search(question) and EVENT_WORD_PATTERN.search(question))
+    if not EVENT_WORD_PATTERN.search(question):
+        return False
+    return bool(
+        EVENT_LIST_COMMAND_PATTERN.search(question)
+        or NYTW_LOCATION_PATTERN.search(question)
+        or EVENT_LOCATION_SEARCH_PATTERN.search(question)
+    )
 
 
 def likely_nytw_data_question(question: str) -> bool:
@@ -326,13 +341,18 @@ def build_keyword_event_query(
         escaped = term.replace("'", "\\'")
         pattern = f"%{escaped}%"
         conditions.append(
-            f"(title ILIKE '{pattern}' OR description ILIKE '{pattern}' OR host ILIKE '{pattern}')"
+            f"(title ILIKE '{pattern}' OR description ILIKE '{pattern}' OR "
+            f"host ILIKE '{pattern}' OR neighborhood ILIKE '{pattern}' OR "
+            f"venue_name ILIKE '{pattern}' OR venue_address ILIKE '{pattern}')"
         )
         score_parts.append(
             "multiIf("
             f"title ILIKE '{pattern}', 5, "
             f"description ILIKE '{pattern}', 2, "
             f"host ILIKE '{pattern}', 1, "
+            f"neighborhood ILIKE '{pattern}', 6, "
+            f"venue_name ILIKE '{pattern}', 3, "
+            f"venue_address ILIKE '{pattern}', 2, "
             "0)"
         )
 
@@ -375,7 +395,13 @@ def compact_text(value: Any, *, max_chars: int = 130) -> str:
     return sentence[: max_chars - 1].rstrip() + "..."
 
 
-def format_event_rows(result: dict[str, Any], *, offset: int = 0) -> str:
+def format_event_rows(
+    result: dict[str, Any],
+    *,
+    offset: int = 0,
+    page_size: int | None = None,
+    more_hint: bool = False,
+) -> str:
     if not result.get("ok"):
         return f"Query failed: {result.get('error', 'unknown error')}"
 
@@ -383,8 +409,11 @@ def format_event_rows(result: dict[str, Any], *, offset: int = 0) -> str:
     if not rows:
         return "No more matching events found." if offset else "No matching events found."
 
+    has_more = page_size is not None and len(rows) > page_size
+    display_rows = rows[:page_size] if page_size is not None else rows
+
     lines = []
-    for row in rows:
+    for row in display_rows:
         title = row.get("title") or "Untitled event"
         date = row.get("event_date") or "date TBD"
         start = row.get("start_time") or "time TBD"
@@ -396,6 +425,9 @@ def format_event_rows(result: dict[str, Any], *, offset: int = 0) -> str:
         reason = compact_text(row.get("description_excerpt") or row.get("description"))
         rsvp_url = row.get("rsvp_url") or row.get("public_short_url") or ""
         lines.append(f"**{title}** — {date}, {time} — {location} — {reason} — {rsvp_url}")
+
+    if has_more and more_hint:
+        lines.append("More results are available. Send `more` for the next page.")
 
     return "\n\n".join(lines)
 
@@ -427,8 +459,20 @@ class NytwSubconsciousAgent:
         ]
 
         if likely_event_list_question(question):
-            result = self._query_sql(build_keyword_event_query(question, offset=event_offset))
-            return format_event_rows(result, offset=event_offset)
+            page_size = requested_event_limit(question)
+            result = self._query_sql(
+                build_keyword_event_query(
+                    question,
+                    limit=page_size + 1,
+                    offset=event_offset,
+                )
+            )
+            return format_event_rows(
+                result,
+                offset=event_offset,
+                page_size=page_size,
+                more_hint=True,
+            )
 
         if self.senso and not likely_nytw_data_question(question):
             answer = self._answer_from_senso(question)
@@ -501,6 +545,8 @@ class NytwSubconsciousAgent:
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"Subconscious API error {exc.code}: {detail}") from exc
+        except urllib.error.URLError as exc:
+            raise RuntimeError(f"Subconscious API network error: {exc}") from exc
 
     def _handle_tool_call(self, tool_call: dict[str, Any]) -> dict[str, Any]:
         function = tool_call.get("function", {})

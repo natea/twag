@@ -8,6 +8,8 @@ Send `/start` or `/help` to the bot. It replies:
 
 ```text
 Hi, I'm a bot that will answer questions about TechWeek NY events!
+
+Production by https://data.flowers/
 ```
 
 Ask data-driven questions based on criteria, keywords, dates, locations, hosts,
@@ -158,6 +160,9 @@ CLICKHOUSE_HOST=your-clickhouse-host
 CLICKHOUSE_USERNAME=default
 CLICKHOUSE_PASSWORD=your-clickhouse-password
 CLICKHOUSE_DATABASE=default
+CLICKHOUSE_QUERY_RETRIES=3
+CLICKHOUSE_RETRY_INITIAL_SECONDS=1
+CLICKHOUSE_RETRY_MAX_SECONDS=8
 ```
 
 Ask a Senso-backed knowledge question:
@@ -204,6 +209,7 @@ TELEGRAM_POLL_TIMEOUT=30
 TELEGRAM_REQUEST_TIMEOUT=45
 TELEGRAM_RETRY_INITIAL_SECONDS=2
 TELEGRAM_RETRY_MAX_SECONDS=60
+TELEGRAM_STATUS_HEARTBEAT_SECONDS=8
 ```
 
 Leave `TELEGRAM_ALLOWED_CHAT_IDS` empty to answer every Telegram user. To
@@ -221,6 +227,9 @@ CLICKHOUSE_HOST=your-clickhouse-host
 CLICKHOUSE_USERNAME=default
 CLICKHOUSE_PASSWORD=your-clickhouse-password
 CLICKHOUSE_DATABASE=default
+CLICKHOUSE_QUERY_RETRIES=3
+CLICKHOUSE_RETRY_INITIAL_SECONDS=1
+CLICKHOUSE_RETRY_MAX_SECONDS=8
 ```
 
 ### Run
@@ -248,6 +257,8 @@ Send `/start` or `/help` to the bot in Telegram. It should reply:
 
 ```text
 Hi, I'm a bot that will answer questions about TechWeek NY events!
+
+Production by https://data.flowers/
 ```
 
 Then ask questions such as:
@@ -262,6 +273,17 @@ more
 
 The bot will push back on subjective prompts such as "best event" or "what
 should I do?" Ask with criteria instead.
+
+For normal questions, the bot sends a visible progress message before the final
+answer. That status message shows the route it chose, such as ClickHouse event
+search or Senso knowledge search, and updates as the request moves through the
+agent. While a request is still running, the bot keeps editing that same status
+message every `TELEGRAM_STATUS_HEARTBEAT_SECONDS` seconds so the user can see
+that the backend is still working.
+
+Event-list responses stay short. When more matching events exist, the bot says
+so at the bottom of the answer; send `more` to page through the next result set
+for the same search.
 
 Telegram network timeouts are treated as transient. The bot retries with
 exponential backoff using `TELEGRAM_RETRY_INITIAL_SECONDS` and

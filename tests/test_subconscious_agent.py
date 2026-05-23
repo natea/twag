@@ -72,6 +72,8 @@ def test_build_keyword_event_query_is_limited_and_targets_nytw_events() -> None:
     assert "FROM nytw_events" in sql
     assert "LIMIT 3" in sql
     assert "orchestration" in sql
+    assert "neighborhood ILIKE" in sql
+    assert "venue_name ILIKE" in sql
 
 
 def test_build_keyword_event_query_supports_offset() -> None:
@@ -105,6 +107,7 @@ def test_likely_nytw_data_question_detects_event_data_requests() -> None:
 def test_likely_event_list_question_requires_event_search_intent() -> None:
     assert likely_event_list_question("list events involving running")
     assert likely_event_list_question("top 3 AI events")
+    assert likely_event_list_question("events in upper west side?")
     assert not likely_event_list_question("What is our refund policy for events?")
 
 
@@ -135,9 +138,63 @@ def test_format_event_rows_handles_empty_followup_page() -> None:
     assert format_event_rows({"ok": True, "rows": []}, offset=5) == "No more matching events found."
 
 
+def test_format_event_rows_adds_more_hint_only_when_extra_row_exists() -> None:
+    rows = [
+        {
+            "title": f"Event {index}",
+            "event_date": "2026-06-06",
+            "start_time": "9:00am ET",
+            "neighborhood": "Upper West Side",
+            "description_excerpt": "A focused event.",
+            "rsvp_url": f"https://partiful.com/e/{index}",
+        }
+        for index in range(1, 4)
+    ]
+
+    output = format_event_rows(
+        {"ok": True, "rows": rows},
+        page_size=2,
+        more_hint=True,
+    )
+
+    assert "Event 1" in output
+    assert "Event 2" in output
+    assert "Event 3" not in output
+    assert "Send `more` for the next page" in output
+
+    output_without_extra = format_event_rows(
+        {"ok": True, "rows": rows[:2]},
+        page_size=2,
+        more_hint=True,
+    )
+
+    assert "Send `more` for the next page" not in output_without_extra
+
+
 class FakeClickHouse:
     def query(self, sql: str) -> list[dict[str, str]]:
         raise AssertionError(f"ClickHouse should not be called for Senso-default questions: {sql}")
+
+
+class RecordingClickHouse:
+    def __init__(self) -> None:
+        self.sql: str | None = None
+
+    def query(self, sql: str) -> list[dict[str, str]]:
+        self.sql = sql
+        return [
+            {
+                "title": f"Upper West Side Founder Breakfast {index}",
+                "event_date": "2026-06-03",
+                "start_time": "9:00am ET",
+                "end_time": "",
+                "neighborhood": "Upper West Side",
+                "venue_name": "Cafe",
+                "description_excerpt": "Founders and operators meet over breakfast.",
+                "rsvp_url": f"https://partiful.com/e/uws-{index}",
+            }
+            for index in range(1, 7)
+        ]
 
 
 class FakeSenso:
@@ -165,6 +222,23 @@ def test_agent_uses_senso_by_default_for_non_nytw_questions() -> None:
     assert senso.queries == ["What is our refund policy for events?"]
     assert "full refund within 30 days" in answer
     assert "Sources: Refund Policy (0.96)" in answer
+
+
+def test_agent_routes_plain_location_event_question_to_clickhouse() -> None:
+    clickhouse = RecordingClickHouse()
+    agent = NytwSubconsciousAgent(
+        clickhouse=clickhouse,  # type: ignore[arg-type]
+        subconscious=SubconsciousConfig(api_key="test"),
+    )
+
+    answer = agent.ask("events in upper west side?")
+
+    assert clickhouse.sql is not None
+    assert "neighborhood ILIKE" in clickhouse.sql
+    assert "LIMIT 6" in clickhouse.sql
+    assert "Upper West Side Founder Breakfast 1" in answer
+    assert "Upper West Side Founder Breakfast 6" not in answer
+    assert "Send `more` for the next page" in answer
 
 
 def test_agent_from_env_does_not_require_clickhouse_for_senso_default(monkeypatch: pytest.MonkeyPatch) -> None:

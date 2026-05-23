@@ -37,6 +37,9 @@ class ClickHouseConfig:
     secure: bool = True
     connect_timeout: int = 10
     send_receive_timeout: int = 30
+    query_retries: int = 3
+    retry_initial: float = 1.0
+    retry_max: float = 8.0
 
     @classmethod
     def from_env(cls, *, env_file: str | None = ".env") -> "ClickHouseConfig":
@@ -71,6 +74,9 @@ class ClickHouseConfig:
             send_receive_timeout=_as_int(
                 os.getenv("CLICKHOUSE_SEND_RECEIVE_TIMEOUT"), 30
             ),
+            query_retries=_as_int(os.getenv("CLICKHOUSE_QUERY_RETRIES"), 3),
+            retry_initial=float(os.getenv("CLICKHOUSE_RETRY_INITIAL_SECONDS", "1")),
+            retry_max=float(os.getenv("CLICKHOUSE_RETRY_MAX_SECONDS", "8")),
         )
 
     def safe_dict(self) -> dict[str, object]:
@@ -84,4 +90,7 @@ class ClickHouseConfig:
             "secure": self.secure,
             "connect_timeout": self.connect_timeout,
             "send_receive_timeout": self.send_receive_timeout,
+            "query_retries": self.query_retries,
+            "retry_initial": self.retry_initial,
+            "retry_max": self.retry_max,
         }

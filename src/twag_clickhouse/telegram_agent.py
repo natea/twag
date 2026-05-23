@@ -6,6 +6,7 @@ import pathlib
 import random
 import re
 import socket
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -28,6 +29,13 @@ from .subconscious_agent import (
 
 
 TELEGRAM_MESSAGE_LIMIT = 4096
+TELEGRAM_STATUS_STEP_LIMIT = 8
+DEFAULT_STATUS_HEARTBEAT_SECONDS = 8.0
+STATUS_HEARTBEAT_MESSAGES = (
+    "Still working; waiting on the backend.",
+    "Still working; keeping the request alive.",
+    "Still working; no final answer yet.",
+)
 SUBJECTIVE_QUESTION_PATTERN = re.compile(
     r"\b("
     r"best|coolest|fun|funniest|good|recommend|recommendation|suggest|"
@@ -43,12 +51,20 @@ SUBJECTIVE_QUESTION_REPLY = (
     "topic keywords, date, neighborhood, host, capacity, RSVP status, or time. "
     "Try: 'List AI events in SoHo on June 3' or 'Show cybersecurity events with RSVP links.'"
 )
+GREETING_REPLY = (
+    "Hi, I'm a bot that will answer questions about TechWeek NY events!\n\n"
+    "Production by https://data.flowers/"
+)
 
 
 @dataclass
 class ChatState:
     last_event_question: str | None = None
     last_event_offset: int = 0
+    active_question: str | None = None
+    active_route: str | None = None
+    active_steps: list[str] = field(default_factory=list)
+    status_message_id: int | None = None
 
 
 @dataclass
@@ -58,6 +74,7 @@ class TelegramAgentConfig:
     request_timeout: int = 45
     retry_initial: float = 2.0
     retry_max: float = 60.0
+    status_heartbeat_seconds: float = DEFAULT_STATUS_HEARTBEAT_SECONDS
     clear_webhook_on_start: bool = True
     allowed_chat_ids: set[int] = field(default_factory=set)
 
@@ -84,6 +101,12 @@ class TelegramAgentConfig:
             request_timeout=request_timeout,
             retry_initial=float(os.getenv("TELEGRAM_RETRY_INITIAL_SECONDS", "2")),
             retry_max=float(os.getenv("TELEGRAM_RETRY_MAX_SECONDS", "60")),
+            status_heartbeat_seconds=float(
+                os.getenv(
+                    "TELEGRAM_STATUS_HEARTBEAT_SECONDS",
+                    str(DEFAULT_STATUS_HEARTBEAT_SECONDS),
+                )
+            ),
             clear_webhook_on_start=os.getenv(
                 "TELEGRAM_CLEAR_WEBHOOK_ON_POLL",
                 "true",
@@ -149,16 +172,34 @@ class TelegramApi:
 
         return self.request("getUpdates", payload)["result"]
 
-    def send_message(self, chat_id: int, text: str) -> None:
+    def send_message(self, chat_id: int, text: str) -> list[dict[str, Any]]:
+        responses = []
         for part in split_telegram_message(text):
-            self.request(
-                "sendMessage",
-                {
-                    "chat_id": str(chat_id),
-                    "text": part,
-                    "disable_web_page_preview": "true",
-                },
+            responses.append(
+                self.request(
+                    "sendMessage",
+                    {
+                        "chat_id": str(chat_id),
+                        "text": part,
+                        "disable_web_page_preview": "true",
+                    },
+                )
             )
+        return responses
+
+    def edit_message_text(self, chat_id: int, message_id: int, text: str) -> None:
+        self.request(
+            "editMessageText",
+            {
+                "chat_id": str(chat_id),
+                "message_id": str(message_id),
+                "text": text[:TELEGRAM_MESSAGE_LIMIT],
+                "disable_web_page_preview": "true",
+            },
+        )
+
+    def send_chat_action(self, chat_id: int, action: str = "typing") -> None:
+        self.request("sendChatAction", {"chat_id": str(chat_id), "action": action})
 
 
 def split_telegram_message(text: str) -> list[str]:
@@ -199,16 +240,60 @@ def is_subjective_question(text: str) -> bool:
     return bool(SUBJECTIVE_QUESTION_PATTERN.search(text))
 
 
+def status_text(state: ChatState) -> str:
+    route = state.active_route or "working"
+    lines = [f"Working on: {state.active_question}", f"Route: {route}", ""]
+    lines.extend(f"- {step}" for step in state.active_steps)
+    return "\n".join(lines).strip()
+
+
+def update_chat_status(
+    state: ChatState,
+    *,
+    question: str | None = None,
+    route: str | None = None,
+    step: str | None = None,
+) -> str:
+    if question is not None:
+        state.active_question = question
+        state.active_route = None
+        state.active_steps = []
+        state.status_message_id = None
+    if route is not None:
+        state.active_route = route
+    if step is not None:
+        state.active_steps.append(step)
+        if len(state.active_steps) > TELEGRAM_STATUS_STEP_LIMIT:
+            state.active_steps = state.active_steps[-TELEGRAM_STATUS_STEP_LIMIT:]
+    return status_text(state)
+
+
+def clear_chat_status(state: ChatState) -> None:
+    state.active_question = None
+    state.active_route = None
+    state.active_steps = []
+    state.status_message_id = None
+
+
+def answer_route(text: str, state: ChatState) -> tuple[str, str]:
+    if is_more_results_request(text):
+        return "ClickHouse event search", "Fetching the next page of matching events."
+    if likely_event_list_question(text):
+        return "ClickHouse event search", "Searching NY Tech Week events by topic, location, venue, and host."
+    return "Senso knowledge search", "Searching the knowledge base before falling back to event data if needed."
+
+
 def answer_message(
     agent: NytwSubconsciousAgent,
     states: dict[int, ChatState],
     chat_id: int,
     text: str,
+    progress: Any | None = None,
 ) -> str:
     state = states.setdefault(chat_id, ChatState())
 
     if text.startswith("/start") or text.startswith("/help"):
-        return "Hi, I'm a bot that answers from Senso by default and uses ClickHouse for TechWeek NY event data."
+        return GREETING_REPLY
 
     if is_subjective_question(text):
         return SUBJECTIVE_QUESTION_REPLY
@@ -216,14 +301,98 @@ def answer_message(
     if is_more_results_request(text):
         if not state.last_event_question:
             return "Ask an event-list question first, then send 'more'."
+        if progress:
+            progress("Requesting the next page from ClickHouse.")
         state.last_event_offset += requested_event_limit(state.last_event_question)
         return agent.ask(state.last_event_question, event_offset=state.last_event_offset)
 
+    if progress:
+        progress("Running the agent.")
     answer = agent.ask(text)
     if likely_event_list_question(text):
         state.last_event_question = text
         state.last_event_offset = 0
     return answer
+
+
+def answer_message_with_status(
+    *,
+    telegram: TelegramApi,
+    agent: NytwSubconsciousAgent,
+    states: dict[int, ChatState],
+    chat_id: int,
+    text: str,
+    status_heartbeat_seconds: float = DEFAULT_STATUS_HEARTBEAT_SECONDS,
+) -> str:
+    state = states.setdefault(chat_id, ChatState())
+
+    if text.startswith("/start") or text.startswith("/help") or is_subjective_question(text):
+        return answer_message(agent, states, chat_id, text)
+
+    route, first_step = answer_route(text, state)
+    update_chat_status(state, question=text, route=route, step="Received your message.")
+    update_chat_status(state, step=first_step)
+
+    sent = telegram.send_message(chat_id, status_text(state))
+    message = sent[0].get("result", {}) if sent else {}
+    state.status_message_id = int(message.get("message_id", 0) or 0) or None
+    status_lock = threading.Lock()
+
+    def progress(step: str) -> None:
+        with status_lock:
+            update_chat_status(state, step=step)
+            text_to_send = status_text(state)
+        try:
+            telegram.send_chat_action(chat_id)
+            if state.status_message_id:
+                telegram.edit_message_text(chat_id, state.status_message_id, text_to_send)
+        except Exception as exc:
+            print(f"telegram status update failed: {exc}", flush=True)
+
+    stop_heartbeat = threading.Event()
+
+    def heartbeat() -> None:
+        if status_heartbeat_seconds <= 0:
+            return
+        started_at = time.monotonic()
+        beat = 0
+        while not stop_heartbeat.wait(status_heartbeat_seconds):
+            elapsed = int(time.monotonic() - started_at)
+            message = STATUS_HEARTBEAT_MESSAGES[beat % len(STATUS_HEARTBEAT_MESSAGES)]
+            beat += 1
+            progress(f"{message} ({elapsed}s elapsed.)")
+
+    heartbeat_thread = threading.Thread(
+        target=heartbeat,
+        name=f"telegram-status-{chat_id}",
+        daemon=True,
+    )
+
+    failed = False
+    try:
+        heartbeat_thread.start()
+        progress("Waiting for the agent response.")
+        answer = answer_message(agent, states, chat_id, text, progress=progress)
+        progress("Answer ready; sending it now.")
+        return answer
+    except Exception:
+        failed = True
+        raise
+    finally:
+        stop_heartbeat.set()
+        heartbeat_thread.join(timeout=1)
+        if state.status_message_id:
+            try:
+                with status_lock:
+                    final_status = status_text(state)
+                telegram.edit_message_text(
+                    chat_id,
+                    state.status_message_id,
+                    final_status + ("\n\nStopped with an error." if failed else "\n\nDone."),
+                )
+            except Exception as exc:
+                print(f"telegram final status update failed: {exc}", flush=True)
+        clear_chat_status(state)
 
 
 def run_telegram_agent() -> int:
@@ -254,7 +423,14 @@ def run_telegram_agent() -> int:
                     continue
 
                 try:
-                    reply = answer_message(agent, states, chat_id, text)
+                    reply = answer_message_with_status(
+                        telegram=telegram,
+                        agent=agent,
+                        states=states,
+                        chat_id=chat_id,
+                        text=text,
+                        status_heartbeat_seconds=config.status_heartbeat_seconds,
+                    )
                 except Exception as exc:
                     reply = f"Sorry, I hit an error while answering: {exc}"
 
