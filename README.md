@@ -53,6 +53,16 @@ more
 The bot intentionally refuses vague subjective prompts like "best event" or
 "what should I do?" with a blunt NYC-style nudge to provide searchable criteria.
 
+## Project Lineage
+
+TWAG was inspired by and builds on
+[Stage-11-Agentics/nytw-2026-for-agents](https://github.com/Stage-11-Agentics/nytw-2026-for-agents),
+an agent-friendly NY Tech Week 2026 event mirror. You can think of this repo as
+an application-layer fork of that idea: the upstream project made the event
+landscape readable for agents, while TWAG adds ClickHouse loading, guarded
+natural-language querying, Senso knowledge sync, Nimble deployment, and a
+Telegram interface.
+
 ## What This Repo Contains
 
 A Python integration for ClickHouse with:
@@ -135,7 +145,9 @@ twag-clickhouse insert-event page_view '{"path":"/"}'
 
 ### NY Tech Week 2026 Dataset
 
-This workspace includes a local copy of the machine-readable NY Tech Week data from `Stage-11-Agentics/nytw-2026-for-agents`:
+This workspace includes a local copy of the machine-readable NY Tech Week data
+from
+[Stage-11-Agentics/nytw-2026-for-agents](https://github.com/Stage-11-Agentics/nytw-2026-for-agents):
 
 ```text
 data/nytw-2026-for-agents/
