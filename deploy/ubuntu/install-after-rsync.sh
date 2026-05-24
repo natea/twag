@@ -43,6 +43,7 @@ python3 -m venv "$APP_DIR/.venv"
 "$APP_DIR/.venv/bin/pip" install -e "$APP_DIR"
 
 sudo install -d -m 0750 -o "$SERVICE_USER" -g "$SERVICE_GROUP" "$ENV_DIR"
+sudo install -d -m 0750 -o "$SERVICE_USER" -g "$SERVICE_GROUP" /var/log/twag
 if [[ ! -f "$ENV_FILE" ]]; then
   sudo install -m 0640 -o "$SERVICE_USER" -g "$SERVICE_GROUP" \
     "$APP_DIR/deploy/ubuntu/twag.env.example" "$ENV_FILE"

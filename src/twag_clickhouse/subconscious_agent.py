@@ -16,6 +16,7 @@ from .config import ClickHouseConfig
 
 DEFAULT_SUBCONSCIOUS_BASE_URL = "https://api.subconscious.dev/v1"
 DEFAULT_SUBCONSCIOUS_MODEL = "subconscious/tim-qwen3.6-27b"
+TokenUsageCallback = Callable[[dict[str, Any]], None]
 
 FORBIDDEN_SQL = re.compile(
     r"\b("
@@ -133,6 +134,9 @@ Important query rules:
 - Event queries are primary. For event discovery, ranking, counts, schedules,
   capacity, venue, host, RSVP, or neighborhood questions, query nytw_* tables
   first and prefer nytw_* over Senso.
+- Use reasoning only to decide what information to retrieve and how to query it.
+  Do not spend reasoning tokens on prose style, formatting, or how to phrase the
+  final response.
 - Senso is mirrored into ClickHouse as senso_* tables. Never call Senso
   directly. Use senso_* only for general-purpose Tech Week context, policy,
   background, or explanatory questions that the NYTW event rows cannot answer.
@@ -170,9 +174,16 @@ FINAL_FORMAT_PROMPT = """
 Rewrite the answer for the user.
 Use only the tool results already provided in this conversation.
 Do not mention SQL, tools, or reasoning.
+Do not reason about formatting. Apply the answer contract directly.
 Follow the answer contract exactly.
 If fewer rows are provided than requested, show all provided rows without
 apologizing. Do not invent missing events.
+""".strip()
+
+CONTINUE_TRUNCATED_PROMPT = """
+Your previous response was cut off before completion.
+Continue from where it stopped and finish the answer. Do not restart.
+If you were reasoning, complete the reasoning and include the final answer.
 """.strip()
 
 QUERY_TOOL = {
@@ -296,6 +307,60 @@ def looks_like_planning_leak(content: str) -> bool:
     if not candidate:
         return False
     return bool(PLANNING_LEAK_PATTERN.search(candidate)) and len(candidate.split()) > 5
+
+
+def response_was_truncated(response: dict[str, Any]) -> bool:
+    choices = response.get("choices") or []
+    for choice in choices:
+        if not isinstance(choice, dict):
+            continue
+        reason = choice.get("finish_reason") or choice.get("stop_reason")
+        if isinstance(reason, str) and reason.lower() in {
+            "length",
+            "max_tokens",
+            "max_completion_tokens",
+        }:
+            return True
+    return False
+
+
+def merge_continued_text(previous: str, continuation: str) -> str:
+    if not previous:
+        return continuation
+    if not continuation:
+        return previous
+
+    max_overlap = min(len(previous), len(continuation))
+    for size in range(max_overlap, 0, -1):
+        if previous[-size:] == continuation[:size]:
+            return previous + continuation[size:]
+    return previous + continuation
+
+
+STATUS_TERM_STOPWORDS = {
+    "need",
+    "needs",
+    "want",
+    "wants",
+    "about",
+    "event",
+    "events",
+    "show",
+    "find",
+    "list",
+    "give",
+    "me",
+    "please",
+}
+
+
+def status_query_terms(question: str, *, limit: int = 6) -> list[str]:
+    terms = [
+        term
+        for term in expanded_keyword_terms(question)
+        if term.lower() not in STATUS_TERM_STOPWORDS
+    ]
+    return terms[:limit]
 
 
 def _tool_call_from_object(value: Any, index: int) -> dict[str, Any] | None:
@@ -641,14 +706,25 @@ class NytwSubconsciousAgent:
         max_turns: int = 8,
         stream_callback: Callable[[str], None] | None = None,
         raw_stream_callback: Callable[[str], None] | None = None,
+        token_usage_callback: TokenUsageCallback | None = None,
+        progress_callback: Callable[[str], None] | None = None,
     ) -> str:
         messages: list[dict[str, Any]] = [
             {"role": "system", "content": NYTW_AGENT_SYSTEM_PROMPT},
             {"role": "user", "content": question},
         ]
+        response_parts: list[str] = []
 
         if likely_event_list_question(question):
             page_size = requested_event_limit(question)
+            if progress_callback:
+                terms = status_query_terms(question)
+                if terms:
+                    progress_callback(f"Expanded search terms: {', '.join(terms)}.")
+                progress_callback(
+                    "Building a ranked event query across titles, descriptions, "
+                    "hosts, venues, and neighborhoods."
+                )
             result = self._query_sql(
                 build_keyword_event_query(
                     question,
@@ -656,6 +732,18 @@ class NytwSubconsciousAgent:
                     offset=event_offset,
                 )
             )
+            if progress_callback:
+                if result.get("ok"):
+                    row_count = int(result.get("row_count") or len(result.get("rows") or []))
+                    visible = min(row_count, page_size)
+                    progress_callback(
+                        f"ClickHouse returned {row_count} candidate rows; "
+                        f"formatting {visible} result{'s' if visible != 1 else ''}."
+                    )
+                else:
+                    progress_callback(
+                        "ClickHouse returned an error; preparing the failure details."
+                    )
             return format_event_rows(
                 result,
                 offset=event_offset,
@@ -664,29 +752,62 @@ class NytwSubconsciousAgent:
             )
 
         for _ in range(max_turns):
+            if progress_callback:
+                progress_callback(
+                    "Choosing the smallest useful data query across NYTW events "
+                    "and synced Senso context."
+                )
             response = self._chat(messages, tools=[QUERY_TOOL])
+            self._emit_token_usage(response, token_usage_callback)
             message = response["choices"][0]["message"]
             tool_calls = message.get("tool_calls") or []
             if not tool_calls:
                 tool_calls = extract_embedded_tool_calls(message.get("content") or "")
+            truncated = response_was_truncated(response)
 
             if not tool_calls and looks_like_planning_leak(message.get("content") or ""):
+                messages.append({"role": "assistant", "content": message.get("content") or ""})
                 messages.append(
                     {
-                        "role": "assistant",
-                        "content": "I need to query the database before answering.",
+                        "role": "user",
+                        "content": (
+                            CONTINUE_TRUNCATED_PROMPT if truncated else RETRY_AFTER_PLANNING_PROMPT
+                        ),
                     }
                 )
-                messages.append({"role": "user", "content": RETRY_AFTER_PLANNING_PROMPT})
                 continue
 
             messages.append(message)
 
             if not tool_calls:
-                return clean_model_answer(message.get("content") or "")
+                response_parts = [
+                    merge_continued_text(
+                        "".join(response_parts),
+                        message.get("content") or "",
+                    )
+                ]
+                if truncated:
+                    messages.append({"role": "user", "content": CONTINUE_TRUNCATED_PROMPT})
+                    continue
+                return clean_model_answer("".join(response_parts))
 
             for tool_call in tool_calls:
+                if progress_callback:
+                    progress_callback("Validating the selected ClickHouse query before execution.")
                 result = self._handle_tool_call(tool_call)
+                if progress_callback:
+                    if result.get("ok"):
+                        row_count = int(result.get("row_count") or len(result.get("rows") or []))
+                        progress_callback(
+                            f"ClickHouse returned {row_count} "
+                            f"row{'s' if row_count != 1 else ''}; "
+                            "sending rows back for synthesis."
+                        )
+                    else:
+                        progress_callback(
+                            "The query failed validation or execution; "
+                            "preparing the error response."
+                        )
                 messages.append(
                     {
                         "role": "tool",
@@ -696,21 +817,61 @@ class NytwSubconsciousAgent:
                     }
                 )
             messages.append({"role": "user", "content": FINAL_FORMAT_PROMPT})
-            if stream_callback:
-                response = self._chat(
-                    messages,
-                    stream_callback=stream_callback,
-                    raw_stream_callback=raw_stream_callback,
-                )
+            if progress_callback:
+                progress_callback("Formatting the database rows into the final Telegram answer.")
+            final_response_parts: list[str] = []
+            for _ in range(max_turns):
+                if stream_callback and raw_stream_callback:
+                    response = self._chat(
+                        messages,
+                        stream_callback=stream_callback,
+                        raw_stream_callback=raw_stream_callback,
+                        enable_thinking=False,
+                    )
+                else:
+                    response = self._chat(messages, enable_thinking=False)
+                self._emit_token_usage(response, token_usage_callback)
                 message = response["choices"][0]["message"]
                 content = message.get("content") or ""
+                truncated = response_was_truncated(response)
                 if looks_like_planning_leak(content):
                     messages.append({"role": "assistant", "content": content})
-                    messages.append({"role": "user", "content": FINAL_FORMAT_PROMPT})
+                    if truncated:
+                        final_response_parts = [
+                            merge_continued_text("".join(final_response_parts), content)
+                        ]
+                    messages.append(
+                        {
+                            "role": "user",
+                            "content": (
+                                CONTINUE_TRUNCATED_PROMPT if truncated else FINAL_FORMAT_PROMPT
+                            ),
+                        }
+                    )
                     continue
-                return clean_model_answer(content)
+                if truncated:
+                    final_response_parts = [
+                        merge_continued_text("".join(final_response_parts), content)
+                    ]
+                    messages.append({"role": "assistant", "content": content})
+                    messages.append({"role": "user", "content": CONTINUE_TRUNCATED_PROMPT})
+                    continue
+                final_response_parts = [
+                    merge_continued_text("".join(final_response_parts), content)
+                ]
+                return clean_model_answer("".join(final_response_parts))
+            raise RuntimeError("Agent final answer did not finish within max_turns")
 
         raise RuntimeError("Agent did not finish within max_turns")
+
+    def _emit_token_usage(
+        self,
+        response: dict[str, Any],
+        callback: TokenUsageCallback | None,
+    ) -> None:
+        usage = response.get("usage")
+        if callback and isinstance(usage, dict):
+            callback(usage)
 
     def start_clickhouse_warmup(
         self,
@@ -735,14 +896,20 @@ class NytwSubconsciousAgent:
         tools: list[dict[str, Any]] | None = None,
         stream_callback: Callable[[str], None] | None = None,
         raw_stream_callback: Callable[[str], None] | None = None,
+        enable_thinking: bool | None = None,
     ) -> dict[str, Any]:
+        thinking_enabled = (
+            self.subconscious.enable_thinking
+            if enable_thinking is None
+            else enable_thinking
+        )
         body: dict[str, Any] = {
             "model": self.subconscious.model,
             "messages": messages,
             "max_tokens": self.subconscious.max_tokens,
             "temperature": 0.2,
             "chat_template_kwargs": {
-                "enable_thinking": self.subconscious.enable_thinking,
+                "enable_thinking": thinking_enabled,
             },
         }
         if tools:
@@ -791,6 +958,8 @@ class NytwSubconsciousAgent:
 
         full_content = ""
         visible_sent = ""
+        usage: dict[str, Any] | None = None
+        finish_reason: str | None = None
         try:
             with urllib.request.urlopen(request, timeout=120) as response:
                 for raw_line in response:
@@ -806,11 +975,17 @@ class NytwSubconsciousAgent:
                         continue
                     if event.get("type") == "error":
                         raise RuntimeError(f"Subconscious stream error: {event.get('error')}")
+                    if isinstance(event.get("usage"), dict):
+                        usage = event["usage"]
                     if event.get("type") == "delta":
                         chunk = str(event.get("content") or "")
                     else:
                         choices = event.get("choices") or []
-                        delta = choices[0].get("delta", {}) if choices else {}
+                        choice = choices[0] if choices else {}
+                        reason = choice.get("finish_reason") or choice.get("stop_reason")
+                        if isinstance(reason, str):
+                            finish_reason = reason
+                        delta = choice.get("delta", {}) if choice else {}
                         chunk = str(delta.get("content") or "")
                     if not chunk:
                         continue
@@ -830,12 +1005,14 @@ class NytwSubconsciousAgent:
         return {
             "choices": [
                 {
+                    "finish_reason": finish_reason,
                     "message": {
                         "role": "assistant",
                         "content": full_content,
                     }
                 }
-            ]
+            ],
+            "usage": usage,
         }
 
     def _handle_tool_call(self, tool_call: dict[str, Any]) -> dict[str, Any]:

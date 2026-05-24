@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Callable, Protocol
 
 from .subconscious_agent import (
+    TokenUsageCallback,
     is_more_results_request,
     likely_event_list_question,
     requested_event_limit,
@@ -18,6 +19,8 @@ class AgentLike(Protocol):
         event_offset: int = 0,
         stream_callback: Callable[[str], None] | None = None,
         raw_stream_callback: Callable[[str], None] | None = None,
+        token_usage_callback: TokenUsageCallback | None = None,
+        progress_callback: Callable[[str], None] | None = None,
     ) -> str:
         ...
 
@@ -34,6 +37,8 @@ class AgentConversation:
         *,
         stream_callback: Callable[[str], None] | None = None,
         raw_stream_callback: Callable[[str], None] | None = None,
+        token_usage_callback: TokenUsageCallback | None = None,
+        progress_callback: Callable[[str], None] | None = None,
         no_previous_more_message: str = "Ask an event-list question first, then type 'more'.",
     ) -> str:
         if is_more_results_request(text):
@@ -45,12 +50,16 @@ class AgentConversation:
                 event_offset=self.last_event_offset,
                 stream_callback=stream_callback,
                 raw_stream_callback=raw_stream_callback,
+                token_usage_callback=token_usage_callback,
+                progress_callback=progress_callback,
             )
 
         answer = agent.ask(
             text,
             stream_callback=stream_callback,
             raw_stream_callback=raw_stream_callback,
+            token_usage_callback=token_usage_callback,
+            progress_callback=progress_callback,
         )
         if likely_event_list_question(text):
             self.last_event_question = text

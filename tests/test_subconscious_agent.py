@@ -18,6 +18,8 @@ from twag_clickhouse.subconscious_agent import (
     likely_event_list_question,
     likely_nytw_data_question,
     looks_like_planning_leak,
+    merge_continued_text,
+    response_was_truncated,
     requested_event_limit,
     validate_nytw_query,
     visible_stream_content,
@@ -76,6 +78,23 @@ def test_looks_like_planning_leak_detects_verbose_process_output() -> None:
     assert looks_like_planning_leak(content)
     assert looks_like_planning_leak("<think>I need to call query_nytw_clickhouse with SQL</think>")
     assert not looks_like_planning_leak("There are 1,360 live events.")
+
+
+def test_response_was_truncated_detects_length_finish_reason() -> None:
+    assert response_was_truncated({"choices": [{"finish_reason": "length"}]})
+    assert response_was_truncated({"choices": [{"stop_reason": "max_tokens"}]})
+    assert not response_was_truncated({"choices": [{"finish_reason": "stop"}]})
+
+
+def test_merge_continued_text_deduplicates_repeated_prefix() -> None:
+    assert (
+        merge_continued_text(
+            "The answer starts but stops",
+            "The answer starts but stops and now finishes.",
+        )
+        == "The answer starts but stops and now finishes."
+    )
+    assert merge_continued_text("First half", " second half") == "First half second half"
 
 
 def test_extract_embedded_tool_calls_recovers_json_tool_content() -> None:
@@ -334,6 +353,332 @@ def test_chat_request_includes_thinking_flag() -> None:
     assert captured["body"]["chat_template_kwargs"] == {"enable_thinking": True}
 
 
+def test_chat_request_can_override_thinking_flag() -> None:
+    agent = NytwSubconsciousAgent(subconscious=SubconsciousConfig(api_key="test"))
+    captured = {}
+
+    class Response:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def read(self):
+            return json.dumps({"choices": [{"message": {"content": "ok"}}]}).encode()
+
+    def fake_urlopen(request, timeout):
+        captured["body"] = json.loads(request.data.decode("utf-8"))
+        return Response()
+
+    with patch("urllib.request.urlopen", side_effect=fake_urlopen):
+        agent._chat([{"role": "user", "content": "hi"}], enable_thinking=False)
+
+    assert captured["body"]["chat_template_kwargs"] == {"enable_thinking": False}
+
+
+def test_agent_disables_thinking_for_tool_result_presentation() -> None:
+    class PresentationThinkingAgent(NytwSubconsciousAgent):
+        def __init__(self) -> None:
+            super().__init__(
+                clickhouse=RecordingClickHouse(),  # type: ignore[arg-type]
+                subconscious=SubconsciousConfig(api_key="test"),
+            )
+            self.calls = 0
+            self.thinking_flags = []
+
+        def _chat(self, messages, **kwargs):  # type: ignore[no-untyped-def]
+            self.calls += 1
+            self.thinking_flags.append(kwargs.get("enable_thinking"))
+            if self.calls == 1:
+                return {
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "id": "call-1",
+                                        "function": {
+                                            "name": "query_nytw_clickhouse",
+                                            "arguments": json.dumps(
+                                                {"sql": "SELECT title FROM nytw_events"}
+                                            ),
+                                        },
+                                    }
+                                ],
+                            }
+                        }
+                    ]
+                }
+
+            return {
+                "choices": [
+                    {"message": {"role": "assistant", "content": "Final answer"}}
+                ]
+            }
+
+    agent = PresentationThinkingAgent()
+
+    assert agent.ask("how many events?") == "Final answer"
+    assert agent.thinking_flags == [None, False]
+
+
+def test_agent_reports_nonstream_token_usage() -> None:
+    class UsageAgent(NytwSubconsciousAgent):
+        def _chat(self, messages, **kwargs):  # type: ignore[no-untyped-def]
+            return {
+                "choices": [{"message": {"role": "assistant", "content": "Final answer"}}],
+                "usage": {
+                    "prompt_tokens": 11,
+                    "completion_tokens": 4,
+                    "total_tokens": 15,
+                },
+            }
+
+    agent = UsageAgent(subconscious=SubconsciousConfig(api_key="test"))
+    usage = []
+
+    assert agent.ask("how many events?", token_usage_callback=usage.append) == "Final answer"
+    assert usage == [{"prompt_tokens": 11, "completion_tokens": 4, "total_tokens": 15}]
+
+
+def test_agent_continues_truncated_nonstream_response() -> None:
+    class TruncatedAgent(NytwSubconsciousAgent):
+        def __init__(self) -> None:
+            super().__init__(subconscious=SubconsciousConfig(api_key="test"))
+            self.calls = 0
+
+        def _chat(self, messages, **kwargs):  # type: ignore[no-untyped-def]
+            self.calls += 1
+            if self.calls == 1:
+                return {
+                    "choices": [
+                        {
+                            "finish_reason": "length",
+                            "message": {
+                                "role": "assistant",
+                                "content": "The answer starts but stops",
+                            },
+                        }
+                    ]
+                }
+            assert "cut off" in messages[-1]["content"]
+            return {
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "message": {
+                            "role": "assistant",
+                            "content": "The answer starts but stops and now finishes.",
+                        },
+                    }
+                ]
+            }
+
+    agent = TruncatedAgent()
+
+    assert agent.ask("how many events?") == "The answer starts but stops and now finishes."
+    assert agent.calls == 2
+
+
+def test_agent_buffers_tool_final_answer_when_not_verbose_streaming() -> None:
+    class BufferedFinalAgent(NytwSubconsciousAgent):
+        def __init__(self) -> None:
+            super().__init__(
+                clickhouse=RecordingClickHouse(),  # type: ignore[arg-type]
+                subconscious=SubconsciousConfig(api_key="test"),
+            )
+            self.calls = 0
+            self.streamed_final = False
+
+        def _chat(self, messages, **kwargs):  # type: ignore[no-untyped-def]
+            self.calls += 1
+            if self.calls == 1:
+                return {
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "id": "call-1",
+                                        "function": {
+                                            "name": "query_nytw_clickhouse",
+                                            "arguments": json.dumps(
+                                                {"sql": "SELECT title FROM nytw_events"}
+                                            ),
+                                        },
+                                    }
+                                ],
+                            }
+                        }
+                    ]
+                }
+
+            if kwargs.get("stream_callback"):
+                self.streamed_final = True
+                kwargs["stream_callback"](
+                    "I should explain that the previous query returned 0 rows."
+                )
+                return {
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "content": "I should explain that the previous query returned 0 rows.",
+                            }
+                        }
+                    ]
+                }
+
+            return {
+                "choices": [
+                    {"message": {"role": "assistant", "content": "No matching events found."}}
+                ]
+            }
+
+    agent = BufferedFinalAgent()
+    streamed = []
+
+    answer = agent.ask("knowledge graph events", stream_callback=streamed.append)
+
+    assert answer == "No matching events found."
+    assert streamed == []
+    assert agent.streamed_final is False
+
+
+def test_agent_continues_truncated_verbose_stream_response() -> None:
+    class TruncatedStreamAgent(NytwSubconsciousAgent):
+        def __init__(self) -> None:
+            super().__init__(
+                clickhouse=RecordingClickHouse(),  # type: ignore[arg-type]
+                subconscious=SubconsciousConfig(api_key="test"),
+            )
+            self.calls = 0
+
+        def _chat(self, messages, **kwargs):  # type: ignore[no-untyped-def]
+            self.calls += 1
+            if self.calls == 1:
+                return {
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "id": "call-1",
+                                        "function": {
+                                            "name": "query_nytw_clickhouse",
+                                            "arguments": json.dumps(
+                                                {"sql": "SELECT title FROM nytw_events"}
+                                            ),
+                                        },
+                                    }
+                                ],
+                            }
+                        }
+                    ]
+                }
+
+            if self.calls == 2:
+                kwargs["raw_stream_callback"]("The previous query returned 0 rows and")
+                kwargs["stream_callback"]("The previous query returned 0 rows and")
+                return {
+                    "choices": [
+                        {
+                            "finish_reason": "length",
+                            "message": {
+                                "role": "assistant",
+                                "content": "The previous query returned 0 rows and",
+                            },
+                        }
+                    ]
+                }
+
+            assert "cut off" in messages[-1]["content"]
+            kwargs["raw_stream_callback"](" now it finishes.")
+            kwargs["stream_callback"](" now it finishes.")
+            return {
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "message": {
+                            "role": "assistant",
+                            "content": " now it finishes.",
+                        },
+                    }
+                ]
+            }
+
+    agent = TruncatedStreamAgent()
+    visible = []
+    raw = []
+
+    answer = agent.ask(
+        "knowledge graph events",
+        stream_callback=visible.append,
+        raw_stream_callback=raw.append,
+    )
+
+    assert answer == "The previous query returned 0 rows and now it finishes."
+    assert agent.calls == 3
+    assert raw == ["The previous query returned 0 rows and", " now it finishes."]
+
+
+def test_agent_can_still_verbose_stream_tool_final_answer() -> None:
+    class VerboseFinalAgent(NytwSubconsciousAgent):
+        def __init__(self) -> None:
+            super().__init__(
+                clickhouse=RecordingClickHouse(),  # type: ignore[arg-type]
+                subconscious=SubconsciousConfig(api_key="test"),
+            )
+            self.calls = 0
+
+        def _chat(self, messages, **kwargs):  # type: ignore[no-untyped-def]
+            self.calls += 1
+            if self.calls == 1:
+                return {
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "tool_calls": [
+                                    {
+                                        "id": "call-1",
+                                        "function": {
+                                            "name": "query_nytw_clickhouse",
+                                            "arguments": json.dumps(
+                                                {"sql": "SELECT title FROM nytw_events"}
+                                            ),
+                                        },
+                                    }
+                                ],
+                            }
+                        }
+                    ]
+                }
+
+            if kwargs.get("stream_callback"):
+                kwargs["raw_stream_callback"]("<think>plan</think>Answer")
+                kwargs["stream_callback"]("Answer")
+            return {"choices": [{"message": {"role": "assistant", "content": "Answer"}}]}
+
+    agent = VerboseFinalAgent()
+    visible = []
+    raw = []
+
+    answer = agent.ask(
+        "knowledge graph events",
+        stream_callback=visible.append,
+        raw_stream_callback=raw.append,
+    )
+
+    assert answer == "Answer"
+    assert visible == ["Answer"]
+    assert raw == ["<think>plan</think>Answer"]
+
+
 def test_chat_stream_accumulates_visible_content_after_thinking() -> None:
     agent = NytwSubconsciousAgent(subconscious=SubconsciousConfig(api_key="test"))
     updates = []
@@ -350,6 +695,7 @@ def test_chat_stream_accumulates_visible_content_after_thinking() -> None:
                 {"choices": [{"delta": {"content": "<think>plan"}}]},
                 {"choices": [{"delta": {"content": "</think>Hello"}}]},
                 {"choices": [{"delta": {"content": " world"}}]},
+                {"choices": [], "usage": {"prompt_tokens": 3, "completion_tokens": 2, "total_tokens": 5}},
             ]
             for chunk in chunks:
                 yield f"data: {json.dumps(chunk)}\n".encode()
@@ -362,6 +708,7 @@ def test_chat_stream_accumulates_visible_content_after_thinking() -> None:
         )
 
     assert response["choices"][0]["message"]["content"] == "<think>plan</think>Hello world"
+    assert response["usage"] == {"prompt_tokens": 3, "completion_tokens": 2, "total_tokens": 5}
     assert updates == ["Hello", "Hello world"]
 
 

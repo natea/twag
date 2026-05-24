@@ -265,6 +265,7 @@ TELEGRAM_RETRY_MAX_SECONDS=60
 TELEGRAM_STATUS_HEARTBEAT_SECONDS=8
 TELEGRAM_STREAM_DRAFTS=true
 TELEGRAM_STREAM_DRAFT_INTERVAL_SECONDS=1
+TELEGRAM_QUESTION_LOG_PATH=logs/twag-telegram-questions.jsonl
 ```
 
 Leave `TELEGRAM_ALLOWED_CHAT_IDS` empty to answer every Telegram user. To
@@ -287,6 +288,11 @@ CLICKHOUSE_QUERY_RETRIES=3
 CLICKHOUSE_RETRY_INITIAL_SECONDS=1
 CLICKHOUSE_RETRY_MAX_SECONDS=8
 ```
+
+`TELEGRAM_QUESTION_LOG_PATH` writes one JSON object per handled Telegram
+message. Each line includes the Telegram chat/user metadata, question text,
+route, answer status, duration, and aggregated Subconscious token usage. Set it
+to `false` to disable the server-side question log.
 
 ### Run
 
@@ -540,6 +546,7 @@ CLICKHOUSE_HOST=your-clickhouse-host
 CLICKHOUSE_USERNAME=default
 CLICKHOUSE_PASSWORD=your-clickhouse-password
 CLICKHOUSE_DATABASE=default
+TELEGRAM_QUESTION_LOG_PATH=/var/log/twag/questions.jsonl
 ```
 
 The Nimble service defaults to:
