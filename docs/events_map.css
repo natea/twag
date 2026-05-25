@@ -114,7 +114,7 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
 }
 .tile-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  padding-top: 100%;       /* classic 1:1 box that works in every grid layout */
   background: #ddd;
   overflow: hidden;
   position: relative;
@@ -178,6 +178,8 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   .tile-overlay { display: none; }
 }
 .tile-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
