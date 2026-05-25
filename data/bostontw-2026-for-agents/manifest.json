@@ -1,0 +1,5387 @@
+{
+  "count": 598,
+  "events": [
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 7:30am",
+      "host": "All Stage",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Boston Tech Week wakeup run",
+      "url": "https://partiful.com/e/yY8GzwD5bkR4nq3C7fe6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 7:30am",
+      "host": "MCJ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "WAKE UP WITH ENERGY: group run for energy, climate, industry.",
+      "url": "https://partiful.com/e/P7GheqLSdcXlHZGFB4vF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8am",
+      "host": "Walnut AI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Agents Meet at Boston 2026: Meet Your Next Partner",
+      "url": "https://partiful.com/e/tObYJoI36jOiZjIMukkQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8am",
+      "host": "Moonshot",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "MedTech AI Summit",
+      "url": "https://partiful.com/e/XpVEdIeNDHyHm6f6KipN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8am",
+      "host": "SourceHound",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Can you make $1,000 Before Breakfast?",
+      "url": "https://partiful.com/e/Y16QijxR98dPBavfyPXY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8am",
+      "host": "Byteforge Systems",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Hardware Founders and Builders Breakfast",
+      "url": "https://partiful.com/e/os0a6jcxeaohPcNJ74Ab"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8:30am",
+      "host": "TechWalk",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "TechWalk",
+      "url": "https://partiful.com/e/m7i3pTPn8Am8TtwHG4S2"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8:30am",
+      "host": "Longevity Global",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Aging Code Summit",
+      "url": "https://partiful.com/e/mrGX7nQq9agpUIjJplF6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8:30am",
+      "host": "First Star Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Allocating to Atoms: A Breakfast for LPs in Deep Tech",
+      "url": "https://partiful.com/e/Ika5aCfvQ5QO23iiyzTY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8:30am",
+      "host": "C10 Labs",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "How Corporate Venture Capital (CVC) is working with GenAI and Startups",
+      "url": "https://partiful.com/e/edoU6JyMqL4htfl1wDfj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 8:30am",
+      "host": "Thrive Tide Partners",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Building in Color: Black Founders in AI",
+      "url": "https://partiful.com/e/mZmcWJgSF8LVCXRBjh49"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9am",
+      "host": "ScaleUp Labs",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "What’s Not So Obvious About AI in Manufacturing and Energy: Mixer & Roundtable",
+      "url": "https://partiful.com/e/hfaSebsdlwYU57CirbYK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9am",
+      "host": "Liberty Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Vibe Coding for Freedom Hackathon Lovable x Liberty Ventures",
+      "url": "https://partiful.com/e/YEsCtk3srsKQwAVp7KIC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9am",
+      "host": "Puzzle",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Founders Breakfast",
+      "url": "https://partiful.com/e/gN0s1gSAPcwz6RfDPa2x"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9am",
+      "host": "Enlaye",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Rebuilding Construction Intelligence",
+      "url": "https://partiful.com/e/9WmqI3CkHvgEy3GT3QDL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9am",
+      "host": "Indori VC",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Inference and AI Infrastructure by Keysight",
+      "url": "https://partiful.com/e/nJ9P46nBl7d4v8QxroQb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9am",
+      "host": "Y·US Ventures",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Your Consumer App is a B2B Company",
+      "url": "https://partiful.com/e/7AxXj5wS8wCBwxJBO0xV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9:30am",
+      "host": "The Open Accelerator",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Ringing in the Inaugural Boston AI Tech Week",
+      "url": "https://partiful.com/e/kVTU2rhqby1rhb0rqtee"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9:30am",
+      "host": "FounderWay",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Don’t Let AI Build the Wrong Thing Faster",
+      "url": "https://partiful.com/e/1LofNrSNKTPbjUfyInXq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 9:30am",
+      "host": "Tabs",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Tabs Truck. Free Donuts. Fresh Swag.",
+      "url": "https://partiful.com/e/Qqi8ZvGsFkGm5uJrG7DS"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10am",
+      "host": "Travelbay",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Building Products That Scale Globally",
+      "url": "https://partiful.com/e/f6qZldGX61LI078xdS8Z"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10am",
+      "host": "Cloudonix, Inc",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "If Your AI Can’t Talk and Act, It’s Broken - Agentic Voice Workshop",
+      "url": "https://partiful.com/e/Z49RTBQXINeOZOyCOjKI"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10am",
+      "host": "Probably.dev",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Building the Data Agent",
+      "url": "https://partiful.com/e/4dLyfoP8XvcjkYFRSITM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10am",
+      "host": "Black Math",
+      "neighborhood": "Chinatown",
+      "source": "crawl",
+      "title": "AI-Woven Art Lab: New Narrative Frameworks",
+      "url": "https://partiful.com/e/SpexlIZkVJ1AoDhkQizG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10am",
+      "host": "BeatM",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Cursor Boston",
+      "url": "https://partiful.com/e/tuwaHOMgiJHvTfOFUJzA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10:30am",
+      "host": "Flybridge",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Titans of Boston Tech",
+      "url": "https://partiful.com/e/YBAQuiLwcuBZhRiQBIgK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 11am",
+      "host": "MIT Sloan Career Development Office",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Connecting with MIT Sloan's Talent Ecosystem",
+      "url": "https://partiful.com/e/IRifccp3pjRyKrWbs6TK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 11am",
+      "host": "Founder-Led Media Community",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Cracking Founder-Led Marketing",
+      "url": "https://partiful.com/e/bjwwGkcsY9nEC2EZpHxN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 11am",
+      "host": "MTLC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Trusted Humans in the Age of Agentic AI",
+      "url": "https://partiful.com/e/ULbgipFAv1moRHfOOoHs"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 11am",
+      "host": "York Effect",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "FOUNDER REALITY CHECK",
+      "url": "https://partiful.com/e/DIYbvrTKc7yqMqTaeJo6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 11am",
+      "host": "Linton Lifesciences",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Organ Engineering-How Biofabrication is paving the way for Tissue Products",
+      "url": "https://partiful.com/e/B14Myl6svuM6HbvaSsCy"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 11:30am",
+      "host": "SVB",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "How to Raise a Series A",
+      "url": "https://partiful.com/e/CO9oaDLSOmLKHbfXgW9I"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Scalepoint Advisors",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Fintech CFO Office Hours",
+      "url": "https://partiful.com/e/ZrKsputfC9casbx6L8b9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Automata",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AIxBIO Tech Talks: The Infrastructure Behind AI-Native Labs (Hosted by Automata)",
+      "url": "https://partiful.com/e/19O3ycXCAN3nJfUR8FrF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Product Advisory Collective (PAC)",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Authorized Access: Gender, Ambition & Tech",
+      "url": "https://partiful.com/e/76U2Xfy1LxonP4h1OWbE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "CREWASIS",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "CREWASIS Presents: Agentic AI Experiment to Impact",
+      "url": "https://partiful.com/e/TyiiDELL5sQjIP8MVjOF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Cherry Hill Advisory",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "AI Startup Founders' Lunch hosted by Cherry Hill Advisory",
+      "url": "https://partiful.com/e/KVexTCtxySfnCjWhj649"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Studio 3e8",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Startup Science Fair: Innovation Showcase @ Greentown Labs",
+      "url": "https://partiful.com/e/U519rmb4zrVYxmCyDiGx"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Pitch Genius",
+      "neighborhood": "Virtual (Boston)",
+      "source": "crawl",
+      "title": "The 30 Min. Pitch Workshop for Figuring Out Your Hook",
+      "url": "https://partiful.com/e/2IP1C3kzI9mr0lqtrVYL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Pickle Robot",
+      "neighborhood": "Charlestown",
+      "source": "crawl",
+      "title": "Physical AI Up Close with Pickle Robot",
+      "url": "https://partiful.com/e/RE4ZMnljF6NtGKRx2466"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Quark Labs",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Tech Week Boston: Workflow Automation CTO/CIO Lunch",
+      "url": "https://partiful.com/e/C8bWu3pppppvnM8knwtG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Focus Technologies",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Mastering the EU CRA & AI Act",
+      "url": "https://partiful.com/e/2oiJXiJyAYGZRZvtsEZ6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "staaake",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Opening Power Walk",
+      "url": "https://partiful.com/e/iNBTrOveQInJiRvLdsHA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "AcceleratorCON",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Brand Over Algorithm",
+      "url": "https://partiful.com/e/b0G7pgyhTzgpwYaLEIGY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Friedman School at Tufts Univresity",
+      "neighborhood": "Chinatown",
+      "source": "crawl",
+      "title": "Tufts x BOS\nCo-creating the future of women’s health innovation",
+      "url": "https://partiful.com/e/4zdgi2Kv3v5fQ21UA3zW"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "KRCG",
+      "neighborhood": "Virtual (BOS)",
+      "source": "crawl",
+      "title": "Ask a VP of Sales: Live GTM Office Hours for Early-Stage B2B Founders (Virtual)",
+      "url": "https://partiful.com/e/oO54tU5Ta0lmfPoMQeSD"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 12pm",
+      "host": "Limitr",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Priced to Scale: A Guided Conversation for Usage-Based Pricing",
+      "url": "https://partiful.com/e/DpR5CcbfdgsCJpyY6yzw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 1pm",
+      "host": "Ideas in Action and MIT LIDS",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "TedxBoston: Innovating Defense and Security in an Age of AI",
+      "url": "https://partiful.com/e/RssASBo7BfZrf9FIFfVE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 1pm",
+      "host": "Tedxharvard square ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "TEDxHarvardSquare: Demo Day",
+      "url": "https://partiful.com/e/rRAPdTw4eEMBEOhoC3YN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 1pm",
+      "host": "Legaleez",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "WorkLaw VibeHack",
+      "url": "https://partiful.com/e/udaRNwwGomh65ecUQ3TB"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 1:30pm",
+      "host": "staaake",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Taco Profitable Founders Meet",
+      "url": "https://partiful.com/e/KL9Y7DRJrfKgYUMqu7g6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2pm",
+      "host": "ScaleUp Labs",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "What’s Not So Obvious About AI in Energy: Mixer & Roundtable",
+      "url": "https://partiful.com/e/TofXFoNBejjgh5p0POyK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2pm",
+      "host": "MIT.nano",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Hard-Tech Innovation & MIT.nano",
+      "url": "https://partiful.com/e/dU8YDPenYQbh8Zp6Lqb4"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2pm",
+      "host": "VIA",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Security wasn’t built for this: Rethinking human-centered security for the age of AI",
+      "url": "https://partiful.com/e/yf8ujIv7kKYcCssQuGuP"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2pm",
+      "host": "WHO MENTORS YOU INC.",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "From Your Own H-1B Cap Exempt Employer",
+      "url": "https://partiful.com/e/8eMKc3rVPeOXlKv7ajkv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2pm",
+      "host": "Kendall Square Association",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Kendall Square Walking Tour",
+      "url": "https://partiful.com/e/Jd5zNjOv7oP9ulVEH8DR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2pm",
+      "host": "PythiaVox",
+      "neighborhood": "Virtual (Boston)",
+      "source": "crawl",
+      "title": "The Founder Fail:Let's Make Lemonade!",
+      "url": "https://partiful.com/e/wfUQiUzFdBKvEV26UbLf"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 2:30pm",
+      "host": "Two Lanterns Venture Capital",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Founders Revolutionary Tour",
+      "url": "https://partiful.com/e/RyqWWOYVhrp7R2VAmtiY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3pm",
+      "host": "BUILD617",
+      "neighborhood": "Chinatown",
+      "source": "crawl",
+      "title": "BUILD617 x JPM x Day AI Tech Week Live Pod",
+      "url": "https://partiful.com/e/AjHV6ieg8MizHWE9RFi0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3pm",
+      "host": "Convergence Center for Applied Quantum",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Quantum Future: Questions Answered",
+      "url": "https://partiful.com/e/QkfKztxmG5W6VBzTmEF4"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3pm",
+      "host": "Evidexa",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Power of Digital Twin Technology in Healthcare",
+      "url": "https://partiful.com/e/F2lHjVgAHLaTJrReBQ7v"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3pm",
+      "host": "DataRobot",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "From Zero to Production: Build and Deploy Enterprise Agents in 2 Hours",
+      "url": "https://partiful.com/e/nSNBpG3heCSz7nhrA8vm"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3pm",
+      "host": "Cognisee",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Building Superintelligence for Humanity",
+      "url": "https://partiful.com/e/1IGMdozGEWz1480XbItg"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3:30pm",
+      "host": "Cloudonix, Inc",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Agentic Voice AMA",
+      "url": "https://partiful.com/e/dqT8aqmCazCqPJiPoK6o"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3:30pm",
+      "host": "Clutch Talent & Resume Refactor",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Jobseeker Strategy",
+      "url": "https://partiful.com/e/1OxYb31LmKUnw4734A1V"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 3:30pm",
+      "host": "H*QUOTIENT",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Climate Tech, Future of Energy, and AI",
+      "url": "https://partiful.com/e/AUnhsSbIjjcRSecgxlw7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Hyperplane",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "How AI is Impacting the Real World",
+      "url": "https://partiful.com/e/nCU3xVvIPgbsL2b2ySQN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Nexxa.ai",
+      "neighborhood": "South Boston",
+      "source": "crawl",
+      "title": "Athletes & Industrials",
+      "url": "https://partiful.com/e/3bTQr7mGi0nZEo7AnqaB"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Perkins School for the Blind",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Taco Tuesday & Teacher Tools: Vibecoding for the 2026 Classroom",
+      "url": "https://partiful.com/e/PEGwGhCeAEMXLsJOEVjT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Fenwick",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Partnering with Biotech for Strategic Investment",
+      "url": "https://partiful.com/e/9F6jn6vipZnQ9fFwe9Oq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "FoundersX Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI x Deep Tech Talk in Harvard Square",
+      "url": "https://partiful.com/e/0S6UwLWJf9HkXvd0cMVO"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Aikreate",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI Literacy for Educators: Experiential Teachathon",
+      "url": "https://partiful.com/e/x9lugxjkcbiqtkcS8T7n"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Girls into VC, Tufts",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Vibe coding Hackathon Lovable X Gamma X Listentoher X Girls Into VC @ SVB",
+      "url": "https://partiful.com/e/o6v2xLUJOrST8U65NFb1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "MIT-IBM Computing Research Lab",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "MIT-IBM / The Open Accelerator - Build-n-Brew Session 1 -- vLLM",
+      "url": "https://partiful.com/e/2CWzL7efN3h5MtSTO9nw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4pm",
+      "host": "Rhapsody Venture Partners",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Reindustrializing the US: Building the Next Era of Hard Tech",
+      "url": "https://partiful.com/e/K0A7mmrNfgMrSyw20DLH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4:30pm",
+      "host": "FoundersEdge",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "VC Investor Happy Hour",
+      "url": "https://partiful.com/e/OVqaGkkARAh35EGwojM9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4:30pm",
+      "host": "Dune IRL",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Tech Week Hosts & Friends Pre-Game",
+      "url": "https://partiful.com/e/U4TiwpTuNODQkQrm6doS"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 4:30pm",
+      "host": "Funnel.io",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Marketers Eating Mangoes @ Funnel.io",
+      "url": "https://partiful.com/e/SNj32TJdxgevKyxJX2Dg"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "Startup Grind Boston",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Startup World Cup Boston Regional Pitch Competition",
+      "url": "https://partiful.com/e/iRecwytlarcXUDZh0nt6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "Subconscious",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Beat The Clock Agent Hack @ Wayfair HQ",
+      "url": "https://partiful.com/e/go7W5NU5i1NYHYoxoDgp"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "Cloaked",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Doxxing and Drinks",
+      "url": "https://partiful.com/e/fAzZkBjN3PILhID3l42j"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "MassBio",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "From Models to Medicines: AI Tools Powering Drug Discovery",
+      "url": "https://partiful.com/e/x7APx6PtGOrOLpxmqGHi"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "The Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Ventures Startup Award Boston 2026",
+      "url": "https://partiful.com/e/dEXUM5OzNv5U215zI7DL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "Houston",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Build your first AI agent without knowing how to code @Harvard University",
+      "url": "https://partiful.com/e/y1BxWEv3H5MVoO9LWoRz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5pm",
+      "host": "Keysight",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Scaling AI Infrastructure - From Chiplets to Clusters By Keysight",
+      "url": "https://partiful.com/e/0Nby1nnEUHh06BErQs9A"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "LeaderBank",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "The State of Venture Capital",
+      "url": "https://partiful.com/e/jr9hH7zvOClKS3rrd8Uv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "Taco Tech Tuesday",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Taco Tech Tuesday",
+      "url": "https://partiful.com/e/r9Vaor5p706ZGJYDbb46"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "Professionally Unprofessional",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Creatorpreneur Happy Hour",
+      "url": "https://partiful.com/e/wuFjKyBFWpAqeptGu5wX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "Startup Boston",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Test Early-Stage Startups IRL",
+      "url": "https://partiful.com/e/ne4II9Tl18u9TFtppGi5"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "TNT",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "TNT Demo Day at MIT",
+      "url": "https://partiful.com/e/5KaV64CyTChweH4qYBy6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "Leverage",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI-Powered Startup Ops: Build the Automation Stack Behind a Scaling Company",
+      "url": "https://partiful.com/e/AGxoG9074FEAe4BKbUNz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "The Engine",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Networking Reception: AI for Our Hardest Problems",
+      "url": "https://partiful.com/e/9zk8PBr3GI2cSWVj9niv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "Renavest",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Behind the Hustle: How Personal Finances Make or Break Startups",
+      "url": "https://partiful.com/e/k4hQnABwveqYzRRWxTnY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "Caldwell Law",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Punch & Pie at the Top: IP, Innovation & Dealmaking",
+      "url": "https://partiful.com/e/gd3fryB93zSgQECQ0PHw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 5:30pm",
+      "host": "WS Development",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Welcome to the Neighborhood: Seaport, Tech Week '26",
+      "url": "https://partiful.com/e/WLRYb0CSqVp5g8xWMWz1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "M13",
+      "neighborhood": "Everett",
+      "source": "crawl",
+      "title": "M13: VC Talent Happy Hour",
+      "url": "https://partiful.com/e/tZMXwTs8VrP0XavxJvcb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "LokBros Studio",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Experiential Game Night",
+      "url": "https://partiful.com/e/uYG5hIw3rMi8cqsgi5bm"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Creatortech.ai",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "A New Creative Stack: How AI Is Reshaping Content",
+      "url": "https://partiful.com/e/B2eihp3dWFqYYcsUf2iG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Driver AI",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Solving Context for Agentic Coding: Driver AI Reception at Boston Tech Week",
+      "url": "https://partiful.com/e/CqAXMakyIu2AR31HNoaK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Darkside AI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Darkside AI Stories Night",
+      "url": "https://partiful.com/e/fE1xf79VZTQwR10ErFSl"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Ask a Chief of Staff",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "How Chiefs of Staff Grow & Scale",
+      "url": "https://partiful.com/e/ZbiykAzr5kfi3AX8EZAT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Genspark",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Roast Nights by Genspark",
+      "url": "https://partiful.com/e/ZBhUnoW4qKdsDibYNrw3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Fenwick",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "The Official a16z Tech Week kickoff presented by Fenwick and HSBC",
+      "url": "https://partiful.com/e/bG41mJ5pbQgD87HSXOpm"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Savas Labs",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Who Benefits from AGI Abundance",
+      "url": "https://partiful.com/e/AUG08Y1n2vOdtJZQ8POd"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Technology Founders of America",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Advertising & Marketing Mixer",
+      "url": "https://partiful.com/e/nT5KYmeJpOGYo9KX7sD2"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "CoreWeave",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Reception with Weights & Biases - Autonomously Improving Agents",
+      "url": "https://partiful.com/e/dEi26RKq0ZlIqzExdJxb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Girls in VC and Listen to Her ",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Build → Pitch → Fund: AI Founder Sprint",
+      "url": "https://partiful.com/e/5Va5D9ywU7HybZuBjiJe"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "The Harvard Club ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Nonlinear Edge: The Value of Circuitous Careers in Tech",
+      "url": "https://partiful.com/e/IJFGTdF1u8KIkizx4pvU"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Unicorner",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Founding GPs VC Omakase",
+      "url": "https://partiful.com/e/SqerPqIhsfVr53YRx7EM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Dune IRL",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Your Team is Probably The Problem",
+      "url": "https://partiful.com/e/nQQYMJwz3KODLtNhXs9k"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Two Lanterns Venture Capital",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "2LVC x OSS: Investor Dinner & Fireside Chat",
+      "url": "https://partiful.com/e/N0GDRp8irDf7upNceuJx"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Silicon Valley Bank",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI Drives Fintech to the Green",
+      "url": "https://partiful.com/e/tcZ9FW2mmgMCwplMPnnY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "MindTech",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "VIP Dinner for Founders & CTOs",
+      "url": "https://partiful.com/e/5UMbXEaZeYsdbaM3GCHe"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "J2",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Boston Legacy FC & Lumia Health VIP Dinner (with J.P. Morgan)",
+      "url": "https://partiful.com/e/s5fXgo6Jzb76mhS47DPX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Cushman & Wakefield ",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Defense Tech Roundtable: \"Scaling from Prototype to Production\" sponsored by Cushman & Wakefield",
+      "url": "https://partiful.com/e/tqqKfkfJZLSy9m9RLRSd"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "AI Tinkerers ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI Tinkerers Boston: Builders Meetup",
+      "url": "https://partiful.com/e/XKC23dPW7jRV72qxg2zA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6pm",
+      "host": "Ugly Talk",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "UGLY TALK: BOSTON TECH FOUNDER OPEN MIC + MIXER",
+      "url": "https://partiful.com/e/ULaZqmUgUxWA36bJEluK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6:30pm",
+      "host": "Leverage",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI-Founders & Investors Dinner",
+      "url": "https://partiful.com/e/GXePcsDQRj4f3VmhaRaJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6:30pm",
+      "host": "Dispatchino",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Beat Dispatchino: Break Our Freight Voice AI Dispatcher, Win a World Cup Ticket",
+      "url": "https://partiful.com/e/YH8QOU1giL6EcwmXX1Ix"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6:30pm",
+      "host": "Exclaimer",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Systems at Speed: Join Exclaimer & Insight for an Evening at the F1 Arcade",
+      "url": "https://partiful.com/e/TQg1t2nD92aFfWKx5vRo"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 6:45pm",
+      "host": "PwC",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Tech me out to the ball game",
+      "url": "https://partiful.com/e/sGl5McbId9A6btWVH5dN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 7pm",
+      "host": "RAUK AI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI-matched dinners with Rauk AI [BOSTON]",
+      "url": "https://partiful.com/e/LQKsnSIpCosaD2dVLKlH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 7pm",
+      "host": "Wix Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Taste: The Human Skill AI Hasn't Automate (Yet...)",
+      "url": "https://partiful.com/e/jQYngS6Va9leqfcYYGsK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Tuesday · May 26 · 10pm",
+      "host": "Comida For Familias, Inc. ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "CEO Intern Public Service Entrepreneurship",
+      "url": "https://partiful.com/e/URK5jDbxydyFoq4Ia3qP"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7am",
+      "host": "RemoFirst",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Boston Runs on Tech, a networking run for charity",
+      "url": "https://partiful.com/e/oGNKfuBbxjT0G8ebHcyw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7:30am",
+      "host": "Formation Bio",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI & Biotech Runtime",
+      "url": "https://partiful.com/e/FJXCHsTzgGQQQwt1qWGG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7:30am",
+      "host": "Subconscious",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "BOSTON STRONG: Tech Pushup Challenge",
+      "url": "https://partiful.com/e/QqdXzM3VDuw9CXoMJbrC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8am",
+      "host": "darshana.ai",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "How Do You Build a Borderless Tech Career in the AI Era? Hosted by Darshana and Get on Board",
+      "url": "https://partiful.com/e/wsRxKuFjnimcau9TsjTC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8am",
+      "host": "MA AI Hub",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI for Decision Makers: Autonomous Systems and AI Design, from Strategy to Deployment",
+      "url": "https://partiful.com/e/WVI9NC4M90TGwh5Iw3md"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8am",
+      "host": "Soft Agents",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "The Future of Work is Behavioral: Soft Agents Launch",
+      "url": "https://partiful.com/e/dpB4igv26fzW1uMcrKiQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8:30am",
+      "host": "PwC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Women who build Boston - From mentorship to sponsorship with Lovable",
+      "url": "https://partiful.com/e/GYflfIUGGMMQ0LWj5KjA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8:30am",
+      "host": "Branch Venture Group",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Founders & Funders in Food & Ag",
+      "url": "https://partiful.com/e/dWQkRrJbv7CIP1hVclIA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8:30am",
+      "host": "The FOMO Group",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Boston Protocol: Hacking Healthcare",
+      "url": "https://partiful.com/e/co1H0pbx1kjHrxbCe4Mz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8:30am",
+      "host": "J2 Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Investor Networking Breakfast (with J2 Ventures & J.P. Morgan)",
+      "url": "https://partiful.com/e/Ti9tl54xX64jrR61nRA0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 8:30am",
+      "host": "Supermomos",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Private Founders Breakfast ft. Zendesk Ventures & Will Ventures —",
+      "url": "https://partiful.com/e/DL0cyjjWtONMJZvp9R6K"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "ScaleUp Labs ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Breakfast Mixer",
+      "url": "https://partiful.com/e/vQ3j7n2KyWbdrbHBZgX6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Fintech Sandbox",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Revolution Started Here: Moving Fast and Minting Things",
+      "url": "https://partiful.com/e/GrSlGjHe4vQFMwHwczfE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "JPMorgan",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Boston Tech Week Defense Breakfast",
+      "url": "https://partiful.com/e/pwxiFLTVCzq4xx02D44S"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Foray",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Applied AI Founders & Builders Breakfast",
+      "url": "https://partiful.com/e/AXnfEzPrICv2bkOmaOjf"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Alumni Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Women's Health Breakfast",
+      "url": "https://partiful.com/e/HHSHwj6EefPW6vGKWE7h"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Trove",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Where Does the Talent Go?",
+      "url": "https://partiful.com/e/LbEtriasonbT4NoKbVxw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Connexa",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Female Founders & Funders Breakfast",
+      "url": "https://partiful.com/e/WBNgOQ0xCiCtwA6Uf9Gc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Glasswing Ventures",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Defensible AI: Building Trust and Resilience in the Enterprise",
+      "url": "https://partiful.com/e/DIrd1qZz5zkJYUA9jvg3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Wistia",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Business of Video: What’s Working Now (and What’s Next)",
+      "url": "https://partiful.com/e/2KVSudYlzQpKBweLOwH9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9am",
+      "host": "Founder Institute Boston / 128vc",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "From Fired to Founder: The AI-Native Company Playbook",
+      "url": "https://partiful.com/e/BtQRRqcR7PpYOVHBbwvF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9:15am",
+      "host": "Via AI",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Founders & Fitness",
+      "url": "https://partiful.com/e/zREi1s6DlYHLqfBcLYlh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9:30am",
+      "host": "Google for Startups",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Google for Startups: Healthcare & Life Sciences Summit",
+      "url": "https://partiful.com/e/r15W7xfPhpCKh4AeMlDH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 10am",
+      "host": "Go Global World",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "GGW Sharks. Startup Pitch & Networking",
+      "url": "https://partiful.com/e/7fTCCTACRFJ0PRntuzc2"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 10am",
+      "host": "Converge VC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "What do Early-Stage B2B Investors Look for in the AI Era?",
+      "url": "https://partiful.com/e/nYwABOB9oay8tl4EvjtG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 10am",
+      "host": "MTLC",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Innovation unConference",
+      "url": "https://partiful.com/e/qOhJqoxxt1DLTPyge9Ez"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 10am",
+      "host": "Prioriwise",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "The New MSP Playbook: AI, Security, and Growth",
+      "url": "https://partiful.com/e/l3oP2Ls8nAC5oMYLK7Zq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 10am",
+      "host": "PhaseV Trials",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Trials in Motion",
+      "url": "https://partiful.com/e/2FALmSd7dGutTvgJuJrh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 10:30am",
+      "host": "Inspiralia US",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Unlocking Federal Funding for Startups",
+      "url": "https://partiful.com/e/bwlE0ODyRCNkphmroLHP"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 11am",
+      "host": "CMU T&E",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "Boston Builders Brunch & MA-kerspace",
+      "url": "https://partiful.com/e/CKMOe2wAD5cxuPACKmyl"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 11am",
+      "host": "VIA",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Sovereignty vs. security: data and AI in the Global South",
+      "url": "https://partiful.com/e/ObQT3Ois4T2349SyYWM7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 11am",
+      "host": "LibGem",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Is Data Still a Moat in the AI World?",
+      "url": "https://partiful.com/e/g16OAfTQBIqG4XpYqWD1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 11am",
+      "host": "Boston New Technology ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Boston New Technology's Chai Chats",
+      "url": "https://partiful.com/e/sTyxKPXBJPQytukcZu2n"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 11am",
+      "host": "Product Advisory Collective (PAC) ",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Trustworthy AI Showcase & Matching",
+      "url": "https://partiful.com/e/XVOrbVgJPkqTMeyAN3sZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 11am",
+      "host": "Innovate@BU",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Early Career Pathways for Student Entrepreneurs",
+      "url": "https://partiful.com/e/24PCfYD160CRhx1FWL4y"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "PTC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI in Robotics: Are we at an Iron Man Moment?",
+      "url": "https://partiful.com/e/V1l1gw9YT7TN9v3YEaLC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "Quantum Alliance",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The AI Table · Family Office Lunch",
+      "url": "https://partiful.com/e/8cRufEmlqml5b3DwktP0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "SIMPLITO",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Building secure AI for your data: DeepFellow Demo + Q&A",
+      "url": "https://partiful.com/e/b0wDq3V7RJh4GwCOZ67Q"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "Cherry Hill Advisory",
+      "neighborhood": "Brookline",
+      "source": "crawl",
+      "title": "Founders' Lunch hosted by Cherry Hill Advisory",
+      "url": "https://partiful.com/e/Gnbt53bYR1lDlSCV432R"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "Beyond Features",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Build the Story. Then Launch.",
+      "url": "https://partiful.com/e/IBqZqNmlGDDRr7NVfyGT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "Imagination in Action",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Imagination in Action: AI Showcase & Builder Celebration at Whoop",
+      "url": "https://partiful.com/e/8VYKGKwQisDRLSp7W6xA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "Adobe",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Builder's Table with Adobe for Startups",
+      "url": "https://partiful.com/e/9XI33jM1rQ9rqZmCcrde"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 12pm",
+      "host": "KRCG",
+      "neighborhood": "Virtual (BOS)",
+      "source": "crawl",
+      "title": "Scaling Founder-led Sales on LinkedIn - #BOSTechWeek",
+      "url": "https://partiful.com/e/CUHQ5mfVdncHE7IYZPzY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 1pm",
+      "host": "Reframe Systems",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Scaling Net-Zero: Reframe Systems Factory Tour",
+      "url": "https://partiful.com/e/k0C8gP3E67qWjqfT5NjO"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 1pm",
+      "host": "Wayfair",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Legal AI Summit",
+      "url": "https://partiful.com/e/pM0Dnw5pQRibSUklUBH2"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 1pm",
+      "host": "Future of Higher Ed (FOHE) Boston ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "From AI Hype to Human Impact: Co-Designing the Future of Learning",
+      "url": "https://partiful.com/e/Y9EnoPlvCZpxubbMcDlQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 1pm",
+      "host": "Hardware Velocity",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Hard Truths: Building a Scalable B2B Hardware Business",
+      "url": "https://partiful.com/e/CgRQLUOAuO9YCoGNtc4G"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 1:30pm",
+      "host": "Workday",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "VC Only-Event Scaling for Growth: Secrets of the Fortune Future 50",
+      "url": "https://partiful.com/e/OGM2P0booWxlcD1yIVlw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 1:30pm",
+      "host": "Anthropic",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Anthropic Founders' Lab: AI for Life Sciences",
+      "url": "https://partiful.com/e/gKBL52v6jIOhzpijIXBV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "VoiceRun",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "VOICECLAW",
+      "url": "https://partiful.com/e/QB4c0UK5QlvhLw7hI2O9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "QuantUniversity",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Build an Agentic AI Fintech MVP in 4 Hours",
+      "url": "https://partiful.com/e/BOrA03IIPRhozlOmfidP"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "C10 Labs",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "AIxBio Hackathon at Bayer: Kickoff Event",
+      "url": "https://partiful.com/e/d75Fr7EgDNLoznDMb4MV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "Wearable Tech Ventures ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Exit Map: M&A trends in Women's Health, Wellness and Wearables",
+      "url": "https://partiful.com/e/WP3YZR5E7nOJlTPzydQn"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "FounderWay",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Builders Room: Co-Work + Office Hours with Founders & Investors",
+      "url": "https://partiful.com/e/G7J7CV6qewDZa9wm6Yzt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "Kendall Project LLC",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI Governance: Beyond Policy to Traceable Decisions",
+      "url": "https://partiful.com/e/PBfq10PrG4T6y6pMcJdh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 2pm",
+      "host": "Technology Founders of America",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Founders & Investors Afternoon Mixer",
+      "url": "https://partiful.com/e/Hn0HWAb64chvmjUsSgrH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "Jiffy Labs",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Trust Debt vs Tech Debt for Startups",
+      "url": "https://partiful.com/e/Xq5Bl9nkznpCkIBREu9V"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "Perkins School for the Blind",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "DisabilityTech Investor Summit",
+      "url": "https://partiful.com/e/Gqvk21nWiFyDRIdW5PEc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "Avenir AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "At MIT: AI x Employee Benefits: From Reactive to Proactive",
+      "url": "https://partiful.com/e/ypuxg50A1Kp68GlbCvjk"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "ScaleUp Labs",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "ScaleUp Labs Demo Day 2026",
+      "url": "https://partiful.com/e/OOVZgAtAMmhbjrka5Pth"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "Workday",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Scaling the Human + AI Workforce",
+      "url": "https://partiful.com/e/fSoSJAlqltICOxLiGZ7k"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "The Boston DAO",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Vibe Code an Agent that uses Stablecoins for Payments - No Experience Necessary!",
+      "url": "https://partiful.com/e/55TuCAUIb27Nsljxaw7i"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "VisualBoston",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "We're Building a Real Product Live in 30 Minutes",
+      "url": "https://partiful.com/e/K8zFdOgkAq7b4o0MZpPD"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "2048 Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Biotech Pitch Competition - 2048 Ventures",
+      "url": "https://partiful.com/e/fWRK866fdFgeonq3dGao"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "How Women Invest",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "The Fine Print That Matters: What to Get Right from Seed to Scale",
+      "url": "https://partiful.com/e/eNjP4Eo9ZsFqzGKQPFqz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "PwC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "From chaos to capital: Scale, fundraising and navigation in the AI age -with a16z",
+      "url": "https://partiful.com/e/zO32FgxwBpDndZn0MLkW"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "Maritime Sh",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Build and Deploy Your First AI Agent with Maritime",
+      "url": "https://partiful.com/e/ZXdD60tt19gGfyoOIN79"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3pm",
+      "host": "Harvard GovLab",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "A Debate on Governing AI's Future (Tech Week, Harvard, Anthropic)",
+      "url": "https://partiful.com/e/T4Aj9ZvX4uFr9EJ4n85f"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3:30pm",
+      "host": "H*QUOTIENT",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Physical AI & Robotics: Future of the Physical World",
+      "url": "https://partiful.com/e/vpXBZdDVsrWcy2eKimLA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3:30pm",
+      "host": "Fenwick",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Generational Perspectives on Early-Stage Investing",
+      "url": "https://partiful.com/e/nyAFMZLJtwtlR5iiwqRi"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 3:30pm",
+      "host": "Arnold & Porter",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Investing in the Next Wave: AI & Regulated Tech Networking Reception",
+      "url": "https://partiful.com/e/LwfDPbin0Pehfb778ye9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Troutman Pepper Locke",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Selling to Uncle Sam: Practical Strategies for Startups to Land Contracts and Grants",
+      "url": "https://partiful.com/e/VAErpuxm1xSWQ98HYQDw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Valere",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Becoming AI-First in 2026",
+      "url": "https://partiful.com/e/DrBDo76R1XpzJ73fo7zb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Veree.io",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Future of Career Credentials (Web3 + Identity)",
+      "url": "https://partiful.com/e/Ep9FmcFVTJ7u8z6822Z8"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Thomson Reuters Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Beyond Agents and Bolt-Ons: Building Enterprise-Ready Finance Systems with AI",
+      "url": "https://partiful.com/e/OWarDYx0kw2xnBv3Ux3c"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Innospark Ventures",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Is Software Still Eating the World? Rooftop Happy Hour",
+      "url": "https://partiful.com/e/YkXZ9jjGOg0PItHC2l70"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Fin",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Reverse VC Pitch w/ Fin, Fidelity Private Shares",
+      "url": "https://partiful.com/e/AnISJi0kcK7FWP4rqeYS"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "RadVac",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Longevity Panel: AI, Aging, Drugs, & Mindspan |",
+      "url": "https://partiful.com/e/sB1i5KBYubAKlyFblza0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "CMU BOS Alumni Network",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Building Bridges across Biotech & Biosecurity @ the Brewery |",
+      "url": "https://partiful.com/e/jWzh6PEDkjvpyk8khLGc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Trans Health HQ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Gender HealthTech: The Next Investment Frontier (Pre-Seed/Seed Founders & Active Angels/VCs)",
+      "url": "https://partiful.com/e/bGSUJUNKtplFqLPZFZry"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "MIT-IBM Computing Research Lab",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "MIT-IBM / The Open Accelerator - Build-n-Brew Session 2 -- Docling",
+      "url": "https://partiful.com/e/K0u54muKGZTpEnUju7Jb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "VEKTIS",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "You Shipped All Quarter. Which Features Made Money?",
+      "url": "https://partiful.com/e/KmYZmK4WIij4ywcDdGHd"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Délégation du Québec à Boston",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Networking Reception: Building the AI-Native Enterprise",
+      "url": "https://partiful.com/e/onjz1mqVj06xskA9TGRz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "Wada Hoppah",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Flux Marine and Wada Hoppah E-Boat Harbor Cruises",
+      "url": "https://partiful.com/e/ZXKZjEftkHK6CKTiY0E3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4pm",
+      "host": "MassMutual Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Backyard Briefs: Climate Tech in the Real World",
+      "url": "https://partiful.com/e/jrusYUjwKjdkETP937vR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 4:30pm",
+      "host": "Y·US Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Backstage: Stories Founders Don't Tell On Stage",
+      "url": "https://partiful.com/e/pmttS2qpCXJvHVKA0R8d"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "Gesmer Updegrove LLP",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Spin & Scale: Founder's Night at Spin Boston",
+      "url": "https://partiful.com/e/TViatIUWudvCJ8CC124a"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "The Collective",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Tech Week Basketball Tournament",
+      "url": "https://partiful.com/e/3DsvWlYqIH8gMNzbR4Mg"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "The Open Accelerator",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Where Wicked Smart Meets Wicked Fast: A Curated Community Evening with The Open Accelerator",
+      "url": "https://partiful.com/e/3xi3QmDuMBMQxZnBNbWR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "Money In Focus",
+      "neighborhood": "South Boston",
+      "source": "crawl",
+      "title": "MIF After: Drinks & Deep Talks — The Capital–Product Dynamic in Fintech",
+      "url": "https://partiful.com/e/kL7n61dyYxGrscnWgeRl"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "iDelsoft",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "🍹Boston Founders Happy Hour",
+      "url": "https://partiful.com/e/WuwYNFrKFIqsQsybLQu3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "York IE ",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "GTM in the AI Era | B2B GTM Leader Panel",
+      "url": "https://partiful.com/e/3Xe3EyQwBuSEAEZlwDR5"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "LandingAI",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "[TechWeek Boston] Agentic AI in Production: Builders & Leaders Happy Hour",
+      "url": "https://partiful.com/e/eIyH9qhFTGDAvdcRDVQ1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "Autom8",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Where Does AI Actually Fit? A Hands-On Founder Roundtable on Business Workflows",
+      "url": "https://partiful.com/e/W9A4V2xdGse2UmepcBXg"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "Safran Corporate Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Meet the aerospace & defense community",
+      "url": "https://partiful.com/e/geUOilCfq5L5YbIOMhXI"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "CVS Health Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Pharma Services Innovation @ Boston Tech Week",
+      "url": "https://partiful.com/e/Hkw7gBgiLzxUGo8cKvJV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5pm",
+      "host": "Remark",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Ecomm's CAC Problem and How to Fix it",
+      "url": "https://partiful.com/e/iDsQQyy0JbIdIqDGqL7v"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "LeafLabs",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Physical AI Safety: Balancing Risk & Innovation",
+      "url": "https://partiful.com/e/cHseq4NsLCDbvaxslZnK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Formlabs",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "The Hardware Hustle: Boston Founders on Building Physical Products",
+      "url": "https://partiful.com/e/YZZQwB99oB3FZfjWtRBw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "VPE Forum",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Redrawing the Lines: Product × Engineering in the Age of AI",
+      "url": "https://partiful.com/e/RUzK8f52K2juDjL9R8sd"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "DealRoom",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Built Different: The Art of Buying, Growing, & Selling Your Company",
+      "url": "https://partiful.com/e/ho5OA43E0sSxhM9zD7cv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Arcade.dev",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Private Dinner: What’s Actually Working in AI",
+      "url": "https://partiful.com/e/nIO7HddK467PrS32ZvHl"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "of All Trades",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Build the Team the Future Demands",
+      "url": "https://partiful.com/e/5Shv6d068VWla46ssM1i"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Holland & Knight",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Boston Tech Week Casino Night",
+      "url": "https://partiful.com/e/qBSC9Gq2PGk1uDjsvYoo"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "The Cyber Security Intellects",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Tcsi's Headshot Happy Hour",
+      "url": "https://partiful.com/e/QELWjCIEbkeTLZpxz59j"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Cybernetix Ventures",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "BREATHING / ROOM [Human Override]",
+      "url": "https://partiful.com/e/gUIN4BnWeZ6yIXsS811u"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "VentureFizz",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Making the Call: When to Build AI Solutions & How to Drive Adoption",
+      "url": "https://partiful.com/e/JSuKlYnveOanFCfg7z41"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Extuitive",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Digital Ads in the Age of AI Content Generation",
+      "url": "https://partiful.com/e/E6D4UaUard0YjIHoyHdC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Founders Pledge",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Ice Cream and Impact: Panel with the co-founders of SoFi, Techwolf and Akara by Founders Pledge",
+      "url": "https://partiful.com/e/za56HmnVDZCvelGvauAD"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "ContentsPal AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Future of Insurance: How AI Is Reshaping Claims",
+      "url": "https://partiful.com/e/qE2rQxFNrOMrhMpCIrWT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "SevenTrain Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Quantum, AI and the Reallocation of Capital",
+      "url": "https://partiful.com/e/fXR88jGCZCY3TRhTKZm9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Tabs",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "CFO Dinner - Future of Pricing in AI",
+      "url": "https://partiful.com/e/9yN1UQp2YE9aQshJ9FzF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "\"Orrick, J.P. Morgan, Founder Collective and RSM\"",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Venture Above the Charles hosted by Orrick, J.P. Morgan, Founder Collective + RSM",
+      "url": "https://partiful.com/e/FWblronB9RlMaYr1YaFr"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Matrix",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "At the Frontier: AI x Creativity",
+      "url": "https://partiful.com/e/EWHX50LnSgk9Iuc7ZU5W"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Pillar VC",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Co-founder Match Event - Hosted by Pillar VC",
+      "url": "https://partiful.com/e/dxIgUzFlD7tDXvMz7xdA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Climactic x Ephemeral Forms",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Art at the Edge of Physical AI",
+      "url": "https://partiful.com/e/8BahG1zEWGvSBxCNNdN2"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "Demand Spring",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI-Driven Marketing Transformation.",
+      "url": "https://partiful.com/e/ChjihkQqBoVH3iIQjrfY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "groundcover ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Production Ready",
+      "url": "https://partiful.com/e/OilkTNUQCCDotAIley3T"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 5:30pm",
+      "host": "The Boston DAO",
+      "neighborhood": "Fenway–Kenmore",
+      "source": "crawl",
+      "title": "Boston DAO MIT Fraternity Brownstone Takeover",
+      "url": "https://partiful.com/e/AbfFM9d8MQGFqYdvsAdY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "DraftKings",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI-Enabled Analytics",
+      "url": "https://partiful.com/e/TdNlEIYaIoWK1mYHcLlh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Surflytics",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Surf Parks & Wave Pools: From Adam Neumann to Mark Zuckerberg",
+      "url": "https://partiful.com/e/QPgGriEJl90mNWSb6OKJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Quarter20",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Bingo, Bots & Beers",
+      "url": "https://partiful.com/e/OjvtHQ0UlWxzJOSGw1kk"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "FoundersEdge",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Ditch the Deck- AI Show not Tell",
+      "url": "https://partiful.com/e/2A6f866uiX6dzdad1wBf"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Mendoza Ventures",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "BMO x Mendoza Impact Rooftop Social",
+      "url": "https://partiful.com/e/Iz31rDO1HW9BuKicd1NC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Ask a Chief of Staff",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Boston Chief of Staff Happy Hour",
+      "url": "https://partiful.com/e/ToqMxR4YbWvaykDjDrvL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "V2 Communications",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "V2 Communications' 20th Anniversary",
+      "url": "https://partiful.com/e/pgbHsCdeBN0CMu4mlB9w"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Ugly Talk",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Ugly Talk: Building and Scaling Tech Companies in Boston",
+      "url": "https://partiful.com/e/4woX7YBtWcTRd0u8r8dX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Leverage.Work",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Hiring + Raising Seed Panel + Mixer",
+      "url": "https://partiful.com/e/FgW0mEvTcAdlIKFLWViE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Atmosphere Innovations",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Find Your Vibe, Fund Your Vibe Bar Crawl",
+      "url": "https://partiful.com/e/dsmWWhBfbYzsoBR99WDT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "VC Village",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "GP <> LP Dinner Boston Tech Week from VC Village",
+      "url": "https://partiful.com/e/LxCoKfsdZtFcK7xXwFQN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "xAI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "⚡Grok 4.3 & Beyond: xAI's Vision for Autonomous Business Transformation",
+      "url": "https://partiful.com/e/PQlxELFhiAGsiJPpMsA4"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "a16z speedrun",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "speedrun Insiders VIP Dinner",
+      "url": "https://partiful.com/e/43DWHeT0XSiyrEWWPHq8"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Sentry ",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Soundcheck w/ Sentry & Harness | 2026",
+      "url": "https://partiful.com/e/34IHMgRM7N4iWVOw3AZ9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Software Velocity Corp. ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Testing at AI Speed",
+      "url": "https://partiful.com/e/gC92RtBsioqN3SIurLpa"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "OnRamp",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI in CX Happy Hour",
+      "url": "https://partiful.com/e/GTCf6DeoltyrARzh8gZQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Flex ",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Flex x Companyon x Suffolk Tech Happy Hour",
+      "url": "https://partiful.com/e/QqnvUjZPPlkGQkzaH7Za"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Toyota Ventures",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Robotics on the Rocks: Toyota Ventures Mixer",
+      "url": "https://partiful.com/e/89OpCTrNgtnyMoQv6hnW"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Fund Her Network",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Closing the Capital Gap: Female Founder x Investor Matchmaking for BostonTechWeek",
+      "url": "https://partiful.com/e/JZ7iDhDzByF4zSDmRYsE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Datadog",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "What Nobody Warned You About Building AI Products",
+      "url": "https://partiful.com/e/HxJ94wDRWhQJ1IaWHwUo"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Leverage",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Raise your Seed Round  Panel + Mixer",
+      "url": "https://partiful.com/e/9sfapzEUl46XRbh4g3J4"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Unicorner",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI Champions Dinner",
+      "url": "https://partiful.com/e/udGXoOl2ikCwOasD8wXt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "SheTO",
+      "neighborhood": "East Boston",
+      "source": "crawl",
+      "title": "Ship It Anyway: Women Engineering Leaders on the Hard Calls",
+      "url": "https://partiful.com/e/NuZeEdDze9UwIuOuyQTh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Boston Product Management Association",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Boston Product Playbook: Building in a City That Punches Above Its Weight",
+      "url": "https://partiful.com/e/T7IwkS8Q8F8lgYwwgibQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Foundation for Agentic Networks",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Financial Services for Agentic Networks",
+      "url": "https://partiful.com/e/fHhevRl82hQ7FV4mgBwk"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Build Momentum",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Global Founder Meetup: Breaking Into the U.S. Market",
+      "url": "https://partiful.com/e/iya04tuJn5B9ILh9AYJx"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Brex",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Playing to win:Boston Celtics",
+      "url": "https://partiful.com/e/FjJ86yGIiv6KcvuW5YZM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Finta",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "How Founders Actually Raise in 2026",
+      "url": "https://partiful.com/e/zdC0kojFy1dJMCDryLTh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "HubSpot for Startups",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Building in Boston with HubSpot Co-Founder Brian Halligan and a16z",
+      "url": "https://partiful.com/e/UMYqXUS6hFHpUthDhPKk"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "ElevenLabs",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "ElevenLabs @ Boston Tech Week Dinner & Discourse",
+      "url": "https://partiful.com/e/8rcmMsKoC2lYK5kuE9eA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "EliseAI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI with Impact: Building Housing Affordability",
+      "url": "https://partiful.com/e/ELH1Pzti2bbyxqf5Ak2L"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Pitch Lift",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Pitch Lift $100K Competition | Round 2",
+      "url": "https://partiful.com/e/mZsIalQDySTOSZeg11CV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "a16z speedrun",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Overlook x a16z speedrun Investor Dinner",
+      "url": "https://partiful.com/e/yMXpJ0AE5N1rHmaqnzS7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Women Applying AI",
+      "neighborhood": "Charlestown",
+      "source": "crawl",
+      "title": "Winning with AI: Presented by Women Applying AI",
+      "url": "https://partiful.com/e/Z1XdckdcqamPGrd6hmKB"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6pm",
+      "host": "Boston Product Management Association",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "The Boston Product Playbook: Building in a City That Punches Above Its Weight",
+      "url": "https://partiful.com/e/T7IwkS8Q8F8lgYwwgibQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6:30pm",
+      "host": "Jiffy Labs",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Jiffy x Scrut Present: Security in the AI Era Panel + Art + Food + Live Music",
+      "url": "https://partiful.com/e/rYlEZvkSLhbLsbhUhJ14"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6:30pm",
+      "host": "she.NNENNA.gans multimedia",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Art of Good Work: Choosing Your User Wisely — A Live Working Session for Early-Stage Founders",
+      "url": "https://partiful.com/e/l5yIHMvX6Z7EbnCaSSL8"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6:30pm",
+      "host": "The Line",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Built Different _ Faith in Tech",
+      "url": "https://partiful.com/e/QvSro208gaechq1daxJv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6:30pm",
+      "host": "PedagogyVentures",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Ethics Beyond Buzzwords:  Frameworks & Skills for Ethical Design",
+      "url": "https://partiful.com/e/n7rNgPNvPKRvpiYIxhoQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 6:45pm",
+      "host": "PwC",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Tech me out to the ballgame",
+      "url": "https://partiful.com/e/G0oePtUh6jSmVl6yWCCE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "PitchWell",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Founder's Table: A Curated Dinner Experience",
+      "url": "https://partiful.com/e/YvyoeeFZVcH1B7cZ0jiu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "Parallel Fluidics",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Full-Stack Factories: Raw Material to Finished Product in Boston",
+      "url": "https://partiful.com/e/8yV3r0kwmwGkY7V8zuRE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "Airwallex",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Runway - A dinner series by Airwallex",
+      "url": "https://partiful.com/e/ROlwkDfBOr5IoUxg1TS1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "NSDS Tech Comedy Show",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Artificially Unintelligent Tech Comedy Show",
+      "url": "https://partiful.com/e/PlWs94kVQ66OOaAJWxpv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "RealPact AI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "RealPact Demo",
+      "url": "https://partiful.com/e/kV0ZArkcVonUJFlJuGdt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "Startup Oasis",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Startup Founders + Tech Professionals Happy Hour",
+      "url": "https://partiful.com/e/TYEqkVAR84ctCvGOx4jb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "EO Ventures ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Builders Dinner with Harvard Economist Roland Fryer",
+      "url": "https://partiful.com/e/sU3QjSdvoYWOWjyGegdO"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "Second Axis",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "Boston Tech Week: The New Era of Business Productivity Tools",
+      "url": "https://partiful.com/e/qex1waRxOzFM4YYuHpct"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "Ascent Valley",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Tech Week: Networking Event by Ascent Valley",
+      "url": "https://partiful.com/e/CkFQ2tKBfmgJ82vfkNAk"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7pm",
+      "host": "Moki Sauna",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "Sauna Social for Founders & Investors",
+      "url": "https://partiful.com/e/bRFOmzfjb3pXpUC85FHt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 7:30pm",
+      "host": "EndpointArena.com",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Prediction Markets for Clinical Trials",
+      "url": "https://partiful.com/e/pWy8g9d1sb2e6FGbz6DW"
+    },
+    {
+      "badges": [],
+      "dateTime": "Wednesday · May 27 · 9pm",
+      "host": "Ink.AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Ink.AI & Rayfit  After Party",
+      "url": "https://partiful.com/e/lyJjqTEAcxEKlByloEOG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7am",
+      "host": "Dune IRL",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Tech Week Hosts & Friends | Coffee & Vibes in Kendall Square",
+      "url": "https://partiful.com/e/f8BxLUWD4BrK9CYR8dwj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8am",
+      "host": "athenahealth",
+      "neighborhood": "Brighton",
+      "source": "crawl",
+      "title": "athenahealth: AI for Healthcare - Hackathon",
+      "url": "https://partiful.com/e/pnph1tPlBXklAB1WVI7U"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8am",
+      "host": "One Six 8 Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "the MedTech Exit Blueprint - Breakfast Panel",
+      "url": "https://partiful.com/e/noAD9TMCFIBh5o7fUdL3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8am",
+      "host": "Klaviyo",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "How Teams Are Actually Building with AI",
+      "url": "https://partiful.com/e/SHdFnv26yilYWOElsl4z"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:15am",
+      "host": "PwC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Geopolitics decoded: Challenges and opportunities for tech executives",
+      "url": "https://partiful.com/e/gBY6YnazkRshfqqwsYu1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "Somarae",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "COFFEE + CONNECT Networking Mixer",
+      "url": "https://partiful.com/e/ZIP2VARKE4wKZDBzmDFD"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "3IP",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "3IP Spring Edition",
+      "url": "https://partiful.com/e/Q7ekLz3P6OwtvB1OhaCj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "MongoDB",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "MongoDB AI Builder Day @ Boston Tech Week",
+      "url": "https://partiful.com/e/SlZvG0XGbjwLzuQR4Tpx"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "The Open Accelerator",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Agents in Production Panel: What's Next?",
+      "url": "https://partiful.com/e/zUA6ddinewnPXurHHEYF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "Drive by DraftKings",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Rise with Drive by DraftKings- A morning on human performance",
+      "url": "https://partiful.com/e/knA8humo2oUvlJrcf3BL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "British Consulate General",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Global Mindsets: Cultivating Boston-UK Startup and Talent Pipelines",
+      "url": "https://partiful.com/e/bF88PLmyyuURVs3xaYoX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "Alpha Partners",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Partner2Partner VC Bfast @ F-Prime Capital",
+      "url": "https://partiful.com/e/CCVvgh0ZX10ltR8Vyq7E"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "Workday",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Building AI That Preserves Human Dignity",
+      "url": "https://partiful.com/e/X1HUBeTXUjcPgN66NTwI"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "Foray",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Growers on the Move",
+      "url": "https://partiful.com/e/V5LJJRJB2RmDkzRH6uIm"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "Zapier",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "CMO Breakfast",
+      "url": "https://partiful.com/e/SUzVv6Buy7g4WOVwBehu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8:30am",
+      "host": "a16z Bio + Health",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI x Bio Investor Breakfast @",
+      "url": "https://partiful.com/e/LPCImh146ECHpHTFLZi9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "TAY Fitness ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Fitness For Founders: The TAY Way Pro Day",
+      "url": "https://partiful.com/e/othITfx1SR3qYhr3uHMu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "BASE-X",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "FUTURE OF DUAL USE: What's Pacing Human-Out-Of-The-Loop Autonomy?",
+      "url": "https://partiful.com/e/Uk3sgGuWOmBQJMBEDhOt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "Fenwick",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Morning Reset: Women in Biotech",
+      "url": "https://partiful.com/e/MPgjvuQtQQVitCxJ675e"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "North AI ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Simulations vs Real People - How Agents are Reshaping Market Research",
+      "url": "https://partiful.com/e/dFgWFFKw7ZilOCI7oRXm"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "Innospark Ventures",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Intersection of AI & Government: What’s Working (And What’s Not)",
+      "url": "https://partiful.com/e/8XGx1D2n5F1kYK1U9SwF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "Venture Lane",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Healthtech Breakfast: The Healthcare AI Playbook with Duncan Reece",
+      "url": "https://partiful.com/e/aI76SfQiCN5E0E0ojqC8"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "Alt-Black",
+      "neighborhood": "Brookline",
+      "source": "crawl",
+      "title": "Brewing Connections: Colombian Coffee Tasting",
+      "url": "https://partiful.com/e/2ZAP0h9UpFA6Kld1ZsCQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "Brderless",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Founder Breakfast",
+      "url": "https://partiful.com/e/GSU52PNhQ7g4kPnTBqPY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "Flagship Pioneering",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Scientific Discovery Hackathon",
+      "url": "https://partiful.com/e/QE3rf39P03sCEOFzx3Ik"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9am",
+      "host": "This Week in Fintech",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "This Week in Fintech x SVB: Boston Fintech Coffee",
+      "url": "https://partiful.com/e/JVbU2slUMmEiSGa6FStn"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9:30am",
+      "host": "a16z Speedrun",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "a16z Speedrun x Underscore VC: Startup Culture Brunch for Angels + VCs",
+      "url": "https://partiful.com/e/sS8mF4GdI6Nk7WPwABfs"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9:30am",
+      "host": "VC Village",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "MATCH HOUSE: Founders, Investors, Operators, Execs",
+      "url": "https://partiful.com/e/Joxb7vdmpZYOZGAxz1Xp"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9:30am",
+      "host": "Persona",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Founder Reset",
+      "url": "https://partiful.com/e/VInKX65hxbe20xg0MRM8"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 9:30am",
+      "host": "Via AI",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Cold Brew, Warm Leads",
+      "url": "https://partiful.com/e/tnTYPdu3ObomoC6vlB9B"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 10am",
+      "host": "Converge VC",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "M&A in the AI Era: What Are Startup Acquirers Looking For?",
+      "url": "https://partiful.com/e/Q9gd6I2M3GayrlRG7oSy"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 10am",
+      "host": "SSC Venture Partners",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Supporting Boston’s Student Founders",
+      "url": "https://partiful.com/e/qashn4XvlJzS2xiOSbQe"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 10:30am",
+      "host": "BoxOne Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Future is Weird",
+      "url": "https://partiful.com/e/ZHBEzEsNtk7Jw8NCub6D"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 10:30am",
+      "host": "Google for Startups",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Google for Startups Sprint: ADK 2.0",
+      "url": "https://partiful.com/e/JzKDNPNjA2zAG7ohxNMm"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 10:45am",
+      "host": "SamSam ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "How Embodied AI Companions Are Reshaping the Industry",
+      "url": "https://partiful.com/e/uu0G3vhh5ZsJ6w2d6WoU"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 11am",
+      "host": "Workday",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Closing the AI Monetization Gap",
+      "url": "https://partiful.com/e/zEtUZhOpy4e26wuQaVdp"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 11am",
+      "host": "FounderWay",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "👉 GTM in the Age of AI: What’s Working Right Now",
+      "url": "https://partiful.com/e/HijXFkG088ePOn3jgCin"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 11am",
+      "host": "Rho",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Founder's Lounge & Investor Office Hours",
+      "url": "https://partiful.com/e/lFbdUSY8LCRaxAfwqeZ3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 11am",
+      "host": "Azarian Growth Agency",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Watch Autonomous Agents Build Your Pipeline Live",
+      "url": "https://partiful.com/e/PWadFXXDsnI831SJtPoC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "Momentum360™",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Decision Drag",
+      "url": "https://partiful.com/e/QVVUsBhdZxUbMGauEcyY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "Karini AI ",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Zero Trust AI Agents Live",
+      "url": "https://partiful.com/e/goODloIjgEBAyq6RvqrM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "CIC",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "CIC Discovery Day: Tech in Action",
+      "url": "https://partiful.com/e/dEcZqkksdIHQUZJy7OSb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "Fin",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Founder Lunch Club w/ Fin, Stripe, Ramp",
+      "url": "https://partiful.com/e/5fk09y5dRzcbDSZwybDQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "Allium",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "What's Onchain? Allium Student Showcase",
+      "url": "https://partiful.com/e/AU61Be4jDnKAN2hcwsU1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "AI Advisor Guy",
+      "neighborhood": "South Boston",
+      "source": "crawl",
+      "title": "The Modern Contractor AI Playbook",
+      "url": "https://partiful.com/e/WpjbeKuSrSnmgI83m09k"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "Escape Velocity Digital",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Make Your MarTech Work Harder",
+      "url": "https://partiful.com/e/3XkkGwW55QIfBBsSfjsN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "KRCG",
+      "neighborhood": "Virtual (BOS)",
+      "source": "crawl",
+      "title": "Ask a VP of Sales: Live GTM Office Hours for Early-Stage B2B Founders (Virtual)- #BOSTechWeek",
+      "url": "https://partiful.com/e/IXyFGkYHPoZdQWuDZSLu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12pm",
+      "host": "Designing for Analytics",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Built With AI. But Will Anyone Buy It?",
+      "url": "https://partiful.com/e/1PjXTZcJ3eaBBezcBntr"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12:30pm",
+      "host": "x1025",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Boston Maritime Tech Summit",
+      "url": "https://partiful.com/e/q8EIs0sX6YJSVmSqMPSZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12:30pm",
+      "host": "Acclime",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "The Unfair Advantage: Why Smart Biotechs Run Trials in Australia",
+      "url": "https://partiful.com/e/vyHdATwyukSl5O9NrO4O"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 12:30pm",
+      "host": "Upstarts Media",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Founders Only: Building Boston's Next Billion-Dollar Startup",
+      "url": "https://partiful.com/e/juZL2PteQaClVpeketNj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Heliqon",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI on the Factory Floor: How to Turn AI Ambition Into Action",
+      "url": "https://partiful.com/e/s4pVGNMhEB9wp5PGGTX5"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Human Cloud",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Hacking The Workforce",
+      "url": "https://partiful.com/e/f51aJWAHVWW4SM3JpNBP"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Google for Startups",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Google for Startups: Luncheon",
+      "url": "https://partiful.com/e/ISj42bmGx5Ha7h5G0965"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "VirtusLab",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "From Data Swamp to AI-Ready Data Foundation: What it Actually Takes",
+      "url": "https://partiful.com/e/tSfM8nCo8QrI6pZFg4FY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Northeastern University",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "From Idea to Investment for Northeastern Entrepreneurs",
+      "url": "https://partiful.com/e/aRpauPH4KLWpEKH6zmd6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Untapped Ventures",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Q2 2026 State of AI + AE (Autonomous Economy) & Investment Opportunities",
+      "url": "https://partiful.com/e/xkCEpwPcG18T00y5lGXZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Snyk",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Community Jam: Boston",
+      "url": "https://partiful.com/e/qELY5aJkDIcVBATLF9mc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "HBS Rock Center for Entrepreneurship",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "Built for AI: Rewriting Leadership and Culture for the Next Generation",
+      "url": "https://partiful.com/e/jQjBMsoiCb76F8rm9FSD"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "MachineTrader.io Inc.",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Build a Trading System Live with MachineTrader",
+      "url": "https://partiful.com/e/Mbah3yDfWEhOcyFEA1dR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1pm",
+      "host": "Airtable",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Build with Airtable AI: Workflow Hackathon",
+      "url": "https://partiful.com/e/fqg9Nu5XJ03GcSUdoteq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 1:30pm",
+      "host": "Launch by Lunch",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "DND: Nervous System Reset",
+      "url": "https://partiful.com/e/Dn9PBaQFQLVxjibl6Ryc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 2pm",
+      "host": "LinqAlpha",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI for Finance Summit - The Era of Autonomous Financial Agents",
+      "url": "https://partiful.com/e/ADv04bqDpuqrFrgwbnEf"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 2pm",
+      "host": "Technology Founders of America",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Go To Market Mixer",
+      "url": "https://partiful.com/e/BUCBx5OJ5a0pbCsi0nXc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 2pm",
+      "host": "Socrates Advice",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "How Great Teams Win in the Age of AI",
+      "url": "https://partiful.com/e/yy0OZ2B5qf6TfHBLe7Tv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 2pm",
+      "host": "Green Room",
+      "neighborhood": "Fenway–Kenmore",
+      "source": "crawl",
+      "title": "Cheeky Room of European Ambition",
+      "url": "https://partiful.com/e/BEdLLkueKM6E8b9q0uRr"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "2048 Ventures",
+      "neighborhood": "South Boston",
+      "source": "crawl",
+      "title": "Deep Tech Pitch Competition - 2048 Ventures x Boost VC",
+      "url": "https://partiful.com/e/WgE2wyAFVShd2y29Ai8C"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "PwC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Tax mistakes that kill founder wealth",
+      "url": "https://partiful.com/e/DeHKnuxt6fcc3RXD9UCV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "York IE",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Scaling the Harbor: A Yacht Cruise for B2B SaaS Leaders",
+      "url": "https://partiful.com/e/EQBRtCROmgvFN3RQyABs"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "AI Velocity Fund, LLC",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI Velocity Trading: Official Launch & Strategy Discussion",
+      "url": "https://partiful.com/e/wdI3IEYlARP18r1XxTFV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "HubSpot Ventures",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Tech Week at Fenway: Founders, Operators & VCs w/ HubSpot Ventures, Lovable & SVB",
+      "url": "https://partiful.com/e/nvpPjouojpIDDTMRE2qE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "VIA",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Practicalities and Policy for AI in Defense w/ Congressman Auchincloss, Bosch, and Procurement Sciences",
+      "url": "https://partiful.com/e/9QlRYb6MyXp3GOaqF7xl"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "Omnichannel Data Advisors",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Turning Data Into AI Impact for Marketing & Customer Growth",
+      "url": "https://partiful.com/e/4oIJMrpJHVGTNIAy6g2k"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3pm",
+      "host": "Clutch Talent (Recruitment Agency)",
+      "neighborhood": "Virtual (Boston)",
+      "source": "crawl",
+      "title": "Networking  @ Boston Tech Week",
+      "url": "https://partiful.com/e/fPnFDvwbvmptjZYqo2NN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3:30pm",
+      "host": "RISE Robotics",
+      "neighborhood": "Somerville",
+      "source": "crawl",
+      "title": "Robotics & Hard-Tech Demo Night at RISE Robotics",
+      "url": "https://partiful.com/e/KP2y0vtxmdLA5FggQLlG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3:30pm",
+      "host": "Pluvo",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "AI for Finance: Building with Claude + Excel, MCP, and more!",
+      "url": "https://partiful.com/e/vv3N7ao6ejSlBhWuH2KL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3:30pm",
+      "host": "Boston Smaht (BIG)",
+      "neighborhood": "South Boston",
+      "source": "crawl",
+      "title": "Boston Smaht & Proptech Council @The Union: Piloting PropTech",
+      "url": "https://partiful.com/e/aPSBCv6xiNmtAxe146Jc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3:30pm",
+      "host": "Black Math",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Keynote Series: The Future of Creative Work",
+      "url": "https://partiful.com/e/9H52jP2haDNrm2hvYC8F"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 3:30pm",
+      "host": "Goodwin",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Goodwin & MIT CRE PropTech Executive Forum",
+      "url": "https://partiful.com/e/YzxPMvIV5nJLmLHX7zcT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "InvoiceCloud",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "The AI Pipeline Playbook: How Modern Sales Teams Build Pipeline Faster",
+      "url": "https://partiful.com/e/rfHyFAJgUQHzlhf4G76n"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "TBD Angels",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "TBD Angels @ Boston Tech Week 2026",
+      "url": "https://partiful.com/e/tpDpzv8okndu6S4eKRir"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "WHOOP",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Mass AI Coalition “First 100 Days” x WHOOP",
+      "url": "https://partiful.com/e/tpA3opfeLHMEJuRSMH7b"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Demand AI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Demand AI : In Full Swing",
+      "url": "https://partiful.com/e/5OQJprZfXTnQ2rZ9xadE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Adobe",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Adobe Presents: Brand Discoverability in the AI Era",
+      "url": "https://partiful.com/e/AUcBMXzGCXE7f8n65c6Q"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Protofire",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Liquidity for RWA Private Credit Asset Managers - Boston Edition",
+      "url": "https://partiful.com/e/owwNOHHWe4tCwimfnnuH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "C10 Labs",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "AI/Bio Hackathon Awards and Lightning Pitches",
+      "url": "https://partiful.com/e/XtABb8m1oJkDVZ81Ahxj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "HubSpot for Startups",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Investment Game: In Pursuit of Series A [LIVE with a16z!]",
+      "url": "https://partiful.com/e/ytxnudn6nO1v3QWSkBxB"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Enlaye",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "BuiltWorld Founders Happy Hour 🍸🏗️",
+      "url": "https://partiful.com/e/k1oTdQzw7V7kI6GGJDOA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "HSBC",
+      "neighborhood": "West End",
+      "source": "crawl",
+      "title": "Next in Care: How AI is Reshaping Healthcare",
+      "url": "https://partiful.com/e/hTsMJ9EKZar9xxhdPIfq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "MIT-IBM Computing Research Lab",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "MIT-IBM / The Open Accelerator - Build-n-Brew Session 3 -- Bob Agent Development Partner",
+      "url": "https://partiful.com/e/jixyrcrLUUKcaFq0HYSJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Rho",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Alumni & Ecosystem Mixer",
+      "url": "https://partiful.com/e/Wt2szqPrPxYAvqGTo6eB"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "PwC",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Tech me out to the ball game",
+      "url": "https://partiful.com/e/FD0zf2unpyz2ylKLxCLv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Women X",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Women Shaping the Future of AI",
+      "url": "https://partiful.com/e/T2IKUtN7VhfXop0X9zWb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Y·US Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Pilots That Don't Die: How Startup-Corporate Deals Actually Close",
+      "url": "https://partiful.com/e/9N88UH7Y4QsLiQUiIr8V"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Lila Sciences",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI for Science",
+      "url": "https://partiful.com/e/w6H3PKZXhDpQTreZpPsu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "IDC - International Data Corporation",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "IDC presents - Navigating the AI Economy with Trusted Tech Intelligence",
+      "url": "https://partiful.com/e/DVTs8V8seLwueOVUYuec"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4pm",
+      "host": "Wada Hoppah",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Flux Marine and Wada Hoppah E-Boat Harbor Cruises",
+      "url": "https://partiful.com/e/fymhyC3nifIyVGYIDq4V"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4:30pm",
+      "host": "Venture Café Cambridge",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Venture Café Cambridge",
+      "url": "https://partiful.com/e/h5zrY4uqnAsAybr2nEg0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4:30pm",
+      "host": "InstaLILY AI",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Creating Operating Leverage with AI",
+      "url": "https://partiful.com/e/NhYybMjJl8DuHIJkRrOW"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4:30pm",
+      "host": "The Harvard Innovation Labs",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "Demystifying AI Powered Learning",
+      "url": "https://partiful.com/e/F5O89ATeZUqOSDO0zw7T"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4:30pm",
+      "host": "Elev X! by NEC X",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Pitch, Mix & Sushi Night for Early-Stage AI Founders＠MIT",
+      "url": "https://partiful.com/e/zPEiChMpv3kNF110OSQM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4:30pm",
+      "host": "iMotions",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Behavior, Biometrics, and Beverages",
+      "url": "https://partiful.com/e/LAlU6MmpoTG1V38uTWkC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 4:30pm",
+      "host": "Hercules Capital",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Venture Debt in the AI Economy.",
+      "url": "https://partiful.com/e/Wspdvybh1dRw5TROZDlA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Venture Lane",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Whiskey, Wine & Whiteboards",
+      "url": "https://partiful.com/e/czEE7oiMIxZhhm2u0Q8P"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Arizona Commerce Authority",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Building Beyond Boston: Advantages in Arizona for Founders",
+      "url": "https://partiful.com/e/5Ycf4U6B0fXTXqk9AEvU"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Foley Hoag LLP",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Boston Tech Week: Seaport Block Party",
+      "url": "https://partiful.com/e/0tV8YeOGl1HZZ3Te7XMQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "NachoNacho",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "NachoThursday Private Pirate Ship Party 🏴‍☠️ for SaaS & AI Founders + VCs",
+      "url": "https://partiful.com/e/m7nki1meHRd4vtCk7vDR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "B Ventures Group",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Future of AI in Peace & War - with $1B+ VC, Brian Abrams",
+      "url": "https://partiful.com/e/i2OuUsXnpEghS3OY713D"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Legendary Ventures",
+      "neighborhood": "Chinatown",
+      "source": "crawl",
+      "title": "The Deal Room Happy Hour",
+      "url": "https://partiful.com/e/ry1ciGweSZTXtRmXa2T3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "MedRock Ventures Inc.",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "AI & HealthTech for Pharma and Biotech",
+      "url": "https://partiful.com/e/QpkrXaDcnEXPzkmszelG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "LearnLaunch Fund+Accelerator",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "EdTech Pitch Night & Networking Social",
+      "url": "https://partiful.com/e/1deu3ObQdApVQxGLFq2l"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "IncentivesPRO",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Roundtrip Capital",
+      "url": "https://partiful.com/e/EoELmGOgV7Snr38ajZSU"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Lighthouse Creative",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "LHCollab Cocktail Party",
+      "url": "https://partiful.com/e/lWXctqG69qnS03GiOnB1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Flex",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Fintech Happy Hour",
+      "url": "https://partiful.com/e/3cIeQxKwDFCYiqmtssCO"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "CMU T&E",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "🇲🇽TechWeek.mx In Boston",
+      "url": "https://partiful.com/e/DKpwUHh6WtuMGNDmsh1J"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Cityside Construction ",
+      "neighborhood": "Brookline",
+      "source": "crawl",
+      "title": "Boston Tech Week: AI × Real Estate",
+      "url": "https://partiful.com/e/RPl700cKb2jr8ITQeBdC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Legendary Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Deal Room Happy Hour",
+      "url": "https://partiful.com/e/ry1ciGweSZTXtRmXa2T3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "First Star Ventures",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Heeding Nature's Call: Reading the Body with AI",
+      "url": "https://partiful.com/e/MyfKGX0Dl8BiNKoyxs2b"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "MongoDB",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Swing & Sip: Happy Hour with MongoDB",
+      "url": "https://partiful.com/e/jogfVnCqgAzTgWVN0jEH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Blitzy",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Blitzy Presents: AI GTM Talent Exchange",
+      "url": "https://partiful.com/e/mzkD379gcjFWX36Ax2QR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5pm",
+      "host": "Yamaha Music Innovations Fund & Modulate",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "All Ears on Boston: Audio Technology Summit",
+      "url": "https://partiful.com/e/PNR1uJwfbJDsg3IKyiES"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:15pm",
+      "host": "Swan Inc",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "🦢 You Are the Moat. Our AI Will Show You Why. Drinks on Us.",
+      "url": "https://partiful.com/e/CJluWRRtQs2ZVX0NP493"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Independent",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Boston OpenClaw Meetup",
+      "url": "https://partiful.com/e/78wvXB58luad5yacvHPZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "DigitalHeatlh InvestorTalk",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Boston Health Innovation Night on LongevityTech",
+      "url": "https://partiful.com/e/Pg2f8DHkLfdrCb3ovpkw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Agora",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Voice AI Mixer: Boston Tech Week",
+      "url": "https://partiful.com/e/cuLKayZwRnxyOHvzu7ES"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Underscore VC",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "No Hype: AI in Practice @ Underscore VC",
+      "url": "https://partiful.com/e/PjOh6W2Q7FzL82fXces0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Chain Reaction Boston",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Chain Reaction Boston: Blockchain Angel Pitch Night",
+      "url": "https://partiful.com/e/G7Db0p8qz8ws7rGHyZQF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Alumni Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Solo: Building Billion-Dollar Companies with Tiny Teams",
+      "url": "https://partiful.com/e/6OWrT8ESdq1I0d2lXCVS"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Boston Healthcare Cloud and AI Community",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "BOSHUG at Boston Tech Week: The Healthcare AI Community Meetup",
+      "url": "https://partiful.com/e/YWlbiPN8uppUm98K5C82"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Kids in Tech ",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Future of Inclusive AI & STEM Innovation",
+      "url": "https://partiful.com/e/U47uOTtlHIXDd9hs872H"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Nappr",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Future of Travel Happy Hour!",
+      "url": "https://partiful.com/e/qL1tGNys09hv3HP8JQYV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Savas Labs",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Practical AI for Agencies",
+      "url": "https://partiful.com/e/MrjkOCfKRxMGPtp3FrP7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Elastic",
+      "neighborhood": "West End",
+      "source": "crawl",
+      "title": "Agentic AI in production: retrieval, drift, and what actually works",
+      "url": "https://partiful.com/e/iShXGbvtF35NmFklk54c"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Boston Dynamics",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Boston Dynamics - Celebrating Robotics & Physical AI",
+      "url": "https://partiful.com/e/0JrnvG5smvYCgBckDYF0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Somarae",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Somatic Wellness, Breathwork & Meditation",
+      "url": "https://partiful.com/e/Mm5zOMZb398OwGSA6tkZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "North.cloud",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "FinOps Unlocked",
+      "url": "https://partiful.com/e/wF1YxRbupN75rVcmTOfq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 5:30pm",
+      "host": "Genivra.ai",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Genivra.ai X Vytus @ Tech Week",
+      "url": "https://partiful.com/e/YPNHwwFkvSmt4jUmipD5"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Founders N' Funders",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "Founders & Funders: VC Reverse Pitch",
+      "url": "https://partiful.com/e/GCNJtSkNtbbNx9bDNc8f"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Ketryx",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Life Sciences AI on Tap",
+      "url": "https://partiful.com/e/V8joGZmNyuGMlmwiSunt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "7AI",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "THE CYBER SUMMER KICKOFF PARTY",
+      "url": "https://partiful.com/e/F7y1kts4KKOksWtf2pZX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Reitler Law",
+      "neighborhood": "West End",
+      "source": "crawl",
+      "title": "Museum Night for VCs and Founders",
+      "url": "https://partiful.com/e/wyjda2ETHS7vGOjrKAXg"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "JPMorgan",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Boston Tech Week Defense Happy Hour",
+      "url": "https://partiful.com/e/hXZHVOBiMLY3npFsYoHX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Braintrust ",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI builders night-Boston",
+      "url": "https://partiful.com/e/1sgpEmvEDCv1Vth4BO82"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "LinqAlpha",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI for Finance Summit - VIP Dinner",
+      "url": "https://partiful.com/e/TQUEH73DkgVPd6SywRak"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Liminal",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Off the Record with Biz Stone — Founders Only",
+      "url": "https://partiful.com/e/3IV70qLxgUmVhDoobwCC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Clair Health",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Built with Bias: Women's Health Tech  & Closing the Data Gap",
+      "url": "https://partiful.com/e/Na6jq147vRnZXhVZh3F6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Eduwave AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "What’s Actually Working in EdTech Right Now",
+      "url": "https://partiful.com/e/36eXtZ652H5GgEGrymXr"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Collinear Capital",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Venture Capital for enterprise leaders Happy Hour",
+      "url": "https://partiful.com/e/NWXE7ireCe7IcqVCnLz5"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Build Momentum",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Architecting Startups",
+      "url": "https://partiful.com/e/ZU1IBQ73td9O6qa80D6U"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Founders and Fractionals",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Founders & Fractionals: Top startups, meet top talent",
+      "url": "https://partiful.com/e/GYxJGAiv3IFL3SdciPfl"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Rootless",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Breaking the Ice: Rootless Social Tech Founders Mixer",
+      "url": "https://partiful.com/e/MxKksyGdLwvJhW4Tye5l"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "moccet",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Developer Sprint: Build the AI that knows you.",
+      "url": "https://partiful.com/e/96u0Uor9RmVIsd2Z0Z0w"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Dubai Future Foundation",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Dubai is Building the Future. Come Join Us.",
+      "url": "https://partiful.com/e/VPdmYttLz1ZfH8DN2MEL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Lenny's Newsletter",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Product Meetup by Lenny's Newsletter",
+      "url": "https://partiful.com/e/86OFMs4XUyTef4LoMR6e"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Unlocked Consultancy",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Future of Work & Jobs with AI: What Leaders Need to Know",
+      "url": "https://partiful.com/e/d0Dj4L9nPUWvt93QShFr"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Wistia",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Ultimate Marketing Trivia Night!",
+      "url": "https://partiful.com/e/kfbPiuO9nMMSMhV3SlRe"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Krithika.Agentic AI Builders",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Build Your First AI Agent Crew",
+      "url": "https://partiful.com/e/2roIKFG7EF53k81XBQB7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Dimenso AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Capturing Science with AI Safety Glasses",
+      "url": "https://partiful.com/e/lyDniNKXlxsjaaBY74aS"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Databricks, Venture Guides",
+      "neighborhood": "West End",
+      "source": "crawl",
+      "title": "The Builder’s Table: From data to actions",
+      "url": "https://partiful.com/e/5w7rM9dw7CMdRIi0gO0V"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "F*ckup Night Boston",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "F*ckup Nights BOSTON // Vol IV",
+      "url": "https://partiful.com/e/pZsIMj89F3pDqDcPGrnK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "VNTR",
+      "neighborhood": "Chelsea",
+      "source": "crawl",
+      "title": "VNTR Women in Tech - Private Investor Dinner",
+      "url": "https://partiful.com/e/ipj8KAgnwDz6BaH18PrX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "GrindCon",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "GrindCon: The Power of negotiation",
+      "url": "https://partiful.com/e/TqSTCu9ALxfavIg6BjWL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6pm",
+      "host": "Unlocked Consultancy",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Future of Work & Jobs with AI: What Leaders Need to Know",
+      "url": "https://partiful.com/e/d0Dj4L9nPUWvt93QShFr"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6:30pm",
+      "host": "Persona",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Supper Club: Boston Edition",
+      "url": "https://partiful.com/e/DM2YveyQY0vXpXic3FD2"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6:30pm",
+      "host": "intent",
+      "neighborhood": "Watertown",
+      "source": "crawl",
+      "title": "Designing the Intelligent Physical World",
+      "url": "https://partiful.com/e/IhP5hhrrsolhon2d4yF7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 6:30pm",
+      "host": "HARD MODE",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "HARD MODE : Physical AI at MIT Media Lab",
+      "url": "https://partiful.com/e/4wahZxSOBB3IvStcmnGz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Jiffy Labs",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Jiffy  presents: Boston Security Leader Dinner",
+      "url": "https://partiful.com/e/Y0RQBgyUo16V0O0OQAXt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Arizona Commerce Authority",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Scale Smarter: The Arizona Growth & Capital Dinner",
+      "url": "https://partiful.com/e/rpRtdFLLBUyMuwmWRLpd"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "VeraYou Inc.",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "InTheRoom: Founders, Builders & Connectors",
+      "url": "https://partiful.com/e/qP6lfZZOeBN2xWWOe2Mn"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Fin",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Founder Skybar Social w/ Fin, Fireworks, Vanta",
+      "url": "https://partiful.com/e/hpvvIK3lCRgNKftWIZ1Y"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Yale Club of Boston",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "YaleClub Tech Speakers and Social",
+      "url": "https://partiful.com/e/F9VOtdcmitoVxZEe73Xh"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Sherlocks AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Boston Vibe Debugging",
+      "url": "https://partiful.com/e/mVJUfie5IOk6EhokJzKQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Pitch Roast Live",
+      "neighborhood": "Chinatown",
+      "source": "crawl",
+      "title": "Pitch Roast Live",
+      "url": "https://partiful.com/e/KIHVnZIHC9qDh1M6FVRL"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7pm",
+      "host": "Yard Stick PBC",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Sauna Hang For The Climate",
+      "url": "https://partiful.com/e/V5zNPCYk65QdfFa3hcQe"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7:30pm",
+      "host": "Founders Basketball",
+      "neighborhood": "Brighton",
+      "source": "crawl",
+      "title": "Founders Basketball (May 2026)",
+      "url": "https://partiful.com/e/BdWQHdP3uIHUjM6k26cx"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7:30pm",
+      "host": "Optivide",
+      "neighborhood": "Virtual (Boston)",
+      "source": "crawl",
+      "title": "Climate Tech Night Mixer",
+      "url": "https://partiful.com/e/eqCtHH7qV0zysz4ODtQR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 7:45pm",
+      "host": "Hardware Meetup LLC",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "Boston Hardware Meetup | Tech Week Happy Hour",
+      "url": "https://partiful.com/e/yeCVddRoJUelyYn8aUSJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Thursday · May 28 · 8pm",
+      "host": "BDMT Global",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "BOSTON LIVE WEBINAR - How to Start and Scale Up: 7 Benefits You Must Learn to Grow in the U.S.",
+      "url": "https://partiful.com/e/m0XjQT0rHUSkIFCkv0Xy"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 8am",
+      "host": "AI Advisor Guy",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "AI + EQ for the Modern Leader",
+      "url": "https://partiful.com/e/JnxtZv6kuRoi1aHVofTF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 8:30am",
+      "host": "ProductCamp Boston ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "ProductCamp Boston Breakfast",
+      "url": "https://partiful.com/e/1A65LJu0g2QOXDmXH4le"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 8:30am",
+      "host": "Boston University Center for Brain Recovery",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Transforming Brain Health and Disease through AI",
+      "url": "https://partiful.com/e/4bPVfD5hfdfHs9fylnaE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "Coaching with Farah",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Charles River Walk & Talk for HR Leaders",
+      "url": "https://partiful.com/e/5SxkaqVwnqpaTJYDeOWu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "Shane & Ife",
+      "neighborhood": "Chelsea",
+      "source": "crawl",
+      "title": "Faith Driven Investors & Founders",
+      "url": "https://partiful.com/e/kqxG4TVcXXGzFvibhEdV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "QLab",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "QLab Harvard/MIT National Security Accelerator Pitch Day",
+      "url": "https://partiful.com/e/HBjQNRPuiIIpO4CHCEwQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "ScaleUp Labs",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "What’s Not So Obvious About AI in Healthcare: Mixer & Roundtable",
+      "url": "https://partiful.com/e/xI6dIAB1TAWSpqHR6utM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "Alumni Ventures",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Building and Scaling in Quantum Tech: Bridging Engineering and Market Impact",
+      "url": "https://partiful.com/e/StgnoIxOZVtzGSdVdRhR"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "5-Dee Studios",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Agents Unleashed Hack",
+      "url": "https://partiful.com/e/JDTf2IHHc8CWrkpzDTvc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "Fenwick",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Platform to Pipeline: Fireside Chat with a16z and the CEO of Cartography",
+      "url": "https://partiful.com/e/vQDvxdHU5dZgwJAFBzmZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "PsychDraft",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Founder's Mind: A Founder Breakfast on The Psychology of Building",
+      "url": "https://partiful.com/e/baLjGX6g9byOPC7TwycH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "ZeroClaw Labs",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "ZeroClaw Run & Coffee",
+      "url": "https://partiful.com/e/um47yY6Glub6KLR8LQiM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9am",
+      "host": "StitchDX",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Intranet IS Your AI Strategy: A Roundtable for HR and Comms Leaders",
+      "url": "https://partiful.com/e/poHMR0rMYs0vMXSWTrF3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 10am",
+      "host": "myop.dev",
+      "neighborhood": "West End",
+      "source": "crawl",
+      "title": "Build-It-Yourself Workshop. For non-thecnical builders inside commercial products.",
+      "url": "https://partiful.com/e/EPH52AkmCcU32OFJTEJJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 10am",
+      "host": "MacPaw",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "From vibe coding to real products: what it takes to scale your app",
+      "url": "https://partiful.com/e/jmlmwkBmMTeGVmgtgss7"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 10am",
+      "host": "jadewell",
+      "neighborhood": "South End",
+      "source": "crawl",
+      "title": "The Experiment",
+      "url": "https://partiful.com/e/fJ48etynmSXObH6E2t1a"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 10am",
+      "host": "MassRobotics ",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Inside MassRobotics: Open House for Startups",
+      "url": "https://partiful.com/e/kIwJyGQsqnO6J7ycroCv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 10am",
+      "host": "Reign Dragon Lab",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Governing the AI Workforce: Institutions, Incentives, and Accountability",
+      "url": "https://partiful.com/e/obw9iWg6PPHrxoHVe6cj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 10:30am",
+      "host": "Juniper Square",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Investors Pickleball Event",
+      "url": "https://partiful.com/e/yS67rK1ae4BAJ7w6chBD"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 11am",
+      "host": "DeepMyst ",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Life is a Pitch 2.0!",
+      "url": "https://partiful.com/e/wbPzpDh1zbx9ZMznVLzM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 11am",
+      "host": "FedTech",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Converging Priorities Between Energy and Defense Innovation: Capital, Procurement, and Dual‑Use",
+      "url": "https://partiful.com/e/zgxMqegbSNjSuUDFUdlC"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 11:30am",
+      "host": "Meizhou Selainda Electronic Technology Co., Ltd",
+      "neighborhood": "Chinatown",
+      "source": "crawl",
+      "title": "Wearable Vision Games",
+      "url": "https://partiful.com/e/YcBMwXKLCaKQAjpZknoY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 11:30am",
+      "host": "Product Advisory Collective (PAC)",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Architecting a Borderless Life + Travel Giveaway",
+      "url": "https://partiful.com/e/6twJZfODP3glntxvDwSU"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 12pm",
+      "host": "Cherry Hill Advisory",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Founders' Lunch hosted by Cherry Hill Advisory",
+      "url": "https://partiful.com/e/DyVgTCUSFZDzRIEJL4Ki"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 12pm",
+      "host": "Catalyst Noir",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "The Performance Protocol: Stay Sharp in the Age of AI",
+      "url": "https://partiful.com/e/UbbwqUQ18E9Io3rXuKS3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 12pm",
+      "host": "Sisters Capital",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Female founders and funders lunch",
+      "url": "https://partiful.com/e/sDlEo3UpFBjEpLAdby4z"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 12pm",
+      "host": "Savas Labs",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Skills That Matter",
+      "url": "https://partiful.com/e/45XngBfs9OI4E64iH5ha"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 1pm",
+      "host": "Reframe Systems",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Scaling Net-Zero: Reframe Systems Factory Tour",
+      "url": "https://partiful.com/e/uBq4mLGFQUWvoKC3hZau"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 1pm",
+      "host": "BatchIn",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "BatchIn V4 Vibethon",
+      "url": "https://partiful.com/e/oXrrXCcP4zV6KMTRsWFg"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 1pm",
+      "host": "AI Adivsor Guy",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "The Recipe for Modern AI GTM",
+      "url": "https://partiful.com/e/WhGW0bQjcfch6B3ScHDZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 1pm",
+      "host": "CoreWeave",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Build Autonomously Improving  Agent Swarms (Weights & Biases)",
+      "url": "https://partiful.com/e/yUFWhUip4Rt2td9rqkrK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 1pm",
+      "host": "PythiaVox",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Venture Trobleshooting Mini Hackathon",
+      "url": "https://partiful.com/e/d0VsNQkb8CVTeADzauJM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 1:30pm",
+      "host": "Base44",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Issa Vibe: Vibe Coding for Non-Technical Women.",
+      "url": "https://partiful.com/e/7BJerZsW0T4ZaAJxLYvb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 2pm",
+      "host": "Ugly Talk",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Ugly Talk: How to Actually Build at the Speed of AI and Outship a Bigger Team",
+      "url": "https://partiful.com/e/shukXUXpQsVnJHEFGicA"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 2pm",
+      "host": "Leebry",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The emperor has no clothes: AI's dirty secret is that humans do all the work",
+      "url": "https://partiful.com/e/HAvW3xOk3uYZO4S5vML0"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 2pm",
+      "host": "Concerto Biosciences",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Biotech x Consumer Health Meetup",
+      "url": "https://partiful.com/e/GDUtWO77adM94auHoU8l"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 2:30pm",
+      "host": "Boston University Faculty of Computing and Data Science",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI Ethics: Measuring Real-World Impact in Education",
+      "url": "https://partiful.com/e/k6gsP5bvyG0AfKrNQsZ3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 3pm",
+      "host": "Fundraising Bootcamp",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "[Future of Robotics, AI Infra & New Materials Startup Competition]",
+      "url": "https://partiful.com/e/tfIqa3mNawYMhGzvLWwt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 3pm",
+      "host": "University recent grads",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "48-Hour Systems Sprint: Fix a Broken Startup Stack",
+      "url": "https://partiful.com/e/8gjrn2VeVv26sfSX6uha"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 3pm",
+      "host": "Barry's",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Barry's Downtown Private Class",
+      "url": "https://partiful.com/e/uZUdPpP94FdSjZ3VTL0h"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Skywork AI",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Workflow Delivery in Action: Automate your work with Skywork @ BOSTechWeek",
+      "url": "https://partiful.com/e/hMJXDsXa1dS6QVOckEcY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Sbur, Inc.",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Pitch, Raise Capital, and Win a $3,500 Cash Prize from Sbur",
+      "url": "https://partiful.com/e/mb7k79beARCW0dLCu7BH"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Oasis Collective",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Women in AI Pitch Competition",
+      "url": "https://partiful.com/e/3jMIHhPM75L8MlegXg0z"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Fine Line Consultants",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI Block Party",
+      "url": "https://partiful.com/e/3CEvtMvadv8UwyTeS5Qo"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Babson College",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Babson Tech Entrepreneurship",
+      "url": "https://partiful.com/e/dtteY0E22LIeXnm47Qwn"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Founder Social Club",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Startup Pitch Night",
+      "url": "https://partiful.com/e/kgaUjKLzqcKA7jqghnpc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "MIT-IBM Computing Research Lab",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "MIT-IBM / The Open Accelerator - Build-n-Brew Session 4 -- Mellea",
+      "url": "https://partiful.com/e/PV70ces8rF522t1kEKvG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 4pm",
+      "host": "Kamp",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "Founder Fest (Boston Tech Week Close Out Party)",
+      "url": "https://partiful.com/e/cA2f4n22pixpcJIohujd"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5pm",
+      "host": "ContraSearch, Inc.",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Tech Networking Event With Boston City Council",
+      "url": "https://partiful.com/e/ONMBBX45Yq18guiNDCHc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5pm",
+      "host": "Tech/ish",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Ship It! Building Bridges for Better AI Outcomes",
+      "url": "https://partiful.com/e/SkYhfLuSKolvoVH0E8yN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5pm",
+      "host": "MacPaw",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The AI Industry Is Going Hybrid: Cloud vs On-Device Models (Panel + Reception to Follow)",
+      "url": "https://partiful.com/e/0vqKvt9WQVvRbwssed17"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5:30pm",
+      "host": "Rho ",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Founder & VC Mixer [Rho x J2 x Link Ventures x Fenwick]",
+      "url": "https://partiful.com/e/nQR1IPSFyIVBB0uYkZAx"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5:30pm",
+      "host": "Flexcompute",
+      "neighborhood": "Watertown",
+      "source": "crawl",
+      "title": "AI Physics, Founders, and Free Drinks",
+      "url": "https://partiful.com/e/4bNv57ugPzLqRP8qT4eZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5:30pm",
+      "host": "Boston University",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "How Convergent Research Addresses Societal Grand Challenges - A View from Boston",
+      "url": "https://partiful.com/e/ae9In9lFKYwuAZaWrQKJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5:30pm",
+      "host": "Attention Labs",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI x Bio: Founders, Builders & Investors Mixer",
+      "url": "https://partiful.com/e/WKJ8fNkHQl1UDmcu5b9u"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 5:30pm",
+      "host": "Creators x Founders",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Creators x Founders Recharge at Remedy Place",
+      "url": "https://partiful.com/e/zYPDsBlpExsjQEaCMNBz"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Travelbay",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Boston Tech Week Afrobeats Party",
+      "url": "https://partiful.com/e/4uaYV6J1OCnsCJfBuaSj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Entre",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Founder & Investor Mixer",
+      "url": "https://partiful.com/e/qdDEurv2RWpBlSgouPxa"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Vencapital",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Startup & VC Happy Hour + Career Expo",
+      "url": "https://partiful.com/e/O1w690cPsHihA7q9smSM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Tau Beta Pi (TBP) Boston Alumni Chapter",
+      "neighborhood": "North End",
+      "source": "crawl",
+      "title": "Engineers of All Trades Meet Up",
+      "url": "https://partiful.com/e/d6cBipiW2gJVb4sE6Voe"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Fin",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Game Break with Fin, Superhuman & Tines",
+      "url": "https://partiful.com/e/holFfT6PRaXLg7pcWMGa"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Dense Context Systems Inc.",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Hackathon: Building Production-Grade AI Agents",
+      "url": "https://partiful.com/e/5u2p3xbucyM9kGmBmA5z"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "Founder 9 Golf Club",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Founder 9 Golf Club",
+      "url": "https://partiful.com/e/JCyT3Mi3TUcv71mNmDn4"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "ReechOut",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "The Live Hiring Lab",
+      "url": "https://partiful.com/e/7reEp1fh8ke0HArshMU8"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "SOLIDWORKS",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "SOLIDWORKS Hard-Tech Mixer",
+      "url": "https://partiful.com/e/plZcMPJJu6tDQfHcJq4U"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6pm",
+      "host": "a16z Cultural Leadership Fund",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The CLF Boston Cultural Capital Table",
+      "url": "https://partiful.com/e/VmYS2fpsDB2qPJsWZf9O"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 6:30pm",
+      "host": "Owle AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "The Healthcare Venture Table: An Invite-Only Dinner for Funders & Founders",
+      "url": "https://partiful.com/e/qKePyscdhnmH4798EfhQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 7pm",
+      "host": "Tech Wednesdays",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "How Anyone Can Run a Tech Event: The Tech Wednesdays Playbook",
+      "url": "https://partiful.com/e/uVPM5aJRPZr1J0soFzKf"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 7pm",
+      "host": "Flex",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI in PE Dinner",
+      "url": "https://partiful.com/e/9qGkl5JcjPMPqQYdBmSX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 7pm",
+      "host": "Flex",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "AI in PE Dinner",
+      "url": "https://partiful.com/e/9qGkl5JcjPMPqQYdBmSX"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 7pm",
+      "host": "Genesis Fund",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Genesis Fund Nuclear Happy Hour",
+      "url": "https://partiful.com/e/6z4U4Siq2StqvmE40xCK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 7pm",
+      "host": "Colère Nu",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "AI: Move Fast or Break Society?",
+      "url": "https://partiful.com/e/IAbESv2oikHcVpokXD4E"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 8pm",
+      "host": "Latinos in Tech Collective",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Latinos in Tech Mixer - #BOSTechWeek",
+      "url": "https://partiful.com/e/ypM2bzj8hhw82wqwRHND"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 8pm",
+      "host": "OPC Community",
+      "neighborhood": "Virtual (BOS)",
+      "source": "crawl",
+      "title": "AI for Solo Founders: Virtual Coffee Chat & Networking",
+      "url": "https://partiful.com/e/SvBNyriEGJkIT0Wgzc9v"
+    },
+    {
+      "badges": [],
+      "dateTime": "Friday · May 29 · 9pm",
+      "host": "LevM",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "Prediction Markets Rooftop",
+      "url": "https://partiful.com/e/RSIw0D1vwJpqsEwewFrQ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "Air Space Intelligence",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "Hacking the Fourth Dimension with ASI at Fenway Park",
+      "url": "https://partiful.com/e/5dBDeFo8TOIjJftLaGPF"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "WealthTrek by Hanscom Federal Credit Union",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Gaming Meets Finance @WealthTrek - 'Coffee Chat'",
+      "url": "https://partiful.com/e/3MGfktPK4OJB4QbfgpLc"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "Funnel.io",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Courtside: Tennis Morning @ MIT",
+      "url": "https://partiful.com/e/GAPC6zZqGD6ODwelynb6"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "AIKreate",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "EdTech as the Engine: Turning AI Research into Scalable Learning Companies",
+      "url": "https://partiful.com/e/JOWl8jUltG7z0yUBDnDq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "Finide",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Ship It Boston - A Build Day",
+      "url": "https://partiful.com/e/a7saw3Uon0HyUzhmz7OE"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "Harvard Innovation Labs LLX",
+      "neighborhood": "Allston",
+      "source": "crawl",
+      "title": "Healthcare Agentic AI Hackathon",
+      "url": "https://partiful.com/e/7EgxT5dc4UzgQL69P1Ht"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9am",
+      "host": "Absentia Labs",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "AI x Bio Hackathon",
+      "url": "https://partiful.com/e/4ltwdcESiUvW3BUsX296"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9:30am",
+      "host": "QueensKnow ",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "QueensKnow Prayer Walk for Women in Tech, Business & Leadership",
+      "url": "https://partiful.com/e/hwZlgHcsHGlBTqDJ5b2Q"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 9:45am",
+      "host": "Mindful Makers",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Biofeedback Hack @ MIT w/ Vibes AI + AWEAR - Mindful Makers",
+      "url": "https://partiful.com/e/XQ8S6683BTQfeuc7u3Vo"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "Independent",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Boston OpenClaw Hackathon",
+      "url": "https://partiful.com/e/eBd91pZJpdTRp8V3FJFJ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "ntg events",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI Agents in Healthcare Hackathon",
+      "url": "https://partiful.com/e/pPmyJSqmwakAmHGJrGhG"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "Gifted Life LLC",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Proof Wins: The Future of Nonprofit Impact",
+      "url": "https://partiful.com/e/khhyxTweL4qIegsuqNON"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "VERITAS QUEST",
+      "neighborhood": "Bay Village",
+      "source": "crawl",
+      "title": "AI Won’t Solve This: Leading Through Uncertainty in Tech Organizations",
+      "url": "https://partiful.com/e/68Cmxib6N0z7D6y5xxf3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "VERITAS QUEST",
+      "neighborhood": "Bay Village",
+      "source": "crawl",
+      "title": "AI Won’t Solve This: Leading Through Uncertainty in Tech Organizations",
+      "url": "https://partiful.com/e/68Cmxib6N0z7D6y5xxf3"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "MakeItSo",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Cosmic playground",
+      "url": "https://partiful.com/e/YwnLunHcyYIPucQr2zcK"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "Massachusetts AI Hub",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Every MA Citizen with an AI Agent",
+      "url": "https://partiful.com/e/QG5ze3odU6bLW4teuu2q"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 10am",
+      "host": "Rasa",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "The Always-On Agent Hackathon: Build Your Digital Coworker",
+      "url": "https://partiful.com/e/UaCivuHqb00uIv1YO6qZ"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 11am",
+      "host": "American South Asian Network (ASAN)",
+      "neighborhood": "Bay Village",
+      "source": "crawl",
+      "title": "From Idea to Revenue in 4 Hours: Boston AI Hackathon",
+      "url": "https://partiful.com/e/eicNadP8Kh6KGRlDpMR1"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 11am",
+      "host": "Growbie",
+      "neighborhood": "Brookline",
+      "source": "crawl",
+      "title": "[AAPI Current & Future Bootstrapped Founders Mixer]",
+      "url": "https://partiful.com/e/5V3gcIQu1QuSGoJtpFXo"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 11am",
+      "host": "Manus AI",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "From Ideas to Reality: Build with Agentic AI",
+      "url": "https://partiful.com/e/FNNVp4KpM2JysbCX72ia"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 1pm",
+      "host": "Boston AI/Startup Poker Club",
+      "neighborhood": "Everett",
+      "source": "crawl",
+      "title": "Startup AI Poker Night - BOSTechWeek",
+      "url": "https://partiful.com/e/ivRZWMRBMRUioKIvXQUn"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 2pm",
+      "host": "Wind Financial Information LLC",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Unlocking Alpha: China’s AI & Tech Frontiers with Wind",
+      "url": "https://partiful.com/e/68IWe9o3chjpha5Z8kMU"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 2pm",
+      "host": "EchoHer",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "First-Time Founders: What Nobody Tells You",
+      "url": "https://partiful.com/e/lwFz2SdkYAn9phTFJtsY"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 2pm",
+      "host": "staaake",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Founders Pic Nic",
+      "url": "https://partiful.com/e/WSONYVay9pQZj1dG90Gj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 2pm",
+      "host": "PedagogyVentures",
+      "neighborhood": "Beacon Hill",
+      "source": "crawl",
+      "title": "Book Talk & Signing: Ethical Ed Tech: How Educators Can Lead on AI",
+      "url": "https://partiful.com/e/7uUJOhYbDjoB1Dh2CVZV"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 2pm",
+      "host": "LightHouse",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Capital, Talent, Markets: How Founders Navigate U.S.–Asia Reality in 2026",
+      "url": "https://partiful.com/e/QDwktJKbEbZjK9j57KKI"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 3pm",
+      "host": "Cloudflare",
+      "neighborhood": "Seaport District",
+      "source": "crawl",
+      "title": "Startup Yacht Party with Cloudflare, TNT, and Orrick",
+      "url": "https://partiful.com/e/KcT7yzQSBZ1vfFK0wCLp"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 3pm",
+      "host": "Door 3",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Door 3 - Boston",
+      "url": "https://partiful.com/e/5wKpvSPFo4FremNFtlTi"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 3pm",
+      "host": "Startup Oasis",
+      "neighborhood": "",
+      "source": "crawl",
+      "title": "Find a Cofounder, Help or Join a Cofounder",
+      "url": "https://partiful.com/e/PlVvBzlCyOn0OPr3MD6a"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 4pm",
+      "host": "BSCP Alumni Network",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Catalyzing Collaborations: Computing in the Clinic",
+      "url": "https://partiful.com/e/WYvqeuG2pPZ0hqURAkzT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 4pm",
+      "host": "Your Next Win",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Sip & Ship: The Un-Hackathon",
+      "url": "https://partiful.com/e/Vz5p5XYIDjLVTyTxjb4T"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 4pm",
+      "host": "CAD-ai.tech",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "CAD + AI After Hours",
+      "url": "https://partiful.com/e/5nuANCTQeY99mqIYmfKw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 4:30pm",
+      "host": "Modaic",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "DSPy + Evals Sailhouse Happy Hour by Modaic",
+      "url": "https://partiful.com/e/kPMrAH7Au9SJhzJ1Owzt"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 5:30pm",
+      "host": "American South Asian Network (ASAN)",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "South Asian Collective",
+      "url": "https://partiful.com/e/mQSVpKpS8Ex4vZN5W9Bu"
+    },
+    {
+      "badges": [],
+      "dateTime": "Saturday · May 30 · 7pm",
+      "host": "Mental Health Tech AI",
+      "neighborhood": "Kendall Square",
+      "source": "crawl",
+      "title": "Mental Health Tech Leaders Networking Hour",
+      "url": "https://partiful.com/e/OOjwL4AUxKbRg5qr5VjT"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 8am",
+      "host": "Dune IRL",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Tech Week Hosts & Friends | Coffee & Vibes in Back Bay",
+      "url": "https://partiful.com/e/87jdMzBRKiKtF9kjOIlb"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 8:30am",
+      "host": "CEO LAB",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "MIT CEO LAB Conference",
+      "url": "https://partiful.com/e/l9HAaBjp6prT5ngwP0Wq"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 9am",
+      "host": "Foundation for Agentic Networks",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Agentic Web - Connecting Vision & Opportunity",
+      "url": "https://partiful.com/e/RrdIRukLSxr9JfhfVtjw"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 9am",
+      "host": "CoreWeave",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Multi-Agent Orchestration Hackathon with Weights & Biases at MIT",
+      "url": "https://partiful.com/e/kUWTICaO2TDCVzG8KUeP"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 9am",
+      "host": "American South Asian Network (ASAN)",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "South Asian Founders Walk",
+      "url": "https://partiful.com/e/PJ4dXYMBLHjAfCRMDg2M"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 9:30am",
+      "host": "SundAI Club",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "SundAI Hack & Learn: Autonomous Companies & Research, and latest AI tools made in Boston",
+      "url": "https://partiful.com/e/ygDGE5ENT6Ipa57M17Rv"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 10am",
+      "host": "ntg events",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "OpenClaw in Healthcare Hackathon",
+      "url": "https://partiful.com/e/1NhkX3sqraPVyWGaJ7sj"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 10:30am",
+      "host": "Museum of Science, Boston",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "Innovation Spotlight: Japan",
+      "url": "https://partiful.com/e/kK1NZBH4N1W4clCSlYwf"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 12pm",
+      "host": "Massachusetts Institute of Technology (MIT)",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "LEGO AND MOVIE BUILD NIGHT @MIT",
+      "url": "https://partiful.com/e/vD1pCBjTjJ4Zq8HutiWN"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 2pm",
+      "host": "Wind Financial Information LLC",
+      "neighborhood": "Downtown",
+      "source": "crawl",
+      "title": "Investing in AI with AI: China's Tech Frontiers & Wind Alice AI Demo",
+      "url": "https://partiful.com/e/tq8LNUiJjiMwtL9xvePM"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 3pm",
+      "host": "Wasabi Technologies",
+      "neighborhood": "Fenway-Kenmore",
+      "source": "crawl",
+      "title": "The New MVP? Inside the AI Playbooks of the Red Sox and Bruins",
+      "url": "https://partiful.com/e/GJjYsPRHRtCF8krNu67e"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 3pm",
+      "host": "Signal",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "Builders X Creatives",
+      "url": "https://partiful.com/e/AF03aPsAVH47PehHRZo9"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 4pm",
+      "host": "Leverage",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI Agents for Media & Financial Journalism",
+      "url": "https://partiful.com/e/fby63WVVycZHzpoe3J6b"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 5pm",
+      "host": "Motif",
+      "neighborhood": "Back Bay",
+      "source": "crawl",
+      "title": "The Music AI Can't Hear: What's Actually Missing from the Future of Sound",
+      "url": "https://partiful.com/e/bGvfyb9wzlojXnFyhs4O"
+    },
+    {
+      "badges": [],
+      "dateTime": "Sunday · May 31 · 6pm",
+      "host": "Bizzen",
+      "neighborhood": "Cambridge",
+      "source": "crawl",
+      "title": "AI Bridging the Real World: AI Agents for Your Business",
+      "url": "https://partiful.com/e/mtwfNDAijRnsCZRQxbVx"
+    }
+  ]
+}

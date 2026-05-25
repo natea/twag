@@ -8,6 +8,7 @@ dependencies = [
   "fastapi>=0.115.0",
   "python-dotenv>=1.0.1",
   "uvicorn>=0.30.0",
+  "playwright>=1.48.0"
 ]
 
 [project.scripts]
