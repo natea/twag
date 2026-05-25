@@ -1,6 +1,26 @@
-# TWAG NY Tech Week Bot
+# TWAG Tech Week Bot (NY + Boston)
 
-Use the system through Telegram: [https://t.me/Twagbot](https://t.me/Twagbot)
+Use the NY Tech Week bot through Telegram: [https://t.me/Twagbot](https://t.me/Twagbot)
+
+## Cities
+
+TWAG is parameterized by the `TWAG_CITY` environment variable. Two cities are registered:
+
+| Slug     | Display name           | Dataset                              | Table prefix |
+|----------|------------------------|--------------------------------------|--------------|
+| `nyc`    | NY Tech Week 2026      | `data/nytw-2026-for-agents`          | `nytw_*`     |
+| `boston` | Boston Tech Week 2026  | `data/bostontw-2026-for-agents`      | `bostw_*`    |
+
+Set `TWAG_CITY=boston` (in `.env` or the process environment) to point the CLI,
+tool server, and Telegram bot at Boston. Each CLI subcommand also accepts a
+top-level `--city` override (e.g. `twag --city boston load-nytw`). Tables for
+each city live side-by-side in ClickHouse; the bot loaded with `TWAG_CITY=nyc`
+will only see `nytw_*` rows, and vice versa.
+
+To add a new city, register a `CityConfig` in `src/twag_clickhouse/city.py` and
+copy `data/nytw-2026-for-agents/scripts/` into a new dataset directory with the
+city's `calendar_url` swapped in `crawl_manifest.py`.
+
 
 ![QR code for https://t.me/Twagbot](docs/assets/twagbot-qr.png)
 
