@@ -10,6 +10,9 @@ header {
 }
 header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
 #count { font-size: 13px; color: #aaa; }
+.credit { font-size: 12px; color: #888; margin-top: 6px; }
+.credit a { color: #ccc; text-decoration: none; }
+.credit a:hover { color: #fff; text-decoration: underline; }
 
 #date-picker {
   display: flex;

@@ -2,6 +2,26 @@
 
 Use the NY Tech Week bot through Telegram: [https://t.me/Twagbot](https://t.me/Twagbot)
 
+## Boston port by Nate Aune ([@natea](https://twitter.com/natea))
+
+I forked the upstream NY Tech Week bot and repurposed it for Boston Tech Week
+2026 by parameterizing the entire stack around a `TWAG_CITY` env var (NYC and
+Boston live side-by-side; adding a new city is one entry in `city.py`). I also
+re-crawled the Boston events dataset from `tech-week.com/calendar/boston` and
+added two new views served from GitHub Pages:
+
+- **Event map** — clustered map of events per day, powered by Mapbox GL JS
+  with venues geocoded via OpenCage:
+  [Boston](https://natea.github.io/twag/events_map_boston.html) ·
+  [NYC](https://natea.github.io/twag/events_map_nyc.html)
+- **Image gallery** — scrollable grid of event hero images; tap a tile to RSVP
+  on Partiful:
+  [Boston](https://natea.github.io/twag/events_gallery_boston.html) ·
+  [NYC](https://natea.github.io/twag/events_gallery_nyc.html)
+
+The Telegram bot now includes a `/map [date]` command and appends a "🗺 View on
+map" link to every event-list answer.
+
 ## Cities
 
 TWAG is parameterized by the `TWAG_CITY` environment variable. Two cities are registered:
