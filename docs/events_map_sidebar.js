@@ -31,6 +31,21 @@ function _humanTime(props) {
   return start || end || "";
 }
 
+// Compact weekday + day-of-month label for cross-day rows. ISO event_date
+// is "YYYY-MM-DD". Returns e.g. "Thu May 28".
+function _humanShortDate(eventDate) {
+  if (!eventDate) return "";
+  const [y, m, d] = eventDate.split("-").map(Number);
+  if (!y || !m || !d) return "";
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.toLocaleDateString(undefined, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 function _humanWhere(props) {
   return [props.venue_name, props.neighborhood].filter(Boolean).join(" · ");
 }
@@ -55,12 +70,14 @@ function _isPastNow(props) {
   return false;
 }
 
-function _rowHtml(citySlug, props) {
+function _rowHtml(citySlug, props, crossDay) {
   const eventId = props.event_id;
   const cap = props.at_capacity ? `<span class="sidebar-row-cap">full</span>` : "";
   const pastClass = _isPastNow(props) ? " is-past" : "";
   const time = _humanTime(props);
   const where = _humanWhere(props);
+  const dayPrefix = crossDay ? _humanShortDate(props.event_date) : "";
+  const whenLine = dayPrefix ? `${dayPrefix} · ${time}` : time;
   const going = (typeof props.going_guest_count === "number")
     ? `<span class="sidebar-detail-stat">${props.going_guest_count} going</span>` : "";
   const remaining = (typeof props.remaining_capacity === "number" && props.remaining_capacity > 0)
@@ -83,7 +100,7 @@ function _rowHtml(citySlug, props) {
       </div>
       <div class="sidebar-row-body">
         <div class="sidebar-row-title">${_esc(props.title)} ${cap}</div>
-        <div class="sidebar-row-meta">${_esc(time)}</div>
+        <div class="sidebar-row-meta">${_esc(whenLine)}</div>
         <div class="sidebar-row-meta">${_esc(where)}</div>
         ${host}
         <div class="sidebar-detail">
@@ -228,18 +245,34 @@ function initMapSidebar(config) {
       out.push(f);
       eventCoords.set(id, f.geometry.coordinates);
     }
+    // When a search is active, sort by Fuse relevance (most relevant first)
+    // so the user's intended match floats to the top regardless of time.
+    const matchOrder = window.__twagSearch && window.__twagSearch.currentMatchOrder
+      ? window.__twagSearch.currentMatchOrder()
+      : null;
+    if (matchOrder) {
+      const rank = new Map(matchOrder.map((id, i) => [id, i]));
+      return out
+        .slice()
+        .sort((a, b) => {
+          const ra = rank.has(a.properties.event_id) ? rank.get(a.properties.event_id) : Number.MAX_SAFE_INTEGER;
+          const rb = rank.has(b.properties.event_id) ? rank.get(b.properties.event_id) : Number.MAX_SAFE_INTEGER;
+          return ra - rb;
+        });
+    }
     return _sortByStart(out);
   }
 
   function render(features) {
     lastFeatures = features;
+    const crossDay = !!(window.__twagSearch && window.__twagSearch.currentQuery && window.__twagSearch.currentQuery());
     if (!features.length) {
       countEl.textContent = "No events in view";
       listEl.innerHTML = `<div class="sidebar-empty">Pan or zoom the map — events in view will appear here.</div>`;
       return;
     }
     countEl.textContent = `${features.length} event${features.length === 1 ? "" : "s"} in view`;
-    listEl.innerHTML = features.map(f => _rowHtml(citySlug, f.properties)).join("");
+    listEl.innerHTML = features.map(f => _rowHtml(citySlug, f.properties, crossDay)).join("");
 
     listEl.querySelectorAll(".sidebar-row").forEach(row => {
       row.addEventListener("click", () => {
@@ -254,7 +287,9 @@ function initMapSidebar(config) {
 
     if (scrollOnNextRender) {
       scrollOnNextRender = false;
-      _scrollToCurrentOrNext();
+      // Skip the current-or-next anchor while a search is active — the
+      // relevance-sorted first row should stay at the top of the list.
+      if (!crossDay) _scrollToCurrentOrNext();
     }
   }
 
