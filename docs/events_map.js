@@ -98,6 +98,21 @@ async function initEventMap(config) {
     refresh();
   });
 
+  let sidebar = null;
+  let activePopup = null;
+
+  function showPopup(lonLat, props) {
+    if (activePopup) {
+      activePopup.remove();
+      activePopup = null;
+    }
+    activePopup = new mapboxgl.Popup({ maxWidth: "300px" })
+      .setLngLat(lonLat)
+      .setHTML(popupHtml(props))
+      .addTo(map);
+    activePopup.on("close", () => { activePopup = null; });
+  }
+
   function refresh() {
     buildDatePicker(datePicker, config.dateRange, activeDate, (date) => {
       activeDate = date;
@@ -111,6 +126,7 @@ async function initEventMap(config) {
     if (source) {
       source.setData(filtered);
     }
+    if (sidebar) sidebar.refresh();
   }
 
   map.on("load", () => {
@@ -180,15 +196,33 @@ async function initEventMap(config) {
     map.on("click", "unclustered-point", (e) => {
       const feature = e.features[0];
       const [lon, lat] = feature.geometry.coordinates;
-      new mapboxgl.Popup({ maxWidth: "300px" })
-        .setLngLat([lon, lat])
-        .setHTML(popupHtml(feature.properties))
-        .addTo(map);
+      showPopup([lon, lat], feature.properties);
+      // Mirror selection in the sidebar (no pan — see plan decision #4).
+      if (sidebar && feature.properties.event_id) {
+        sidebar.select(feature.properties.event_id, { fromUser: false });
+      }
     });
 
     for (const layerId of ["clusters", "unclustered-point"]) {
       map.on("mouseenter", layerId, () => (map.getCanvas().style.cursor = "pointer"));
       map.on("mouseleave", layerId, () => (map.getCanvas().style.cursor = ""));
+    }
+
+    if (typeof initMapSidebar === "function") {
+      sidebar = initMapSidebar({
+        map,
+        sourceId: "events",
+        citySlug: config.citySlug,
+        onSelect: (eventId, lonLat, opts) => {
+          // Open the popup when a sidebar row is the source of the selection.
+          if (!opts || !opts.fromUser || !lonLat) return;
+          const feature = fullGeoJson.features.find(
+            (f) => f.properties.event_id === eventId
+          );
+          if (!feature) return;
+          showPopup(lonLat, feature.properties);
+        },
+      });
     }
 
     refresh();

@@ -18,16 +18,21 @@
     <a href="./events_gallery_boston.html">Gallery</a>
   </nav>
   <div id="date-picker"></div>
-  <div id="map"></div>
+  <div id="map-stage">
+    <div id="map"></div>
+    <aside id="sidebar"></aside>
+  </div>
   <div id="error"></div>
 
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
   <script src="./config.js"></script>
   <script src="./tab_nav.js"></script>
+  <script src="./events_map_sidebar.js"></script>
   <script src="./events_map.js"></script>
   <script>
     initEventMap({
       token: window.TWAG_MAPBOX_TOKEN,
+      citySlug: "boston",
       centerLat: 42.3601,
       centerLon: -71.0942,
       zoom: 12.0,
