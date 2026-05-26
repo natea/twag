@@ -70,6 +70,10 @@ def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
             counts["no_coords"] += 1
             continue
 
+        description = (event.get("description") or "").strip()
+        if len(description) > 1200:
+            description = description[:1197].rstrip() + "…"
+
         features.append(
             {
                 "type": "Feature",
@@ -87,6 +91,9 @@ def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
                     "neighborhood": event.get("neighborhood") or "",
                     "venue_name": event.get("venue_name") or "",
                     "venue_address": event.get("venue_address") or "",
+                    "description": description,
+                    "going_guest_count": event.get("going_guest_count"),
+                    "remaining_capacity": event.get("remaining_capacity"),
                     "rsvp_url": (
                         event.get("rsvp_url")
                         or event.get("public_short_url")
