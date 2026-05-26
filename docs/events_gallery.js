@@ -102,6 +102,7 @@ async function initEventGallery(config) {
   }
   const payload = await response.json();
   const allEvents = payload.events || [];
+  const citySlug = payload.city || "";
 
   const initialDate = parseDateFromHashG() || config.defaultDate;
   let activeDate = initialDate;
@@ -110,7 +111,10 @@ async function initEventGallery(config) {
   const grid = document.getElementById("gallery-grid");
   const countEl = document.getElementById("count");
 
+  let lastTrackedDate = null;
+
   function refresh() {
+    const previousDate = lastTrackedDate;
     buildDatePickerG(datePicker, config.dateRange, activeDate, (date) => {
       activeDate = date;
       setDateInHashG(date);
@@ -122,6 +126,41 @@ async function initEventGallery(config) {
     grid.innerHTML = filtered.length
       ? filtered.map(renderTile).join("")
       : `<div class="empty">No events with images on this day.</div>`;
+
+    if (window.twagTrack) {
+      if (previousDate === null) {
+        twagTrack("gallery_view_loaded", {
+          city: citySlug,
+          date: activeDate,
+          event_count: filtered.length,
+        });
+      } else if (previousDate !== activeDate) {
+        twagTrack("date_filter_changed", {
+          city: citySlug,
+          view: "gallery",
+          from_date: previousDate,
+          to_date: activeDate,
+        });
+      }
+      lastTrackedDate = activeDate;
+
+      // Wire tile-click tracking. Each tile <a> goes to the Partiful RSVP,
+      // so we fire both gallery_tile_clicked and rsvp_clicked.
+      grid.querySelectorAll(".tile").forEach(tile => {
+        tile.addEventListener("click", () => {
+          const href = tile.getAttribute("href") || "";
+          // Extract event_id from the Partiful URL last path segment.
+          const match = href.match(/\/e\/([A-Za-z0-9_-]+)/);
+          const eventId = match ? match[1] : "";
+          twagTrack("gallery_tile_clicked", { city: citySlug, event_id: eventId });
+          twagTrack("rsvp_clicked", {
+            city: citySlug,
+            event_id: eventId,
+            source: "gallery",
+          });
+        });
+      });
+    }
   }
 
   refresh();

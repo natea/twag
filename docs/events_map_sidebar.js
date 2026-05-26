@@ -157,8 +157,14 @@ function initMapSidebar(config) {
     }
   } catch (_) {}
 
-  hideBtn.addEventListener("click", () => setHidden(true));
-  showBtn.addEventListener("click", () => setHidden(false));
+  hideBtn.addEventListener("click", () => {
+    setHidden(true);
+    if (window.twagTrack) twagTrack("sidebar_hidden", { city: citySlug });
+  });
+  showBtn.addEventListener("click", () => {
+    setHidden(false);
+    if (window.twagTrack) twagTrack("sidebar_shown", { city: citySlug });
+  });
 
   let selectedEventId = null;
   let lastFeatures = [];
@@ -237,11 +243,30 @@ function initMapSidebar(config) {
     selectedEventId = eventId;
     applySelectionDom();
     const row = listEl.querySelector(`.sidebar-row[data-event-id="${CSS.escape(eventId)}"]`);
-    if (row) row.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    if (row) {
+      row.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      // Track RSVP click-throughs from inside the expanded card.
+      const rsvpEl = row.querySelector(".sidebar-detail-rsvp");
+      if (rsvpEl && window.twagTrack && !rsvpEl.dataset.tracked) {
+        rsvpEl.dataset.tracked = "1";
+        rsvpEl.addEventListener("click", () => {
+          twagTrack("rsvp_clicked", {
+            city: citySlug,
+            event_id: eventId,
+            source: "sidebar",
+          });
+        });
+      }
+    }
     const coords = eventCoords.get(eventId);
-    if (opts.fromUser && coords) {
-      // Clicking a row pans toward the pin (per plan: sidebar→map flies, map→sidebar doesn't).
-      map.flyTo({ center: coords, speed: 1.4, curve: 1 });
+    if (opts.fromUser) {
+      if (window.twagTrack) {
+        twagTrack("sidebar_row_clicked", { city: citySlug, event_id: eventId });
+      }
+      if (coords) {
+        // Clicking a row pans toward the pin (per plan: sidebar→map flies, map→sidebar doesn't).
+        map.flyTo({ center: coords, speed: 1.4, curve: 1 });
+      }
     }
     onSelect(eventId, coords || null, opts);
   }
