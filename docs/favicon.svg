@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Map pin: brand orange teardrop with a white inner circle. -->
+  <path d="M32 3 C 17.7 3 7 13.7 7 28 C 7 47 32 61 32 61 C 32 61 57 47 57 28 C 57 13.7 46.3 3 32 3 Z"
+        fill="#e8543e" stroke="#a83321" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="32" cy="26" r="9" fill="#ffffff"/>
+  <circle cx="32" cy="26" r="4" fill="#e8543e"/>
+</svg>

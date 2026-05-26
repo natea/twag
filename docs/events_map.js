@@ -25,12 +25,20 @@ function formatHumanDate(iso) {
   return date.toLocaleDateString(undefined, opts);
 }
 
+const _WEEKDAY_SHORT = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+function weekdayShort(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return _WEEKDAY_SHORT[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+}
+
 function buildDatePicker(container, dateRange, activeDate, onChange) {
   container.innerHTML = "";
   for (const date of dateRange) {
     const btn = document.createElement("button");
     btn.className = "date-btn" + (date === activeDate ? " active" : "");
-    btn.textContent = formatHumanDate(date);
+    btn.innerHTML =
+      `<span class="date-btn-long">${formatHumanDate(date)}</span>` +
+      `<span class="date-btn-short">${weekdayShort(date)}</span>`;
     btn.addEventListener("click", () => onChange(date));
     container.appendChild(btn);
   }

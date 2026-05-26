@@ -107,6 +107,8 @@ function _sortByStart(features) {
   });
 }
 
+const _SIDEBAR_HIDDEN_KEY = "twag_sidebar_hidden";
+
 function initMapSidebar(config) {
   const map = config.map;
   const sourceId = config.sourceId;
@@ -114,14 +116,49 @@ function initMapSidebar(config) {
   const onSelect = config.onSelect || (() => {});
 
   const root = document.getElementById("sidebar");
-  if (!root) return null;
+  const stage = document.getElementById("map-stage");
+  if (!root || !stage) return null;
 
   root.innerHTML = `
-    <div class="sidebar-header" id="sidebar-count">Loading…</div>
+    <div class="sidebar-header">
+      <span id="sidebar-count">Loading…</span>
+      <button class="sidebar-hide-btn" type="button" aria-label="Hide events list" title="Hide events list">×</button>
+    </div>
     <div class="sidebar-list" id="sidebar-list"></div>
   `;
   const countEl = root.querySelector("#sidebar-count");
   const listEl = root.querySelector("#sidebar-list");
+  const hideBtn = root.querySelector(".sidebar-hide-btn");
+
+  // Floating "show" button rendered once and revealed when the sidebar is hidden.
+  let showBtn = document.getElementById("sidebar-show-btn");
+  if (!showBtn) {
+    showBtn = document.createElement("button");
+    showBtn.id = "sidebar-show-btn";
+    showBtn.type = "button";
+    showBtn.setAttribute("aria-label", "Show events list");
+    showBtn.title = "Show events list";
+    showBtn.innerHTML = `<span class="sidebar-show-btn-icon" aria-hidden="true">‹</span><span class="sidebar-show-btn-label">Events</span>`;
+    stage.appendChild(showBtn);
+  }
+
+  function setHidden(hidden, opts) {
+    opts = opts || {};
+    stage.classList.toggle("sidebar-hidden", hidden);
+    try { localStorage.setItem(_SIDEBAR_HIDDEN_KEY, hidden ? "1" : "0"); } catch (_) {}
+    // Let CSS transition finish, then have Mapbox refit the canvas.
+    setTimeout(() => { if (map && map.resize) map.resize(); }, opts.delay || 220);
+  }
+
+  // Restore prior state (default: visible).
+  try {
+    if (localStorage.getItem(_SIDEBAR_HIDDEN_KEY) === "1") {
+      setHidden(true, { delay: 0 });
+    }
+  } catch (_) {}
+
+  hideBtn.addEventListener("click", () => setHidden(true));
+  showBtn.addEventListener("click", () => setHidden(false));
 
   let selectedEventId = null;
   let lastFeatures = [];
