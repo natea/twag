@@ -15,7 +15,13 @@ function parseDateFromHashG() {
 }
 
 function setDateInHashG(date) {
-  window.location.hash = "date=" + date;
+  // Merge into existing hash params so the search query (q=…) survives a
+  // date chip click. Without this, switching days erases the user's search.
+  const raw = (window.location.hash || "").replace(/^#/, "");
+  const params = new URLSearchParams(raw);
+  if (date) params.set("date", date);
+  else params.delete("date");
+  window.location.hash = params.toString();
 }
 
 function formatHumanDateG(iso) {
