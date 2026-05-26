@@ -1,7 +1,7 @@
-/* Preserve the current URL hash (e.g. #date=2026-05-28) when switching
- * between Map and Gallery tabs. Intercepts clicks on .tab-nav anchors
- * and rewrites the href to include the live hash at click time, so
- * changing the date on one tab carries through when you switch.
+/* Preserve the current URL hash (e.g. #date=2026-05-28&q=ai) when
+ * switching between Map and Gallery tabs. Intercepts clicks on .tab-nav
+ * anchors and rewrites the href to include the live hash at click time,
+ * so the active date AND search query carry through when you switch.
  */
 (function () {
   function viewOf(href) {

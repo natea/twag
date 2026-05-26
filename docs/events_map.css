@@ -41,6 +41,32 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   .date-btn { padding: 6px 10px; }
 }
 
+#search-row {
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+#search {
+  width: 100%;
+  max-width: 320px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background: #f7f7f7;
+  outline: none;
+  transition: border-color 0.1s, background 0.1s;
+}
+#search:focus {
+  border-color: #e8543e;
+  background: #fff;
+}
+@media (max-width: 640px) {
+  #search-row { padding: 6px 12px; }
+  #search { max-width: none; font-size: 14px; }
+}
+
 /* Map + sidebar layout: row on desktop, column (sidebar as bottom sheet)
    on mobile. Flex parent (#map-stage) is itself a flex-1 child of body
    so it claims the space below the date picker. */

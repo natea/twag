@@ -43,6 +43,9 @@
     <a href="./events_gallery_nyc.html">Gallery</a>
   </nav>
   <div id="date-picker"></div>
+  <div id="search-row">
+    <input id="search" type="search" placeholder="Search events…" autocomplete="off" spellcheck="false">
+  </div>
   <div id="map-stage">
     <div id="map"></div>
     <aside id="sidebar"></aside>
@@ -54,6 +57,8 @@
   <script src="./posthog.js"></script>
   <script src="./datadog.js"></script>
   <script src="./tab_nav.js"></script>
+  <script src="./vendor/fuse.basic.min.js"></script>
+  <script src="./search.js"></script>
   <script src="./events_map_sidebar.js"></script>
   <script src="./events_map.js"></script>
   <script>
