@@ -174,7 +174,12 @@ async function initEventGallery(config) {
   }
 
   if (typeof initSearch === "function") {
-    search = initSearch({ events: allEvents, onChange: refresh });
+    search = initSearch({
+      events: allEvents,
+      onChange: refresh,
+      citySlug: citySlug,
+      view: "gallery",
+    });
   }
 
   refresh();

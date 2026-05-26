@@ -189,6 +189,8 @@ async function initEventMap(config) {
     search = initSearch({
       events: fullGeoJson.features.map((f) => f.properties),
       onChange: refresh,
+      citySlug: config.citySlug,
+      view: "map",
     });
   }
 

@@ -63,6 +63,8 @@
   window.initSearch = function (config) {
     const events = config.events || [];
     const onChange = config.onChange || (() => {});
+    const citySlug = config.citySlug || "";
+    const view = config.view || "";
     const input = document.getElementById("search");
     if (!input) {
       console.warn("[search] #search input not found; skipping init.");
@@ -72,6 +74,7 @@
     const fuse = new Fuse(events, FUSE_OPTIONS);
     let currentQuery = "";
     let currentMatchSet = null; // null = no query active, all events match
+    let lastTrackedQuery = "";
 
     function recompute() {
       const q = currentQuery.trim();
@@ -83,6 +86,24 @@
       currentMatchSet = new Set(results.map((r) => r.item.event_id));
     }
 
+    // Track "settled" queries — fires after the user pauses typing for
+    // ~700ms, deduped against the previous tracked query so we don't
+    // capture every intermediate keystroke.
+    const trackSettledSearch = debounce(() => {
+      const q = currentQuery.trim();
+      if (!q || q === lastTrackedQuery) return;
+      lastTrackedQuery = q;
+      if (window.twagTrack) {
+        twagTrack("search_performed", {
+          city: citySlug,
+          view: view,
+          query: q,
+          query_length: q.length,
+          match_count: currentMatchSet ? currentMatchSet.size : 0,
+        });
+      }
+    }, 700);
+
     function applyQuery(query, opts) {
       opts = opts || {};
       currentQuery = String(query || "");
@@ -90,6 +111,7 @@
       recompute();
       if (opts.fromUser !== false) setQueryInHash(currentQuery);
       onChange();
+      if (opts.fromUser !== false) trackSettledSearch();
     }
 
     const debouncedApply = debounce(() => applyQuery(input.value), 120);
