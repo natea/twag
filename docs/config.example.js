@@ -9,3 +9,8 @@ window.TWAG_MAPBOX_TOKEN = "pk.YOUR_PUBLIC_TOKEN_HERE";
 // origin under Project Settings → CORS in the PostHog dashboard.
 // Leave blank to disable analytics entirely.
 window.TWAG_POSTHOG_KEY = "phc_YOUR_POSTHOG_KEY_HERE";
+
+// Datadog RUM. applicationId is a UUID; clientToken starts with "pub".
+// Both are public client-side credentials. Leave blank to disable.
+window.TWAG_DATADOG_APPLICATION_ID = "YOUR_DATADOG_APPLICATION_ID_HERE";
+window.TWAG_DATADOG_CLIENT_TOKEN = "pubYOUR_DATADOG_CLIENT_TOKEN_HERE";
