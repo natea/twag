@@ -119,9 +119,24 @@ async function initEventMap(config) {
       .setHTML(popupHtml(props))
       .addTo(map);
     activePopup.on("close", () => { activePopup = null; });
+
+    // Track RSVP click-throughs from the popup.
+    const rsvpEl = activePopup.getElement().querySelector(".popup-rsvp");
+    if (rsvpEl && window.twagTrack) {
+      rsvpEl.addEventListener("click", () => {
+        twagTrack("rsvp_clicked", {
+          city: config.citySlug,
+          event_id: props.event_id || "",
+          source: "map_popup",
+        });
+      });
+    }
   }
 
+  let lastTrackedDate = null;
+
   function refresh() {
+    const previousDate = lastTrackedDate;
     buildDatePicker(datePicker, config.dateRange, activeDate, (date) => {
       activeDate = date;
       setDateInHash(date);
@@ -135,6 +150,24 @@ async function initEventMap(config) {
       source.setData(filtered);
     }
     if (sidebar) sidebar.refresh();
+
+    if (window.twagTrack) {
+      if (previousDate === null) {
+        twagTrack("map_view_loaded", {
+          city: config.citySlug,
+          date: activeDate,
+          event_count: filtered.features.length,
+        });
+      } else if (previousDate !== activeDate) {
+        twagTrack("date_filter_changed", {
+          city: config.citySlug,
+          view: "map",
+          from_date: previousDate,
+          to_date: activeDate,
+        });
+      }
+      lastTrackedDate = activeDate;
+    }
   }
 
   map.on("load", () => {
@@ -195,6 +228,12 @@ async function initEventMap(config) {
     map.on("click", "clusters", (e) => {
       const features = map.queryRenderedFeatures(e.point, { layers: ["clusters"] });
       const clusterId = features[0].properties.cluster_id;
+      if (window.twagTrack) {
+        twagTrack("map_cluster_clicked", {
+          city: config.citySlug,
+          cluster_size: features[0].properties.point_count || 0,
+        });
+      }
       map.getSource("events").getClusterExpansionZoom(clusterId, (err, zoom) => {
         if (err) return;
         map.easeTo({ center: features[0].geometry.coordinates, zoom });
@@ -205,6 +244,13 @@ async function initEventMap(config) {
       const feature = e.features[0];
       const [lon, lat] = feature.geometry.coordinates;
       showPopup([lon, lat], feature.properties);
+      if (window.twagTrack) {
+        twagTrack("map_pin_clicked", {
+          city: config.citySlug,
+          event_id: feature.properties.event_id || "",
+          neighborhood: feature.properties.neighborhood || "",
+        });
+      }
       // Mirror selection in the sidebar (no pan — see plan decision #4).
       if (sidebar && feature.properties.event_id) {
         sidebar.select(feature.properties.event_id, { fromUser: false });

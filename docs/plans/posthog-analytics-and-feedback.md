@@ -207,24 +207,22 @@ Two complementary mechanisms:
 6. Click the feedback link in the header — survey panel appears.
 7. Switch to NYC map, repeat — events arrive with `city: nyc`.
 
-## Open questions to confirm before implementing
+## Decisions
 
-1. **PostHog Cloud region**: US (`us.i.posthog.com`) or EU (`eu.i.posthog.com`)?
-   US is default and lower-latency for North-American visitors; EU is required
-   only if we expect significant EU traffic and want data residency there.
-   Recommendation: US.
-2. **Session replay**: on or off for v1? It's the most useful debugging tool
-   PostHog has, but it consumes the recording quota fast. Recommendation:
-   **on, sampled at 10%** — `session_recording: { sampleRate: 0.10 }`.
-3. **Autocapture**: on or off? Captures every click + form submit
-   automatically, very useful for funnels we didn't think to set up. Some
-   teams find it noisy. Recommendation: **on**; we can always filter in the
-   UI.
-4. **Feedback mechanism**: PostHog Survey only, or also a mailto: link as a
-   fallback? Recommendation: both — survey for engaged feedback, mailto for
-   bug reports.
-5. **Privacy page**: write a one-page `docs/privacy.md` and link it from the
-   header / index? Low effort, polite, and good for any GDPR-conscious user.
+1. **Region**: US (`us.i.posthog.com`).
+2. **Session replay**: on, 100% (every session). Heads-up: free tier is 5k
+   recordings/month, so if traffic exceeds ~150 sessions/day across both
+   cities, recordings pause until the quota resets. Analytics still capture.
+   We can drop to 10% sampling later if quota becomes the binding constraint.
+3. **Autocapture**: on. Every click + form submit recorded automatically; we
+   filter in the PostHog UI.
+4. **Feedback**: PostHog Survey widget (auto-trigger after 45 s) *plus* a
+   `mailto:` link in the header credit line. Survey for engaged feedback,
+   email for bug reports.
+5. **Privacy page**: skipping `docs/privacy.md` for v1 — the site collects
+   no PII, no auth, and PostHog runs in anonymous mode with
+   `person_profiles: "identified_only"`. We can add later if EU traffic
+   becomes non-trivial.
 
 ## Out of scope (deliberate)
 

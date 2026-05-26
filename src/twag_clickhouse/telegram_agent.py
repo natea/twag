@@ -80,7 +80,7 @@ def _help_reply() -> str:
         "`/verbose` - show the agent thinking stream\n"
         "`/quiet` - show only result updates and final answers\n\n"
         "Use concrete criteria like topic, date, neighborhood, host, capacity, RSVP status, or time.\n\n"
-        "Made by Nate Aune ([@natea](https://twitter.com/natea))."
+        "Made by Nate Aune ([@natea](https://x.com/natea))."
     )
 
 

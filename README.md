@@ -2,7 +2,7 @@
 
 Use the NY Tech Week bot through Telegram: [https://t.me/Twagbot](https://t.me/Twagbot)
 
-## Boston port by Nate Aune ([@natea](https://twitter.com/natea))
+## Boston port by Nate Aune ([@natea](https://x.com/natea))
 
 I forked the upstream NY Tech Week bot and repurposed it for Boston Tech Week
 2026 by parameterizing the entire stack around a `TWAG_CITY` env var (NYC and
