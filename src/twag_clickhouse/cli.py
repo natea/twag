@@ -10,10 +10,14 @@ try:
 except ImportError:
     load_dotenv = None
 
+from .city import active_city, load_city
 from .client import ClickHouseService
 from .cloud import ClickHouseCloudClient, ClickHouseCloudConfig
 from .conversation import AgentConversation
 from .config import ClickHouseConfig
+from .geocode import geocode_city
+from .geojson_export import build_gallery, build_geojson
+from .thumbnails import build_thumbnails
 from .nytw import NytwDataset, inspect_nytw_dataset, load_nytw_dataset
 from .rendering import render_terminal_markdown
 from .senso import SensoConfig, SensoService, senso_sync_overview, sync_senso_kb
@@ -65,15 +69,19 @@ def resolve_cloud_service(_: argparse.Namespace) -> int:
     return 0
 
 
+def _resolve_source(args: argparse.Namespace) -> str:
+    return args.source or active_city().dataset_path
+
+
 def inspect_nytw(args: argparse.Namespace) -> int:
-    _print_json(inspect_nytw_dataset(NytwDataset.from_path(args.source)))
+    _print_json(inspect_nytw_dataset(NytwDataset.from_path(_resolve_source(args))))
     return 0
 
 
 def load_nytw(args: argparse.Namespace) -> int:
     counts = load_nytw_dataset(
         _service(),
-        NytwDataset.from_path(args.source),
+        NytwDataset.from_path(_resolve_source(args)),
         replace=args.replace,
         batch_size=args.batch_size,
     )
@@ -191,10 +199,41 @@ def run_telegram_nytw_agent(_: argparse.Namespace) -> int:
     return run_telegram_agent()
 
 
+def geocode_venues(args: argparse.Namespace) -> int:
+    result = geocode_city(refresh=args.refresh, limit=args.limit)
+    _print_json(result)
+    return 0
+
+
+def export_geojson(args: argparse.Namespace) -> int:
+    _ = args
+    result = build_geojson()
+    _print_json(result)
+    return 0
+
+
+def export_gallery(args: argparse.Namespace) -> int:
+    _ = args
+    result = build_gallery()
+    _print_json(result)
+    return 0
+
+
+def make_thumbnails(args: argparse.Namespace) -> int:
+    result = build_thumbnails(refresh=args.refresh)
+    _print_json(result)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog=os.path.basename(sys.argv[0]) if sys.argv else "twag",
-        description="TWAG NY Tech Week ClickHouse agent CLI.",
+        description="TWAG Tech Week ClickHouse agent CLI.",
+    )
+    parser.add_argument(
+        "--city",
+        default=None,
+        help="Override TWAG_CITY for this invocation (e.g. nyc, boston).",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -236,8 +275,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     inspect_nytw_parser.add_argument(
         "--source",
-        default="data/nytw-2026-for-agents",
-        help="Path containing events/, users.json, and manifest.json",
+        default=None,
+        help="Path containing events/, users.json, and manifest.json (defaults to the active city's dataset)",
     )
     inspect_nytw_parser.set_defaults(func=inspect_nytw)
 
@@ -247,8 +286,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     load_nytw_parser.add_argument(
         "--source",
-        default="data/nytw-2026-for-agents",
-        help="Path containing events/, users.json, and manifest.json",
+        default=None,
+        help="Path containing events/, users.json, and manifest.json (defaults to the active city's dataset)",
     )
     load_nytw_parser.add_argument(
         "--replace",
@@ -375,6 +414,46 @@ def build_parser() -> argparse.ArgumentParser:
     )
     telegram_agent_parser.set_defaults(func=run_telegram_nytw_agent)
 
+    geocode_parser = subparsers.add_parser(
+        "geocode-venues",
+        help="Geocode each event venue via OpenCage and cache to venues.json",
+    )
+    geocode_parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-geocode every venue, ignoring the existing cache",
+    )
+    geocode_parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Only geocode the first N events (debug)",
+    )
+    geocode_parser.set_defaults(func=geocode_venues)
+
+    geojson_parser = subparsers.add_parser(
+        "build-geojson",
+        help="Join events + venues.json into events.geojson for the map page",
+    )
+    geojson_parser.set_defaults(func=export_geojson)
+
+    gallery_parser = subparsers.add_parser(
+        "build-gallery",
+        help="Emit docs/<city>_gallery.json for the image gallery page",
+    )
+    gallery_parser.set_defaults(func=export_gallery)
+
+    thumbs_parser = subparsers.add_parser(
+        "build-thumbnails",
+        help="Resize event images into docs/<city>/thumbs/ (~400px JPEG) for the gallery",
+    )
+    thumbs_parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-render every thumb, ignoring existing files",
+    )
+    thumbs_parser.set_defaults(func=make_thumbnails)
+
     return parser
 
 
@@ -384,6 +463,10 @@ def main(argv: list[str] | None = None) -> int:
 
     parser = build_parser()
     args = parser.parse_args(argv)
+
+    if args.city:
+        load_city(args.city)  # validate
+        os.environ["TWAG_CITY"] = args.city.strip().lower()
 
     try:
         return args.func(args)
