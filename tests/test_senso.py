@@ -6,6 +6,7 @@ from twag_clickhouse.senso import (
     SensoNode,
     chunk_text,
     extract_senso_text,
+    senso_sync_overview,
     sync_senso_kb,
 )
 
@@ -100,7 +101,39 @@ def test_sync_senso_kb_creates_schema_and_inserts_nodes_documents_chunks() -> No
     assert result["documents"] == 1
     assert result["chunks"] >= 1
     assert any("CREATE TABLE IF NOT EXISTS senso_kb_nodes" in sql for sql in clickhouse.commands)
+    assert any("CREATE TABLE IF NOT EXISTS senso_sync_changes" in sql for sql in clickhouse.commands)
     assert any("TRUNCATE TABLE IF EXISTS senso_kb_nodes" in sql for sql in clickhouse.commands)
     assert clickhouse.inserts["senso_kb_documents"][0][2] == "Refund Policy"
     assert "30 days" in clickhouse.inserts["senso_kb_chunks"][0][4]
     assert clickhouse.inserts["senso_sync_runs"][0][3] == "complete"
+    assert clickhouse.inserts["senso_sync_changes"][0][2] == "inserted"
+    assert result["changes"]["inserted"] == 1
+
+
+def test_senso_sync_overview_reads_runs_and_changes() -> None:
+    class OverviewClickHouse:
+        def query(self, sql: str, parameters: dict[str, Any] | None = None) -> list[dict]:
+            if "FROM senso_sync_runs" in sql:
+                return [
+                    {
+                        "run_id": "run-1",
+                        "status": "complete",
+                        "nodes": 2,
+                        "documents": 1,
+                        "chunks": 1,
+                    }
+                ]
+            if "GROUP BY run_id, change_type" in sql:
+                return [
+                    {"run_id": "run-1", "change_type": "inserted", "count": 1},
+                    {"run_id": "run-1", "change_type": "unchanged", "count": 3},
+                ]
+            if "FROM senso_sync_changes" in sql:
+                return [{"run_id": "run-1", "change_type": "inserted", "title": "Refund Policy"}]
+            return []
+
+    overview = senso_sync_overview(OverviewClickHouse(), limit=1)  # type: ignore[arg-type]
+
+    assert overview["runs"][0]["changes"]["inserted"] == 1
+    assert overview["runs"][0]["changes"]["unchanged"] == 3
+    assert overview["changed_items"][0]["title"] == "Refund Policy"

@@ -415,8 +415,18 @@ twag-nytw-tool-server
 Deploy that server on a public host with the same `CLICKHOUSE_*` environment
 variables used by the CLI. The server exposes:
 
+- `GET /`
 - `GET /health`
 - `POST /query` with `{ "sql": "SELECT ... FROM nytw_events ..." }`
+
+For a public Nimble/tool server, scanner traffic is normal. These defaults keep
+the journal focused on real service logs:
+
+```bash
+NYTW_TOOL_ACCESS_LOG=false
+NYTW_TOOL_SUPPRESS_SCANNER_NOISE=true
+NYTW_TOOL_LOG_LEVEL=info
+```
 
 Create a Subconscious hosted run that calls the public tool:
 
@@ -567,6 +577,26 @@ SENSO_SYNC_ENABLED=true
 SENSO_SYNC_INTERVAL_SECONDS=3600
 ```
 
+Inspect the latest Senso/Nimble database sync overview:
+
+```bash
+twag sync-senso-log
+twag sync-senso-log --limit 5 --item-limit 50
+```
+
+The overview reads these ClickHouse tables:
+
+- `senso_sync_runs`: one row per sync scan with status, timing, and final totals
+- `senso_sync_changes`: document-level inserted/updated/unchanged/removed rows
+  for each sync run
+
+On the Ubuntu box:
+
+```bash
+cd /opt/twag
+.venv/bin/twag sync-senso-log --limit 3 --item-limit 25
+```
+
 Override `TWAG_NIMBLE_COMMAND` in `/etc/twag/twag.env` if your Nimble process is
 different.
 
@@ -590,6 +620,21 @@ Follow one service:
 ```bash
 journalctl -u twag-telegram-agent@$USER.service -f
 journalctl -u twag-nimble@$USER.service -f
+```
+
+On the current root deployment:
+
+```bash
+journalctl -u twag-telegram-agent@root.service -f
+journalctl -u twag-nimble@root.service -f
+tail -f /var/log/twag/questions.jsonl
+```
+
+Telegram questions are written as JSON Lines to `TELEGRAM_QUESTION_LOG_PATH`
+when that env var is set. The deployed default is:
+
+```bash
+TELEGRAM_QUESTION_LOG_PATH=/var/log/twag/questions.jsonl
 ```
 
 If you see `Failed to set up mount namespacing: /tmp/twag: No such file or
