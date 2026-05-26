@@ -244,7 +244,12 @@ function initMapSidebar(config) {
     applySelectionDom();
     const row = listEl.querySelector(`.sidebar-row[data-event-id="${CSS.escape(eventId)}"]`);
     if (row) {
-      row.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      // Click-from-sidebar should snap the row's title to the top of the
+      // visible area; click-from-pin should only nudge into view (no lurch).
+      row.scrollIntoView({
+        block: opts.fromUser ? "start" : "nearest",
+        behavior: "smooth",
+      });
       // Track RSVP click-throughs from inside the expanded card.
       const rsvpEl = row.querySelector(".sidebar-detail-rsvp");
       if (rsvpEl && window.twagTrack && !rsvpEl.dataset.tracked) {
