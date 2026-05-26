@@ -57,6 +57,9 @@ function _rowHtml(citySlug, props) {
     ? `<div class="sidebar-detail-stats">${going}${remaining}</div>` : "";
   return `
     <button class="sidebar-row" type="button" data-event-id="${_esc(eventId)}" aria-selected="false">
+      <div class="sidebar-row-thumb" aria-hidden="true">
+        <img loading="lazy" src="${_esc(_thumbUrl(citySlug, eventId))}" alt="">
+      </div>
       <div class="sidebar-row-body">
         <div class="sidebar-row-title">${_esc(props.title)} ${cap}</div>
         <div class="sidebar-row-meta">${_esc(time)}</div>
