@@ -35,16 +35,30 @@ function _humanWhere(props) {
   return [props.venue_name, props.neighborhood].filter(Boolean).join(" · ");
 }
 
-function _isPastNow(endIso) {
-  if (!endIso) return false;
-  const t = Date.parse(endIso);
-  return Number.isFinite(t) && t < Date.now();
+// Assume any event missing an explicit end_iso runs at most this long
+// past its start time. Matches Partiful's typical event length, biased
+// generous so we don't grey events that are still actually happening.
+const _DEFAULT_EVENT_DURATION_MS = 3 * 60 * 60 * 1000;
+
+function _isPastNow(props) {
+  const now = Date.now();
+  if (props.end_iso) {
+    const t = Date.parse(props.end_iso);
+    if (Number.isFinite(t)) return t < now;
+  }
+  // Fallback: many Partiful events list a start but no end. Treat them as
+  // past if they started more than _DEFAULT_EVENT_DURATION_MS ago.
+  if (props.start_iso) {
+    const t = Date.parse(props.start_iso);
+    if (Number.isFinite(t)) return t + _DEFAULT_EVENT_DURATION_MS < now;
+  }
+  return false;
 }
 
 function _rowHtml(citySlug, props) {
   const eventId = props.event_id;
   const cap = props.at_capacity ? `<span class="sidebar-row-cap">full</span>` : "";
-  const pastClass = _isPastNow(props.end_iso) ? " is-past" : "";
+  const pastClass = _isPastNow(props) ? " is-past" : "";
   const time = _humanTime(props);
   const where = _humanWhere(props);
   const going = (typeof props.going_guest_count === "number")

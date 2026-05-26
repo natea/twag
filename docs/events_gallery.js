@@ -58,10 +58,24 @@ function escapeHtmlG(value) {
     .replace(/"/g, "&quot;");
 }
 
-function _isPastNowG(endIso) {
-  if (!endIso) return false;
-  const t = Date.parse(endIso);
-  return Number.isFinite(t) && t < Date.now();
+// Assume any event missing an explicit end_iso runs at most this long
+// past its start time. Matches Partiful's typical event length, biased
+// generous so we don't grey events that are still actually happening.
+const _DEFAULT_EVENT_DURATION_MS = 3 * 60 * 60 * 1000;
+
+function _isPastNowG(event) {
+  const now = Date.now();
+  if (event.end_iso) {
+    const t = Date.parse(event.end_iso);
+    if (Number.isFinite(t)) return t < now;
+  }
+  // Fallback: many Partiful events list a start but no end. Treat them as
+  // past if they started more than _DEFAULT_EVENT_DURATION_MS ago.
+  if (event.start_iso) {
+    const t = Date.parse(event.start_iso);
+    if (Number.isFinite(t)) return t + _DEFAULT_EVENT_DURATION_MS < now;
+  }
+  return false;
 }
 
 function renderTile(event) {
@@ -69,7 +83,7 @@ function renderTile(event) {
   const where = [event.venue_name, event.neighborhood].filter(Boolean).join(" · ");
   const cap = event.at_capacity ? `<span class="tile-cap">at capacity</span>` : "";
   const href = event.rsvp_url || "#";
-  const pastClass = _isPastNowG(event.end_iso) ? " is-past" : "";
+  const pastClass = _isPastNowG(event) ? " is-past" : "";
   const going = (typeof event.going_guest_count === "number")
     ? `<span class="overlay-stat">${event.going_guest_count} going</span>`
     : "";
