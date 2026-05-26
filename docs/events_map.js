@@ -108,6 +108,17 @@ async function initEventMap(config) {
 
   let sidebar = null;
   let activePopup = null;
+  let search = null;
+
+  function filterByDateAndSearch() {
+    const matchIds = search ? search.currentMatchIds() : null;
+    const byDate = filterFeaturesByDate(fullGeoJson, activeDate);
+    if (!matchIds) return byDate;
+    return {
+      type: "FeatureCollection",
+      features: byDate.features.filter((f) => matchIds.has(f.properties.event_id)),
+    };
+  }
 
   function showPopup(lonLat, props) {
     if (activePopup) {
@@ -142,9 +153,12 @@ async function initEventMap(config) {
       setDateInHash(date);
       refresh();
     });
-    const filtered = filterFeaturesByDate(fullGeoJson, activeDate);
-    document.getElementById("count").textContent =
-      `${filtered.features.length} events on ${formatHumanDate(activeDate)}`;
+    const filtered = filterByDateAndSearch();
+    const query = search ? search.currentQuery() : "";
+    const dateLabel = formatHumanDate(activeDate);
+    document.getElementById("count").textContent = query
+      ? `${filtered.features.length} events matching "${query}" on ${dateLabel}`
+      : `${filtered.features.length} events on ${dateLabel}`;
     const source = map.getSource("events");
     if (source) {
       source.setData(filtered);
@@ -170,10 +184,18 @@ async function initEventMap(config) {
     }
   }
 
+  // Build the search index once we have the full feature list.
+  if (typeof initSearch === "function") {
+    search = initSearch({
+      events: fullGeoJson.features.map((f) => f.properties),
+      onChange: refresh,
+    });
+  }
+
   map.on("load", () => {
     map.addSource("events", {
       type: "geojson",
-      data: filterFeaturesByDate(fullGeoJson, activeDate),
+      data: filterByDateAndSearch(),
       cluster: true,
       clusterMaxZoom: 14,
       clusterRadius: 50,

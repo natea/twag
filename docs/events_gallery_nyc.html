@@ -42,6 +42,9 @@
     <a href="./events_gallery_nyc.html" class="active">Gallery</a>
   </nav>
   <div id="date-picker"></div>
+  <div id="search-row">
+    <input id="search" type="search" placeholder="Search events…" autocomplete="off" spellcheck="false">
+  </div>
   <div id="gallery-grid"></div>
   <div id="error"></div>
 
@@ -49,6 +52,8 @@
   <script src="./posthog.js"></script>
   <script src="./datadog.js"></script>
   <script src="./tab_nav.js"></script>
+  <script src="./vendor/fuse.basic.min.js"></script>
+  <script src="./search.js"></script>
   <script src="./events_gallery.js"></script>
   <script>
     initEventGallery({

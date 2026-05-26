@@ -112,6 +112,7 @@ async function initEventGallery(config) {
   const countEl = document.getElementById("count");
 
   let lastTrackedDate = null;
+  let search = null;
 
   function refresh() {
     const previousDate = lastTrackedDate;
@@ -120,12 +121,21 @@ async function initEventGallery(config) {
       setDateInHashG(date);
       refresh();
     });
-    const filtered = allEvents.filter(e => e.event_date === activeDate);
-    countEl.textContent =
-      `${filtered.length} events on ${formatHumanDateG(activeDate)}`;
+    const byDate = allEvents.filter(e => e.event_date === activeDate);
+    const matchIds = search ? search.currentMatchIds() : null;
+    const filtered = matchIds
+      ? byDate.filter(e => matchIds.has(e.event_id))
+      : byDate;
+    const query = search ? search.currentQuery() : "";
+    const dateLabel = formatHumanDateG(activeDate);
+    countEl.textContent = query
+      ? `${filtered.length} events matching "${query}" on ${dateLabel}`
+      : `${filtered.length} events on ${dateLabel}`;
     grid.innerHTML = filtered.length
       ? filtered.map(renderTile).join("")
-      : `<div class="empty">No events with images on this day.</div>`;
+      : `<div class="empty">${query
+          ? `No events match "${escapeHtmlG(query)}" on ${dateLabel}.`
+          : "No events with images on this day."}</div>`;
 
     if (window.twagTrack) {
       if (previousDate === null) {
@@ -161,6 +171,10 @@ async function initEventGallery(config) {
         });
       });
     }
+  }
+
+  if (typeof initSearch === "function") {
+    search = initSearch({ events: allEvents, onChange: refresh });
   }
 
   refresh();
