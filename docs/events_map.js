@@ -118,12 +118,16 @@ async function initEventMap(config) {
 
   function filterByDateAndSearch() {
     const matchIds = search ? search.currentMatchIds() : null;
-    const byDate = filterFeaturesByDate(fullGeoJson, activeDate);
-    if (!matchIds) return byDate;
-    return {
-      type: "FeatureCollection",
-      features: byDate.features.filter((f) => matchIds.has(f.properties.event_id)),
-    };
+    // When a search is active, ignore the date filter — show matches from
+    // any day so users find what they're looking for regardless of which
+    // date chip is selected.
+    if (matchIds) {
+      return {
+        type: "FeatureCollection",
+        features: fullGeoJson.features.filter((f) => matchIds.has(f.properties.event_id)),
+      };
+    }
+    return filterFeaturesByDate(fullGeoJson, activeDate);
   }
 
   function showPopup(lonLat, props) {
@@ -163,7 +167,7 @@ async function initEventMap(config) {
     const query = search ? search.currentQuery() : "";
     const dateLabel = formatHumanDate(activeDate);
     document.getElementById("count").textContent = query
-      ? `${filtered.features.length} events matching "${query}" on ${dateLabel}`
+      ? `${filtered.features.length} events matching "${query}" across all days`
       : `${filtered.features.length} events on ${dateLabel}`;
     const source = map.getSource("events");
     if (source) {
@@ -205,6 +209,9 @@ async function initEventMap(config) {
       citySlug: config.citySlug,
       view: "map",
     });
+    // Sidebar reads window.__twagSearch.currentMatchOrder() so it can sort
+    // its rows by Fuse relevance when a search is active.
+    window.__twagSearch = search;
   }
 
   map.on("load", () => {

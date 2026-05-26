@@ -78,12 +78,24 @@ function _isPastNowG(event) {
   return false;
 }
 
-function renderTile(event) {
+function _humanShortDateG(eventDate) {
+  if (!eventDate) return "";
+  const [y, m, d] = eventDate.split("-").map(Number);
+  if (!y || !m || !d) return "";
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.toLocaleDateString(undefined, {
+    weekday: "short", month: "short", day: "numeric", timeZone: "UTC",
+  });
+}
+
+function renderTile(event, crossDay) {
   const time = [event.start_time, event.end_time].filter(Boolean).join("–");
   const where = [event.venue_name, event.neighborhood].filter(Boolean).join(" · ");
   const cap = event.at_capacity ? `<span class="tile-cap">at capacity</span>` : "";
   const href = event.rsvp_url || "#";
   const pastClass = _isPastNowG(event) ? " is-past" : "";
+  const dayPrefix = crossDay ? _humanShortDateG(event.event_date) : "";
+  const whenLine = dayPrefix ? `${dayPrefix} · ${time}` : time;
   const going = (typeof event.going_guest_count === "number")
     ? `<span class="overlay-stat">${event.going_guest_count} going</span>`
     : "";
@@ -112,7 +124,7 @@ function renderTile(event) {
       </div>
       <div class="tile-body">
         <div class="tile-title">${escapeHtmlG(event.title)} ${cap}</div>
-        <div class="tile-meta">${escapeHtmlG(time)}</div>
+        <div class="tile-meta">${escapeHtmlG(whenLine)}</div>
         <div class="tile-meta">${escapeHtmlG(where)}</div>
         ${event.host ? `<div class="tile-host">${escapeHtmlG(event.host)}</div>` : ""}
       </div>
@@ -150,25 +162,39 @@ async function initEventGallery(config) {
       setDateInHashG(date);
       refresh();
     });
-    const byDate = allEvents.filter(e => e.event_date === activeDate);
     const matchIds = search ? search.currentMatchIds() : null;
-    const filtered = matchIds
-      ? byDate.filter(e => matchIds.has(e.event_id))
-      : byDate;
     const query = search ? search.currentQuery() : "";
     const dateLabel = formatHumanDateG(activeDate);
+    let filtered;
+    if (matchIds) {
+      // Cross-day search: include matches from any day, ordered by Fuse relevance.
+      const order = search.currentMatchOrder() || [];
+      const rank = new Map(order.map((id, i) => [id, i]));
+      filtered = allEvents
+        .filter(e => matchIds.has(e.event_id))
+        .sort((a, b) => {
+          const ra = rank.has(a.event_id) ? rank.get(a.event_id) : Number.MAX_SAFE_INTEGER;
+          const rb = rank.has(b.event_id) ? rank.get(b.event_id) : Number.MAX_SAFE_INTEGER;
+          return ra - rb;
+        });
+    } else {
+      filtered = allEvents.filter(e => e.event_date === activeDate);
+    }
     countEl.textContent = query
-      ? `${filtered.length} events matching "${query}" on ${dateLabel}`
+      ? `${filtered.length} events matching "${query}" across all days`
       : `${filtered.length} events on ${dateLabel}`;
+    const crossDay = !!matchIds;
     grid.innerHTML = filtered.length
-      ? filtered.map(renderTile).join("")
+      ? filtered.map(e => renderTile(e, crossDay)).join("")
       : `<div class="empty">${query
-          ? `No events match "${escapeHtmlG(query)}" on ${dateLabel}.`
+          ? `No events match "${escapeHtmlG(query)}".`
           : "No events with images on this day."}</div>`;
 
     // Auto-scroll to the first current-or-upcoming tile, but only when the
-    // user changed days (not on every search keystroke).
-    if (shouldScroll && filtered.length) {
+    // user changed days (not on every search keystroke). Suppressed entirely
+    // while a search is active — the relevance-sorted first match should
+    // stay at the top of the grid.
+    if (shouldScroll && filtered.length && !matchIds) {
       lastScrolledDate = activeDate;
       const tiles = Array.from(grid.querySelectorAll(".tile"));
       const target = tiles.find((t) => !t.classList.contains("is-past"));

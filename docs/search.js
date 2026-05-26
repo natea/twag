@@ -73,17 +73,20 @@
 
     const fuse = new Fuse(events, FUSE_OPTIONS);
     let currentQuery = "";
-    let currentMatchSet = null; // null = no query active, all events match
+    let currentMatchSet = null;   // null = no query active, all events match
+    let currentMatchOrder = null; // array of event_ids in Fuse-relevance order
     let lastTrackedQuery = "";
 
     function recompute() {
       const q = currentQuery.trim();
       if (!q) {
         currentMatchSet = null;
+        currentMatchOrder = null;
         return;
       }
       const results = fuse.search(q);
-      currentMatchSet = new Set(results.map((r) => r.item.event_id));
+      currentMatchOrder = results.map((r) => r.item.event_id);
+      currentMatchSet = new Set(currentMatchOrder);
     }
 
     // Track "settled" queries — fires after the user pauses typing for
@@ -139,7 +142,8 @@
     });
 
     return {
-      currentMatchIds: () => currentMatchSet,   // Set<event_id> | null
+      currentMatchIds: () => currentMatchSet,      // Set<event_id> | null
+      currentMatchOrder: () => currentMatchOrder,  // string[] | null (relevance-ranked)
       currentQuery: () => currentQuery,
       applyQuery,
     };
