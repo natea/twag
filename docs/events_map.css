@@ -49,18 +49,22 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
 #search {
   width: 100%;
   max-width: 320px;
-  padding: 7px 12px;
+  padding: 7px 12px 7px 32px;
   font-size: 13px;
   font-family: inherit;
   border: 1px solid #ccc;
   border-radius: 16px;
-  background: #f7f7f7;
+  background-color: #f7f7f7;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 14px 14px;
   outline: none;
-  transition: border-color 0.1s, background 0.1s;
+  transition: border-color 0.1s, background-color 0.1s;
 }
 #search:focus {
   border-color: #e8543e;
-  background: #fff;
+  background-color: #fff;
 }
 @media (max-width: 640px) {
   #search-row { padding: 6px 12px; }
