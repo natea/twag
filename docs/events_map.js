@@ -169,7 +169,14 @@ async function initEventMap(config) {
     if (source) {
       source.setData(filtered);
     }
-    if (sidebar) sidebar.refresh();
+    if (sidebar) {
+      // Re-anchor the sidebar to current-or-next when the date changes
+      // (initial load also counts since previousDate is null).
+      if (previousDate !== activeDate && sidebar.scrollToNowOnNextRender) {
+        sidebar.scrollToNowOnNextRender();
+      }
+      sidebar.refresh();
+    }
 
     if (window.twagTrack) {
       if (previousDate === null) {

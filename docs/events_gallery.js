@@ -58,11 +58,18 @@ function escapeHtmlG(value) {
     .replace(/"/g, "&quot;");
 }
 
+function _isPastNowG(endIso) {
+  if (!endIso) return false;
+  const t = Date.parse(endIso);
+  return Number.isFinite(t) && t < Date.now();
+}
+
 function renderTile(event) {
   const time = [event.start_time, event.end_time].filter(Boolean).join("–");
   const where = [event.venue_name, event.neighborhood].filter(Boolean).join(" · ");
   const cap = event.at_capacity ? `<span class="tile-cap">at capacity</span>` : "";
   const href = event.rsvp_url || "#";
+  const pastClass = _isPastNowG(event.end_iso) ? " is-past" : "";
   const going = (typeof event.going_guest_count === "number")
     ? `<span class="overlay-stat">${event.going_guest_count} going</span>`
     : "";
@@ -76,7 +83,7 @@ function renderTile(event) {
     ? `<div class="overlay-stats">${going}${remaining}</div>`
     : "";
   return `
-    <a class="tile" href="${escapeHtmlG(href)}" target="_blank" rel="noopener">
+    <a class="tile${pastClass}" href="${escapeHtmlG(href)}" target="_blank" rel="noopener" data-event-id="${escapeHtmlG(event.event_id)}">
       <div class="tile-img-wrap">
         <img class="tile-img" loading="lazy" src="${escapeHtmlG(event.image)}" alt="${escapeHtmlG(event.title)}">
         <div class="tile-overlay">
@@ -118,10 +125,12 @@ async function initEventGallery(config) {
   const countEl = document.getElementById("count");
 
   let lastTrackedDate = null;
+  let lastScrolledDate = null;
   let search = null;
 
   function refresh() {
     const previousDate = lastTrackedDate;
+    const shouldScroll = activeDate !== lastScrolledDate;
     buildDatePickerG(datePicker, config.dateRange, activeDate, (date) => {
       activeDate = date;
       setDateInHashG(date);
@@ -142,6 +151,22 @@ async function initEventGallery(config) {
       : `<div class="empty">${query
           ? `No events match "${escapeHtmlG(query)}" on ${dateLabel}.`
           : "No events with images on this day."}</div>`;
+
+    // Auto-scroll to the first current-or-upcoming tile, but only when the
+    // user changed days (not on every search keystroke).
+    if (shouldScroll && filtered.length) {
+      lastScrolledDate = activeDate;
+      const tiles = Array.from(grid.querySelectorAll(".tile"));
+      const target = tiles.find((t) => !t.classList.contains("is-past"));
+      if (target) {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ block: "start", behavior: "auto" });
+        });
+      } else {
+        // All events past — leave the user at the top so they see chronologically.
+        grid.scrollTop = 0;
+      }
+    }
 
     if (window.twagTrack) {
       if (previousDate === null) {
