@@ -46,6 +46,16 @@ def _format_iso_date(value: Any) -> str:
         return str(value)
 
 
+def _format_iso_datetime(value: Any) -> str:
+    """ISO 8601 UTC string for a datetime; empty string for None/parse misses."""
+    if value is None:
+        return ""
+    try:
+        return value.isoformat()
+    except AttributeError:
+        return str(value)
+
+
 def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
     city = city or active_city()
     dataset = NytwDataset.from_path(city.dataset_path)
@@ -87,6 +97,8 @@ def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
                     "event_date": _format_iso_date(event.get("event_date")),
                     "start_time": event.get("start_time") or "",
                     "end_time": event.get("end_time") or "",
+                    "start_iso": _format_iso_datetime(event.get("start_at")),
+                    "end_iso": _format_iso_datetime(event.get("end_at")),
                     "host": event.get("host") or "",
                     "neighborhood": event.get("neighborhood") or "",
                     "venue_name": event.get("venue_name") or "",
@@ -177,6 +189,8 @@ def build_gallery(city: CityConfig | None = None) -> dict[str, Any]:
                 "event_date": _format_iso_date(event.get("event_date")),
                 "start_time": event.get("start_time") or "",
                 "end_time": event.get("end_time") or "",
+                "start_iso": _format_iso_datetime(event.get("start_at")),
+                "end_iso": _format_iso_datetime(event.get("end_at")),
                 "host": event.get("host") or "",
                 "neighborhood": event.get("neighborhood") or "",
                 "venue_name": event.get("venue_name") or "",

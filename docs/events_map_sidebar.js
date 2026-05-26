@@ -35,9 +35,16 @@ function _humanWhere(props) {
   return [props.venue_name, props.neighborhood].filter(Boolean).join(" · ");
 }
 
+function _isPastNow(endIso) {
+  if (!endIso) return false;
+  const t = Date.parse(endIso);
+  return Number.isFinite(t) && t < Date.now();
+}
+
 function _rowHtml(citySlug, props) {
   const eventId = props.event_id;
   const cap = props.at_capacity ? `<span class="sidebar-row-cap">full</span>` : "";
+  const pastClass = _isPastNow(props.end_iso) ? " is-past" : "";
   const time = _humanTime(props);
   const where = _humanWhere(props);
   const going = (typeof props.going_guest_count === "number")
@@ -56,7 +63,7 @@ function _rowHtml(citySlug, props) {
   const stats = (going || remaining)
     ? `<div class="sidebar-detail-stats">${going}${remaining}</div>` : "";
   return `
-    <button class="sidebar-row" type="button" data-event-id="${_esc(eventId)}" aria-selected="false">
+    <button class="sidebar-row${pastClass}" type="button" data-event-id="${_esc(eventId)}" aria-selected="false">
       <div class="sidebar-row-thumb" aria-hidden="true">
         <img loading="lazy" src="${_esc(_thumbUrl(citySlug, eventId))}" alt="">
       </div>
@@ -169,6 +176,7 @@ function initMapSidebar(config) {
   let selectedEventId = null;
   let lastFeatures = [];
   const eventCoords = new Map(); // event_id → [lon, lat]
+  let scrollOnNextRender = false;
 
   async function compute() {
     const source = map.getSource(sourceId);
@@ -229,6 +237,22 @@ function initMapSidebar(config) {
     if (selectedEventId) {
       applySelectionDom();
     }
+
+    if (scrollOnNextRender) {
+      scrollOnNextRender = false;
+      _scrollToCurrentOrNext();
+    }
+  }
+
+  function _scrollToCurrentOrNext() {
+    const rows = Array.from(listEl.querySelectorAll(".sidebar-row"));
+    const target = rows.find((r) => !r.classList.contains("is-past"));
+    if (target) {
+      // Defer one tick so the new innerHTML has laid out.
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
   }
 
   function applySelectionDom() {
@@ -286,13 +310,22 @@ function initMapSidebar(config) {
     render(features);
   }
 
+  /** Ask the sidebar to scroll to the current-or-next event the next time
+   *  it renders. Called by the map after a date change (so panning doesn't
+   *  trigger surprise re-scrolls). */
+  function scrollToNowOnNextRender() {
+    scrollOnNextRender = true;
+  }
+
   const debouncedRefresh = _debounce(refresh, 150);
   map.on("moveend", debouncedRefresh);
   map.on("sourcedata", (e) => {
     if (e.sourceId === sourceId && e.isSourceLoaded) debouncedRefresh();
   });
 
+  // First load — auto-anchor to the current-or-next event.
+  scrollOnNextRender = true;
   refresh();
 
-  return { refresh, select, clearSelection };
+  return { refresh, select, clearSelection, scrollToNowOnNextRender };
 }

@@ -173,6 +173,15 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   border-left: 3px solid #e8543e;
   padding-left: 9px;
 }
+.sidebar-row.is-past {
+  opacity: 0.5;
+}
+.sidebar-row.is-past:hover {
+  opacity: 0.85;
+}
+.sidebar-row.is-past[aria-selected="true"] {
+  opacity: 1;
+}
 .sidebar-row-thumb {
   flex: 0 0 64px;
   width: 64px;
@@ -363,6 +372,8 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+.tile.is-past { opacity: 0.45; }
+.tile.is-past:hover { opacity: 1; }
 .tile-img-wrap {
   display: block;
   width: 100%;
