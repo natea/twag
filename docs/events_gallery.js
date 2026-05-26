@@ -162,15 +162,20 @@ async function initEventGallery(config) {
       setDateInHashG(date);
       refresh();
     });
+    // Update the "This day" pill label when activeDate changes.
+    if (search && search.refreshScopeLabel) search.refreshScopeLabel();
     const matchIds = search ? search.currentMatchIds() : null;
     const query = search ? search.currentQuery() : "";
+    const scope = search ? search.currentScope() : "all";
     const dateLabel = formatHumanDateG(activeDate);
     let filtered;
     if (matchIds) {
-      // Cross-day search: include matches from any day, ordered by Fuse relevance.
       const order = search.currentMatchOrder() || [];
       const rank = new Map(order.map((id, i) => [id, i]));
-      filtered = allEvents
+      const candidate = scope === "day"
+        ? allEvents.filter(e => e.event_date === activeDate)
+        : allEvents;
+      filtered = candidate
         .filter(e => matchIds.has(e.event_id))
         .sort((a, b) => {
           const ra = rank.has(a.event_id) ? rank.get(a.event_id) : Number.MAX_SAFE_INTEGER;
@@ -180,10 +185,11 @@ async function initEventGallery(config) {
     } else {
       filtered = allEvents.filter(e => e.event_date === activeDate);
     }
+    const scopeLabel = scope === "day" ? `on ${dateLabel}` : "across all days";
     countEl.textContent = query
-      ? `${filtered.length} events matching "${query}" across all days`
+      ? `${filtered.length} events matching "${query}" ${scopeLabel}`
       : `${filtered.length} events on ${dateLabel}`;
-    const crossDay = !!matchIds;
+    const crossDay = !!matchIds && scope === "all";
     grid.innerHTML = filtered.length
       ? filtered.map(e => renderTile(e, crossDay)).join("")
       : `<div class="empty">${query
@@ -250,6 +256,7 @@ async function initEventGallery(config) {
       onChange: refresh,
       citySlug: citySlug,
       view: "gallery",
+      getActiveDate: () => activeDate,
     });
   }
 

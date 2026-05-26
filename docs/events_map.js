@@ -118,16 +118,22 @@ async function initEventMap(config) {
 
   function filterByDateAndSearch() {
     const matchIds = search ? search.currentMatchIds() : null;
-    // When a search is active, ignore the date filter — show matches from
-    // any day so users find what they're looking for regardless of which
-    // date chip is selected.
-    if (matchIds) {
+    const scope = search ? search.currentScope() : "all";
+    // No search query: just date-filter.
+    if (!matchIds) return filterFeaturesByDate(fullGeoJson, activeDate);
+    // Search + "day" scope: intersect matches with the active date.
+    if (scope === "day") {
+      const byDate = filterFeaturesByDate(fullGeoJson, activeDate);
       return {
         type: "FeatureCollection",
-        features: fullGeoJson.features.filter((f) => matchIds.has(f.properties.event_id)),
+        features: byDate.features.filter((f) => matchIds.has(f.properties.event_id)),
       };
     }
-    return filterFeaturesByDate(fullGeoJson, activeDate);
+    // Search + "all" scope (default): every matching event, any day.
+    return {
+      type: "FeatureCollection",
+      features: fullGeoJson.features.filter((f) => matchIds.has(f.properties.event_id)),
+    };
   }
 
   function showPopup(lonLat, props) {
@@ -163,11 +169,15 @@ async function initEventMap(config) {
       setDateInHash(date);
       refresh();
     });
+    // Update the "This day" pill label when the active date changes.
+    if (search && search.refreshScopeLabel) search.refreshScopeLabel();
     const filtered = filterByDateAndSearch();
     const query = search ? search.currentQuery() : "";
+    const scope = search ? search.currentScope() : "all";
     const dateLabel = formatHumanDate(activeDate);
+    const scopeLabel = scope === "day" ? `on ${dateLabel}` : "across all days";
     document.getElementById("count").textContent = query
-      ? `${filtered.features.length} events matching "${query}" across all days`
+      ? `${filtered.features.length} events matching "${query}" ${scopeLabel}`
       : `${filtered.features.length} events on ${dateLabel}`;
     const source = map.getSource("events");
     if (source) {
@@ -208,6 +218,7 @@ async function initEventMap(config) {
       onChange: refresh,
       citySlug: config.citySlug,
       view: "map",
+      getActiveDate: () => activeDate,
     });
     // Sidebar reads window.__twagSearch.currentMatchOrder() so it can sort
     // its rows by Fuse relevance when a search is active.

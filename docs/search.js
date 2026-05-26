@@ -51,6 +51,20 @@
     window.location.hash = next;
   }
 
+  function parseScopeFromHash() {
+    const raw = (window.location.hash || "").replace(/^#/, "");
+    const params = new URLSearchParams(raw);
+    return params.get("scope") === "day" ? "day" : "all";
+  }
+
+  function setScopeInHash(scope) {
+    const raw = (window.location.hash || "").replace(/^#/, "");
+    const params = new URLSearchParams(raw);
+    if (scope === "day") params.set("scope", "day");
+    else params.delete("scope");  // "all" is default; keep URL clean
+    window.location.hash = params.toString();
+  }
+
   function debounce(fn, ms) {
     let t = null;
     return function () {
@@ -60,11 +74,23 @@
     };
   }
 
+  // "Wed, May 27" style label from a YYYY-MM-DD date.
+  function _shortDateLabel(iso) {
+    if (!iso) return "";
+    const [y, m, d] = iso.split("-").map(Number);
+    if (!y || !m || !d) return "";
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    return dt.toLocaleDateString(undefined, {
+      weekday: "short", month: "short", day: "numeric", timeZone: "UTC",
+    });
+  }
+
   window.initSearch = function (config) {
     const events = config.events || [];
     const onChange = config.onChange || (() => {});
     const citySlug = config.citySlug || "";
     const view = config.view || "";
+    const getActiveDate = config.getActiveDate || (() => "");
     const input = document.getElementById("search");
     if (!input) {
       console.warn("[search] #search input not found; skipping init.");
@@ -75,6 +101,7 @@
     let currentQuery = "";
     let currentMatchSet = null;   // null = no query active, all events match
     let currentMatchOrder = null; // array of event_ids in Fuse-relevance order
+    let currentScope = parseScopeFromHash();  // "all" | "day"
     let lastTrackedQuery = "";
 
     function recompute() {
@@ -126,6 +153,8 @@
       }
     });
 
+    buildScopeUi();
+
     // Initialise from the URL hash (carried over from a sibling tab).
     const initial = parseQueryFromHash();
     if (initial) {
@@ -141,11 +170,86 @@
       }
     });
 
+    // Build the segmented toggle UI right after the #search input.
+    // Two buttons: "All days" (default) | "<active day short>".
+    let scopeUi = null;
+    function buildScopeUi() {
+      const existing = document.getElementById("search-scope");
+      if (existing) existing.remove();
+      const wrap = document.createElement("div");
+      wrap.id = "search-scope";
+      wrap.className = "search-scope";
+      wrap.setAttribute("role", "group");
+      wrap.setAttribute("aria-label", "Search scope");
+      const allBtn = document.createElement("button");
+      allBtn.type = "button";
+      allBtn.className = "search-scope-btn";
+      allBtn.dataset.scope = "all";
+      allBtn.textContent = "All days";
+      const dayBtn = document.createElement("button");
+      dayBtn.type = "button";
+      dayBtn.className = "search-scope-btn";
+      dayBtn.dataset.scope = "day";
+      const dayLabel = _shortDateLabel(getActiveDate()) || "This day";
+      dayBtn.textContent = dayLabel;
+      wrap.appendChild(allBtn);
+      wrap.appendChild(dayBtn);
+      input.insertAdjacentElement("afterend", wrap);
+      allBtn.addEventListener("click", () => setScope("all"));
+      dayBtn.addEventListener("click", () => setScope("day"));
+      scopeUi = { wrap, allBtn, dayBtn };
+      reflectScopeUi();
+    }
+
+    function reflectScopeUi() {
+      if (!scopeUi) return;
+      scopeUi.allBtn.classList.toggle("active", currentScope === "all");
+      scopeUi.dayBtn.classList.toggle("active", currentScope === "day");
+      // Refresh the day-button label in case the active date changed.
+      const dayLabel = _shortDateLabel(getActiveDate()) || "This day";
+      scopeUi.dayBtn.textContent = dayLabel;
+    }
+
+    function setScope(scope, opts) {
+      opts = opts || {};
+      const next = scope === "day" ? "day" : "all";
+      if (next === currentScope) {
+        reflectScopeUi();
+        return;
+      }
+      currentScope = next;
+      if (opts.fromUser !== false) {
+        setScopeInHash(currentScope);
+        if (window.twagTrack) {
+          twagTrack("search_scope_changed", {
+            city: citySlug,
+            view: view,
+            scope: currentScope,
+            has_query: !!currentQuery.trim(),
+          });
+        }
+      }
+      reflectScopeUi();
+      onChange();
+    }
+
+    // Hashchange handler picks up scope changes that arrive via tab nav.
+    window.addEventListener("hashchange", () => {
+      const nextScope = parseScopeFromHash();
+      if (nextScope !== currentScope) {
+        currentScope = nextScope;
+        onChange();
+      }
+    });
+
     return {
       currentMatchIds: () => currentMatchSet,      // Set<event_id> | null
       currentMatchOrder: () => currentMatchOrder,  // string[] | null (relevance-ranked)
       currentQuery: () => currentQuery,
+      currentScope: () => currentScope,            // "all" | "day"
+      setScope,
       applyQuery,
+      refreshScopeLabel: reflectScopeUi,           // call after activeDate changes
     };
   };
 })();

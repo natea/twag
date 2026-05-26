@@ -265,7 +265,8 @@ function initMapSidebar(config) {
 
   function render(features) {
     lastFeatures = features;
-    const crossDay = !!(window.__twagSearch && window.__twagSearch.currentQuery && window.__twagSearch.currentQuery());
+    const s = window.__twagSearch;
+    const crossDay = !!(s && s.currentQuery && s.currentQuery() && s.currentScope && s.currentScope() === "all");
     if (!features.length) {
       countEl.textContent = "No events in view";
       listEl.innerHTML = `<div class="sidebar-empty">Pan or zoom the map — events in view will appear here.</div>`;

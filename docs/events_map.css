@@ -45,6 +45,33 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   padding: 8px 16px;
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.search-scope {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+.search-scope-btn {
+  border: none;
+  background: transparent;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  color: #555;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.search-scope-btn + .search-scope-btn { border-left: 1px solid #e0e0e0; }
+.search-scope-btn:hover { background: #eee; }
+.search-scope-btn.active {
+  background: #e8543e;
+  color: #fff;
 }
 #search {
   width: 100%;
