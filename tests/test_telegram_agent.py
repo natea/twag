@@ -587,6 +587,39 @@ def test_telegram_config_reads_retry_settings():
     assert config.question_log_path == "/tmp/twag-questions.jsonl"
 
 
+def test_telegram_config_reads_ny_city_token():
+    env = {
+        "TWAG_CITY": "nyc",
+        "NY_TELEGRAM_BOT_TOKEN": "ny-token",
+        "BOSTON_TELEGRAM_BOT_TOKEN": "boston-token",
+    }
+
+    with patch.dict(os.environ, env, clear=True):
+        config = TelegramAgentConfig.from_env()
+
+    assert config.bot_token == "ny-token"
+
+
+def test_telegram_config_reads_boston_city_token():
+    env = {
+        "TWAG_CITY": "boston",
+        "NY_TELEGRAM_BOT_TOKEN": "ny-token",
+        "BOSTON_TELEGRAM_BOT_TOKEN": "boston-token",
+    }
+
+    with patch.dict(os.environ, env, clear=True):
+        config = TelegramAgentConfig.from_env()
+
+    assert config.bot_token == "boston-token"
+
+
+def test_telegram_config_keeps_legacy_token_fallback():
+    with patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": "legacy-token"}, clear=True):
+        config = TelegramAgentConfig.from_env()
+
+    assert config.bot_token == "legacy-token"
+
+
 def test_token_usage_accumulator_sums_openai_and_alt_token_fields():
     usage = TokenUsageAccumulator()
 

@@ -347,8 +347,11 @@ def sync_senso_kb(
     started_at = datetime.now(timezone.utc)
     create_senso_tables(service)
     previous_documents = _latest_senso_documents(service)
+    previous_nodes = _latest_senso_nodes(service)
     if replace:
         truncate_senso_tables(service)
+        previous_documents = {}
+        previous_nodes = {}
 
     node_rows: list[tuple[Any, ...]] = []
     document_rows: list[tuple[Any, ...]] = []
@@ -364,22 +367,42 @@ def sync_senso_kb(
             content_id = _first_string(node.raw, "content_id", "contentId")
             version = _as_int_or_none(node.raw.get("version") or node.raw.get("version_num"))
             processing_status = _first_string(node.raw, "processing_status", "status")
-            node_rows.append(
-                (
-                    node.kb_node_id,
-                    node.parent_id,
-                    node.path,
-                    node.name,
-                    node.node_type,
-                    content_id,
-                    version,
-                    processing_status,
-                    json.dumps(node.raw, sort_keys=True, default=str),
-                    synced_at,
+            previous_node = previous_nodes.get(node.kb_node_id)
+            if previous_node is None or not _node_metadata_unchanged(node, previous_node):
+                node_rows.append(
+                    (
+                        node.kb_node_id,
+                        node.parent_id,
+                        node.path,
+                        node.name,
+                        node.node_type,
+                        content_id,
+                        version,
+                        processing_status,
+                        json.dumps(node.raw, sort_keys=True, default=str),
+                        synced_at,
+                    )
                 )
-            )
 
             if not node.is_folder:
+                current_document_ids.add(node.kb_node_id)
+                previous = previous_documents.get(node.kb_node_id)
+                if _can_skip_senso_download(node, previous, previous_node):
+                    change_rows.append(
+                        (
+                            run_id,
+                            synced_at,
+                            "unchanged",
+                            node.kb_node_id,
+                            node.path,
+                            str(previous.get("title") or node.name),
+                            str(previous.get("content_hash") or ""),
+                            str(previous.get("content_hash") or ""),
+                            previous.get("synced_at"),
+                        )
+                    )
+                    continue
+
                 content = _safe_content(senso, node.kb_node_id)
                 download = _safe_download_url(senso, node.kb_node_id)
                 filename = _first_string(download, "filename") or node.name
@@ -392,8 +415,6 @@ def sync_senso_kb(
                 content_hash = _first_string(content, "content_hash_md5", "hash", "md5")
                 if not content_hash and text:
                     content_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
-                current_document_ids.add(node.kb_node_id)
-                previous = previous_documents.get(node.kb_node_id)
                 previous_hash = str(previous.get("content_hash") or "") if previous else ""
                 if previous is None:
                     change_type = "inserted"
@@ -458,13 +479,14 @@ def sync_senso_kb(
         for kb_node_id, previous in previous_documents.items():
             if kb_node_id in current_document_ids:
                 continue
+            previous_node = previous_nodes.get(kb_node_id, {})
             change_rows.append(
                 (
                     run_id,
                     removed_at,
                     "removed",
                     kb_node_id,
-                    str(previous.get("path") or ""),
+                    str(previous_node.get("path") or ""),
                     str(previous.get("title") or ""),
                     str(previous.get("content_hash") or ""),
                     "",
@@ -707,7 +729,6 @@ def _latest_senso_documents(service: ClickHouseService) -> dict[str, dict[str, A
         """
         SELECT
           kb_node_id,
-          argMax(path, synced_at) AS path,
           argMax(title, synced_at) AS title,
           argMax(content_hash, synced_at) AS content_hash,
           max(synced_at) AS synced_at
@@ -721,6 +742,94 @@ def _latest_senso_documents(service: ClickHouseService) -> dict[str, dict[str, A
         if kb_node_id:
             documents[kb_node_id] = row
     return documents
+
+
+def _latest_senso_nodes(service: ClickHouseService) -> dict[str, dict[str, Any]]:
+    rows = _safe_query(
+        service,
+        """
+        SELECT
+          kb_node_id,
+          argMax(parent_id, synced_at) AS parent_id,
+          argMax(path, synced_at) AS path,
+          argMax(name, synced_at) AS name,
+          argMax(node_type, synced_at) AS node_type,
+          argMax(content_id, synced_at) AS content_id,
+          argMax(version, synced_at) AS version,
+          argMax(processing_status, synced_at) AS processing_status,
+          argMax(raw_json, synced_at) AS raw_json,
+          max(synced_at) AS synced_at
+        FROM senso_kb_nodes
+        GROUP BY kb_node_id
+        """,
+    )
+    nodes: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        kb_node_id = str(row.get("kb_node_id") or "")
+        if kb_node_id:
+            nodes[kb_node_id] = row
+    return nodes
+
+
+def _can_skip_senso_download(
+    node: SensoNode,
+    previous_document: dict[str, Any] | None,
+    previous_node: dict[str, Any] | None,
+) -> bool:
+    if previous_document is None or previous_node is None:
+        return False
+    if not str(previous_document.get("content_hash") or ""):
+        return False
+    return _node_metadata_unchanged(node, previous_node)
+
+
+def _node_metadata_unchanged(node: SensoNode, previous_node: dict[str, Any]) -> bool:
+    return _node_signature(node) == _previous_node_signature(previous_node)
+
+
+def _node_signature(node: SensoNode) -> str:
+    return hashlib.sha256(
+        json.dumps(_node_signature_payload(node), sort_keys=True, default=str).encode("utf-8")
+    ).hexdigest()
+
+
+def _previous_node_signature(row: dict[str, Any]) -> str:
+    raw_json = str(row.get("raw_json") or "")
+    raw: dict[str, Any] = {}
+    if raw_json:
+        try:
+            parsed = json.loads(raw_json)
+            if isinstance(parsed, dict):
+                raw = parsed
+        except json.JSONDecodeError:
+            raw = {}
+
+    payload = {
+        "parent_id": str(row.get("parent_id") or ""),
+        "path": str(row.get("path") or ""),
+        "name": str(row.get("name") or ""),
+        "node_type": str(row.get("node_type") or ""),
+        "content_id": str(row.get("content_id") or ""),
+        "version": _as_int_or_none(row.get("version")),
+        "processing_status": str(row.get("processing_status") or ""),
+        "raw": raw,
+    }
+    return hashlib.sha256(
+        json.dumps(payload, sort_keys=True, default=str).encode("utf-8")
+    ).hexdigest()
+
+
+def _node_signature_payload(node: SensoNode) -> dict[str, Any]:
+    return {
+        "parent_id": node.parent_id,
+        "path": node.path,
+        "name": node.name,
+        "node_type": node.node_type,
+        "content_id": _first_string(node.raw, "content_id", "contentId"),
+        "version": _as_int_or_none(node.raw.get("version") or node.raw.get("version_num")),
+        "processing_status": _first_string(node.raw, "processing_status", "status"),
+        "raw": node.raw,
+    }
 
 
 def _safe_query(service: ClickHouseService, sql: str) -> list[dict[str, Any]]:

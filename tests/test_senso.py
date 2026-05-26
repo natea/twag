@@ -27,7 +27,33 @@ class FakeClickHouse:
     ) -> None:
         self.inserts.setdefault(table, []).extend(rows)
 
-    def query(self, sql: str, parameters: dict[str, Any] | None = None) -> list[dict[str, int]]:
+    def query(self, sql: str, parameters: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+        if "FROM senso_kb_documents" in sql and "GROUP BY kb_node_id" in sql:
+            return [
+                {
+                    "kb_node_id": str(row[0]),
+                    "title": str(row[2]),
+                    "content_hash": str(row[8]),
+                    "synced_at": row[9],
+                }
+                for row in self.inserts.get("senso_kb_documents", [])
+            ]
+        if "FROM senso_kb_nodes" in sql and "GROUP BY kb_node_id" in sql:
+            return [
+                {
+                    "kb_node_id": str(row[0]),
+                    "parent_id": str(row[1]),
+                    "path": str(row[2]),
+                    "name": str(row[3]),
+                    "node_type": str(row[4]),
+                    "content_id": str(row[5]),
+                    "version": row[6],
+                    "processing_status": str(row[7]),
+                    "raw_json": str(row[8]),
+                    "synced_at": row[9],
+                }
+                for row in self.inserts.get("senso_kb_nodes", [])
+            ]
         return [
             {
                 "nodes": len(self.inserts.get("senso_kb_nodes", [])),
@@ -38,6 +64,11 @@ class FakeClickHouse:
 
 
 class FakeSenso:
+    def __init__(self) -> None:
+        self.content_calls = 0
+        self.download_url_calls = 0
+        self.download_text_calls = 0
+
     def iter_nodes(self):
         yield SensoNode(
             kb_node_id="folder-1",
@@ -63,6 +94,7 @@ class FakeSenso:
         )
 
     def get_content(self, node_id: str) -> dict[str, str]:
+        self.content_calls += 1
         return {
             "id": "content-1",
             "title": "Refund Policy",
@@ -71,7 +103,12 @@ class FakeSenso:
         }
 
     def get_download_url(self, node_id: str) -> dict[str, str]:
+        self.download_url_calls += 1
         return {}
+
+    def download_text(self, url: str, *, filename: str = "") -> str:
+        self.download_text_calls += 1
+        return ""
 
 
 def test_extract_senso_text_prefers_direct_text_fields() -> None:
@@ -108,6 +145,32 @@ def test_sync_senso_kb_creates_schema_and_inserts_nodes_documents_chunks() -> No
     assert clickhouse.inserts["senso_sync_runs"][0][3] == "complete"
     assert clickhouse.inserts["senso_sync_changes"][0][2] == "inserted"
     assert result["changes"]["inserted"] == 1
+
+
+def test_sync_senso_kb_skips_content_download_when_node_metadata_is_unchanged() -> None:
+    clickhouse = FakeClickHouse()
+    first_senso = FakeSenso()
+
+    first = sync_senso_kb(
+        clickhouse,  # type: ignore[arg-type]
+        first_senso,  # type: ignore[arg-type]
+        chunk_chars=80,
+        chunk_overlap=5,
+    )
+
+    second_senso = FakeSenso()
+    second = sync_senso_kb(
+        clickhouse,  # type: ignore[arg-type]
+        second_senso,  # type: ignore[arg-type]
+        chunk_chars=80,
+        chunk_overlap=5,
+    )
+
+    assert first["changes"]["inserted"] == 1
+    assert second["changes"]["unchanged"] == 1
+    assert second_senso.content_calls == 0
+    assert second_senso.download_url_calls == 0
+    assert second_senso.download_text_calls == 0
 
 
 def test_senso_sync_overview_reads_runs_and_changes() -> None:

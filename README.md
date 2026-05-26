@@ -397,7 +397,10 @@ one bot process per Telegram bot token.
 Create the bot with Telegram's `@BotFather`, then add these values to `.env`:
 
 ```bash
-TELEGRAM_BOT_TOKEN=your-telegram-bot-token
+NY_TELEGRAM_BOT_TOKEN=your-ny-telegram-bot-token
+BOSTON_TELEGRAM_BOT_TOKEN=your-boston-telegram-bot-token
+# Legacy single-city fallback:
+TELEGRAM_BOT_TOKEN=
 TELEGRAM_ALLOWED_CHAT_IDS=
 TELEGRAM_CLEAR_WEBHOOK_ON_POLL=true
 TELEGRAM_POLL_TIMEOUT=30
@@ -680,7 +683,8 @@ The installer:
 - creates `.venv`
 - installs the package in editable mode
 - creates `/etc/twag/twag.env` from `deploy/ubuntu/twag.env.example` if missing
-- installs `twag-telegram-agent@.service`
+- installs `twag-telegram-agent@.service` for NY
+- installs `twag-telegram-agent-boston@.service` for Boston
 - installs `twag-nimble@.service`
 
 Edit the remote env file:
@@ -692,7 +696,8 @@ sudoedit /etc/twag/twag.env
 Required values for the Telegram process:
 
 ```bash
-TELEGRAM_BOT_TOKEN=your-telegram-bot-token
+NY_TELEGRAM_BOT_TOKEN=your-ny-telegram-bot-token
+BOSTON_TELEGRAM_BOT_TOKEN=your-boston-telegram-bot-token
 SUBCONSCIOUS_API_KEY=your-subconscious-key
 CLICKHOUSE_HOST=your-clickhouse-host
 CLICKHOUSE_USERNAME=default
@@ -742,14 +747,15 @@ cd /opt/twag
 Override `TWAG_NIMBLE_COMMAND` in `/etc/twag/twag.env` if your Nimble process is
 different.
 
-Start both services, replacing `$USER` if you installed under another account:
+Start all services, replacing `$USER` if you installed under another account:
 
 ```bash
 sudo systemctl enable --now twag-telegram-agent@$USER.service
+sudo systemctl enable --now twag-telegram-agent-boston@$USER.service
 sudo systemctl enable --now twag-nimble@$USER.service
 ```
 
-Operate both services:
+Operate all services:
 
 ```bash
 deploy/ubuntu/control.sh status
@@ -761,6 +767,7 @@ Follow one service:
 
 ```bash
 journalctl -u twag-telegram-agent@$USER.service -f
+journalctl -u twag-telegram-agent-boston@$USER.service -f
 journalctl -u twag-nimble@$USER.service -f
 ```
 
@@ -768,6 +775,7 @@ On the current root deployment:
 
 ```bash
 journalctl -u twag-telegram-agent@root.service -f
+journalctl -u twag-telegram-agent-boston@root.service -f
 journalctl -u twag-nimble@root.service -f
 tail -f /var/log/twag/questions.jsonl
 ```
@@ -785,7 +793,7 @@ a persistent directory and rerun the installer:
 
 ```bash
 REMOTE_DIR=/opt/twag RUN_REMOTE_INSTALL=true deploy/ubuntu/rsync.privileged.sh
-ssh root@your-private-or-public-ubuntu-ip 'systemctl daemon-reload && systemctl restart twag-telegram-agent@root.service twag-nimble@root.service'
+ssh root@your-private-or-public-ubuntu-ip 'systemctl daemon-reload && systemctl restart twag-telegram-agent@root.service twag-telegram-agent-boston@root.service twag-nimble@root.service'
 ```
 
 Useful ClickHouse queries:

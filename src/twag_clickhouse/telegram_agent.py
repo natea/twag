@@ -58,6 +58,10 @@ SPONSOR_LINE = (
     "Want to sponsor TechWeek AI search? Contact info@data.flowers"
 )
 
+CITY_TELEGRAM_TOKEN_ENV_ALIASES = {
+    "nyc": ("NY_TELEGRAM_BOT_TOKEN", "NYC_TELEGRAM_BOT_TOKEN"),
+}
+
 
 def _subjective_question_reply() -> str:
     return active_city().vibe_line
@@ -294,9 +298,22 @@ class TelegramAgentConfig:
 
     @classmethod
     def from_env(cls) -> "TelegramAgentConfig":
-        bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+        city = active_city()
+        token_env_names = (
+            *CITY_TELEGRAM_TOKEN_ENV_ALIASES.get(city.slug, ()),
+            f"{city.slug.upper()}_TELEGRAM_BOT_TOKEN",
+            "TELEGRAM_BOT_TOKEN",
+        )
+        bot_token = ""
+        for env_name in dict.fromkeys(token_env_names):
+            bot_token = os.getenv(env_name, "").strip()
+            if bot_token:
+                break
         if not bot_token:
-            raise ValueError("TELEGRAM_BOT_TOKEN is required")
+            raise ValueError(
+                "Telegram bot token is required. Set one of: "
+                + ", ".join(dict.fromkeys(token_env_names))
+            )
 
         allowed = {
             int(value.strip())
