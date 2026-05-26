@@ -8,4 +8,4 @@ window.TWAG_MAPBOX_TOKEN =
 // PostHog project API key. Restrict to https://natea.github.io
 // under Project Settings → CORS in the PostHog dashboard.
 // Leave blank ("") to disable analytics entirely (the snippet no-ops).
-window.TWAG_POSTHOG_KEY = "";
+window.TWAG_POSTHOG_KEY = "phc_otNjakqHqTEBx2M35NgKZY3JAPf8KAgzBC34HdEpQoEC";
