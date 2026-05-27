@@ -103,6 +103,7 @@
     let currentMatchOrder = null; // array of event_ids in Fuse-relevance order
     let currentScope = parseScopeFromHash();  // "all" | "day"
     let lastTrackedQuery = "";
+    let scopeUi = null;   // populated by buildScopeUi() below
 
     function recompute() {
       const q = currentQuery.trim();
@@ -172,7 +173,6 @@
 
     // Build the segmented toggle UI right after the #search input.
     // Two buttons: "All days" (default) | "<active day short>".
-    let scopeUi = null;
     function buildScopeUi() {
       const existing = document.getElementById("search-scope");
       if (existing) existing.remove();
