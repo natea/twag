@@ -130,6 +130,14 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   background: #e8543e;
   color: #fff;
 }
+/* Long/short label swap on the day button (matches the date-chip pattern):
+   desktop shows "Tue, May 26"; mobile shows "This day" so the toggle
+   doesn't get truncated next to the search input. */
+.scope-btn-short { display: none; }
+@media (max-width: 640px) {
+  .scope-btn-long { display: none; }
+  .scope-btn-short { display: inline; }
+}
 #search {
   width: 100%;
   max-width: 320px;

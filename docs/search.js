@@ -191,7 +191,12 @@
       dayBtn.className = "search-scope-btn";
       dayBtn.dataset.scope = "day";
       const dayLabel = _shortDateLabel(getActiveDate()) || "This day";
-      dayBtn.textContent = dayLabel;
+      // Two labels: the full "Tue, May 26" for desktop, a compact "This day"
+      // for mobile. CSS picks one based on viewport width so the toggle
+      // never gets truncated next to the search input.
+      dayBtn.innerHTML =
+        `<span class="scope-btn-long">${dayLabel}</span>` +
+        `<span class="scope-btn-short">This day</span>`;
       wrap.appendChild(allBtn);
       wrap.appendChild(dayBtn);
       input.insertAdjacentElement("afterend", wrap);
@@ -206,8 +211,11 @@
       scopeUi.allBtn.classList.toggle("active", currentScope === "all");
       scopeUi.dayBtn.classList.toggle("active", currentScope === "day");
       // Refresh the day-button label in case the active date changed.
+      // Keep both the long and short spans so the CSS swap still works.
       const dayLabel = _shortDateLabel(getActiveDate()) || "This day";
-      scopeUi.dayBtn.textContent = dayLabel;
+      scopeUi.dayBtn.innerHTML =
+        `<span class="scope-btn-long">${dayLabel}</span>` +
+        `<span class="scope-btn-short">This day</span>`;
     }
 
     function setScope(scope, opts) {
