@@ -43,9 +43,14 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   /* Hide the top tab nav on mobile — the bottom bar takes over. */
   .tab-nav:not(.bottom-tab-bar) { display: none; }
 
-  /* Reserve space at the bottom of the page for the fixed bar so the last
-     bit of content (sidebar list, gallery tile) isn't covered. */
-  body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+  /* Let the map / sidebar / gallery fill all the way to the viewport
+     bottom; the fixed bar overlays them. Scrollable containers below
+     add interior padding so their last item can scroll above the bar.
+     (Padding the body would leave a dead band between content and bar.) */
+  .sidebar-list,
+  #gallery-grid {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
 
   .bottom-tab-bar {
     position: fixed;
