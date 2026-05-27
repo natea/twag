@@ -39,6 +39,58 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   .date-btn-short { display: inline; }
   #date-picker { gap: 4px; padding: 8px 12px; }
   .date-btn { padding: 6px 10px; }
+
+  /* Hide the top tab nav on mobile — the bottom bar takes over. */
+  .tab-nav:not(.bottom-tab-bar) { display: none; }
+
+  /* Reserve space at the bottom of the page for the fixed bar so the last
+     bit of content (sidebar list, gallery tile) isn't covered. */
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+
+  .bottom-tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    /* Apple "Glass" — strongly translucent surface with saturate/blur,
+       a subtle inner highlight on the top edge for the glass-rim
+       effect, and a soft upward shadow that lifts content off the bar. */
+    background: rgba(255, 255, 255, 0.62);
+    -webkit-backdrop-filter: saturate(180%) blur(28px);
+    backdrop-filter: saturate(180%) blur(28px);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 -10px 24px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+  }
+  /* Solid-fallback so the bar stays legible on browsers without
+     backdrop-filter support (older Android WebView, very old Safari). */
+  @supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+    .bottom-tab-bar { background: rgba(255, 255, 255, 0.94); }
+  }
+  .bottom-tab-bar a {
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 4px;
+    color: #6b6b6b;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .bottom-tab-bar a:active { background: rgba(0, 0, 0, 0.04); }
+  .bottom-tab-bar a.active {
+    color: #e8543e;
+    font-weight: 600;
+  }
 }
 
 #search-row {
@@ -94,8 +146,12 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   background-color: #fff;
 }
 @media (max-width: 640px) {
-  #search-row { padding: 6px 12px; }
-  #search { max-width: none; font-size: 14px; }
+  /* Keep the search input and scope toggle on the same row to conserve
+     vertical pixels — input flexes to fill, toggle stays compact. */
+  #search-row { padding: 6px 12px; flex-wrap: nowrap; gap: 8px; }
+  #search { max-width: none; font-size: 14px; flex: 1 1 auto; min-width: 0; }
+  .search-scope { flex: 0 0 auto; }
+  .search-scope-btn { padding: 5px 8px; font-size: 11px; }
 }
 
 /* Map + sidebar layout: row on desktop, column (sidebar as bottom sheet)
@@ -369,6 +425,23 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   color: #fff;
   background: #1a1a1a;
 }
+
+/* --- iOS-style bottom tab bar (mobile only) ---
+   Default-hide via a desktop-only media query so it doesn't fight the
+   mobile @media block that shows + styles the bar (same specificity,
+   later-wins would otherwise re-hide on phones). */
+@media (min-width: 641px) {
+  .bottom-tab-bar { display: none; }
+}
+.bottom-tab-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-tab-icon svg { width: 100%; height: 100%; }
+.bottom-tab-label { font-size: 11px; font-weight: 500; }
 
 /* --- Gallery grid --- */
 #gallery-grid {
