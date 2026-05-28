@@ -17,3 +17,4 @@ build/
 *.egg-info/
 data/nytw-2026-for-agents/images/
 data/bostontw-2026-for-agents/images/
+.playwright-mcp/
