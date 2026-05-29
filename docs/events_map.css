@@ -197,26 +197,35 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   justify-content: space-between;
   gap: 8px;
 }
-.sidebar-hide-btn {
+.sidebar-header-btns { flex: 0 0 auto; display: flex; align-items: center; gap: 2px; }
+.sidebar-hide-btn,
+.sidebar-expand-btn {
   flex: 0 0 auto;
   width: 28px;
   height: 28px;
   border: none;
   background: transparent;
   color: #888;
-  font-size: 22px;
   line-height: 1;
   border-radius: 4px;
   cursor: pointer;
   padding: 0;
 }
-.sidebar-hide-btn:hover { background: #f0f0f0; color: #222; }
+.sidebar-hide-btn { font-size: 22px; }
+.sidebar-expand-btn { font-size: 16px; }
+.sidebar-hide-btn:hover,
+.sidebar-expand-btn:hover { background: #f0f0f0; color: #222; }
+/* The expand/contract control only makes sense in the mobile stacked
+   layout; on desktop the sidebar is a fixed-width right panel. */
+.sidebar-expand-btn { display: none; }
 
-/* Floating "show" button — appears only when the sidebar is hidden. */
+/* Floating "show" button — appears only when the sidebar is hidden.
+   Anchored top-LEFT so it never overlaps the Mapbox zoom controls
+   (which live top-right). */
 #sidebar-show-btn {
   position: absolute;
   top: 12px;
-  right: 12px;
+  left: 12px;
   display: none;
   align-items: center;
   gap: 6px;
@@ -385,6 +394,22 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
     min-height: 200px;     /* don't collapse below ~2 rows */
     border-left: none;
     border-top: 1px solid #e0e0e0;
+  }
+
+  /* The expand/contract control is a mobile-only affordance. */
+  .sidebar-expand-btn { display: inline-block; }
+
+  /* Expanded: the list takes the whole stage and the map collapses to
+     nothing (still mounted, so Mapbox just needs a resize() on toggle).
+     The expand button flips to ⤡ and acts as the "show map" tab. */
+  #map-stage.sidebar-expanded #map {
+    flex: 0 0 0;
+    min-height: 0;
+    height: 0;
+  }
+  #map-stage.sidebar-expanded #sidebar {
+    flex: 1 1 auto;
+    height: auto;
   }
 }
 
