@@ -22,6 +22,8 @@ data/bostontw-2026-for-agents/images/
 # .claude/settings.local.json = machine-local Claude Code settings
 .playwright-mcp/
 .claude/settings.local.json
+.agents/
+skills-lock.json
 my-video/
 
 # Capacitor / native app
