@@ -55,7 +55,7 @@ NYC = CityConfig(
     map_center_lon=-73.9840,
     map_zoom=11.5,
     map_html_filename="events_map_nyc.html",
-    default_map_date="2026-06-02",
+    default_map_date="2026-06-01",
 )
 
 

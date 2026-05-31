@@ -17,7 +17,6 @@ build/
 *.egg-info/
 data/nytw-2026-for-agents/images/
 data/bostontw-2026-for-agents/images/
-
 # Local tooling / transient artifacts
 # .playwright-mcp/ = Playwright-MCP debug screenshots + console logs
 # .claude/settings.local.json = machine-local Claude Code settings

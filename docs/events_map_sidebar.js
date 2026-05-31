@@ -210,6 +210,7 @@ function _wireDetailActions(listEl, propsById, citySlug) {
 }
 
 const _SIDEBAR_HIDDEN_KEY = "twag_sidebar_hidden";
+const _SIDEBAR_EXPANDED_KEY = "twag_sidebar_expanded";
 
 function initMapSidebar(config) {
   const map = config.map;
@@ -224,13 +225,17 @@ function initMapSidebar(config) {
   root.innerHTML = `
     <div class="sidebar-header">
       <span id="sidebar-count">Loading…</span>
-      <button class="sidebar-hide-btn" type="button" aria-label="Hide events list" title="Hide events list">×</button>
+      <div class="sidebar-header-btns">
+        <button class="sidebar-expand-btn" type="button" aria-label="Expand list to full height" title="Expand list to full height">⤢</button>
+        <button class="sidebar-hide-btn" type="button" aria-label="Hide events list" title="Hide events list">×</button>
+      </div>
     </div>
     <div class="sidebar-list" id="sidebar-list"></div>
   `;
   const countEl = root.querySelector("#sidebar-count");
   const listEl = root.querySelector("#sidebar-list");
   const hideBtn = root.querySelector(".sidebar-hide-btn");
+  const expandBtn = root.querySelector(".sidebar-expand-btn");
 
   // Floating "show" button rendered once and revealed when the sidebar is hidden.
   let showBtn = document.getElementById("sidebar-show-btn");
@@ -240,22 +245,42 @@ function initMapSidebar(config) {
     showBtn.type = "button";
     showBtn.setAttribute("aria-label", "Show events list");
     showBtn.title = "Show events list";
-    showBtn.innerHTML = `<span class="sidebar-show-btn-icon" aria-hidden="true">‹</span><span class="sidebar-show-btn-label">Events</span>`;
+    showBtn.innerHTML = `<span class="sidebar-show-btn-icon" aria-hidden="true">☰</span><span class="sidebar-show-btn-label">Events</span>`;
     stage.appendChild(showBtn);
   }
 
   function setHidden(hidden, opts) {
     opts = opts || {};
     stage.classList.toggle("sidebar-hidden", hidden);
+    if (hidden) stage.classList.remove("sidebar-expanded"); // hiding clears expand
     try { localStorage.setItem(_SIDEBAR_HIDDEN_KEY, hidden ? "1" : "0"); } catch (_) {}
     // Let CSS transition finish, then have Mapbox refit the canvas.
     setTimeout(() => { if (map && map.resize) map.resize(); }, opts.delay || 220);
   }
 
-  // Restore prior state (default: visible).
+  function setExpanded(expanded, opts) {
+    opts = opts || {};
+    stage.classList.toggle("sidebar-expanded", expanded);
+    if (expandBtn) {
+      // ⤢ = expand to full; ⤡ = shrink back / reveal the map.
+      expandBtn.textContent = expanded ? "⤡" : "⤢";
+      expandBtn.setAttribute(
+        "aria-label",
+        expanded ? "Shrink list and show map" : "Expand list to full height"
+      );
+      expandBtn.title = expandBtn.getAttribute("aria-label");
+    }
+    try { localStorage.setItem(_SIDEBAR_EXPANDED_KEY, expanded ? "1" : "0"); } catch (_) {}
+    setTimeout(() => { if (map && map.resize) map.resize(); }, opts.delay || 220);
+  }
+
+  // Restore prior state (default: visible, not expanded).
   try {
     if (localStorage.getItem(_SIDEBAR_HIDDEN_KEY) === "1") {
       setHidden(true, { delay: 0 });
+    }
+    if (localStorage.getItem(_SIDEBAR_EXPANDED_KEY) === "1") {
+      setExpanded(true, { delay: 0 });
     }
   } catch (_) {}
 
@@ -266,6 +291,13 @@ function initMapSidebar(config) {
   showBtn.addEventListener("click", () => {
     setHidden(false);
     if (window.twagTrack) twagTrack("sidebar_shown", { city: citySlug });
+  });
+  expandBtn.addEventListener("click", () => {
+    const nowExpanded = !stage.classList.contains("sidebar-expanded");
+    setExpanded(nowExpanded);
+    if (window.twagTrack) {
+      twagTrack(nowExpanded ? "sidebar_expanded" : "sidebar_contracted", { city: citySlug });
+    }
   });
 
   let selectedEventId = null;
