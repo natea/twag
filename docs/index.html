@@ -339,7 +339,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 22px;
+      gap: 12px;
+      padding: 14px 18px;
       background: var(--paper);
       color: var(--ink);
       border: 2px solid var(--ink);
@@ -347,8 +348,17 @@
       font-weight: 700;
       font-size: 17px;
       letter-spacing: -0.01em;
+      line-height: 1.1;
       transition: background 0.18s, color 0.18s, transform 0.18s;
     }
+    .btn-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      min-width: 0;
+    }
+    .btn-label { white-space: nowrap; }
     .card.featured .btn { background: var(--ink); color: var(--paper); border-color: var(--ink); }
     .btn:hover { background: var(--ink); color: var(--paper); }
     .card.featured .btn:hover { background: var(--paper); color: var(--ink); }
@@ -357,6 +367,7 @@
       font-style: italic;
       font-weight: 400;
       font-size: 22px;
+      flex-shrink: 0;
       transition: transform 0.2s;
     }
     .btn:hover .arrow { transform: translateX(4px); }
@@ -366,7 +377,6 @@
       text-transform: uppercase;
       letter-spacing: 0.18em;
       opacity: 0.55;
-      margin-right: 12px;
     }
 
     .stamp {
@@ -532,9 +542,9 @@
           <div class="city-mono">42.36°N · 71.06°W</div>
           <div class="dates">May 26–31, 2026</div>
           <div class="btn-stack">
-            <a class="btn" href="./events_map_boston.html"><span><span class="kind">Map</span>Open the map</span><span class="arrow">→</span></a>
-            <a class="btn" href="./events_gallery_boston.html"><span><span class="kind">Gallery</span>Browse the gallery</span><span class="arrow">→</span></a>
-            <a class="btn" href="https://data.flowers/tw/?city=boston"><span><span class="kind">Chatbot</span>Ask the bot</span><span class="arrow">→</span></a>
+            <a class="btn" href="./events_map_boston.html"><span class="btn-inner"><span class="kind">Map</span><span class="btn-label">Open the map</span></span><span class="arrow">→</span></a>
+            <a class="btn" href="./events_gallery_boston.html"><span class="btn-inner"><span class="kind">Gallery</span><span class="btn-label">Browse the gallery</span></span><span class="arrow">→</span></a>
+            <a class="btn" href="https://data.flowers/tw/?city=boston"><span class="btn-inner"><span class="kind">Chatbot</span><span class="btn-label">Ask the bot</span></span><span class="arrow">→</span></a>
           </div>
         </div>
       </article>
@@ -551,9 +561,9 @@
           <div class="city-mono">40.75°N · 73.98°W</div>
           <div class="dates">June 1–7, 2026</div>
           <div class="btn-stack">
-            <a class="btn" href="./events_map_nyc.html"><span><span class="kind">Map</span>Open the map</span><span class="arrow">→</span></a>
-            <a class="btn" href="./events_gallery_nyc.html"><span><span class="kind">Gallery</span>Browse the gallery</span><span class="arrow">→</span></a>
-            <a class="btn" href="https://data.flowers/tw/?city=nyc"><span><span class="kind">Chatbot</span>Ask the bot</span><span class="arrow">→</span></a>
+            <a class="btn" href="./events_map_nyc.html"><span class="btn-inner"><span class="kind">Map</span><span class="btn-label">Open the map</span></span><span class="arrow">→</span></a>
+            <a class="btn" href="./events_gallery_nyc.html"><span class="btn-inner"><span class="kind">Gallery</span><span class="btn-label">Browse the gallery</span></span><span class="arrow">→</span></a>
+            <a class="btn" href="https://data.flowers/tw/?city=nyc"><span class="btn-inner"><span class="kind">Chatbot</span><span class="btn-label">Ask the bot</span></span><span class="arrow">→</span></a>
           </div>
         </div>
       </article>
@@ -596,7 +606,7 @@
           <div class="city-mono">29.97°N · 90.06°W · Fair Grounds</div>
           <div class="dates"><em>15+ minutes between stages</em></div>
           <div class="btn-stack">
-            <a class="btn" href="https://nolajazzfest.stagehopper.app"><span><span class="kind">Open</span>Stage map &amp; lineup</span><span class="arrow">→</span></a>
+            <a class="btn" href="https://nolajazzfest.stagehopper.app"><span class="btn-inner"><span class="kind">Open</span><span class="btn-label">Stage map &amp; lineup</span></span><span class="arrow">→</span></a>
           </div>
         </div>
       </article>
