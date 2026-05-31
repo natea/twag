@@ -1,4 +1,4 @@
-/* TWAG Datadog RUM (Real User Monitoring).
+/* StageHopper Datadog RUM (Real User Monitoring).
  *
  * Loads the Datadog browser RUM SDK and initializes it. The application ID
  * + client token are PUBLIC by design (Datadog's "client token" is meant to

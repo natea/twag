@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NY Tech Week 2026 — Event Gallery | TWAG</title>
+  <title>NY Tech Week 2026 — Event Gallery | StageHopper</title>
   <meta name="description" content="Scrollable image gallery of every NY Tech Week 2026 event (June 1–7, 1,360+ events). Filter by day, hover for details, tap a tile to RSVP on Partiful.">
   <meta name="keywords" content="NY Tech Week, NY Tech Week 2026, NYTechWeek, NYTW, New York startup events, SoHo, Chelsea, Flatiron, Williamsburg, Partiful, founder events, AI events NYC, tech events poster gallery">
   <meta name="author" content="Nate Aune">
@@ -15,12 +15,12 @@
   <meta property="og:description" content="Every NY Tech Week 2026 event in a scrollable image gallery. Filter by day, tap to RSVP.">
   <meta property="og:url" content="https://natea.github.io/twag/events_gallery_nyc.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="TWAG — Tech Week Bot">
+  <meta property="og:site_name" content="StageHopper">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://natea.github.io/twag/og_nyc.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="NY Tech Week 2026 — TWAG event gallery">
+  <meta property="og:image:alt" content="NY Tech Week 2026 — StageHopper event gallery">
 
   <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
   <meta name="twitter:title" content="NY Tech Week 2026 — Event Gallery">
   <meta name="twitter:description" content="Every NY Tech Week 2026 event in a scrollable image gallery. Filter by day, tap to RSVP.">
   <meta name="twitter:image" content="https://natea.github.io/twag/og_nyc.png">
-  <meta name="twitter:image:alt" content="NY Tech Week 2026 — TWAG event gallery">
+  <meta name="twitter:image:alt" content="NY Tech Week 2026 — StageHopper event gallery">
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="apple-touch-icon" href="./apple-touch-icon.svg">
@@ -41,7 +41,7 @@
   <header>
     <h1>NY Tech Week 2026 — Gallery</h1>
     <div id="count">Loading…</div>
-    <div class="credit">Made by Nate Aune (<a href="https://x.com/natea" target="_blank" rel="noopener">@natea</a>) · <a href="mailto:natejaune+twag@gmail.com?subject=TWAG%20feedback" class="credit-feedback">feedback</a></div>
+    <div class="credit">Made by Nate Aune (<a href="https://x.com/natea" target="_blank" rel="noopener">@natea</a>) · <a href="https://docs.google.com/forms/d/e/1FAIpQLSfquYPMCzn2q1HoZDf2z1ugysQblb8qlbCv27BmnuRkYYnAPg/viewform" target="_blank" rel="noopener" class="credit-feedback">feedback</a></div>
   </header>
   <nav class="tab-nav">
     <a href="./events_map_nyc.html">Map</a>
@@ -60,7 +60,9 @@
   <script src="./tab_nav.js"></script>
   <script src="./vendor/fuse.basic.min.js"></script>
   <script src="./search.js"></script>
+  <script src="./capacitor_bridge.js"></script>
   <script src="./events_gallery.js"></script>
+  <script src="./app_teaser.js"></script>
   <script>
     initEventGallery({
       galleryUrl: "./nyc_gallery.json",

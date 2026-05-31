@@ -1,4 +1,4 @@
-/* TWAG client-side fuzzy search.
+/* StageHopper client-side fuzzy search.
  *
  * Builds a Fuse.js index over the events array passed in, wires the
  * #search input (debounced ~120 ms), and notifies the caller whenever

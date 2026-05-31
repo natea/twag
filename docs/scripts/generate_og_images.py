@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate 1200×630 Open Graph share images for TWAG.
+"""Generate 1200×630 Open Graph share images for StageHopper.
 
 Produces three PNGs under docs/:
   - og.png           generic site card (for index.html)
@@ -7,7 +7,7 @@ Produces three PNGs under docs/:
   - og_nyc.png       NY Tech Week 2026
 
 These are the images platforms like X, LinkedIn, Mastodon, Slack, Facebook,
-iMessage, etc. fetch when someone shares a TWAG URL. 1200×630 is the de
+iMessage, etc. fetch when someone shares a StageHopper URL. 1200×630 is the de
 facto standard size for Open Graph / Twitter Cards "summary_large_image."
 
 Run from the repo root (Pillow is already a project dep):
@@ -145,28 +145,28 @@ def main() -> int:
 
     make_image(
         docs / "og_boston.png",
-        eyebrow="Boston Tech Week 2026 · May 26-31",
+        eyebrow="StageHopper · Boston Tech Week 2026",
         headline="Every event,",
-        subhead="on one clustered map. Filter by day, RSVP on Partiful.",
-        footer_left="natea.github.io/twag/events_map_boston.html",
+        subhead="May 26-31 · one clustered map. Filter by day, RSVP on Partiful.",
+        footer_left="stagehopper.app",
         footer_right=common_footer_right,
     )
 
     make_image(
         docs / "og_nyc.png",
-        eyebrow="NY Tech Week 2026 · June 1-7",
+        eyebrow="StageHopper · NY Tech Week 2026",
         headline="Every event,",
-        subhead="on one clustered map. Filter by day, RSVP on Partiful.",
-        footer_left="natea.github.io/twag/events_map_nyc.html",
+        subhead="June 1-7 · one clustered map. Filter by day, RSVP on Partiful.",
+        footer_left="stagehopper.app",
         footer_right=common_footer_right,
     )
 
     make_image(
         docs / "og.png",
-        eyebrow="TWAG · Tech Week event maps",
+        eyebrow="StageHopper · Tech Week event maps",
         headline="Boston + NY,",
         subhead="every Tech Week event, clustered on a map.",
-        footer_left="natea.github.io/twag",
+        footer_left="stagehopper.app",
         footer_right=common_footer_right,
     )
 

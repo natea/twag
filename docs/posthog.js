@@ -1,4 +1,4 @@
-/* TWAG analytics + feedback bootstrap.
+/* StageHopper analytics + feedback bootstrap.
  *
  * Loads PostHog's web SDK (no bundler), initialises with the project key
  * from window.TWAG_POSTHOG_KEY (set in config.js), and exposes a tiny
