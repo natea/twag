@@ -788,6 +788,10 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   line-height: 1.3;
 }
 .popup-share { padding: 4px 8px; }
+/* Inline share glyph (iOS-style SVG) — vertically centered with adjacent text */
+.share-icon {
+  vertical-align: -2px;
+}
 .popup-remind.is-set {
   background: #fdeeea;
   border-color: #e8543e;
