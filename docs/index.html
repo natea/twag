@@ -421,6 +421,53 @@
       letter-spacing: -0.02em;
     }
 
+    /* ────────────── APPS TEASER (subtle, bottom) ────────────── */
+    .apps-teaser {
+      max-width: 1400px;
+      margin: 80px auto 0;
+      padding: 30px 32px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .apps-teaser .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--vermillion);
+      margin-bottom: 8px;
+    }
+    .apps-teaser h3 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 48;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .apps-teaser p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      margin: 0;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+    .apps-teaser .btn { white-space: nowrap; }
+    @media (max-width: 720px) {
+      .apps-teaser { margin-top: 56px; padding: 24px 20px; gap: 18px; }
+      .apps-teaser h3 { font-size: 24px; }
+    }
+
     /* ────────────── FOOTER ────────────── */
     footer {
       margin-top: 80px;
@@ -625,6 +672,17 @@
       </article>
 
     </div>
+  </section>
+
+  <section class="apps-teaser reveal" aria-label="Mobile apps coming soon">
+    <div>
+      <div class="kicker">On the horizon</div>
+      <h3>Native apps for iOS &amp; Android</h3>
+      <p>See yourself on the map &middot; get pinged before your next event starts.</p>
+    </div>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfquYPMCzn2q1HoZDf2z1ugysQblb8qlbCv27BmnuRkYYnAPg/viewform" target="_blank" rel="noopener">
+      <span class="btn-inner"><span class="kind">Notify me</span><span class="btn-label">Join the waitlist</span></span><span class="arrow">→</span>
+    </a>
   </section>
 
   <footer>
