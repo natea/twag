@@ -19,9 +19,16 @@ logged into the `natea` W&B account first.
 | Run name | Model column | What it is |
 |----------|--------------|------------|
 | `eval-…-eloquent-tree` (`41ac`) | `shipped_pin:v0` | **geocode-mode** — scores the live pins (the 80% in-bbox / 82.5% nbhd numbers; hallucination = N/A) |
-| `eval-…-elegant-bear` (`aec4`) | `extract_then_…` | models-mode **gpt-4o-mini**, 10 rows |
-| `eval-…-innocent-fish` (`69c2`) | `extract_then_…` | models-mode **claude-haiku**, 10 rows |
+| `eval-…-elegant-bear` (`aec4`) | `extract_then_…claude-haiku` | **clean** set, 10 rows |
+| `eval-…-innocent-fish` (`69c2`) | `extract_then_…gpt-4o-mini` | **clean** set, 10 rows |
 | `eager-tree` / `tender-rose` | `extract_then_…` | the 6-row warm-up runs |
+| (two most-recent runs) | gpt-4o-mini / claude-haiku | **hard** set — the ones that diverge 100% vs 90% |
+
+**Which comparison shows what:**
+- `elegant-bear` vs `innocent-fish` (clean) → **tie on accuracy**; the radar
+  chart reveals the **latency / token** difference (the efficiency story).
+- The two **hard**-set runs → the **accuracy gap** (gpt-4o-mini 100% vs
+  claude-haiku 90%). Use these for the "models actually differ" moment.
 
 Reference screenshots of each screen are in `eval/demo/` (`weave-traces.png`,
 `weave-evaluations.png`, `weave-leaderboard.png`).
@@ -81,9 +88,13 @@ Reference screenshots of each screen are in `eval/demo/` (`weave-traces.png`,
   the **Columns** button or scroll if they're off-screen.)
 - Click into the run → its example rows; the out-of-bbox pins (incl. Copley
   Place) are the failures. Click one → the trace shows the bad coordinates.
-- **The killer view:** tick the two model runs (`elegant-bear`,
-  `innocent-fish`) and hit **Compare** (top-left) for the side-by-side
-  evaluation table.
+- **The compare view:** tick two model runs and hit **Compare** (top-left) for
+  the side-by-side radar + per-scorer bars.
+  - clean runs (`elegant-bear` claude vs `innocent-fish` gpt-4o-mini) → **tie**
+    on accuracy; the radar's **Latency / Total Tokens** axes show the efficiency
+    gap.
+  - the two **hard**-set runs → the **accuracy gap** (100% vs 90%) — the
+    stronger "models differ" moment.
 
 > "Five domain scorers, not generic ones: haversine distance vs ground truth,
 > in-city bounding box, neighborhood agreement, an LLM-judge for hallucinated
