@@ -41,3 +41,6 @@ android/capacitor-cordova-android-plugins/
 
 # Vendored Axiom skills (installed locally, not committed)
 .claude/skills/axiom-*/
+
+# App Store marketing assets (screenshots etc.) — generated, not committed
+appstore-assets/
