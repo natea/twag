@@ -35,7 +35,6 @@ const config: CapacitorConfig = {
       style: 'DARK',
       backgroundColor: '#1a1a1a',
     },
-    PushNotifications: { presentationOptions: ['badge', 'sound', 'alert'] },
     LocalNotifications: {
       // Brand-orange small icon + accent; falls back to the app icon.
       smallIcon: 'ic_stat_icon_config_sample',
