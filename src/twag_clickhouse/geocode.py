@@ -140,6 +140,32 @@ def _record_as_dict(record: VenueRecord) -> dict[str, Any]:
     }
 
 
+def geocode_address(address: str, *, api_key: str | None = None) -> dict[str, Any]:
+    """Geocode a single address string and return a plain dict.
+
+    Public, import-friendly entry point used by the Pin Police eval harness
+    (which wraps it with ``weave.op`` for tracing). Behavior matches the
+    per-event geocoding inside :func:`geocode_city`. Returns
+    ``{"address", "lat", "lon", "formatted", "confidence", "source"}``;
+    ``lat``/``lon`` are ``None`` when the address can't be resolved.
+    """
+    address = _normalize_address(address)
+    if not address:
+        return {
+            "address": "",
+            "lat": None,
+            "lon": None,
+            "formatted": "",
+            "confidence": 0,
+            "source": "skipped",
+        }
+    payload = _opencage_request(address, api_key or _api_key())
+    record = _result_to_record(event_id="", address=address, venue_name="", payload=payload)
+    out = _record_as_dict(record)
+    out["source"] = record.source
+    return out
+
+
 def geocode_city(
     *,
     city: CityConfig | None = None,

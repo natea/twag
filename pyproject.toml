@@ -12,6 +12,18 @@ dependencies = [
   "pillow>=10.0.0",
 ]
 
+[project.optional-dependencies]
+# Pin Police — Weave evaluation harness (dev/offline only; NOT shipped in the
+# web/native bundle). Install with: uv sync --extra pinpolice
+pinpolice = [
+  "weave>=0.51.0",
+  "openai>=1.40.0",
+  "anthropic>=0.39.0",
+]
+dev = [
+  "pytest>=8.0.0",
+]
+
 [project.scripts]
 twag = "twag_clickhouse.cli:main"
 twag-clickhouse = "twag_clickhouse.cli:main"
@@ -26,4 +38,4 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "."]

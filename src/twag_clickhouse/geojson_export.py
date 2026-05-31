@@ -56,14 +56,33 @@ def _format_iso_datetime(value: Any) -> str:
         return str(value)
 
 
-def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
+def build_geojson(
+    city: CityConfig | None = None,
+    *,
+    guard: bool = False,
+    guard_action: str = "flag",
+) -> dict[str, Any]:
+    """Build the map GeoJSON.
+
+    When ``guard`` is True, each candidate pin is checked with the shared
+    geometric scorers (``twag_clickhouse.pin_geometry``). Pins that fail are
+    either dropped (``guard_action="drop"``) or kept with ``"pin_flagged": true``
+    in their properties (``guard_action="flag"``, the default). When ``guard``
+    is False the output is byte-for-byte identical to the pre-guardrail export.
+    """
     city = city or active_city()
     dataset = NytwDataset.from_path(city.dataset_path)
     dataset.validate()
     venues = _load_venues(city)
 
+    if guard:
+        from .pin_geometry import pin_verdict  # local import: stdlib-only
+
     features: list[dict[str, Any]] = []
     counts = {"total": 0, "mapped": 0, "no_coords": 0, "canceled": 0, "stub": 0}
+    if guard:
+        counts["flagged"] = 0
+        counts["dropped"] = 0
 
     for path in sorted(dataset.events_dir.glob("*.md")):
         event = parse_event_file(path, dataset.source_dir)
@@ -84,8 +103,22 @@ def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
         if len(description) > 1200:
             description = description[:1197].rstrip() + "…"
 
-        features.append(
-            {
+        pin_flagged = False
+        if guard:
+            verdict = pin_verdict(
+                venue["lat"],
+                venue["lon"],
+                city.slug,
+                neighborhood=event.get("neighborhood") or "",
+            )
+            if not verdict["ok"]:
+                if guard_action == "drop":
+                    counts["dropped"] += 1
+                    continue
+                pin_flagged = True
+                counts["flagged"] += 1
+
+        feature = {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
@@ -114,8 +147,10 @@ def build_geojson(city: CityConfig | None = None) -> dict[str, Any]:
                     "at_capacity": bool(event.get("at_capacity")),
                     "confidence": int(venue.get("confidence") or 0),
                 },
-            }
-        )
+        }
+        if pin_flagged:
+            feature["properties"]["pin_flagged"] = True
+        features.append(feature)
         counts["mapped"] += 1
 
     collection = {

@@ -195,8 +195,10 @@ def geocode_venues(args: argparse.Namespace) -> int:
 
 
 def export_geojson(args: argparse.Namespace) -> int:
-    _ = args
-    result = build_geojson()
+    result = build_geojson(
+        guard=getattr(args, "guard", False),
+        guard_action=getattr(args, "guard_action", "flag"),
+    )
     _print_json(result)
     return 0
 
@@ -405,6 +407,17 @@ def build_parser() -> argparse.ArgumentParser:
     geojson_parser = subparsers.add_parser(
         "build-geojson",
         help="Join events + venues.json into events.geojson for the map page",
+    )
+    geojson_parser.add_argument(
+        "--guard",
+        action="store_true",
+        help="Pin Police: check each pin (in-city bbox, neighborhood) and flag/drop bad ones",
+    )
+    geojson_parser.add_argument(
+        "--guard-action",
+        choices=["flag", "drop"],
+        default="flag",
+        help="With --guard: tag bad pins with pin_flagged (default) or drop them",
     )
     geojson_parser.set_defaults(func=export_geojson)
 

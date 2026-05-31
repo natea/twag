@@ -1,0 +1,77 @@
+{
+  "_note": "Hand-verified gold coordinates for the geocoder eval. Seeded from confidence==10 OpenCage rows; spot-check and correct as needed.",
+  "rows": {
+    "0Nby1nnEUHh06BErQs9A": {
+      "address": "30 Melcher St, Boston, MA 02210",
+      "lat": 42.3495535,
+      "lon": -71.0500292,
+      "venue_name": "SPIN - Boston"
+    },
+    "0S6UwLWJf9HkXvd0cMVO": {
+      "address": "1 Bennett St, Cambridge, MA 02138",
+      "lat": 42.372305,
+      "lon": -71.122165,
+      "venue_name": "Regattabar"
+    },
+    "0tV8YeOGl1HZZ3Te7XMQ": {
+      "address": "2 Seaport Ln, Boston, MA 02210",
+      "lat": 42.3490483,
+      "lon": -71.0407647,
+      "venue_name": ""
+    },
+    "19O3ycXCAN3nJfUR8FrF": {
+      "address": "222 Third St, Cambridge, MA 02142",
+      "lat": 42.3670806,
+      "lon": -71.0802802,
+      "venue_name": ""
+    },
+    "1A65LJu0g2QOXDmXH4le": {
+      "address": "399 Boylston St, Boston, MA 02116",
+      "lat": 42.3518103,
+      "lon": -71.0720961,
+      "venue_name": "Tatte Bakery & Cafe"
+    },
+    "1PjXTZcJ3eaBBezcBntr": {
+      "address": "1060 Broadway, Unit C101B, Somerville, MA 02144",
+      "lat": 42.4016737,
+      "lon": -71.1250679,
+      "venue_name": "Somerville Music Spaces"
+    },
+    "2FALmSd7dGutTvgJuJrh": {
+      "address": "1 Broadway, Cambridge, MA 02139",
+      "lat": 42.3625653,
+      "lon": -71.0832886,
+      "venue_name": "CIC Cambridge"
+    },
+    "2KVSudYlzQpKBweLOwH9": {
+      "address": "120 Brookline St, Cambridge, MA 02139",
+      "lat": 42.360745,
+      "lon": -71.104324,
+      "venue_name": "Wistia"
+    },
+    "2oiJXiJyAYGZRZvtsEZ6": {
+      "address": "1 Beacon St, Boston, MA 02108",
+      "lat": 42.3584577,
+      "lon": -71.0608383,
+      "venue_name": "One Beacon"
+    },
+    "36eXtZ652H5GgEGrymXr": {
+      "address": "460C Harrison Ave, Boston, MA 02118",
+      "lat": 42.3421529,
+      "lon": -71.0639735,
+      "venue_name": "A Street Frames - SoWa"
+    },
+    "3DsvWlYqIH8gMNzbR4Mg": {
+      "address": "915 Commonwealth Ave, Boston, MA 02215",
+      "lat": 42.3510752,
+      "lon": -71.1168816,
+      "venue_name": ""
+    },
+    "3IV70qLxgUmVhDoobwCC": {
+      "address": "163 Newbury St, Boston, MA 02116",
+      "lat": 42.350831,
+      "lon": -71.0787883,
+      "venue_name": "Sushi By Bosso"
+    }
+  }
+}
