@@ -24,6 +24,52 @@ function setDateInHash(date) {
   window.location.hash = params.toString();
 }
 
+// Today's calendar date as a "YYYY-MM-DD" string in the visitor's local time.
+function todayISO() {
+  const d = new Date();
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+}
+
+// Day to show when the visitor hasn't picked one (no hash, no saved choice):
+// today if the event is happening now, otherwise the event's first day
+// (covers both "event hasn't started yet" and "event already passed").
+function defaultEventDate(dateRange) {
+  const t = todayISO();
+  return dateRange.indexOf(t) !== -1 ? t : dateRange[0];
+}
+
+// Persisted day choice (the "cookie") so a returning visitor lands back on
+// the day they were browsing. Keyed per city; ignored if it's not a valid
+// day for the current event (e.g. last year's saved date).
+function dayStorageKey(citySlug) {
+  return "stagehopper_day_" + (citySlug || "");
+}
+function loadSavedDate(citySlug, dateRange) {
+  try {
+    const v = localStorage.getItem(dayStorageKey(citySlug));
+    return v && dateRange.indexOf(v) !== -1 ? v : null;
+  } catch (_) {
+    return null;
+  }
+}
+function saveDate(citySlug, date) {
+  try {
+    localStorage.setItem(dayStorageKey(citySlug), date);
+  } catch (_) {}
+}
+
+// Initial day priority: explicit #date= (deep link / tab carry-over) →
+// saved choice → today-or-first-day default.
+function pickInitialDate(config) {
+  return (
+    parseDateFromHash() ||
+    loadSavedDate(config.citySlug, config.dateRange) ||
+    defaultEventDate(config.dateRange)
+  );
+}
+
 function formatHumanDate(iso) {
   const [y, m, d] = iso.split("-").map(Number);
   const date = new Date(Date.UTC(y, m - 1, d));
@@ -167,13 +213,14 @@ async function initEventMap(config) {
   }
   const fullGeoJson = await response.json();
 
-  const initialDate = parseDateFromHash() || config.defaultDate;
+  const initialDate = pickInitialDate(config);
   let activeDate = initialDate;
 
   const datePicker = document.getElementById("date-picker");
   buildDatePicker(datePicker, config.dateRange, activeDate, (date) => {
     activeDate = date;
     setDateInHash(date);
+    saveDate(config.citySlug, date);
     refresh();
   });
 
@@ -279,6 +326,7 @@ async function initEventMap(config) {
     buildDatePicker(datePicker, config.dateRange, activeDate, (date) => {
       activeDate = date;
       setDateInHash(date);
+      saveDate(config.citySlug, date);
       refresh();
     });
     // Update the "This day" pill label when the active date changes.
@@ -476,6 +524,7 @@ async function initEventMap(config) {
     const hashDate = parseDateFromHash();
     if (hashDate && hashDate !== activeDate) {
       activeDate = hashDate;
+      saveDate(config.citySlug, hashDate);
       refresh();
     }
     focusEventFromHash();

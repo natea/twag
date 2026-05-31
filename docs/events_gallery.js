@@ -24,6 +24,41 @@ function setDateInHashG(date) {
   window.location.hash = params.toString();
 }
 
+// Today's calendar date as "YYYY-MM-DD" in the visitor's local time.
+function todayISOG() {
+  const d = new Date();
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+}
+
+// Day to show when the visitor hasn't picked one: today if the event is on
+// now, otherwise the event's first day (handles before-start and after-end).
+function defaultEventDateG(dateRange) {
+  const t = todayISOG();
+  return dateRange.indexOf(t) !== -1 ? t : dateRange[0];
+}
+
+// Persisted day choice (the "cookie"), keyed per city and validated against
+// the current event's date range. Mirrors the map view so the two stay in
+// sync across tab switches and return visits.
+function dayStorageKeyG(citySlug) {
+  return "stagehopper_day_" + (citySlug || "");
+}
+function loadSavedDateG(citySlug, dateRange) {
+  try {
+    const v = localStorage.getItem(dayStorageKeyG(citySlug));
+    return v && dateRange.indexOf(v) !== -1 ? v : null;
+  } catch (_) {
+    return null;
+  }
+}
+function saveDateG(citySlug, date) {
+  try {
+    localStorage.setItem(dayStorageKeyG(citySlug), date);
+  } catch (_) {}
+}
+
 function formatHumanDateG(iso) {
   const [y, m, d] = iso.split("-").map(Number);
   const date = new Date(Date.UTC(y, m - 1, d));
@@ -207,7 +242,10 @@ async function initEventGallery(config) {
   const allEvents = payload.events || [];
   const citySlug = payload.city || "";
 
-  const initialDate = parseDateFromHashG() || config.defaultDate;
+  const initialDate =
+    parseDateFromHashG() ||
+    loadSavedDateG(citySlug, config.dateRange) ||
+    defaultEventDateG(config.dateRange);
   let activeDate = initialDate;
 
   const datePicker = document.getElementById("date-picker");
@@ -224,6 +262,7 @@ async function initEventGallery(config) {
     buildDatePickerG(datePicker, config.dateRange, activeDate, (date) => {
       activeDate = date;
       setDateInHashG(date);
+      saveDateG(citySlug, date);
       refresh();
     });
     // Update the "This day" pill label when activeDate changes.
@@ -335,6 +374,7 @@ async function initEventGallery(config) {
     const hashDate = parseDateFromHashG();
     if (hashDate && hashDate !== activeDate) {
       activeDate = hashDate;
+      saveDateG(citySlug, hashDate);
       refresh();
     }
   });
