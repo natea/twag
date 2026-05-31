@@ -228,12 +228,13 @@
     .card {
       background: var(--paper-deep);
       border: 2px solid var(--ink);
-      padding: 28px 28px 24px;
+      padding: 0;
       position: relative;
       transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s;
       display: flex;
       flex-direction: column;
       min-height: 460px;
+      overflow: hidden;
     }
     .card:hover {
       transform: translate(-4px, -4px);
@@ -246,8 +247,53 @@
     .card.coming-soon {
       background: transparent;
       border-style: dashed;
-      opacity: 0.75;
+      opacity: 0.78;
     }
+    .card-body {
+      padding: 24px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05) contrast(1.02);
+      transition: transform 0.6s cubic-bezier(.2,.8,.2,1), filter 0.4s;
+    }
+    .card:hover .card-media img {
+      transform: scale(1.04);
+      filter: saturate(1.15) contrast(1.05);
+    }
+    .card.featured .card-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(232,84,62,0.35) 100%);
+      pointer-events: none;
+    }
+    .photo-credit {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.75);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+      z-index: 2;
+    }
+    .photo-credit a { color: inherit; border-bottom: 1px solid rgba(255,255,255,0.4); }
 
     .card-label {
       font-family: 'JetBrains Mono', monospace;
@@ -325,16 +371,24 @@
 
     .stamp {
       position: absolute;
-      top: 18px;
-      right: 18px;
-      border: 1.5px solid currentColor;
+      top: 12px;
+      right: 12px;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
       padding: 4px 10px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       transform: rotate(4deg);
-      opacity: 0.7;
+      z-index: 3;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+    }
+    .card.featured .stamp {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
     }
 
     .coming-soon-inner {
@@ -467,38 +521,56 @@
     <div class="cards">
 
       <article class="card featured">
-        <div class="stamp">In session</div>
-        <div class="card-label">Tech Week · 01</div>
-        <h3>Tech Week Boston</h3>
-        <div class="city-mono">42.36°N · 71.06°W</div>
-        <div class="dates">May 26–31, 2026</div>
-        <div class="btn-stack">
-          <a class="btn" href="./events_map_boston.html"><span><span class="kind">Map</span>Open the map</span><span class="arrow">→</span></a>
-          <a class="btn" href="./events_gallery_boston.html"><span><span class="kind">Gallery</span>Browse the gallery</span><span class="arrow">→</span></a>
-          <a class="btn" href="https://data.flowers/tw/?city=boston"><span><span class="kind">Chatbot</span>Ask the bot</span><span class="arrow">→</span></a>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1631883474385-882359c94e1c?w=900&q=80&auto=format&fit=crop" alt="Acorn Street, Boston — cobblestone lane with brownstones" loading="lazy" decoding="async">
+          <div class="photo-credit">Photo · mk. s / Unsplash</div>
+        </div>
+        <div class="card-body">
+          <div class="stamp">In session</div>
+          <div class="card-label">Tech Week · 01</div>
+          <h3>Tech Week Boston</h3>
+          <div class="city-mono">42.36°N · 71.06°W</div>
+          <div class="dates">May 26–31, 2026</div>
+          <div class="btn-stack">
+            <a class="btn" href="./events_map_boston.html"><span><span class="kind">Map</span>Open the map</span><span class="arrow">→</span></a>
+            <a class="btn" href="./events_gallery_boston.html"><span><span class="kind">Gallery</span>Browse the gallery</span><span class="arrow">→</span></a>
+            <a class="btn" href="https://data.flowers/tw/?city=boston"><span><span class="kind">Chatbot</span>Ask the bot</span><span class="arrow">→</span></a>
+          </div>
         </div>
       </article>
 
       <article class="card">
-        <div class="stamp">This week</div>
-        <div class="card-label">Tech Week · 02</div>
-        <h3>Tech Week NYC</h3>
-        <div class="city-mono">40.75°N · 73.98°W</div>
-        <div class="dates">June 1–7, 2026</div>
-        <div class="btn-stack">
-          <a class="btn" href="./events_map_nyc.html"><span><span class="kind">Map</span>Open the map</span><span class="arrow">→</span></a>
-          <a class="btn" href="./events_gallery_nyc.html"><span><span class="kind">Gallery</span>Browse the gallery</span><span class="arrow">→</span></a>
-          <a class="btn" href="https://data.flowers/tw/?city=nyc"><span><span class="kind">Chatbot</span>Ask the bot</span><span class="arrow">→</span></a>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1452796651103-7c07fca7a2c1?w=900&q=80&auto=format&fit=crop" alt="Brooklyn Bridge with Manhattan skyline beyond" loading="lazy" decoding="async">
+          <div class="photo-credit">Photo · Hannes Richter / Unsplash</div>
+        </div>
+        <div class="card-body">
+          <div class="stamp">This week</div>
+          <div class="card-label">Tech Week · 02</div>
+          <h3>Tech Week NYC</h3>
+          <div class="city-mono">40.75°N · 73.98°W</div>
+          <div class="dates">June 1–7, 2026</div>
+          <div class="btn-stack">
+            <a class="btn" href="./events_map_nyc.html"><span><span class="kind">Map</span>Open the map</span><span class="arrow">→</span></a>
+            <a class="btn" href="./events_gallery_nyc.html"><span><span class="kind">Gallery</span>Browse the gallery</span><span class="arrow">→</span></a>
+            <a class="btn" href="https://data.flowers/tw/?city=nyc"><span><span class="kind">Chatbot</span>Ask the bot</span><span class="arrow">→</span></a>
+          </div>
         </div>
       </article>
 
       <article class="card coming-soon">
-        <div class="card-label">Tech Week · 03</div>
-        <h3>Tech Week SF</h3>
-        <div class="city-mono">37.77°N · 122.41°W</div>
-        <div class="coming-soon-inner">
-          <div class="big">Coming<br>soon</div>
-          <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">Loading later this summer</p>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=900&q=80&auto=format&fit=crop" alt="Golden Gate Bridge, San Francisco" loading="lazy" decoding="async">
+          <div class="photo-credit">Photo · Maarten van den Heuvel / Unsplash</div>
+        </div>
+        <div class="card-body">
+          <div class="card-label">Tech Week · 03</div>
+          <h3>Tech Week SF</h3>
+          <div class="city-mono">37.77°N · 122.41°W</div>
+          <div class="coming-soon-inner">
+            <div class="big">Coming<br>soon</div>
+            <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">Loading later this summer</p>
+          </div>
         </div>
       </article>
 
@@ -513,25 +585,33 @@
     <div class="cards">
 
       <article class="card">
-        <div class="stamp">Pilot</div>
-        <div class="card-label">Festival · 01</div>
-        <h3>NOLA Jazz Fest</h3>
-        <div class="city-mono">29.97°N · 90.06°W · Fair Grounds</div>
-        <div class="dates"><em>15+ minutes between stages</em></div>
-        <div class="btn-stack">
-          <a class="btn" href="https://nolajazzfest.stagehopper.app"><span><span class="kind">Open</span>Stage map &amp; lineup</span><span class="arrow">→</span></a>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1554311885-22051f2aadfc?w=900&q=80&auto=format&fit=crop" alt="New Orleans street musician playing trumpet, brass-band energy" loading="lazy" decoding="async">
+          <div class="photo-credit">Photo · Victoria Gonzales / Unsplash</div>
+        </div>
+        <div class="card-body">
+          <div class="stamp">Pilot</div>
+          <div class="card-label">Festival · 01</div>
+          <h3>NOLA Jazz Fest</h3>
+          <div class="city-mono">29.97°N · 90.06°W · Fair Grounds</div>
+          <div class="dates"><em>15+ minutes between stages</em></div>
+          <div class="btn-stack">
+            <a class="btn" href="https://nolajazzfest.stagehopper.app"><span><span class="kind">Open</span>Stage map &amp; lineup</span><span class="arrow">→</span></a>
+          </div>
         </div>
       </article>
 
       <article class="card coming-soon">
-        <div class="card-label">Festival · 02</div>
-        <h3>Your event?</h3>
-        <div class="city-mono">Any city · Any stage</div>
-        <div class="coming-soon-inner">
-          <div class="big" style="font-size:36px;">Multi-venue<br>conference<br>organizer?</div>
-          <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfquYPMCzn2q1HoZDf2z1ugysQblb8qlbCv27BmnuRkYYnAPg/viewform" target="_blank" rel="noopener" style="border-bottom:1px solid;">Get in touch →</a>
-          </p>
+        <div class="card-body">
+          <div class="card-label">Festival · 02</div>
+          <h3>Your event?</h3>
+          <div class="city-mono">Any city · Any stage</div>
+          <div class="coming-soon-inner">
+            <div class="big" style="font-size:36px;">Multi-venue<br>conference<br>organizer?</div>
+            <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfquYPMCzn2q1HoZDf2z1ugysQblb8qlbCv27BmnuRkYYnAPg/viewform" target="_blank" rel="noopener" style="border-bottom:1px solid;">Get in touch →</a>
+            </p>
+          </div>
         </div>
       </article>
 
