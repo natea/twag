@@ -1,0 +1,26 @@
+{
+  "name": "twag",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TWAG — Tech Week event maps & galleries, wrapped as a native iOS/Android app via Capacitor.",
+  "scripts": {
+    "cap:sync": "cap sync",
+    "cap:ios": "cap run ios",
+    "cap:android": "cap run android",
+    "cap:assets": "capacitor-assets generate --iconBackgroundColor '#e8543e' --splashBackgroundColor '#1a1a1a'"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/geolocation": "^6.1.0",
+    "@capacitor/ios": "^6.2.0",
+    "@capacitor/local-notifications": "^6.1.2",
+    "@capacitor/push-notifications": "^6.0.4",
+    "@capacitor/share": "^6.0.3",
+    "@capacitor/status-bar": "^6.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.2.0"
+  }
+}

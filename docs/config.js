@@ -5,6 +5,17 @@
 window.TWAG_MAPBOX_TOKEN =
   "pk.eyJ1IjoibmF0ZWF1bmUiLCJhIjoiY21wbHU4aHdmMXRzdzJycTd2bWQ3czN2YiJ9.CzTQoqTuInVTkb0cx-pNiQ";
 
+// iOS-only Mapbox token. The iOS Capacitor webview origin is
+// "capacitor://natea.github.io", which Mapbox URL restrictions can't allow-list
+// (custom scheme), so the referrer-restricted token above 403s on iOS.
+// Paste a SECOND public token here that has NO URL restrictions (Mapbox can't
+// restrict by origin on iOS anyway). capacitor_bridge.js swaps it in only when
+// running in the native iOS shell. Android keeps using the token above (its
+// origin really is https://natea.github.io). Leave "" to fall back to the web
+// token (map will not load on iOS until this is set).
+window.TWAG_MAPBOX_TOKEN_NATIVE =
+  "pk.eyJ1IjoibmF0ZWF1bmUiLCJhIjoiY21qZzBrNG9oMHlyajNocHNpZng4azk2NiJ9.d2rcrPp523vTwIlh0DIt0Q";
+
 // PostHog project API key. Restrict to https://natea.github.io
 // under Project Settings → CORS in the PostHog dashboard.
 // Leave blank ("") to disable analytics entirely (the snippet no-ops).

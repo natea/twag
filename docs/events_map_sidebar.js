@@ -1,4 +1,4 @@
-/* TWAG map sidebar — lists events whose pin is in the current viewport,
+/* StageHopper map sidebar — lists events whose pin is in the current viewport,
  * with an expanded detail card for the selected event.
  *
  * Usage from events_map.js, after the map's 'load' event:
@@ -93,6 +93,19 @@ function _rowHtml(citySlug, props, crossDay) {
     : "";
   const stats = (going || remaining)
     ? `<div class="sidebar-detail-stats">${going}${remaining}</div>` : "";
+  // Native-only actions (local-notification reminder + share sheet). Rendered
+  // as role="button" spans because .sidebar-row is itself a <button>; hidden
+  // entirely on the plain web build so the public site is unchanged.
+  const native = !!(window.twagNative && window.twagNative.isNative());
+  const reminded = native && window.twagNative.hasReminder(eventId);
+  const remindBtn = native
+    ? `<span class="sidebar-detail-remind${reminded ? " is-set" : ""}" role="button" tabindex="0" data-event-id="${_esc(eventId)}" aria-pressed="${reminded ? "true" : "false"}">${reminded ? "🔔 Reminder set" : "🔔 Remind me"}</span>`
+    : "";
+  const shareBtn = native
+    ? `<span class="sidebar-detail-share" role="button" tabindex="0" data-event-id="${_esc(eventId)}" aria-label="Share event">📤 Share</span>`
+    : "";
+  const actions = (remindBtn || shareBtn)
+    ? `<div class="sidebar-detail-actions">${remindBtn}${shareBtn}</div>` : "";
   return `
     <button class="sidebar-row${pastClass}" type="button" data-event-id="${_esc(eventId)}" aria-selected="false">
       <div class="sidebar-row-thumb" aria-hidden="true">
@@ -109,6 +122,7 @@ function _rowHtml(citySlug, props, crossDay) {
           ${stats}
           ${description}
           ${rsvp}
+          ${actions}
         </div>
       </div>
     </button>
@@ -142,6 +156,56 @@ function _sortByStart(features) {
     const aT = a.properties.title || "";
     const bT = b.properties.title || "";
     return aT < bT ? -1 : aT > bT ? 1 : 0;
+  });
+}
+
+// Wire the native-only Remind / Share controls inside expanded detail cards.
+// They're role="button" spans nested in a .sidebar-row <button>, so each
+// handler stops propagation to avoid also triggering the row's own select().
+function _wireDetailActions(listEl, propsById, citySlug) {
+  listEl.querySelectorAll(".sidebar-detail-share").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const props = propsById.get(el.dataset.eventId);
+      if (!props) return;
+      window.twagNative.shareEvent({
+        title: props.title,
+        text: [props.title, props.start_time, props.venue_name].filter(Boolean).join(" · "),
+        url: props.rsvp_url,
+      });
+      if (window.twagTrack) {
+        twagTrack("event_shared", { city: citySlug, event_id: props.event_id || "", source: "sidebar" });
+      }
+    });
+  });
+
+  listEl.querySelectorAll(".sidebar-detail-remind").forEach((el) => {
+    el.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const props = propsById.get(el.dataset.eventId);
+      if (!props) return;
+      const eventId = props.event_id;
+      if (window.twagNative.hasReminder(eventId)) {
+        await window.twagNative.cancelEventReminder(eventId);
+        el.classList.remove("is-set");
+        el.setAttribute("aria-pressed", "false");
+        el.textContent = "🔔 Remind me";
+        if (window.twagTrack) twagTrack("reminder_cancelled", { city: citySlug, event_id: eventId });
+        return;
+      }
+      const res = await window.twagNative.scheduleEventReminder(
+        Object.assign({ city: citySlug }, props)
+      );
+      if (res && res.scheduled) {
+        el.classList.add("is-set");
+        el.setAttribute("aria-pressed", "true");
+        el.textContent = "🔔 Reminder set";
+        if (window.twagTrack) twagTrack("reminder_scheduled", { city: citySlug, event_id: eventId });
+      } else {
+        el.textContent = res && res.reason === "too_late" ? "Already started" : "Couldn't set reminder";
+        setTimeout(() => { el.textContent = "🔔 Remind me"; }, 2500);
+      }
+    });
   });
 }
 
@@ -281,6 +345,13 @@ function initMapSidebar(config) {
         select(id, { fromUser: true });
       });
     });
+
+    // Native action buttons live inside each row's expanded detail card.
+    // Build a quick lookup so handlers have the full event props.
+    if (window.twagNative && window.twagNative.isNative()) {
+      const propsById = new Map(features.map(f => [f.properties.event_id, f.properties]));
+      _wireDetailActions(listEl, propsById, citySlug);
+    }
 
     if (selectedEventId) {
       applySelectionDom();

@@ -1,4 +1,4 @@
-/* TWAG event map — shared logic for per-city HTML pages.
+/* StageHopper event map — shared logic for per-city HTML pages.
  *
  * Each city HTML inlines its own MAP_CONFIG (token, center, zoom,
  * geojsonUrl, dateRange) and then calls initEventMap(MAP_CONFIG).
@@ -74,14 +74,76 @@ function popupHtml(props) {
     ? `<a class="popup-rsvp" href="${escapeHtml(props.rsvp_url)}" target="_blank" rel="noopener">RSVP →</a>`
     : "";
   const cap = props.at_capacity ? `<span class="popup-cap">at capacity</span>` : "";
+  // Native-only action buttons (share sheet, local-notification reminder).
+  // Hidden on the plain web build so the public site is unchanged.
+  const native = !!(window.twagNative && window.twagNative.isNative());
+  const reminded = native && window.twagNative.hasReminder(props.event_id);
+  const remind = native
+    ? `<button class="popup-remind${reminded ? " is-set" : ""}" type="button" aria-pressed="${reminded ? "true" : "false"}" title="Remind me 15 min before">${reminded ? "🔔 Reminder set" : "🔔 Remind me"}</button>`
+    : "";
+  const share = native
+    ? `<button class="popup-share" type="button" aria-label="Share event" title="Share">📤</button>`
+    : "";
+  const actions = (rsvp || remind || share)
+    ? `<div class="popup-actions">${rsvp}${remind}${share}</div>`
+    : "";
   return `
     <div class="popup">
       <div class="popup-title">${title}</div>
       <div class="popup-meta">${escapeHtml(time)} · ${escapeHtml(where)} ${cap}</div>
       ${host}
-      ${rsvp}
+      ${actions}
     </div>
   `;
+}
+
+function parseEventFromHash() {
+  const raw = (window.location.hash || "").replace(/^#/, "");
+  const params = new URLSearchParams(raw);
+  return params.get("event");
+}
+
+/* Custom "Locate me" control. Used only inside the native shell, where it
+ * routes through twagNative.requestLocation() to get the better native
+ * permission UX; the plain web build keeps its existing controls unchanged. */
+function makeLocateControl(map, citySlug) {
+  let marker = null;
+  return {
+    onAdd() {
+      const div = document.createElement("div");
+      div.className = "mapboxgl-ctrl mapboxgl-ctrl-group";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "twag-locate-btn";
+      btn.title = "Locate me";
+      btn.setAttribute("aria-label", "Locate me");
+      btn.textContent = "◎";
+      btn.addEventListener("click", async () => {
+        btn.classList.add("loading");
+        const loc = await window.twagNative.requestLocation();
+        btn.classList.remove("loading");
+        if (!loc) return;
+        const [lon, lat] = loc;
+        if (!marker) {
+          const el = document.createElement("div");
+          el.className = "twag-user-dot";
+          marker = new mapboxgl.Marker({ element: el }).setLngLat([lon, lat]).addTo(map);
+        } else {
+          marker.setLngLat([lon, lat]);
+        }
+        map.flyTo({ center: [lon, lat], zoom: Math.max(map.getZoom(), 14) });
+        if (window.twagTrack) twagTrack("locate_me_used", { city: citySlug });
+      });
+      div.appendChild(btn);
+      this._container = div;
+      return div;
+    },
+    onRemove() {
+      if (this._container && this._container.parentNode) {
+        this._container.parentNode.removeChild(this._container);
+      }
+    },
+  };
 }
 
 async function initEventMap(config) {
@@ -93,6 +155,9 @@ async function initEventMap(config) {
     zoom: config.zoom,
   });
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+  if (window.twagNative && window.twagNative.isNative()) {
+    map.addControl(makeLocateControl(map, config.citySlug), "top-right");
+  }
 
   const response = await fetch(config.geojsonUrl);
   if (!response.ok) {
@@ -147,8 +212,10 @@ async function initEventMap(config) {
       .addTo(map);
     activePopup.on("close", () => { activePopup = null; });
 
+    const popupEl = activePopup.getElement();
+
     // Track RSVP click-throughs from the popup.
-    const rsvpEl = activePopup.getElement().querySelector(".popup-rsvp");
+    const rsvpEl = popupEl.querySelector(".popup-rsvp");
     if (rsvpEl && window.twagTrack) {
       rsvpEl.addEventListener("click", () => {
         twagTrack("rsvp_clicked", {
@@ -156,6 +223,51 @@ async function initEventMap(config) {
           event_id: props.event_id || "",
           source: "map_popup",
         });
+      });
+    }
+
+    // Native share sheet.
+    const shareEl = popupEl.querySelector(".popup-share");
+    if (shareEl && window.twagNative) {
+      shareEl.addEventListener("click", () => {
+        window.twagNative.shareEvent({
+          title: props.title,
+          text: [props.title, props.start_time, props.venue_name].filter(Boolean).join(" · "),
+          url: props.rsvp_url,
+        });
+        if (window.twagTrack) {
+          twagTrack("event_shared", {
+            city: config.citySlug,
+            event_id: props.event_id || "",
+            source: "map_popup",
+          });
+        }
+      });
+    }
+
+    // Native local-notification reminder (toggle).
+    const remindEl = popupEl.querySelector(".popup-remind");
+    if (remindEl && window.twagNative) {
+      remindEl.addEventListener("click", async () => {
+        const props2 = Object.assign({ city: config.citySlug }, props);
+        if (window.twagNative.hasReminder(props.event_id)) {
+          await window.twagNative.cancelEventReminder(props.event_id);
+          remindEl.classList.remove("is-set");
+          remindEl.setAttribute("aria-pressed", "false");
+          remindEl.textContent = "🔔 Remind me";
+          if (window.twagTrack) twagTrack("reminder_cancelled", { city: config.citySlug, event_id: props.event_id || "" });
+          return;
+        }
+        const res = await window.twagNative.scheduleEventReminder(props2);
+        if (res && res.scheduled) {
+          remindEl.classList.add("is-set");
+          remindEl.setAttribute("aria-pressed", "true");
+          remindEl.textContent = "🔔 Reminder set";
+          if (window.twagTrack) twagTrack("reminder_scheduled", { city: config.citySlug, event_id: props.event_id || "" });
+        } else {
+          remindEl.textContent = res && res.reason === "too_late" ? "Already started" : "Couldn't set reminder";
+          setTimeout(() => { remindEl.textContent = "🔔 Remind me"; }, 2500);
+        }
       });
     }
   }
@@ -335,7 +447,30 @@ async function initEventMap(config) {
     }
 
     refresh();
+
+    // Deep link from a tapped notification: #date=…&event=<id>. Fly to the
+    // event, open its popup, and select it in the sidebar.
+    focusEventFromHash();
   });
+
+  // Pan to + select the event named in the hash, switching days if needed.
+  function focusEventFromHash() {
+    const eventId = parseEventFromHash();
+    if (!eventId) return;
+    const feature = fullGeoJson.features.find(
+      (f) => f.properties.event_id === eventId
+    );
+    if (!feature) return;
+    const eventDate = feature.properties.event_date;
+    if (eventDate && eventDate !== activeDate) {
+      activeDate = eventDate;
+      refresh();
+    }
+    const coords = feature.geometry.coordinates;
+    map.flyTo({ center: coords, zoom: Math.max(map.getZoom(), 14) });
+    showPopup(coords, feature.properties);
+    if (sidebar) sidebar.select(eventId, { fromUser: false });
+  }
 
   window.addEventListener("hashchange", () => {
     const hashDate = parseDateFromHash();
@@ -343,5 +478,6 @@ async function initEventMap(config) {
       activeDate = hashDate;
       refresh();
     }
+    focusEventFromHash();
   });
 }

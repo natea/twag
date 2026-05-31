@@ -17,3 +17,23 @@ build/
 *.egg-info/
 data/nytw-2026-for-agents/images/
 data/bostontw-2026-for-agents/images/
+
+# Local tooling / transient artifacts
+# .playwright-mcp/ = Playwright-MCP debug screenshots + console logs
+# .claude/settings.local.json = machine-local Claude Code settings
+.playwright-mcp/
+.claude/settings.local.json
+my-video/
+
+# Capacitor / native app
+node_modules/
+ios/App/Pods/
+ios/App/build/
+ios/App/output/
+ios/DerivedData/
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.idea/
+android/capacitor-cordova-android-plugins/

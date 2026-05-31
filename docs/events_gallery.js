@@ -1,4 +1,4 @@
-/* TWAG event gallery — shared logic for per-city HTML pages.
+/* StageHopper event gallery — shared logic for per-city HTML pages.
  *
  * Each city HTML inlines GALLERY_CONFIG (galleryUrl, dateRange,
  * defaultDate) and calls initEventGallery(GALLERY_CONFIG).
@@ -127,9 +127,73 @@ function renderTile(event, crossDay) {
         <div class="tile-meta">${escapeHtmlG(whenLine)}</div>
         <div class="tile-meta">${escapeHtmlG(where)}</div>
         ${event.host ? `<div class="tile-host">${escapeHtmlG(event.host)}</div>` : ""}
+        ${_tileActions(event)}
       </div>
     </a>
   `;
+}
+
+// Native-only Remind / Share controls for a gallery tile. The tile is an
+// <a>, so these are role="button" spans; their handlers preventDefault +
+// stopPropagation so tapping them doesn't open the RSVP link. Hidden on the
+// plain web build so the public gallery is unchanged.
+function _tileActions(event) {
+  if (!(window.twagNative && window.twagNative.isNative())) return "";
+  const eventId = event.event_id;
+  const reminded = window.twagNative.hasReminder(eventId);
+  const remindBtn = `<span class="tile-remind${reminded ? " is-set" : ""}" role="button" tabindex="0" data-event-id="${escapeHtmlG(eventId)}" aria-pressed="${reminded ? "true" : "false"}">${reminded ? "🔔 Reminder set" : "🔔 Remind me"}</span>`;
+  const shareBtn = `<span class="tile-share" role="button" tabindex="0" data-event-id="${escapeHtmlG(eventId)}" aria-label="Share event">📤</span>`;
+  return `<div class="tile-actions">${remindBtn}${shareBtn}</div>`;
+}
+
+// Attach handlers for the native tile actions after a grid render.
+function _wireTileActions(grid, eventsById, citySlug) {
+  if (!(window.twagNative && window.twagNative.isNative())) return;
+  grid.querySelectorAll(".tile-share").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const event = eventsById.get(el.dataset.eventId);
+      if (!event) return;
+      window.twagNative.shareEvent({
+        title: event.title,
+        text: [event.title, event.start_time, event.venue_name].filter(Boolean).join(" · "),
+        url: event.rsvp_url,
+      });
+      if (window.twagTrack) {
+        twagTrack("event_shared", { city: citySlug, event_id: event.event_id || "", source: "gallery" });
+      }
+    });
+  });
+  grid.querySelectorAll(".tile-remind").forEach((el) => {
+    el.addEventListener("click", async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const event = eventsById.get(el.dataset.eventId);
+      if (!event) return;
+      const eventId = event.event_id;
+      if (window.twagNative.hasReminder(eventId)) {
+        await window.twagNative.cancelEventReminder(eventId);
+        el.classList.remove("is-set");
+        el.setAttribute("aria-pressed", "false");
+        el.textContent = "🔔 Remind me";
+        if (window.twagTrack) twagTrack("reminder_cancelled", { city: citySlug, event_id: eventId });
+        return;
+      }
+      const res = await window.twagNative.scheduleEventReminder(
+        Object.assign({ city: citySlug }, event)
+      );
+      if (res && res.scheduled) {
+        el.classList.add("is-set");
+        el.setAttribute("aria-pressed", "true");
+        el.textContent = "🔔 Reminder set";
+        if (window.twagTrack) twagTrack("reminder_scheduled", { city: citySlug, event_id: eventId });
+      } else {
+        el.textContent = res && res.reason === "too_late" ? "Already started" : "Couldn't set reminder";
+        setTimeout(() => { el.textContent = "🔔 Remind me"; }, 2500);
+      }
+    });
+  });
 }
 
 async function initEventGallery(config) {
@@ -195,6 +259,11 @@ async function initEventGallery(config) {
       : `<div class="empty">${query
           ? `No events match "${escapeHtmlG(query)}".`
           : "No events with images on this day."}</div>`;
+
+    // Wire native Remind / Share controls (no-op on the web build).
+    if (filtered.length) {
+      _wireTileActions(grid, new Map(filtered.map(e => [e.event_id, e])), citySlug);
+    }
 
     // Auto-scroll to the first current-or-upcoming tile, but only when the
     // user changed days (not on every search keystroke). Suppressed entirely

@@ -470,7 +470,6 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   display: flex;
   flex-direction: column;
   align-self: start;        /* don't let grid stretch us to row height */
-  min-height: 300px;        /* 220 img + ~80 body, guarantees the wrap can't be compressed */
   background: #fff;
   border-radius: 8px;
   text-decoration: none;
@@ -611,4 +610,233 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   text-align: center;
   color: #888;
   font-size: 14px;
+}
+
+/* --- "Mobile apps coming soon" teaser (web only) -------------------- */
+.app-teaser-bar {
+  display: flex;
+  align-items: stretch;
+  background: #e8543e;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.app-teaser-open {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 8px 12px;
+  cursor: pointer;
+  font: inherit;
+}
+.app-teaser-emoji { font-size: 16px; }
+.app-teaser-cta {
+  text-decoration: underline;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.app-teaser-close {
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0 14px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.app-teaser-close:hover { opacity: 1; }
+
+.app-teaser-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+.app-teaser-modal.open { display: flex; }
+.app-teaser-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+.app-teaser-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+.app-teaser-grid {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.app-teaser-img {
+  width: 240px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 14px 0 0 14px;
+  background: #1a1a1a;
+  align-self: stretch;
+}
+.app-teaser-copy { padding: 28px 28px 24px; }
+.app-teaser-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e8543e;
+  margin-bottom: 6px;
+}
+.app-teaser-copy h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.2; color: #1a1a1a; }
+.app-teaser-copy p { margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #444; }
+.app-teaser-copy ul { margin: 0 0 14px; padding-left: 0; list-style: none; }
+.app-teaser-copy li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+.app-teaser-foot { font-weight: 600; color: #1a1a1a !important; margin-bottom: 0 !important; }
+
+@media (max-width: 560px) {
+  .app-teaser-grid { flex-direction: column; }
+  .app-teaser-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 14px 14px 0 0;
+  }
+  .app-teaser-copy { padding: 20px; }
+  .app-teaser-cta { display: inline; }
+}
+
+/* --- Native app controls (Capacitor shell only) ---------------------- *
+ * These styles back the Remind / Share / Locate-me controls injected by
+ * capacitor_bridge.js + the *_actions blocks. On the plain web build the
+ * elements are never rendered, so the rules are inert there. */
+
+/* Map popup actions */
+.popup-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.popup-remind,
+.popup-share {
+  appearance: none;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #333;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.3;
+}
+.popup-share { padding: 4px 8px; }
+.popup-remind.is-set {
+  background: #fdeeea;
+  border-color: #e8543e;
+  color: #c2391f;
+}
+
+/* Mapbox "Locate me" custom control + user blue dot */
+.twag-locate-btn {
+  width: 29px;
+  height: 29px;
+  font-size: 16px;
+  line-height: 29px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+.twag-locate-btn.loading { opacity: 0.5; }
+.twag-user-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1a73e8;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
+}
+
+/* Sidebar detail-card actions */
+.sidebar-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.sidebar-detail-remind,
+.sidebar-detail-share {
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #333;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sidebar-detail-remind.is-set {
+  background: #fdeeea;
+  border-color: #e8543e;
+  color: #c2391f;
+}
+
+/* Gallery tile actions */
+.tile-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.tile-remind,
+.tile-share {
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #333;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tile-share { padding: 5px 9px; }
+.tile-remind.is-set {
+  background: #fdeeea;
+  border-color: #e8543e;
+  color: #c2391f;
 }
