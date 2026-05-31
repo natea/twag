@@ -38,3 +38,6 @@ android/build/
 android/local.properties
 android/.idea/
 android/capacitor-cordova-android-plugins/
+
+# Vendored Axiom skills (installed locally, not committed)
+.claude/skills/axiom-*/
