@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.github.natea.twag',
+  appId: 'app.stagehopper.twag',
   appName: 'StageHopper',
   // The existing site in docs/ is the web asset root; Capacitor copies it
   // verbatim into the native bundle. Same folder serves GitHub Pages and

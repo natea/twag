@@ -1,4 +1,4 @@
-package io.github.natea.twag;
+package app.stagehopper.twag;
 
 import com.getcapacitor.BridgeActivity;
 
