@@ -95,3 +95,50 @@ the DO-NOT-DO doc.
 5. Use asc-mcp (above) to create the version, set review details, and submit.
 
 See the full checklist + pitfalls docs linked at the top before submitting.
+
+---
+
+## ⚠️ The one step asc-mcp CANNOT do: App Privacy ("Data Collection")
+
+**Publishing the App Privacy answers is web-UI-only.** Verified against the live
+API (key `NPU5UNJUZL`, app `6775234849`): the `appDataUsages`,
+`appDataUsageCategories`, and `appDataUsagesPublishState` endpoints all return
+**404**, and `appDataUsages` is **not** in the app's relationship list — so it
+cannot be read, set, or published programmatically with an API key.
+
+If App Privacy is not published, **every** submission attempt fails. The legacy
+`app_versions_submit_for_review` returns a generic `409 "This resource cannot be
+reviewed"`; the modern flow (attach an `appStoreVersion` to a
+`reviewSubmissionItem`) returns the *real* reason in `meta.associatedErrors`:
+
+```
+/v1/appDataUsages/ → STATE_ERROR.APP_DATA_USAGES_REQUIRED
+"You must have published answers to your app's data usages."
+```
+
+**Fix (≈2 min, once per app):** App Store Connect → your app → **App Privacy →
+Edit**, then declare (StageHopper collects, none linked to identity, none used
+for tracking):
+
+| Data type   | Purpose          |
+|-------------|------------------|
+| Location    | App Functionality |
+| Usage Data  | Analytics        |
+| Crash Data  | App Functionality |
+
+→ **Publish**. Until you click Publish, the API stays blocked.
+
+### Gotcha: `submit_for_review` leaves empty review submissions behind
+
+Each failed `app_versions_submit_for_review` creates a hollow `reviewSubmission`
+(state `READY_FOR_REVIEW`, **0 items**). These are **not deletable** (`DELETE` →
+403) and **not cancellable** while empty (`canceled:true` → 409 "not in
+cancellable state"). They count toward the per-app concurrency cap, so once you
+accumulate a few, even *creating* a fresh submission fails with
+`CONCURRENT_REVIEW_SUBMISSION_LIMIT_EXCEEDED`.
+
+**Do not** keep re-firing `submit_for_review`. Instead, after App Privacy is
+published, **reuse one of the existing empty submissions**: `POST
+/v1/reviewSubmissionItems` with that `reviewSubmission` id + the
+`appStoreVersion` id, then `PATCH /v1/reviewSubmissions/{id} {submitted:true}`.
+That submits without tripping the concurrency limit.
