@@ -502,6 +502,19 @@ async function initEventMap(config) {
 
     refresh();
 
+    // The iOS/Android webview can finish laying out the map container slightly
+    // after 'load' (status-bar inset + safe-area settle late, and the homepage
+    // → map redirect adds a navigation), leaving Mapbox's GL canvas sized to a
+    // 0-height box — a blank map until something forces a reflow. Nudge a
+    // re-measure once layout settles, and on any later viewport change.
+    const nudgeResize = () => { if (map && map.resize) map.resize(); };
+    requestAnimationFrame(nudgeResize);
+    setTimeout(nudgeResize, 300);
+    setTimeout(nudgeResize, 1000);
+    window.addEventListener("resize", nudgeResize);
+    window.addEventListener("orientationchange", () => setTimeout(nudgeResize, 250));
+    window.addEventListener("pageshow", nudgeResize);
+
     // Deep link from a tapped notification: #date=…&event=<id>. Fly to the
     // event, open its popup, and select it in the sidebar.
     focusEventFromHash();
