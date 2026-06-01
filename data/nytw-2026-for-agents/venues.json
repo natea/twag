@@ -116,6 +116,15 @@
     "lon": -74.0060152,
     "venue_name": "New York, NY"
   },
+  "0N6FdZhl3OG9e30QWIsw": {
+    "address": "12 St Marks Pl, New York, NY 10003",
+    "confidence": 9,
+    "event_id": "0N6FdZhl3OG9e30QWIsw",
+    "formatted": "St. Mark's Comedy Club, 12 Saint Marks Place, New York, NY 10003, United States of America",
+    "lat": 40.729044,
+    "lon": -73.9892596,
+    "venue_name": "St Marks Comedy Club"
+  },
   "0TsrnbBR1D2fI4HqJRcj": {
     "address": "130 E 7th St, New York, NY 10009",
     "confidence": 9,
@@ -350,6 +359,15 @@
     "lon": -73.9796752,
     "venue_name": ""
   },
+  "1yIXMfGmaVXHQVQOkShW": {
+    "address": "45 E 20th St, New York, NY 10003",
+    "confidence": 10,
+    "event_id": "1yIXMfGmaVXHQVQOkShW",
+    "formatted": "45 East 20th Street, New York, NY 10003, United States of America",
+    "lat": 40.7389363,
+    "lon": -73.9889707,
+    "venue_name": "Verci"
+  },
   "23VS8cRnOrDwuiUxCajT": {
     "address": "Union Square W, New York, NY 10003",
     "confidence": 9,
@@ -412,6 +430,15 @@
     "lat": 40.7565815,
     "lon": -73.9692995,
     "venue_name": "Room 52"
+  },
+  "2nxAO6q4kirC15aKFzuF": {
+    "address": "Midtown Manhattan, Manhattan, New York, NY",
+    "confidence": 8,
+    "event_id": "2nxAO6q4kirC15aKFzuF",
+    "formatted": "New York, NY 10110, United States of America",
+    "lat": 40.7551169,
+    "lon": -73.98478,
+    "venue_name": "Midtown Manhattan"
   },
   "2pEmZp1BxNcZENUjpUxv": {
     "address": "45 E 20th St, New York, NY 10003",
@@ -504,13 +531,22 @@
     "venue_name": ""
   },
   "3d1kwJIjPBslCneBS0Ij": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "124 E 14th St, New York, NY 10003",
+    "confidence": 9,
     "event_id": "3d1kwJIjPBslCneBS0Ij",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "Civic Hall, 124 East 14th Street, New York, NY 10003, United States of America",
+    "lat": 40.7336511,
+    "lon": -73.9887397,
+    "venue_name": "Civic Hall"
+  },
+  "3dsSQ4jlafwg2QjIMXW3": {
+    "address": "518 W 27th St, New York, NY 10001",
+    "confidence": 9,
+    "event_id": "3dsSQ4jlafwg2QjIMXW3",
+    "formatted": "Hotel Alameda High Line, 518 West 27th Street, New York, NY 10001, United States of America",
+    "lat": 40.7504517,
+    "lon": -74.0033913,
+    "venue_name": "Creatures Rooftop"
   },
   "3gfDFnOcXdwD4KBwwNvK": {
     "address": "SoHo, Manhattan, New York, NY",
@@ -575,6 +611,15 @@
     "lon": -73.9759701,
     "venue_name": "JPMorgan Chase & Co."
   },
+  "3yZYQKw2f4aMWf9sMEEb": {
+    "address": "25 W 45th St, New York, NY 10036",
+    "confidence": 10,
+    "event_id": "3yZYQKw2f4aMWf9sMEEb",
+    "formatted": "25 West 45th Street, New York, NY 10036, United States of America",
+    "lat": 40.75615,
+    "lon": -73.9806911,
+    "venue_name": "Techstars"
+  },
   "499cWPHnN3Uoh8j7C9AN": {
     "address": "12 W 56th St, New York, NY 10019",
     "confidence": 10,
@@ -585,13 +630,13 @@
     "venue_name": ""
   },
   "4MdmB4GHC4bD4vav1tPQ": {
-    "address": "Flatiron, Manhattan, New York, NY",
-    "confidence": 9,
+    "address": "373 Park Ave S, New York, NY 10016",
+    "confidence": 10,
     "event_id": "4MdmB4GHC4bD4vav1tPQ",
-    "formatted": "Flatiron Building, 175 5th Avenue, New York, NY 10010, United States of America",
-    "lat": 40.7410592,
-    "lon": -73.9896416,
-    "venue_name": "Flatiron"
+    "formatted": "373 Park Avenue South, New York, NY 10016, United States of America",
+    "lat": 40.7422679,
+    "lon": -73.9846255,
+    "venue_name": ""
   },
   "4Qp4a2zWqGDfkbMlBq59": {
     "address": "25 11th Ave, New York, NY 10011",
@@ -639,13 +684,13 @@
     "venue_name": "Belong NYC"
   },
   "4ZZwfYwsanqlxiKEHMY6": {
-    "address": "116 W 23rd St, New York, NY 10011",
-    "confidence": 10,
+    "address": "Manhattan, New York, NY",
+    "confidence": 5,
     "event_id": "4ZZwfYwsanqlxiKEHMY6",
-    "formatted": "116 West 23rd Street, New York, NY 10011, United States of America",
-    "lat": 40.743065,
-    "lon": -73.9934173,
-    "venue_name": ""
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.7579554,
+    "lon": -73.9855319,
+    "venue_name": "Manhattan"
   },
   "4mvtLjRkoCUa7D1tfO3L": {
     "address": "25 W 52nd St, New York, NY 10019",
@@ -692,14 +737,23 @@
     "lon": -73.9791296,
     "venue_name": "Patrizia's of 2nd Avenue"
   },
-  "5C4IsRfc64DvXZoSOto6": {
-    "address": "Midtown Manhattan, Manhattan, New York, NY",
+  "560FtF86aNtKTs67d4S3": {
+    "address": "Chelsea, Manhattan, New York, NY",
     "confidence": 8,
+    "event_id": "560FtF86aNtKTs67d4S3",
+    "formatted": "New York, NY 10011, United States of America",
+    "lat": 40.7464906,
+    "lon": -74.0015283,
+    "venue_name": "Chelsea"
+  },
+  "5C4IsRfc64DvXZoSOto6": {
+    "address": "112 W 25th St, New York, NY 10001",
+    "confidence": 9,
     "event_id": "5C4IsRfc64DvXZoSOto6",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown Manhattan"
+    "formatted": "Renaissance New York Chelsea Hotel, 112 West 25th Street, New York, NY 10001, United States of America",
+    "lat": 40.7443088,
+    "lon": -73.9927375,
+    "venue_name": "Somewhere Nowhere NYC - Nightclub, Lounge, & Rooftop Pool"
   },
   "5CiOULh6wh0ooq6LeF6X": {
     "address": "1 Penn Plaza, New York, NY 10119",
@@ -899,6 +953,15 @@
     "lon": -74.0083999,
     "venue_name": "Hungry Llama"
   },
+  "6XYVSFuCgrRMLcuGQQyV": {
+    "address": "157 Bleecker St, New York, NY 10012",
+    "confidence": 10,
+    "event_id": "6XYVSFuCgrRMLcuGQQyV",
+    "formatted": "157 Bleecker Street, New York, NY 10012, United States of America",
+    "lat": 40.7286979,
+    "lon": -73.9997094,
+    "venue_name": ""
+  },
   "6ZuudQBBZXcMNjdMynJ2": {
     "address": "NoHo, Manhattan, New York, NY",
     "confidence": 8,
@@ -1016,6 +1079,15 @@
     "lon": -73.9987505,
     "venue_name": "SoHo"
   },
+  "7ILtx8BRwV10Vo6CtHGb": {
+    "address": "203 Spring St, New York, NY 10012",
+    "confidence": 10,
+    "event_id": "7ILtx8BRwV10Vo6CtHGb",
+    "formatted": "203 Spring Street, New York, NY 10012, United States of America",
+    "lat": 40.7254017,
+    "lon": -74.0034511,
+    "venue_name": "Soho Room"
+  },
   "7Py4iwQgSRIa0GchHpCF": {
     "address": "Flatiron, Manhattan, New York, NY",
     "confidence": 9,
@@ -1071,31 +1143,31 @@
     "venue_name": "SoHo"
   },
   "7pyV0K7xAuzjPStkZ3y8": {
-    "address": "Downtown, Manhattan, New York, NY",
+    "address": "1 Pace Plaza, New York, NY 10038",
     "confidence": 9,
     "event_id": "7pyV0K7xAuzjPStkZ3y8",
-    "formatted": "Downtown Manhattan Heliport, East River Esplanade, New York, NY 10005, United States of America",
-    "lat": 40.7012724,
-    "lon": -74.0080724,
-    "venue_name": "Downtown"
+    "formatted": "Pace University, 1 Pace Plaza, New York, NY 10038, United States of America",
+    "lat": 40.7111164,
+    "lon": -74.0048044,
+    "venue_name": ""
   },
   "7xmYfFfhTQBHPGqBUNn4": {
-    "address": "136 Crosby St, New York, NY 10012",
-    "confidence": 10,
+    "address": "SoHo, Manhattan, New York, NY",
+    "confidence": 8,
     "event_id": "7xmYfFfhTQBHPGqBUNn4",
-    "formatted": "Konrad, 136 Crosby Street, New York, NY 10012, United States of America",
-    "lat": 40.7249264,
-    "lon": -73.9963375,
-    "venue_name": "BrainStation"
+    "formatted": "New York, NY 10012, United States of America",
+    "lat": 40.72288,
+    "lon": -73.9987505,
+    "venue_name": "SoHo"
   },
   "7yVLWDSWCrZChpot2fGl": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "399 Park Ave, New York, NY 10022",
+    "confidence": 10,
     "event_id": "7yVLWDSWCrZChpot2fGl",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "399 Park Avenue, New York, NY 10152, United States of America",
+    "lat": 40.7589833,
+    "lon": -73.9714789,
+    "venue_name": ""
   },
   "83GF2SN1253QIV5Yr2rY": {
     "address": "New York, NY",
@@ -1107,13 +1179,13 @@
     "venue_name": "New York, NY"
   },
   "87Zdcwg3oOfpvZvXDwcd": {
-    "address": "25 Park Place, New York, NY 10007",
+    "address": "29 Little W 12th St, New York, NY 10014",
     "confidence": 10,
     "event_id": "87Zdcwg3oOfpvZvXDwcd",
-    "formatted": "25 Park Place, New York, NY 10007, United States of America",
-    "lat": 40.7133832,
-    "lon": -74.0087468,
-    "venue_name": "Church Street Boxing Gym"
+    "formatted": "29 Little West 12th Street, New York, NY 10014, United States of America",
+    "lat": 40.740049,
+    "lon": -74.0071175,
+    "venue_name": "Betaworks Studios"
   },
   "8Ebmn6EyMiu19uevP7x4": {
     "address": "26 Bond St, New York, NY 10012",
@@ -1187,6 +1259,15 @@
     "lon": -73.9883005,
     "venue_name": ""
   },
+  "8hY03hoEB7xDq7J3Rc7B": {
+    "address": "452 5th Ave, New York, NY 10018",
+    "confidence": 10,
+    "event_id": "8hY03hoEB7xDq7J3Rc7B",
+    "formatted": "HSBC Tower, 452 5th Avenue, New York, NY 10018, United States of America",
+    "lat": 40.7520531,
+    "lon": -73.9825029,
+    "venue_name": ""
+  },
   "8lu53EbNSapXazcVp1ab": {
     "address": "4709 Center Blvd, Long Island City, NY 11109",
     "confidence": 9,
@@ -1224,13 +1305,22 @@
     "venue_name": ""
   },
   "90GOuJSB0E4e46U5Bo4b": {
-    "address": "Chinatown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "1501 Broadway, New York, NY 10036",
+    "confidence": 10,
     "event_id": "90GOuJSB0E4e46U5Bo4b",
-    "formatted": "New York, NY 10013, United States of America",
-    "lat": 40.7164913,
-    "lon": -73.9962504,
-    "venue_name": "Chinatown"
+    "formatted": "1501 Broadway, New York, NY 10036, United States of America",
+    "lat": 40.7572684,
+    "lon": -73.9866623,
+    "venue_name": "Paramount Building"
+  },
+  "958YRufxIqlYXcPAaBpB": {
+    "address": "12 St Marks Pl, New York, NY 10003",
+    "confidence": 9,
+    "event_id": "958YRufxIqlYXcPAaBpB",
+    "formatted": "St. Mark's Comedy Club, 12 Saint Marks Place, New York, NY 10003, United States of America",
+    "lat": 40.729044,
+    "lon": -73.9892596,
+    "venue_name": "St Marks Comedy Club"
   },
   "98lfOziRko2ulu1smDbv": {
     "address": "New York, NY 10004",
@@ -1276,6 +1366,15 @@
     "lat": 40.7410592,
     "lon": -73.9896416,
     "venue_name": "Flatiron"
+  },
+  "9Og1H8nulI9zPH9OxEco": {
+    "address": "136 Second Ave, New York, NY 10003",
+    "confidence": 10,
+    "event_id": "9Og1H8nulI9zPH9OxEco",
+    "formatted": "136 2 Ave, New York, NY, United States of America",
+    "lat": 40.728758,
+    "lon": -73.987497,
+    "venue_name": "SAINT RESTAURANT BAR & SPEAKEASY"
   },
   "9Vb2HFPhUit5Ra9OCcap": {
     "address": "100 Gansevoort St, New York, NY 10014",
@@ -1439,6 +1538,15 @@
     "lon": -73.9920127,
     "venue_name": "Public Hotel"
   },
+  "AqfYBWRorTzyWNL6B0uO": {
+    "address": "106 W 32nd St, New York, NY 10001",
+    "confidence": 9,
+    "event_id": "AqfYBWRorTzyWNL6B0uO",
+    "formatted": "The Yard, 106 West 32nd Street, New York, NY 10001, United States of America",
+    "lat": 40.748599,
+    "lon": -73.989262,
+    "venue_name": ""
+  },
   "ArxIzJCzN9uEAEpGvqOu": {
     "address": "520 Eighth Ave, New York, NY 10018",
     "confidence": 9,
@@ -1447,6 +1555,15 @@
     "lat": 40.9160751,
     "lon": -73.8043958,
     "venue_name": "Ripley-Grier Studios"
+  },
+  "AzVoaw82pHkJLwh4XtEy": {
+    "address": "181 Avenue B, New York, NY 10009",
+    "confidence": 10,
+    "event_id": "AzVoaw82pHkJLwh4XtEy",
+    "formatted": "181 Avenue B, New York, NY 10009, United States of America",
+    "lat": 40.7276499,
+    "lon": -73.9791098,
+    "venue_name": "Hi-Note Radio"
   },
   "B0alagl9YfiErlgH73La": {
     "address": "264 Canal St, Unit 2, New York, NY 10013",
@@ -1647,13 +1764,13 @@
     "venue_name": "Prometric 1250 Broadway"
   },
   "CKP1QMCbZPFuWHlNo6y0": {
-    "address": "Manhattan, New York, NY",
-    "confidence": 5,
+    "address": "441 9th Ave, New York, NY 10001",
+    "confidence": 9,
     "event_id": "CKP1QMCbZPFuWHlNo6y0",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7579554,
-    "lon": -73.9855319,
-    "venue_name": "Manhattan"
+    "formatted": "ChargePoint, 441 9th Avenue, New York, NY 10001, United States of America",
+    "lat": 40.7537648,
+    "lon": -73.9962654,
+    "venue_name": "Limusina"
   },
   "CKczGayvJbdWdba2q8kr": {
     "address": "248 W 37th St, New York, NY 10018",
@@ -1745,6 +1862,15 @@
     "lon": -73.9994159,
     "venue_name": ""
   },
+  "CtXJoXEUm6YzGbsb30Xb": {
+    "address": "60 Greenwich Ave, New York, NY 10011",
+    "confidence": 10,
+    "event_id": "CtXJoXEUm6YzGbsb30Xb",
+    "formatted": "60 Greenwich Avenue, New York, NY 10011, United States of America",
+    "lat": 40.736072,
+    "lon": -74.000689,
+    "venue_name": "Semma"
+  },
   "CxK2X6xl26SiGhiMB1IZ": {
     "address": "Flatiron, Manhattan, New York, NY",
     "confidence": 9,
@@ -1799,6 +1925,15 @@
     "lon": -73.9888897,
     "venue_name": "Skylark"
   },
+  "D901huF1IbzkfBRq0ikx": {
+    "address": "City Hall, Manhattan, New York, NY",
+    "confidence": 9,
+    "event_id": "D901huF1IbzkfBRq0ikx",
+    "formatted": "City Hall, Broadway, New York, NY 10000, United States of America",
+    "lat": 40.713282,
+    "lon": -74.006978,
+    "venue_name": "City Hall"
+  },
   "DD5Ne8wjr1LBDSvYlQst": {
     "address": "Midtown, Manhattan, New York, NY",
     "confidence": 8,
@@ -1827,13 +1962,13 @@
     "venue_name": "SoHo"
   },
   "DKl5HdJGHTgI3mQXRIrV": {
-    "address": "124 E 14th St, New York, NY 10003",
-    "confidence": 9,
+    "address": "92 Ludlow St, New York, NY 10002",
+    "confidence": 10,
     "event_id": "DKl5HdJGHTgI3mQXRIrV",
-    "formatted": "Civic Hall, 124 East 14th Street, New York, NY 10003, United States of America",
-    "lat": 40.7336511,
-    "lon": -73.9887397,
-    "venue_name": "Civic Hall"
+    "formatted": "92 Ludlow Street, New York, NY 10002, United States of America",
+    "lat": 40.718386,
+    "lon": -73.9889534,
+    "venue_name": "Hotel Chantelle"
   },
   "DO8XlNCIKaedsYpjKgny": {
     "address": "866 Broadway, New York, NY 10003",
@@ -1843,6 +1978,15 @@
     "lat": 40.7373742,
     "lon": -73.9899279,
     "venue_name": "Minuto Bauli"
+  },
+  "DQLmNSvszUDBdewZ60Rb": {
+    "address": "545 8th Ave, New York, NY 10018",
+    "confidence": 10,
+    "event_id": "DQLmNSvszUDBdewZ60Rb",
+    "formatted": "545 8th Avenue, New York, NY 10018, United States of America",
+    "lat": 40.7544981,
+    "lon": -73.9921939,
+    "venue_name": ""
   },
   "DVbRrx7ORnvAHvEz8c8N": {
     "address": "1251 Avenue of the Americas, FL 17, New York, NY 10020",
@@ -1944,13 +2088,13 @@
     "venue_name": ""
   },
   "E8NhJNHWGhMetLlrFvQ7": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "36 Cooper Square, FL 6, New York, NY 10003",
+    "confidence": 10,
     "event_id": "E8NhJNHWGhMetLlrFvQ7",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "36 Cooper Square, New York, NY 10003, United States of America",
+    "lat": 40.7283276,
+    "lon": -73.9915654,
+    "venue_name": "South Park Commons"
   },
   "EDvSG5uaWJ1DJVAlgj6q": {
     "address": "31 W 27th St, New York, NY 10010",
@@ -2034,13 +2178,13 @@
     "venue_name": "Odd Sister"
   },
   "EnJV7INx1Avqm2pTnmG9": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "160 W 25th St, New York, NY 10001",
+    "confidence": 9,
     "event_id": "EnJV7INx1Avqm2pTnmG9",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "The Chelsean New York Hotel, 160 West 25th Street, New York, NY 10001, United States of America",
+    "lat": 40.7449242,
+    "lon": -73.9942288,
+    "venue_name": "The Rose"
   },
   "EstgcJd2gxjOPGIbPHmv": {
     "address": "51 Astor Pl, New York, NY 10003",
@@ -2052,13 +2196,13 @@
     "venue_name": ""
   },
   "EvKdVS3RCeqXCOdLL0Ao": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "Midtown East, Manhattan, New York, NY",
+    "confidence": 8,
     "event_id": "EvKdVS3RCeqXCOdLL0Ao",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "New York, NY 10055, United States of America",
+    "lat": 40.7598219,
+    "lon": -73.9724708,
+    "venue_name": "Midtown East"
   },
   "F5Y6wtHv792PJDhV56MB": {
     "address": "1 Madison Ave, FL 2, New York, NY 10010",
@@ -2258,6 +2402,15 @@
     "lon": -73.990726,
     "venue_name": "Datadog - Headquarters"
   },
+  "Fp5daroRFtl5IulOYhoD": {
+    "address": "18 E 50th St, New York, NY 10022",
+    "confidence": 10,
+    "event_id": "Fp5daroRFtl5IulOYhoD",
+    "formatted": "18 East 50th Street, New York, NY 10022, United States of America",
+    "lat": 40.7577749,
+    "lon": -73.9751662,
+    "venue_name": ""
+  },
   "FymrHYN71HqMEA2aqaO4": {
     "address": "Brooklyn, New York, NY",
     "confidence": 5,
@@ -2266,6 +2419,15 @@
     "lat": 40.6526006,
     "lon": -73.9497211,
     "venue_name": "Brooklyn"
+  },
+  "G02MiaLzT1YRwCpzzFY0": {
+    "address": "34 W 13th St, New York, NY 10011",
+    "confidence": 9,
+    "event_id": "G02MiaLzT1YRwCpzzFY0",
+    "formatted": "Quad Cinema, 34 West 13th Street, New York, NY 10011, United States of America",
+    "lat": 40.7359607,
+    "lon": -73.9959654,
+    "venue_name": ""
   },
   "G0vIARHkSQNe1IyBX0iS": {
     "address": "East Village, Manhattan, New York, NY",
@@ -2284,6 +2446,15 @@
     "lat": 40.754433,
     "lon": -73.9796752,
     "venue_name": "529 Fifth Avenue"
+  },
+  "G2KyxGWf2wHA4lYjcd8F": {
+    "address": "446 Broadway, New York, NY 10013",
+    "confidence": 10,
+    "event_id": "G2KyxGWf2wHA4lYjcd8F",
+    "formatted": "446 Broadway, New York, NY 10013, United States of America",
+    "lat": 40.72032,
+    "lon": -74.0009199,
+    "venue_name": ""
   },
   "G6SmnsyZ3s56lOfHuRLW": {
     "address": "135 W 20th St, New York City, NY 10011",
@@ -2411,14 +2582,32 @@
     "lon": -73.9902332,
     "venue_name": ""
   },
-  "GxfjRxDRUK8wgxH6UMG6": {
-    "address": "Midtown, Manhattan, New York, NY",
+  "Gw543fouMG4silmVEQ9P": {
+    "address": "620 8th Ave, New York, NY 10018",
+    "confidence": 10,
+    "event_id": "Gw543fouMG4silmVEQ9P",
+    "formatted": "The New York Times Building, 620 8th Avenue, New York, NY 10018, United States of America",
+    "lat": 40.7558946,
+    "lon": -73.9896743,
+    "venue_name": ""
+  },
+  "GxT0MlpEgP8RgFxRH2QG": {
+    "address": "Williamsburg, Brooklyn, New York, NY",
     "confidence": 8,
+    "event_id": "GxT0MlpEgP8RgFxRH2QG",
+    "formatted": "New York, NY 11249, United States of America",
+    "lat": 40.714622,
+    "lon": -73.95345,
+    "venue_name": "Williamsburg"
+  },
+  "GxfjRxDRUK8wgxH6UMG6": {
+    "address": "44 W 37th St, New York, NY 10018",
+    "confidence": 10,
     "event_id": "GxfjRxDRUK8wgxH6UMG6",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "44 West 37th Street, New York, NY 10018, United States of America",
+    "lat": 40.7510379,
+    "lon": -73.9853906,
+    "venue_name": ""
   },
   "H1GptQxbn6AogOW5ciCD": {
     "address": "101 5th Ave, New York, NY 10003",
@@ -2502,13 +2691,13 @@
     "venue_name": "New York, NY"
   },
   "HjUT9chDvQXxrCHGkfcA": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "Midtown Manhattan, Manhattan, New York, NY",
+    "confidence": 8,
     "event_id": "HjUT9chDvQXxrCHGkfcA",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "New York, NY 10110, United States of America",
+    "lat": 40.7551169,
+    "lon": -73.98478,
+    "venue_name": "Midtown Manhattan"
   },
   "Ho9Hvhtn5iU4ws7IWM8Z": {
     "address": "New York, NY",
@@ -2565,13 +2754,13 @@
     "venue_name": "VITAL Climbing Gym - Brooklyn"
   },
   "I3ROKuMjZcyfAcyUQcp8": {
-    "address": "15 Beekman St, New York, NY 10038",
+    "address": "1 Pace Plaza, New York, NY 10038",
     "confidence": 9,
     "event_id": "I3ROKuMjZcyfAcyUQcp8",
-    "formatted": "15 Beekman, 15 Beekman Street, New York, NY 10038, United States of America",
-    "lat": 40.7109503,
-    "lon": -74.0065219,
-    "venue_name": "Pace University Seidenberg School Of Computer Science And Information Systems"
+    "formatted": "Pace University, 1 Pace Plaza, New York, NY 10038, United States of America",
+    "lat": 40.7111164,
+    "lon": -74.0048044,
+    "venue_name": "Pace University"
   },
   "I8n2nZDvvQZvMcpwPZWx": {
     "address": "201 Park Ave S, New York, NY 10003",
@@ -2628,13 +2817,13 @@
     "venue_name": "Big SNOW American Dream"
   },
   "IaHFZrZwfwKVMbQGFvAt": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "62 Orchard St, New York, NY 10002",
+    "confidence": 10,
     "event_id": "IaHFZrZwfwKVMbQGFvAt",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "62 Orchard Street, New York, NY 10002, United States of America",
+    "lat": 40.7167872,
+    "lon": -73.9905803,
+    "venue_name": ""
   },
   "IdI7GpcyYOd2xnOnrn2G": {
     "address": "99 Hudson St, New York, NY 10013",
@@ -2663,6 +2852,15 @@
     "lon": -73.9608288,
     "venue_name": ""
   },
+  "IivV8IzESVAW6KJRkslZ": {
+    "address": "300 E 42nd St, New York, NY 10017",
+    "confidence": 10,
+    "event_id": "IivV8IzESVAW6KJRkslZ",
+    "formatted": "300 East 42nd Street, New York, NY 10017, United States of America",
+    "lat": 40.749691,
+    "lon": -73.972113,
+    "venue_name": "Jamaican Consulate"
+  },
   "Ij7ljdnLIT3ixkj3yh1g": {
     "address": "Manhattan, New York, NY",
     "confidence": 5,
@@ -2680,6 +2878,15 @@
     "lat": 40.7548664,
     "lon": -73.985372,
     "venue_name": "Valbella At The Park"
+  },
+  "ImH5yBRFVdqG8ol24cmc": {
+    "address": "109 W 25rd St, New York, NY 10010",
+    "confidence": 7,
+    "event_id": "ImH5yBRFVdqG8ol24cmc",
+    "formatted": "E 25 St, New York, NY, United States of America",
+    "lat": 40.74079,
+    "lon": -73.983812,
+    "venue_name": "First Round\u2019s On Me"
   },
   "IoEy26e6LoWbvwVRCTzR": {
     "address": "27 W 23rd St, New York, NY 10010",
@@ -2826,13 +3033,13 @@
     "venue_name": "Orrick"
   },
   "JYpVVnt8arHL8QFFVE4O": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "16 Vestry St, New York, NY 10013",
+    "confidence": 10,
     "event_id": "JYpVVnt8arHL8QFFVE4O",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "14 Street\u2013Union Square"
+    "formatted": "16 Vestry Street, New York, NY 10013, United States of America",
+    "lat": 40.7226587,
+    "lon": -74.0075659,
+    "venue_name": "Fabrik"
   },
   "Jax5q2nEKzeH7VhmDvS3": {
     "address": "16 Vestry St, New York, NY 10013",
@@ -2878,6 +3085,15 @@
     "lat": 40.7127281,
     "lon": -74.0060152,
     "venue_name": "Central Park"
+  },
+  "JqgGz3jnIK9GEXFSfPMs": {
+    "address": "227 W 27th St, New York, NY 10001",
+    "confidence": 10,
+    "event_id": "JqgGz3jnIK9GEXFSfPMs",
+    "formatted": "227 West 27th Street, New York, NY 10001, United States of America",
+    "lat": 40.7469087,
+    "lon": -73.9942748,
+    "venue_name": ""
   },
   "JugbSvGkWlKMfxKIwdsY": {
     "address": "Midtown, Manhattan, New York, NY",
@@ -2951,6 +3167,15 @@
     "lon": -73.9962504,
     "venue_name": "Chinatown"
   },
+  "KTWA41kbFNYFFtf6HcG7": {
+    "address": "40 Rector St, New York, NY 10006",
+    "confidence": 10,
+    "event_id": "KTWA41kbFNYFFtf6HcG7",
+    "formatted": "40 Rector Street, New York, NY 10006, United States of America",
+    "lat": 40.7086278,
+    "lon": -74.0147454,
+    "venue_name": ""
+  },
   "KbU1aXj8PlE4DHqMi7nL": {
     "address": "60 Washington Square S, New York, NY 10012",
     "confidence": 10,
@@ -2968,6 +3193,15 @@
     "lat": 40.7625302,
     "lon": -73.9755273,
     "venue_name": ""
+  },
+  "Kgq1v7sDmgY8kfJxmU8E": {
+    "address": "250 W 55th St, Unit C1, New York, NY 10019",
+    "confidence": 10,
+    "event_id": "Kgq1v7sDmgY8kfJxmU8E",
+    "formatted": "250 West 55th Street, 8th Avenue, New York, NY 10019, United States of America",
+    "lat": 40.7648694,
+    "lon": -73.9834888,
+    "venue_name": "Morrison & Foerster"
   },
   "KhKOePrEky8gzr3zllTi": {
     "address": "Chelsea, Manhattan, New York, NY",
@@ -3014,6 +3248,15 @@
     "lon": -73.9887397,
     "venue_name": "Time Out Market Union Square"
   },
+  "L9pbPvwYLTbSngRjJIT4": {
+    "address": "512 W 22nd St, New York, NY 10011",
+    "confidence": 10,
+    "event_id": "L9pbPvwYLTbSngRjJIT4",
+    "formatted": "512 West 22nd Street, New York, NY 10011, United States of America",
+    "lat": 40.747254,
+    "lon": -74.0054677,
+    "venue_name": "Next Jump"
+  },
   "LCvyYaFwldgIhU0yb8cW": {
     "address": "406 Broome St, New York, NY 10013",
     "confidence": 10,
@@ -3024,13 +3267,13 @@
     "venue_name": "Ketchy Shuby"
   },
   "LEDa1R82yEii1oxgrTBF": {
-    "address": "Manhattan, New York, NY",
-    "confidence": 5,
+    "address": "321 E 73rd St, New York, NY 10021",
+    "confidence": 10,
     "event_id": "LEDa1R82yEii1oxgrTBF",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7579554,
-    "lon": -73.9855319,
-    "venue_name": "Manhattan"
+    "formatted": "Bohemian National Hall, 321 East 73rd Street, New York, NY 10021, United States of America",
+    "lat": 40.7690899,
+    "lon": -73.9564439,
+    "venue_name": "Bohemian National Hall"
   },
   "LSj9Pfuz86SEiUvjvtNt": {
     "address": "12 W 56th St, New York, NY 10019",
@@ -3051,13 +3294,13 @@
     "venue_name": "Jake's Saloon"
   },
   "LjcDUfXhSF8zoLtGn03K": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "36 Cooper Square, FL 6, New York, NY 10003",
+    "confidence": 10,
     "event_id": "LjcDUfXhSF8zoLtGn03K",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "36 Cooper Square, New York, NY 10003, United States of America",
+    "lat": 40.7283276,
+    "lon": -73.9915654,
+    "venue_name": "South Park Commons"
   },
   "Ly9laOHFYulhosojIy6U": {
     "address": "307 W 38th St, New York, NY 10018",
@@ -3186,13 +3429,13 @@
     "venue_name": "Time Out Market Union Square"
   },
   "MQvS9RrcXl6HcAEzfzhg": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "145 W 53rd St, New York, NY 10019",
+    "confidence": 9,
     "event_id": "MQvS9RrcXl6HcAEzfzhg",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "La Grande Boucherie, 145 West 53rd Street, New York, NY 10019, United States of America",
+    "lat": 40.7626575,
+    "lon": -73.980662,
+    "venue_name": "La Grande Boucherie"
   },
   "MR78mhKL31baYtdbziHm": {
     "address": "115 W 45th St, FL 8, New York, NY 10036",
@@ -3219,6 +3462,15 @@
     "formatted": "529 5th Avenue, New York, NY 10017, United States of America",
     "lat": 40.754433,
     "lon": -73.9796752,
+    "venue_name": ""
+  },
+  "MWGk8lDzyyBUFWW7Cv2f": {
+    "address": "920 Broadway, New York, NY 10010",
+    "confidence": 10,
+    "event_id": "MWGk8lDzyyBUFWW7Cv2f",
+    "formatted": "920 Broadway, New York, NY 10010, United States of America",
+    "lat": 40.7395772,
+    "lon": -73.9894004,
     "venue_name": ""
   },
   "MYIMRXEDdObGOyBaCpeK": {
@@ -3338,14 +3590,32 @@
     "lon": -73.9987505,
     "venue_name": "SoHo"
   },
+  "NCbNEdj2iHAMwKqJkBHa": {
+    "address": "107 Rivington St, New York, NY 10002",
+    "confidence": 9,
+    "event_id": "NCbNEdj2iHAMwKqJkBHa",
+    "formatted": "Hotel on Rivington, 107 Rivington Street, New York, NY 10002, United States of America",
+    "lat": 40.7198066,
+    "lon": -73.9880825,
+    "venue_name": "Hotel on Rivington"
+  },
+  "NCgg6DTFr0Gf4WYiUwJD": {
+    "address": "Manhattan, New York, NY",
+    "confidence": 5,
+    "event_id": "NCgg6DTFr0Gf4WYiUwJD",
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.7579554,
+    "lon": -73.9855319,
+    "venue_name": "Manhattan"
+  },
   "NCyCpVKFHXfdVuODhP90": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "308 W 39th St, New York, NY 10018",
+    "confidence": 10,
     "event_id": "NCyCpVKFHXfdVuODhP90",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "308 West 39th Street, New York, NY 10018, United States of America",
+    "lat": 40.755503,
+    "lon": -73.9918354,
+    "venue_name": ""
   },
   "NEACQLRcBvDYbv4ERCaW": {
     "address": "153 E 53rd St, New York, NY 10022",
@@ -3500,6 +3770,15 @@
     "lon": -73.9868281,
     "venue_name": ""
   },
+  "O53OgLYjmATsfG8LtciO": {
+    "address": "74 Seventh Ave, New York, NY 10011",
+    "confidence": 10,
+    "event_id": "O53OgLYjmATsfG8LtciO",
+    "formatted": "74 7 Ave, New York, NY, United States of America",
+    "lat": 40.739163,
+    "lon": -73.999434,
+    "venue_name": "St. George Coffee"
+  },
   "O9JiMBw5xJlUGJtsYtrt": {
     "address": "Midtown, Manhattan, New York, NY",
     "confidence": 8,
@@ -3510,22 +3789,22 @@
     "venue_name": "Midtown"
   },
   "OABGjYptXq9pQerSnaAq": {
-    "address": "World Trade Center, Manhattan, New York, NY",
+    "address": "285 Fulton St, New York, NY 10007",
     "confidence": 9,
     "event_id": "OABGjYptXq9pQerSnaAq",
-    "formatted": "World Trade Center, 180 Greenwich Street, New York, NY 10007, United States of America",
-    "lat": 40.7119004,
-    "lon": -74.012527,
-    "venue_name": "World Trade Center"
+    "formatted": "One World Observatory, 285 Fulton Street, New York, NY 10048, United States of America",
+    "lat": 40.712949,
+    "lon": -74.0130438,
+    "venue_name": "One World Trade Center"
   },
   "OAnyZlPESteKmm6ypzfC": {
-    "address": "Flatiron, Manhattan, New York, NY",
-    "confidence": 9,
+    "address": "118 E 28th St, New York, NY 10016",
+    "confidence": 10,
     "event_id": "OAnyZlPESteKmm6ypzfC",
-    "formatted": "Flatiron Building, 175 5th Avenue, New York, NY 10010, United States of America",
-    "lat": 40.7410592,
-    "lon": -73.9896416,
-    "venue_name": "Flatiron"
+    "formatted": "118 East 28th Street, New York, NY 10016, United States of America",
+    "lat": 40.7428989,
+    "lon": -73.9835298,
+    "venue_name": ""
   },
   "OCYHq1Lc3wZVhQDp6Xo7": {
     "address": "193 6th St, Brooklyn, NY 11215",
@@ -3544,6 +3823,15 @@
     "lat": 40.7127281,
     "lon": -74.0060152,
     "venue_name": "New York"
+  },
+  "OIxO16hJaP5ZVEu9Nl90": {
+    "address": "393 Broadway, New York, NY 10013",
+    "confidence": 10,
+    "event_id": "OIxO16hJaP5ZVEu9Nl90",
+    "formatted": "393 Broadway, New York, NY 10013, United States of America",
+    "lat": 40.7185427,
+    "lon": -74.0029631,
+    "venue_name": "LUME studios"
   },
   "ONYSrk9bi7nfpjTjY48B": {
     "address": "New York, NY",
@@ -3564,13 +3852,13 @@
     "venue_name": "Port Sa'id"
   },
   "OTB0d4SND0ZJS5WYzdxc": {
-    "address": "686 Broadway, New York, NY 10012",
-    "confidence": 9,
+    "address": "33 Irving Pl, New York, NY 10003",
+    "confidence": 10,
     "event_id": "OTB0d4SND0ZJS5WYzdxc",
-    "formatted": "Great Jones Distilling Co, 686 Broadway, New York, NY 10012, United States of America",
-    "lat": 40.72791,
-    "lon": -73.9942311,
-    "venue_name": "Great Jones Distilling"
+    "formatted": "33 Irving Place, New York, NY 10003, United States of America",
+    "lat": 40.7351053,
+    "lon": -73.9881133,
+    "venue_name": ""
   },
   "OUxJyD6iKq9FxninwLD5": {
     "address": "34 W 32nd St, FL 12, New York, NY 10001",
@@ -3654,13 +3942,13 @@
     "venue_name": ""
   },
   "OhZKHpSNaeZLLepi9AAC": {
-    "address": "Flatiron, Manhattan, New York, NY",
-    "confidence": 9,
+    "address": "307 W 38th St, New York, NY 10018",
+    "confidence": 10,
     "event_id": "OhZKHpSNaeZLLepi9AAC",
-    "formatted": "Flatiron Building, 175 5th Avenue, New York, NY 10010, United States of America",
-    "lat": 40.7410592,
-    "lon": -73.9896416,
-    "venue_name": "Flatiron"
+    "formatted": "307 West 38th Street, New York, NY 10018, United States of America",
+    "lat": 40.755043,
+    "lon": -73.9921577,
+    "venue_name": ""
   },
   "OiFkcaWT26YBs7Hr5dtL": {
     "address": "16 Vestry St, New York, NY 10013",
@@ -3679,6 +3967,24 @@
     "lat": 40.753457,
     "lon": -73.9777688,
     "venue_name": ""
+  },
+  "Olyu7D14YnCyJUUWTdbo": {
+    "address": "13 Grattan St, Brooklyn, NY 11206",
+    "confidence": 10,
+    "event_id": "Olyu7D14YnCyJUUWTdbo",
+    "formatted": "13 Grattan Street, New York, NY 11206, United States of America",
+    "lat": 40.705703,
+    "lon": -73.9327516,
+    "venue_name": ""
+  },
+  "OpCnGfcXsMAs1cQALVuo": {
+    "address": "Broadway, Manhattan, New York, NY",
+    "confidence": 9,
+    "event_id": "OpCnGfcXsMAs1cQALVuo",
+    "formatted": "Broadway, New York, NY 10463, United States of America",
+    "lat": 40.8761674,
+    "lon": -73.9077385,
+    "venue_name": "Broadway"
   },
   "OrQcBqgwq8KX9NOUxhSv": {
     "address": "600 Third Ave, FL 34, New York, NY 10016",
@@ -3734,6 +4040,24 @@
     "lon": -73.9653627,
     "venue_name": "Central Park"
   },
+  "PGgsiNcwPvVS7VW92mZM": {
+    "address": "20 Jay St Suite 218, Brooklyn, NY 11201",
+    "confidence": 9,
+    "event_id": "PGgsiNcwPvVS7VW92mZM",
+    "formatted": "Verso Books, 20 Jay Street, New York, NY 11201, United States of America",
+    "lat": 40.7041127,
+    "lon": -73.9868413,
+    "venue_name": "One World Trade Center"
+  },
+  "PJ3ecgvPoBAZfR6McnkS": {
+    "address": "42 Avenue B, New York, NY 10009",
+    "confidence": 10,
+    "event_id": "PJ3ecgvPoBAZfR6McnkS",
+    "formatted": "42 Avenue B, New York, NY 10009, United States of America",
+    "lat": 40.7229686,
+    "lon": -73.9829992,
+    "venue_name": "Much Obliged"
+  },
   "PR649gAfDDVDcMqgGpJs": {
     "address": "54 E 13th St, New York, NY 10003",
     "confidence": 10,
@@ -3742,6 +4066,15 @@
     "lat": 40.734071,
     "lon": -73.9917218,
     "venue_name": "Everything's Jake"
+  },
+  "PXdyxn9LF6R6eg56pZEZ": {
+    "address": "406 Broadway, FL 3, New York, NY 10013",
+    "confidence": 10,
+    "event_id": "PXdyxn9LF6R6eg56pZEZ",
+    "formatted": "406 Broadway, New York, NY 10013, United States of America",
+    "lat": 40.718786,
+    "lon": -74.0020342,
+    "venue_name": "Verayoga"
   },
   "PdiozfxUMSvzekP4cU32": {
     "address": "455 Broadway, New York, NY 10013",
@@ -3805,6 +4138,15 @@
     "lat": 40.732364,
     "lon": -74.001784,
     "venue_name": "The Parkgate"
+  },
+  "Q3r04rD3P0tAIEFcqZaL": {
+    "address": "133 Mulberry St, New York, NY 10013",
+    "confidence": 10,
+    "event_id": "Q3r04rD3P0tAIEFcqZaL",
+    "formatted": "133 Mulberry Street, New York, NY 10013, United States of America",
+    "lat": 40.7186513,
+    "lon": -73.9979232,
+    "venue_name": "Osteria Barocca"
   },
   "QEtLHa6f52i11Y37wyfb": {
     "address": "136 Crosby St, New York, NY 10012",
@@ -3986,6 +4328,15 @@
     "lon": -73.9846404,
     "venue_name": "Cure"
   },
+  "R8Rwkvu3bxUPIePXp55D": {
+    "address": "45-18 Court Square W, Long Island City, NY 11101",
+    "confidence": 10,
+    "event_id": "R8Rwkvu3bxUPIePXp55D",
+    "formatted": "45-18 Court Square West, New York, NY 11101, United States of America",
+    "lat": 40.7457823,
+    "lon": -73.9439118,
+    "venue_name": "Innolabs"
+  },
   "R9L7G8gn58zhSRtBncv7": {
     "address": "Financial District, Manhattan, New York, NY",
     "confidence": 8,
@@ -4021,6 +4372,24 @@
     "lat": 40.694542,
     "lon": -73.9867908,
     "venue_name": "NYU Tandon School of Engineering"
+  },
+  "RJncgbukJw5Il9UPb378": {
+    "address": "1114 6th Ave, FL 32, New York, NY 10036",
+    "confidence": 10,
+    "event_id": "RJncgbukJw5Il9UPb378",
+    "formatted": "W. R. Grace Building, 1114 6th Avenue, New York, NY 10110, United States of America",
+    "lat": 40.7546914,
+    "lon": -73.9826746,
+    "venue_name": "Vinson & Elkins"
+  },
+  "RLhDCt8BJz36bQu16hDY": {
+    "address": "13 Grattan St, Brooklyn, NY 11206",
+    "confidence": 10,
+    "event_id": "RLhDCt8BJz36bQu16hDY",
+    "formatted": "13 Grattan Street, New York, NY 11206, United States of America",
+    "lat": 40.705703,
+    "lon": -73.9327516,
+    "venue_name": ""
   },
   "RM7ydgybZBFZiy3JFxEi": {
     "address": "600 Third Avenue, FL 34, New York, NY 10016",
@@ -4095,13 +4464,13 @@
     "venue_name": "Mr. Purple"
   },
   "S0qnVAP4oH8tNJYQeU8J": {
-    "address": "SoHo, Manhattan, New York, NY",
+    "address": "Battery Park City, Manhattan, New York, NY",
     "confidence": 8,
     "event_id": "S0qnVAP4oH8tNJYQeU8J",
-    "formatted": "New York, NY 10012, United States of America",
-    "lat": 40.72288,
-    "lon": -73.9987505,
-    "venue_name": "SoHo"
+    "formatted": "New York, NY 10281, United States of America",
+    "lat": 40.7110166,
+    "lon": -74.0169369,
+    "venue_name": "Battery Park City"
   },
   "S1GWW9LgdfrsRourMeSH": {
     "address": "8 W 38th St, New York, NY 10018",
@@ -4239,13 +4608,13 @@
     "venue_name": "Versa"
   },
   "SsoQR8v1U9oS3KHP517R": {
-    "address": "201 Park Ave S, New York, NY 10003",
-    "confidence": 9,
+    "address": "135 Madison Ave, New York, NY 10016",
+    "confidence": 10,
     "event_id": "SsoQR8v1U9oS3KHP517R",
-    "formatted": "W Hotels, 201 Park Avenue South, New York, NY 10003, United States of America",
-    "lat": 40.7365763,
-    "lon": -73.9885429,
-    "venue_name": "Union Square"
+    "formatted": "135 Madison Avenue, New York, NY 10016, United States of America",
+    "lat": 40.7460832,
+    "lon": -73.9839897,
+    "venue_name": ""
   },
   "SwFhpd2jWPqseLa92wsP": {
     "address": "224 W Fourth St, Unit 206, FL 2, New York, NY 10014",
@@ -4635,13 +5004,13 @@
     "venue_name": "New York, NY"
   },
   "Vg3uhwlG7t6HdALQeYTm": {
-    "address": "New York, NY",
-    "confidence": 2,
+    "address": "96 Wythe Ave, Brooklyn, NY 11249",
+    "confidence": 10,
     "event_id": "Vg3uhwlG7t6HdALQeYTm",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7127281,
-    "lon": -74.0060152,
-    "venue_name": "New York, NY"
+    "formatted": "96 Wythe Avenue, New York, NY 11249, United States of America",
+    "lat": 40.7130489,
+    "lon": -73.9657751,
+    "venue_name": "Arlo Williamsburg"
   },
   "Vii5aVoAvr5ICyIRnt27": {
     "address": "357 W Broadway, New York, NY 10013",
@@ -4651,6 +5020,15 @@
     "lat": 40.7228997,
     "lon": -74.002988,
     "venue_name": "Pearl Box"
+  },
+  "VkYzcfVYemTtBVupPiIx": {
+    "address": "210 Spring St, New York, NY 10012",
+    "confidence": 10,
+    "event_id": "VkYzcfVYemTtBVupPiIx",
+    "formatted": "210 Spring Street, New York, NY 10012, United States of America",
+    "lat": 40.7253226,
+    "lon": -74.0038251,
+    "venue_name": "Haraz Coffee House"
   },
   "Vkqzm6uJ1LkUk8bVBQU7": {
     "address": "1 Madison Ave, FL 2, New York, NY 10010",
@@ -4752,13 +5130,13 @@
     "venue_name": "230 Fifth Rooftop Bar"
   },
   "W8Zz3f2lutZZRksKD1hr": {
-    "address": "SoHo, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "62 Chelsea Piers, New York, NY 10011",
+    "confidence": 6,
     "event_id": "W8Zz3f2lutZZRksKD1hr",
-    "formatted": "New York, NY 10012, United States of America",
-    "lat": 40.72288,
-    "lon": -73.9987505,
-    "venue_name": "SoHo"
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.740916,
+    "lon": -73.999769,
+    "venue_name": "Pier 62"
   },
   "WJe6XcxPXwbpCiCVLCas": {
     "address": "NoMad, Manhattan, New York, NY",
@@ -4779,22 +5157,22 @@
     "venue_name": "Grand Army Plaza"
   },
   "WPs4H72VXEFetgndB7A0": {
-    "address": "Manhattan, New York, NY",
-    "confidence": 5,
+    "address": "321 E 73rd St, New York, NY 10021",
+    "confidence": 10,
     "event_id": "WPs4H72VXEFetgndB7A0",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7579554,
-    "lon": -73.9855319,
-    "venue_name": "Manhattan"
+    "formatted": "Bohemian National Hall, 321 East 73rd Street, New York, NY 10021, United States of America",
+    "lat": 40.7690899,
+    "lon": -73.9564439,
+    "venue_name": "Bohemian National Hall"
   },
   "WWDTlzvnJ4tfWRBmDs8U": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "42 Avenue B, New York, NY 10009",
+    "confidence": 10,
     "event_id": "WWDTlzvnJ4tfWRBmDs8U",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "42 Avenue B, New York, NY 10009, United States of America",
+    "lat": 40.7229686,
+    "lon": -73.9829992,
+    "venue_name": "Much Obliged"
   },
   "WWPAAjfT9ybpzmNwU0UZ": {
     "address": "104 5th Ave, New York, NY 10011",
@@ -5112,13 +5490,13 @@
     "venue_name": "NoMad"
   },
   "YMW6sYTh9iRAZZnDCycn": {
-    "address": "SoHo, Manhattan, New York, NY",
+    "address": "Upper East Side, Manhattan, New York, NY",
     "confidence": 8,
     "event_id": "YMW6sYTh9iRAZZnDCycn",
-    "formatted": "New York, NY 10012, United States of America",
-    "lat": 40.72288,
-    "lon": -73.9987505,
-    "venue_name": "SoHo"
+    "formatted": "New York, NY 10028, United States of America",
+    "lat": 40.775479,
+    "lon": -73.9550233,
+    "venue_name": "Upper East Side"
   },
   "YNisiR5czoNqmN0jQyeY": {
     "address": "Midtown, Manhattan, New York, NY",
@@ -5138,14 +5516,23 @@
     "lon": -73.9855319,
     "venue_name": "Manhattan"
   },
+  "Yeub3FdGWyhtwhpIwUOm": {
+    "address": "545 8th Ave, New York, NY 10018",
+    "confidence": 10,
+    "event_id": "Yeub3FdGWyhtwhpIwUOm",
+    "formatted": "545 8th Avenue, New York, NY 10018, United States of America",
+    "lat": 40.7544981,
+    "lon": -73.9921939,
+    "venue_name": ""
+  },
   "YlpHyl2B5kM2Dv5CYqvJ": {
-    "address": "Flatiron, Manhattan, New York, NY",
-    "confidence": 9,
+    "address": "17 W 20th St, New York, NY 10011",
+    "confidence": 10,
     "event_id": "YlpHyl2B5kM2Dv5CYqvJ",
-    "formatted": "Flatiron Building, 175 5th Avenue, New York, NY 10010, United States of America",
-    "lat": 40.7410592,
-    "lon": -73.9896416,
-    "venue_name": "Flatiron"
+    "formatted": "17 West 20th Street, New York, NY 10010, United States of America",
+    "lat": 40.7404094,
+    "lon": -73.9921692,
+    "venue_name": "The Gallery"
   },
   "YtPpBkhAuVR9Wsm6UfoE": {
     "address": "136 2nd Ave, New York, NY 10003",
@@ -5175,13 +5562,13 @@
     "venue_name": "Edge"
   },
   "YxvEsJDZYLbJ9KkMt2bE": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "106 W 32nd St, New York, NY 10001",
+    "confidence": 9,
     "event_id": "YxvEsJDZYLbJ9KkMt2bE",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "The Yard, 106 West 32nd Street, New York, NY 10001, United States of America",
+    "lat": 40.748599,
+    "lon": -73.989262,
+    "venue_name": ""
   },
   "Yypg1qLoBZxTQeULD3pH": {
     "address": "404 West St, New York, NY 10014",
@@ -5264,6 +5651,15 @@
     "lon": -73.9755273,
     "venue_name": "Consulate General Of Argentina"
   },
+  "ZUYiQONLFm1fcVMiVAL2": {
+    "address": "575 Madison Ave, New York, NY 10022",
+    "confidence": 10,
+    "event_id": "ZUYiQONLFm1fcVMiVAL2",
+    "formatted": "575 Madison Avenue, New York, NY 10022, United States of America",
+    "lat": 40.7617911,
+    "lon": -73.9724122,
+    "venue_name": ""
+  },
   "ZZFWMkisfYJrUyqR18cb": {
     "address": "124 E 14th St, New York, NY 10003",
     "confidence": 9,
@@ -5300,6 +5696,15 @@
     "lon": -73.9924921,
     "venue_name": "Othership"
   },
+  "Zm3BaEMeL5lyMrBGyOW9": {
+    "address": "Manhattan, New York, NY",
+    "confidence": 5,
+    "event_id": "Zm3BaEMeL5lyMrBGyOW9",
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.7579554,
+    "lon": -73.9855319,
+    "venue_name": "Manhattan"
+  },
   "ZndEhiwL152GBxWRPdRD": {
     "address": "500/519 Eighth Ave, New York, NY 10018",
     "confidence": 9,
@@ -5334,6 +5739,15 @@
     "formatted": "Leidar, 225 West 34th Street, New York, NY 10122, United States of America",
     "lat": 40.7518074,
     "lon": -73.9917459,
+    "venue_name": ""
+  },
+  "ZxCTPNAXwPBHfwY631IS": {
+    "address": "45 E 20th St, New York, NY 10003",
+    "confidence": 10,
+    "event_id": "ZxCTPNAXwPBHfwY631IS",
+    "formatted": "45 East 20th Street, New York, NY 10003, United States of America",
+    "lat": 40.7389363,
+    "lon": -73.9889707,
     "venue_name": ""
   },
   "ZzxFq9vcfoDUqBBRQTzv": {
@@ -5598,13 +6012,13 @@
     "venue_name": "New York, NY"
   },
   "blNIAVH8VYaVAx5doUig": {
-    "address": "1251 Avenue of the Americas, FL 17, New York, NY 10020",
-    "confidence": 10,
+    "address": "Midtown West, Manhattan, New York, NY",
+    "confidence": 9,
     "event_id": "blNIAVH8VYaVAx5doUig",
-    "formatted": "Exxon Building, 1251 6th Avenue, New York, NY 10112, United States of America",
-    "lat": 40.7600411,
-    "lon": -73.9818903,
-    "venue_name": "Lowenstein Sandler"
+    "formatted": "West 30th Street Heliport, West 30th Street, New York, NY 10199, United States of America",
+    "lat": 40.755285,
+    "lon": -74.0067434,
+    "venue_name": "Midtown West"
   },
   "bn5h1g13xzOV6R5XkLaE": {
     "address": "Manhattan, New York, NY",
@@ -5616,13 +6030,13 @@
     "venue_name": "Manhattan"
   },
   "bpPlecEXfyhCWc1Tpzm7": {
-    "address": "Midtown East, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "24 E 39th St, New York, NY 10016",
+    "confidence": 9,
     "event_id": "bpPlecEXfyhCWc1Tpzm7",
-    "formatted": "New York, NY 10055, United States of America",
-    "lat": 40.7598219,
-    "lon": -73.9724708,
-    "venue_name": "Midtown East"
+    "formatted": "The William, 24 East 39th Street, New York, NY 10016, United States of America",
+    "lat": 40.7504701,
+    "lon": -73.9802536,
+    "venue_name": "The Raines Law Room"
   },
   "brAVEjl6bRCgfMNLQ7X4": {
     "address": "215 Chrystie St, New York, NY 10002",
@@ -5696,6 +6110,15 @@
     "lon": -73.9879798,
     "venue_name": "Mr. Purple"
   },
+  "cbyBD4xAhpcd4mEeBJOG": {
+    "address": "62 Chelsea Piers, New York, NY 10011",
+    "confidence": 6,
+    "event_id": "cbyBD4xAhpcd4mEeBJOG",
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.740916,
+    "lon": -73.999769,
+    "venue_name": ""
+  },
   "cuho3rLbstXqMSZAbREE": {
     "address": "Chinatown, Manhattan, New York, NY",
     "confidence": 8,
@@ -5759,6 +6182,15 @@
     "lon": -73.992127,
     "venue_name": ""
   },
+  "dMstVg7vViat0KgKWCsk": {
+    "address": "22 Vanderbilt Ave, New York, NY 10017",
+    "confidence": 10,
+    "event_id": "dMstVg7vViat0KgKWCsk",
+    "formatted": "22 Vanderbilt Avenue, New York, NY 10017, United States of America",
+    "lat": 40.753457,
+    "lon": -73.9777688,
+    "venue_name": ""
+  },
   "dNyJfF1YLi6KV6hSI5em": {
     "address": "398 W Broadway, New York, NY 10012",
     "confidence": 10,
@@ -5805,13 +6237,13 @@
     "venue_name": "BrainStation"
   },
   "dkcPj9zlgegjOS4bDeCd": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "307 W 38th St, New York, NY 10018",
+    "confidence": 10,
     "event_id": "dkcPj9zlgegjOS4bDeCd",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "307 West 38th Street, New York, NY 10018, United States of America",
+    "lat": 40.755043,
+    "lon": -73.9921577,
+    "venue_name": "307 West 38th Street"
   },
   "dmFBKIxzn2LdFmktqas8": {
     "address": "16 Vestry St, New York, NY 10013",
@@ -5850,22 +6282,22 @@
     "venue_name": ""
   },
   "e0YuY73DbgjtYRu0DgJj": {
-    "address": "St Marks Pl, New York, NY 10003",
+    "address": "12 St Marks Pl, New York, NY 10003",
     "confidence": 9,
     "event_id": "e0YuY73DbgjtYRu0DgJj",
-    "formatted": "Saint Marks Place, New York, NY 10003, United States of America",
-    "lat": 40.7281016,
-    "lon": -73.9864861,
-    "venue_name": ""
+    "formatted": "St. Mark's Comedy Club, 12 Saint Marks Place, New York, NY 10003, United States of America",
+    "lat": 40.729044,
+    "lon": -73.9892596,
+    "venue_name": "St Marks Comedy Club"
   },
   "e2hNOd2jIzhnHQujwMqu": {
-    "address": "Chelsea, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "529 W 20th St, New York, NY 10011",
+    "confidence": 10,
     "event_id": "e2hNOd2jIzhnHQujwMqu",
-    "formatted": "New York, NY 10011, United States of America",
-    "lat": 40.7464906,
-    "lon": -74.0015283,
-    "venue_name": "Chelsea"
+    "formatted": "529 West 20th Street, New York, NY 10011, United States of America",
+    "lat": 40.7466312,
+    "lon": -74.0068964,
+    "venue_name": ""
   },
   "e32DJWAieEIPVwRTAxLU": {
     "address": "415 W 20th St, New York, NY 10011",
@@ -6048,13 +6480,13 @@
     "venue_name": "Riverside School for Makers & Artists"
   },
   "fbIBC3AcgcKGT3yqBsN9": {
-    "address": "Chelsea, Manhattan, New York, NY",
+    "address": "Tribeca, Manhattan, New York, NY",
     "confidence": 8,
     "event_id": "fbIBC3AcgcKGT3yqBsN9",
-    "formatted": "New York, NY 10011, United States of America",
-    "lat": 40.7464906,
-    "lon": -74.0015283,
-    "venue_name": "Chelsea"
+    "formatted": "New York, NY 10007, United States of America",
+    "lat": 40.7153802,
+    "lon": -74.0093063,
+    "venue_name": "Tribeca"
   },
   "fcS1sPOYoO4R7xf3egac": {
     "address": "New York, NY",
@@ -6066,13 +6498,13 @@
     "venue_name": "New York, NY"
   },
   "fhZexBCTeyZAMH4Z37wg": {
-    "address": "175 Fifth Ave, New York, NY 10010",
-    "confidence": 10,
+    "address": "873 Broadway, New York, NY 10003",
+    "confidence": 9,
     "event_id": "fhZexBCTeyZAMH4Z37wg",
-    "formatted": "175 5th Avenue, Village of Pelham, NY 10803, United States of America",
-    "lat": 40.9136041,
-    "lon": -73.8086478,
-    "venue_name": "Flatiron Building"
+    "formatted": "Flatiron Wines & Spirits, 873 Broadway, New York, NY 10003, United States of America",
+    "lat": 40.7379839,
+    "lon": -73.9902332,
+    "venue_name": "The Sixth Floor Loft"
   },
   "foEPEVCrozyJZCN4W19S": {
     "address": "134 W 29th St, FL 2, New York, NY 10001",
@@ -6120,13 +6552,13 @@
     "venue_name": "Lower East Side"
   },
   "gIK9Dj3aDPsfHwISpKSd": {
-    "address": "686 Broadway, New York, NY 10012",
-    "confidence": 9,
+    "address": "33 Irving Pl, New York, NY 10003",
+    "confidence": 10,
     "event_id": "gIK9Dj3aDPsfHwISpKSd",
-    "formatted": "Great Jones Distilling Co, 686 Broadway, New York, NY 10012, United States of America",
-    "lat": 40.72791,
-    "lon": -73.9942311,
-    "venue_name": "Great Jones Distilling"
+    "formatted": "33 Irving Place, New York, NY 10003, United States of America",
+    "lat": 40.7351053,
+    "lon": -73.9881133,
+    "venue_name": ""
   },
   "gKj9MaPMRgLAfdoUrS8A": {
     "address": "1251 Avenue of the Americas, FL 17, New York, NY 10020",
@@ -6299,6 +6731,15 @@
     "lon": -73.9870602,
     "venue_name": ""
   },
+  "hI6Tdz9djTmB6Zrpz9ZS": {
+    "address": "New York, NY",
+    "confidence": 2,
+    "event_id": "hI6Tdz9djTmB6Zrpz9ZS",
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.7127281,
+    "lon": -74.0060152,
+    "venue_name": "New York"
+  },
   "hNaQJhWwvkvbnYnzfmu5": {
     "address": "26 Broadway, New York, NY 10004",
     "confidence": 10,
@@ -6415,6 +6856,15 @@
     "lat": 40.7331313,
     "lon": -73.9912876,
     "venue_name": "Leon's"
+  },
+  "iQP19UAfSBvF0wGAzqwx": {
+    "address": "12 St Marks Pl, New York, NY 10003",
+    "confidence": 9,
+    "event_id": "iQP19UAfSBvF0wGAzqwx",
+    "formatted": "St. Mark's Comedy Club, 12 Saint Marks Place, New York, NY 10003, United States of America",
+    "lat": 40.729044,
+    "lon": -73.9892596,
+    "venue_name": "St Marks Comedy Club"
   },
   "iVvYeqLhieeu6286yKro": {
     "address": "245 Park Ave, New York, NY 10017",
@@ -6723,13 +7173,13 @@
     "venue_name": "Flatiron District"
   },
   "l7bvHYnBBBKSeC7CjeOG": {
-    "address": "157 Bleecker St, New York, NY 10012",
+    "address": "206 Avenue A, New York, NY 10009",
     "confidence": 10,
     "event_id": "l7bvHYnBBBKSeC7CjeOG",
-    "formatted": "157 Bleecker Street, New York, NY 10012, United States of America",
-    "lat": 40.7286979,
-    "lon": -73.9997094,
-    "venue_name": ""
+    "formatted": "206 Avenue A, New York, NY 10009, United States of America",
+    "lat": 40.729456,
+    "lon": -73.9807313,
+    "venue_name": "Waiting on a Friend"
   },
   "l9fA0F5sI4gurGc8hc4H": {
     "address": "110 W 19th St, New York, NY 10011",
@@ -6821,6 +7271,15 @@
     "lon": -73.9484995,
     "venue_name": "Long Island City"
   },
+  "m7pci5eDGgvEMhby9pGq": {
+    "address": "53 Spring St, New York, NY 10012",
+    "confidence": 10,
+    "event_id": "m7pci5eDGgvEMhby9pGq",
+    "formatted": "53 Spring Street, New York, NY 10012, United States of America",
+    "lat": 40.7222913,
+    "lon": -73.996549,
+    "venue_name": "Beyond The Pale"
+  },
   "mFZrUoTromWldzT4JrXy": {
     "address": "Central Park, Manhattan, New York, NY",
     "confidence": 7,
@@ -6849,13 +7308,13 @@
     "venue_name": "The Yard: Columbus Circle"
   },
   "mNGisJ5Fpt9LLK9EiZPc": {
-    "address": "30 W 18th St, New York, NY 10011",
+    "address": "141 E Houston St, New York, NY 10002",
     "confidence": 10,
     "event_id": "mNGisJ5Fpt9LLK9EiZPc",
-    "formatted": "30 West 18th Street, New York, NY 10011, United States of America",
-    "lat": 40.7388525,
-    "lon": -73.992849,
-    "venue_name": "Little Maven"
+    "formatted": "141 East Houston Street, New York, NY 10002, United States of America",
+    "lat": 40.7231677,
+    "lon": -73.9896783,
+    "venue_name": "Flyfish Club"
   },
   "mPWLkFDlQr5fo1NGtk1x": {
     "address": "307 W 38th St, New York, NY 10018",
@@ -6902,14 +7361,23 @@
     "lon": -74.0060152,
     "venue_name": "New York, NY"
   },
-  "mwJI3c1tucYhPsJ42QjE": {
-    "address": "Midtown, Manhattan, New York, NY",
+  "muXQlVgG3uqwpbvvPIve": {
+    "address": "West Village, Manhattan, New York, NY",
     "confidence": 8,
+    "event_id": "muXQlVgG3uqwpbvvPIve",
+    "formatted": "New York, NY 10014, United States of America",
+    "lat": 40.7341857,
+    "lon": -74.00558,
+    "venue_name": "West Village"
+  },
+  "mwJI3c1tucYhPsJ42QjE": {
+    "address": "307 W 38th St, New York, NY 10018",
+    "confidence": 10,
     "event_id": "mwJI3c1tucYhPsJ42QjE",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "307 West 38th Street, New York, NY 10018, United States of America",
+    "lat": 40.755043,
+    "lon": -73.9921577,
+    "venue_name": ""
   },
   "n5uCUeAb1zW9pXNEqsg3": {
     "address": "31 W 52nd St, New York, NY 10019",
@@ -6965,6 +7433,15 @@
     "lon": -74.0105013,
     "venue_name": "World Trade Center Oculus"
   },
+  "nIDPndbXNwYkE2CllnOn": {
+    "address": "45 E 20th St, New York, NY 10003",
+    "confidence": 10,
+    "event_id": "nIDPndbXNwYkE2CllnOn",
+    "formatted": "45 East 20th Street, New York, NY 10003, United States of America",
+    "lat": 40.7389363,
+    "lon": -73.9889707,
+    "venue_name": "Verci"
+  },
   "nM6p1woMkNCsrCmbgFlS": {
     "address": "New York, NY 10028",
     "confidence": 2,
@@ -6984,13 +7461,13 @@
     "venue_name": "Sweet Linda"
   },
   "nNJ80KODX1rqDJbIKCln": {
-    "address": "Manhattan, New York, NY",
-    "confidence": 5,
+    "address": "112 W 25th St, New York, NY 10001",
+    "confidence": 9,
     "event_id": "nNJ80KODX1rqDJbIKCln",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7579554,
-    "lon": -73.9855319,
-    "venue_name": "Manhattan"
+    "formatted": "Renaissance New York Chelsea Hotel, 112 West 25th Street, New York, NY 10001, United States of America",
+    "lat": 40.7443088,
+    "lon": -73.9927375,
+    "venue_name": "Somewhere Nowhere"
   },
   "nQFM0OFzDP65DYIKDBCm": {
     "address": "165 Broadway, New York, NY 10006",
@@ -7019,14 +7496,23 @@
     "lon": -74.0060152,
     "venue_name": "New York, NY"
   },
+  "neEOpN1kjAiwJP4T3mVS": {
+    "address": "6 W 24th St, New York, NY 10010",
+    "confidence": 10,
+    "event_id": "neEOpN1kjAiwJP4T3mVS",
+    "formatted": "6 West 24th Street, New York, NY 10010, United States of America",
+    "lat": 40.7424861,
+    "lon": -73.9903494,
+    "venue_name": "La Compagnie Wine Bar Flatiron"
+  },
   "ng86YpYK7z8hyoGBDHb2": {
-    "address": "Midtown, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "300 Madison Ave, New York, NY 10017",
+    "confidence": 10,
     "event_id": "ng86YpYK7z8hyoGBDHb2",
-    "formatted": "New York, NY 10110, United States of America",
-    "lat": 40.7551169,
-    "lon": -73.98478,
-    "venue_name": "Midtown"
+    "formatted": "300 Madison Avenue, New York, NY 10017, United States of America",
+    "lat": 40.7526831,
+    "lon": -73.9800764,
+    "venue_name": "PwC"
   },
   "ngqSYGVrZpgvkP9AuoFT": {
     "address": "Greenpoint, Brooklyn, New York, NY",
@@ -7065,13 +7551,13 @@
     "venue_name": ""
   },
   "nsJWESaFmNRxg58VfNjT": {
-    "address": "832 8th Ave, New York, NY 10019",
+    "address": "16 W 36th St, New York, NY 10018",
     "confidence": 10,
     "event_id": "nsJWESaFmNRxg58VfNjT",
-    "formatted": "832 8th Avenue, New York, NY 10019, United States of America",
-    "lat": 40.7623354,
-    "lon": -73.9857106,
-    "venue_name": "The Three Monkeys"
+    "formatted": "16 West 36th Street, New York, NY 10018, United States of America",
+    "lat": 40.7499645,
+    "lon": -73.984792,
+    "venue_name": "Clinton Hall 36"
   },
   "nwxJ2O5JhxJfTSFaksLr": {
     "address": "New York, NY",
@@ -7090,6 +7576,15 @@
     "lat": 40.72521,
     "lon": -73.9904,
     "venue_name": "Bowery"
+  },
+  "oAkb6sUA678cbVtfJaKL": {
+    "address": "58 W 40th St, New York, NY 10018",
+    "confidence": 10,
+    "event_id": "oAkb6sUA678cbVtfJaKL",
+    "formatted": "58 West 40th Street, New York, NY 10018, United States of America",
+    "lat": 40.7531176,
+    "lon": -73.9842683,
+    "venue_name": "Experis"
   },
   "oCQeG6SZP23qz5nvcxBh": {
     "address": "Manhattan, New York, NY",
@@ -7144,6 +7639,15 @@
     "lat": 40.8094381,
     "lon": -73.9293593,
     "venue_name": "Tara Rose"
+  },
+  "oSKdFZqbiwxr0frzonCz": {
+    "address": "240 W 40th St, New York, NY 10018",
+    "confidence": 10,
+    "event_id": "oSKdFZqbiwxr0frzonCz",
+    "formatted": "240 West 40th Street, New York, NY 10018, United States of America",
+    "lat": 40.7551968,
+    "lon": -73.9895783,
+    "venue_name": ""
   },
   "oZjPIrymA9JRf4x3t4GO": {
     "address": "110 W 19th St, New York, NY 10011",
@@ -7325,14 +7829,23 @@
     "lon": -73.9987505,
     "venue_name": "SoHo"
   },
+  "pmpzDSI9HP2mJlTBFXRS": {
+    "address": "13 Grattan St, Brooklyn, NY 11206",
+    "confidence": 10,
+    "event_id": "pmpzDSI9HP2mJlTBFXRS",
+    "formatted": "13 Grattan Street, New York, NY 11206, United States of America",
+    "lat": 40.705703,
+    "lon": -73.9327516,
+    "venue_name": ""
+  },
   "pnYKgdY9IvyeGStLgEKU": {
-    "address": "126 W 42nd St, New York, NY 10036",
-    "confidence": 9,
+    "address": "22 W 23rd St, New York, NY 10010",
+    "confidence": 10,
     "event_id": "pnYKgdY9IvyeGStLgEKU",
-    "formatted": "Valbella at the Park, 126 West 42nd Street, New York, NY 10110, United States of America",
-    "lat": 40.7548664,
-    "lon": -73.985372,
-    "venue_name": "Valbella At The Park"
+    "formatted": "22 West 23rd Street, New York, NY 10010, United States of America",
+    "lat": 40.7416997,
+    "lon": -73.9906796,
+    "venue_name": "Lofte 23"
   },
   "pqEys4amaG8z14ZJnDGF": {
     "address": "51 W 52nd St, New York, NY 10019",
@@ -7371,13 +7884,13 @@
     "venue_name": "Midtown"
   },
   "q9Ekc1IjHSv32Xmd8hXB": {
-    "address": "SoHo, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "1150 Broadway, Manhattan, NY 10001",
+    "confidence": 10,
     "event_id": "q9Ekc1IjHSv32Xmd8hXB",
-    "formatted": "New York, NY 10012, United States of America",
-    "lat": 40.72288,
-    "lon": -73.9987505,
-    "venue_name": "SoHo"
+    "formatted": "1150 Broadway, New York, NY 10001, United States of America",
+    "lat": 40.7442431,
+    "lon": -73.9885906,
+    "venue_name": "230 Fifth Rooftop Bar"
   },
   "qHNiowdDBNRygRjZlYcp": {
     "address": "Strada Liviu Rebreanu, 55, Bistrita, 420008",
@@ -7470,13 +7983,13 @@
     "venue_name": ""
   },
   "qyk65dBFAtgDutz68VMK": {
-    "address": "26 Broadway, Brooklyn, NY 11249",
+    "address": "26 Broadway, FL 8, New York, NY 10004",
     "confidence": 10,
     "event_id": "qyk65dBFAtgDutz68VMK",
-    "formatted": "26 Broadway, New York, NY 11249, United States of America",
-    "lat": 40.7105655,
-    "lon": -73.96788,
-    "venue_name": ""
+    "formatted": "Standard Oil Building, 26 Broadway, New York, NY 10004, United States of America",
+    "lat": 40.7053128,
+    "lon": -74.0129107,
+    "venue_name": "26 Broadway"
   },
   "r0srpfriv3SWRcQEBVk7": {
     "address": "Manhattan, New York, NY",
@@ -7515,22 +8028,22 @@
     "venue_name": ""
   },
   "rLtByVXIsbqhgD3CEvaS": {
-    "address": "1251 Avenue of the Americas, FL 17, New York, NY 10020",
-    "confidence": 10,
+    "address": "Midtown, Manhattan, New York, NY",
+    "confidence": 8,
     "event_id": "rLtByVXIsbqhgD3CEvaS",
-    "formatted": "Exxon Building, 1251 6th Avenue, New York, NY 10112, United States of America",
-    "lat": 40.7600411,
-    "lon": -73.9818903,
-    "venue_name": "Lowenstein Sandler"
+    "formatted": "New York, NY 10110, United States of America",
+    "lat": 40.7551169,
+    "lon": -73.98478,
+    "venue_name": "Midtown"
   },
   "rMXDlcjS4U6NnDyGRgYD": {
-    "address": "NoMad, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "776 6th Ave, New York, NY 12182",
+    "confidence": 10,
     "event_id": "rMXDlcjS4U6NnDyGRgYD",
-    "formatted": "New York, NY 10118, United States of America",
-    "lat": 40.7446884,
-    "lon": -73.9882851,
-    "venue_name": "NoMad"
+    "formatted": "776 6th Avenue, City of Troy, NY 12182, United States of America",
+    "lat": 42.781279,
+    "lon": -73.6687145,
+    "venue_name": ""
   },
   "rRCBVWRZ2Hijadxm4yfr": {
     "address": "Queens, New York, NY",
@@ -7567,6 +8080,15 @@
     "lat": 40.7254543,
     "lon": -73.9780492,
     "venue_name": "Bobby\u2019s Night Out"
+  },
+  "rlMYu1yn8OTgJ0Vbaopm": {
+    "address": "432 Park Ave S, New York, NY 10016",
+    "confidence": 10,
+    "event_id": "rlMYu1yn8OTgJ0Vbaopm",
+    "formatted": "432 Park Avenue South, New York, NY 10016, United States of America",
+    "lat": 40.7442156,
+    "lon": -73.9836536,
+    "venue_name": ""
   },
   "rlRAQPlPid3iy9JOVTRs": {
     "address": "77 Delancey St, New York, NY 10002",
@@ -7677,13 +8199,13 @@
     "venue_name": "Love\u2019s Club"
   },
   "sLMniNFeuyQo2DIlR81o": {
-    "address": "Manhattan, New York, NY",
-    "confidence": 5,
+    "address": "112 W 25th St, New York, NY 10001",
+    "confidence": 9,
     "event_id": "sLMniNFeuyQo2DIlR81o",
-    "formatted": "New York, New York, United States of America",
-    "lat": 40.7579554,
-    "lon": -73.9855319,
-    "venue_name": "Manhattan"
+    "formatted": "Renaissance New York Chelsea Hotel, 112 West 25th Street, New York, NY 10001, United States of America",
+    "lat": 40.7443088,
+    "lon": -73.9927375,
+    "venue_name": "Somewhere Nowhere"
   },
   "sM2xFUYglx4DTIZZrw3S": {
     "address": "Midtown, Manhattan, New York, NY",
@@ -7731,13 +8253,13 @@
     "venue_name": "W - Times Square"
   },
   "sc4MhJbd0dglGivVnHYe": {
-    "address": "Midtown West, Manhattan, New York, NY",
-    "confidence": 9,
+    "address": "New York, NY",
+    "confidence": 2,
     "event_id": "sc4MhJbd0dglGivVnHYe",
-    "formatted": "West 30th Street Heliport, 12th Avenue, New York, NY 10199, United States of America",
-    "lat": 40.755285,
-    "lon": -74.0067434,
-    "venue_name": "Midtown West"
+    "formatted": "New York, New York, United States of America",
+    "lat": 40.7127281,
+    "lon": -74.0060152,
+    "venue_name": "New York"
   },
   "seZGbZT3BDyfF9Ds4bI5": {
     "address": "270 Park Ave, New York, NY 10017",
@@ -7776,13 +8298,13 @@
     "venue_name": ""
   },
   "sp4Bjt8b6PEBpUg5pAtr": {
-    "address": "Gramercy, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "900 Broadway, New York, NY 10003",
+    "confidence": 10,
     "event_id": "sp4Bjt8b6PEBpUg5pAtr",
-    "formatted": "New York, NY 10010, United States of America",
-    "lat": 40.7355189,
-    "lon": -73.9840794,
-    "venue_name": "Gramercy"
+    "formatted": "Goelet Building, 900 Broadway, New York, NY 10003, United States of America",
+    "lat": 40.7388292,
+    "lon": -73.989522,
+    "venue_name": "Barlume Downstairs"
   },
   "suiUkzxWKTrNjbWRUoAe": {
     "address": "151 W 43rd St, New York, NY 10036",
@@ -7794,13 +8316,13 @@
     "venue_name": ""
   },
   "svhgMRybAh1XPlLVVXRH": {
-    "address": "1216 Broadway, New York, NY 10001",
-    "confidence": 9,
+    "address": "149 W 27th St, New York, NY 10001",
+    "confidence": 10,
     "event_id": "svhgMRybAh1XPlLVVXRH",
-    "formatted": "Jewelry in Trend, 1216 Broadway, New York, NY 10001, United States of America",
-    "lat": 40.7465808,
-    "lon": -73.9883005,
-    "venue_name": "Nomadworks"
+    "formatted": "149 West 27th Street, New York, NY 10001, United States of America",
+    "lat": 40.7464349,
+    "lon": -73.9928329,
+    "venue_name": ""
   },
   "t2IAjZOPxfRkn0b62Ypj": {
     "address": "New York, NY",
@@ -7819,6 +8341,15 @@
     "lat": 40.740554,
     "lon": -74.005788,
     "venue_name": "Soho House"
+  },
+  "t8YZUAfBPV56O8zW2dER": {
+    "address": "311 W 43rd St, New York, NY 10036",
+    "confidence": 10,
+    "event_id": "t8YZUAfBPV56O8zW2dER",
+    "formatted": "311 West 43rd Street, New York, NY 10036, United States of America",
+    "lat": 40.7584222,
+    "lon": -73.990005,
+    "venue_name": "Fushimi Times Square"
   },
   "t9rcgqhGn2tx8udcMKmX": {
     "address": "Manhattan, New York, NY",
@@ -7848,13 +8379,13 @@
     "venue_name": "The Yard: Columbus Circle"
   },
   "tITnWmy3y2QvpNeyg6tS": {
-    "address": "29-35 Ninth Ave, New York, NY 10014",
+    "address": "455 W 37th St, New York, NY 10018",
     "confidence": 9,
     "event_id": "tITnWmy3y2QvpNeyg6tS",
-    "formatted": "9 Ave, New York, NY, United States of America",
-    "lat": 40.740554,
-    "lon": -74.005788,
-    "venue_name": "Soho House"
+    "formatted": "Jenny's Marketplace, 455 West 37th Street, New York, NY 10018, United States of America",
+    "lat": 40.7565185,
+    "lon": -73.9974491,
+    "venue_name": "Victory Boxing Club"
   },
   "tLkNSguUFu4OSJwMiwDI": {
     "address": "230 Park Ave, New York, NY 10169",
@@ -7937,6 +8468,15 @@
     "lon": -73.9833893,
     "venue_name": "Edge Studio Voice Over"
   },
+  "tnjdx3R4HJ3wQyZeZ8PI": {
+    "address": "13 E 19th St, New York, NY 10003",
+    "confidence": 10,
+    "event_id": "tnjdx3R4HJ3wQyZeZ8PI",
+    "formatted": "13 East 19th Street, New York, NY 10003, United States of America",
+    "lat": 40.7388006,
+    "lon": -73.9904226,
+    "venue_name": "Chief"
+  },
   "tqFtk1LjwFwXxJJTLyaf": {
     "address": "1301 6th Ave, New York, NY 10019",
     "confidence": 10,
@@ -8018,6 +8558,15 @@
     "lon": -73.9834308,
     "venue_name": "Black Iron Burger Theater District"
   },
+  "uQdzb29YFCGMt5EyS7T0": {
+    "address": "902 Broadway, New York, NY 10010",
+    "confidence": 10,
+    "event_id": "uQdzb29YFCGMt5EyS7T0",
+    "formatted": "902 Broadway, New York, NY 10010, United States of America",
+    "lat": 40.7393401,
+    "lon": -73.9893929,
+    "venue_name": ""
+  },
   "uTNLeWPAdJuraikzGCN5": {
     "address": "Financial District, Manhattan, New York, NY",
     "confidence": 8,
@@ -8073,13 +8622,22 @@
     "venue_name": "Flatiron District"
   },
   "uiwKdsUhGWODSJJzwO0C": {
-    "address": "NoMad, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "124 E 14th St, New York, NY 10003",
+    "confidence": 9,
     "event_id": "uiwKdsUhGWODSJJzwO0C",
-    "formatted": "New York, NY 10118, United States of America",
-    "lat": 40.7446884,
-    "lon": -73.9882851,
-    "venue_name": "NoMad"
+    "formatted": "Civic Hall, 124 East 14th Street, New York, NY 10003, United States of America",
+    "lat": 40.7336511,
+    "lon": -73.9887397,
+    "venue_name": "Civic Hall"
+  },
+  "usTxNe1nWX3BBZB7GT9m": {
+    "address": "335 Madison Ave, New York, NY 10017",
+    "confidence": 10,
+    "event_id": "usTxNe1nWX3BBZB7GT9m",
+    "formatted": "22 Vanderbilt, 335 Madison Avenue, New York, NY 10017, United States of America",
+    "lat": 40.7536221,
+    "lon": -73.9780733,
+    "venue_name": ""
   },
   "utGQhLBSFG3hyIlAFlEp": {
     "address": "79-81 MacDougal St, New York, NY 10012",
@@ -8215,6 +8773,15 @@
     "lat": 40.7371632,
     "lon": -73.9979113,
     "venue_name": "People\u2019s"
+  },
+  "vvNMFT7CRsvXm3EBXOqd": {
+    "address": "102 Franklin St, New York, NY 10013",
+    "confidence": 10,
+    "event_id": "vvNMFT7CRsvXm3EBXOqd",
+    "formatted": "102 Franklin Street, New York, NY 10013, United States of America",
+    "lat": 40.7185787,
+    "lon": -74.0055177,
+    "venue_name": ""
   },
   "w2AuKNImWlSexUcM83Bb": {
     "address": "404 Broadway, FL 2, New York, NY 10013",
@@ -8352,13 +8919,13 @@
     "venue_name": ""
   },
   "waaD8WHscyLjlQkL4Uoi": {
-    "address": "70 W 36th St, New York, NY 10018",
-    "confidence": 10,
+    "address": "157 E 53rd St, New York, NY 10022",
+    "confidence": 9,
     "event_id": "waaD8WHscyLjlQkL4Uoi",
-    "formatted": "70 West 36th Street, New York, NY 10018, United States of America",
-    "lat": 40.7505863,
-    "lon": -73.9862797,
-    "venue_name": "The Parlour Room"
+    "formatted": "The Hugh, 157 East 53rd Street, New York, NY 10022, United States of America",
+    "lat": 40.7583874,
+    "lon": -73.9702549,
+    "venue_name": "ilili Midtown"
   },
   "wcXp7CbCwqwC2DFNXGUG": {
     "address": "135 Madison Ave, New York, NY 10016",
@@ -8370,13 +8937,13 @@
     "venue_name": "Blender Workspace"
   },
   "wiWrtmZFVPCAgObP4954": {
-    "address": "East Village, Manhattan, New York, NY",
-    "confidence": 8,
+    "address": "180 Orchard St, FL 15, New York, NY 10002",
+    "confidence": 10,
     "event_id": "wiWrtmZFVPCAgObP4954",
-    "formatted": "New York, NY 10003, United States of America",
-    "lat": 40.7292688,
-    "lon": -73.9873613,
-    "venue_name": "East Village"
+    "formatted": "180 Orchard Street, New York, NY 10002, United States of America",
+    "lat": 40.7217647,
+    "lon": -73.9879798,
+    "venue_name": "Mr. Purple"
   },
   "wqueNyka7qksh4pd6DTb": {
     "address": "1460 Broadway, New York, NY 10036",
@@ -8451,13 +9018,13 @@
     "venue_name": ""
   },
   "xf4L0OHJO6UHVVu3GKNN": {
-    "address": "Flatiron, Manhattan, New York, NY",
-    "confidence": 9,
+    "address": "19 W 22nd St, New York, NY 10010",
+    "confidence": 10,
     "event_id": "xf4L0OHJO6UHVVu3GKNN",
-    "formatted": "Flatiron Building, 175 5th Avenue, New York, NY 10010, United States of America",
-    "lat": 40.7410592,
-    "lon": -73.9896416,
-    "venue_name": "Flatiron"
+    "formatted": "19 West 22nd Street, New York, NY 10010, United States of America",
+    "lat": 40.7413991,
+    "lon": -73.9910549,
+    "venue_name": ""
   },
   "xmJ2Bjacl2LgQ3i7q6V7": {
     "address": "1 Pace Plaza, New York, NY 10038",
@@ -8559,13 +9126,13 @@
     "venue_name": "Sheep Meadow"
   },
   "yUgTDw1Bkps9Rb62ojJf": {
-    "address": "33 Greenwich Ave, New York, NY 10014",
+    "address": "35 W 28th St, New York, NY 10001",
     "confidence": 10,
     "event_id": "yUgTDw1Bkps9Rb62ojJf",
-    "formatted": "33 Greenwich Avenue, New York, NY 10014, United States of America",
-    "lat": 40.7349112,
-    "lon": -74.0003178,
-    "venue_name": "American Bar"
+    "formatted": "35 West 28th Street, New York, NY 10001, United States of America",
+    "lat": 40.7455567,
+    "lon": -73.9891491,
+    "venue_name": "The Bazaar by Jos\u00e9 Andr\u00e9s"
   },
   "yVM17p4sbb6XGNUq8Odp": {
     "address": "SoHo, Manhattan, New York, NY",
