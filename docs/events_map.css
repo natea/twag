@@ -137,6 +137,22 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   background: #e8543e;
   color: #fff;
 }
+
+/* "Virtual" filter chip (gallery only, injected by events_gallery.js). */
+.virtual-chip {
+  flex: 0 0 auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.virtual-chip:hover:not(.active) { background: #f5f5f5; }
+.virtual-chip.active { background: #e8543e; color: #fff; border-color: #e8543e; }
 /* Long/short label swap on the day button (matches the date-chip pattern):
    desktop shows "Tue, May 26"; mobile shows "This day" so the toggle
    doesn't get truncated next to the search input. */
@@ -172,6 +188,7 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
   #search { max-width: none; font-size: 14px; flex: 1 1 auto; min-width: 0; }
   .search-scope { flex: 0 0 auto; }
   .search-scope-btn { padding: 5px 8px; font-size: 11px; }
+  .virtual-chip { padding: 6px 9px; font-size: 12px; }
 }
 
 /* Map + sidebar layout: row on desktop, column (sidebar as bottom sheet)

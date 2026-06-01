@@ -255,6 +255,12 @@ async function initEventGallery(config) {
   let lastTrackedDate = null;
   let lastScrolledDate = null;
   let search = null;
+  let virtualOnly = false;
+
+  // Virtual/online events are tagged with a "Virtual …" neighborhood
+  // (e.g. "Virtual (NYC)"). They have no map pin, so the gallery is the only
+  // place to surface them — hence the "Virtual" filter chip.
+  function isVirtualG(e) { return /virtual|online/i.test(e.neighborhood || ""); }
 
   // Selecting a specific day-of-week button overrides the "All days" search
   // scope (mirrors the map): it switches to single-day so results filter to
@@ -294,14 +300,25 @@ async function initEventGallery(config) {
           const rb = rank.has(b.event_id) ? rank.get(b.event_id) : Number.MAX_SAFE_INTEGER;
           return ra - rb;
         });
+    } else if (virtualOnly && scope === "all") {
+      // "All days" + Virtual → every virtual event, across all days.
+      filtered = allEvents;
     } else {
       filtered = allEvents.filter(e => e.event_date === activeDate);
     }
+    // "Virtual" chip narrows whatever's shown down to virtual/online events.
+    // The day dimension follows the scope: "All days" → every day; a selected
+    // day (scope "day") → just that day.
+    if (virtualOnly) filtered = filtered.filter(isVirtualG);
     const scopeLabel = scope === "day" ? `on ${dateLabel}` : "across all days";
-    countEl.textContent = query
-      ? `${filtered.length} events matching "${query}" ${scopeLabel}`
-      : `${filtered.length} events on ${dateLabel}`;
-    const crossDay = !!matchIds && scope === "all";
+    let countLabel;
+    if (query) countLabel = `${filtered.length} events matching "${query}" ${scopeLabel}${virtualOnly ? " · virtual only" : ""}`;
+    else if (virtualOnly) countLabel = scope === "all"
+      ? `${filtered.length} virtual events across all days`
+      : `${filtered.length} virtual events on ${dateLabel}`;
+    else countLabel = `${filtered.length} events on ${dateLabel}`;
+    countEl.textContent = countLabel;
+    const crossDay = scope === "all" && (!!matchIds || virtualOnly);
     grid.innerHTML = filtered.length
       ? filtered.map(e => renderTile(e, crossDay)).join("")
       : `<div class="empty">${query
@@ -375,6 +392,29 @@ async function initEventGallery(config) {
       view: "gallery",
       getActiveDate: () => activeDate,
     });
+  }
+
+  // "Virtual" filter chip — only shown when this city's dataset actually has
+  // virtual events. Toggles showing only online/virtual events.
+  if (allEvents.some(isVirtualG)) {
+    const row = document.getElementById("search-row");
+    if (row && !document.getElementById("gallery-virtual-toggle")) {
+      const chip = document.createElement("button");
+      chip.id = "gallery-virtual-toggle";
+      chip.type = "button";
+      chip.className = "virtual-chip";
+      chip.setAttribute("aria-pressed", "false");
+      chip.title = "Show only virtual / online events";
+      chip.textContent = "💻 Virtual";
+      chip.addEventListener("click", () => {
+        virtualOnly = !virtualOnly;
+        chip.classList.toggle("active", virtualOnly);
+        chip.setAttribute("aria-pressed", virtualOnly ? "true" : "false");
+        if (window.twagTrack) twagTrack("gallery_virtual_filter", { city: citySlug, on: virtualOnly });
+        refresh();
+      });
+      row.appendChild(chip);
+    }
   }
 
   refresh();
