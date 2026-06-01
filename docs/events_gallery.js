@@ -256,15 +256,24 @@ async function initEventGallery(config) {
   let lastScrolledDate = null;
   let search = null;
 
+  // Selecting a specific day-of-week button overrides the "All days" search
+  // scope (mirrors the map): it switches to single-day so results filter to
+  // that day. setScope("day") updates the toggle AND triggers refresh().
+  function onDatePickG(date) {
+    activeDate = date;
+    setDateInHashG(date);
+    saveDateG(citySlug, date);
+    if (search && search.currentScope() === "all") {
+      search.setScope("day");
+    } else {
+      refresh();
+    }
+  }
+
   function refresh() {
     const previousDate = lastTrackedDate;
     const shouldScroll = activeDate !== lastScrolledDate;
-    buildDatePickerG(datePicker, config.dateRange, activeDate, (date) => {
-      activeDate = date;
-      setDateInHashG(date);
-      saveDateG(citySlug, date);
-      refresh();
-    });
+    buildDatePickerG(datePicker, config.dateRange, activeDate, onDatePickG);
     // Update the "This day" pill label when activeDate changes.
     if (search && search.refreshScopeLabel) search.refreshScopeLabel();
     const matchIds = search ? search.currentMatchIds() : null;

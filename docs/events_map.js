@@ -217,12 +217,23 @@ async function initEventMap(config) {
   let activeDate = initialDate;
 
   const datePicker = document.getElementById("date-picker");
-  buildDatePicker(datePicker, config.dateRange, activeDate, (date) => {
+
+  // Picking a specific day-of-week button overrides the "All days" search
+  // scope: it switches the search to single-day so the results filter to that
+  // day. setScope("day") updates the scope toggle AND triggers refresh(); if
+  // we're already in "day" scope we just refresh for the new date.
+  function onDatePick(date) {
     activeDate = date;
     setDateInHash(date);
     saveDate(config.citySlug, date);
-    refresh();
-  });
+    if (search && search.currentScope() === "all") {
+      search.setScope("day");
+    } else {
+      refresh();
+    }
+  }
+
+  buildDatePicker(datePicker, config.dateRange, activeDate, onDatePick);
 
   let sidebar = null;
   let activePopup = null;
@@ -323,12 +334,7 @@ async function initEventMap(config) {
 
   function refresh() {
     const previousDate = lastTrackedDate;
-    buildDatePicker(datePicker, config.dateRange, activeDate, (date) => {
-      activeDate = date;
-      setDateInHash(date);
-      saveDate(config.citySlug, date);
-      refresh();
-    });
+    buildDatePicker(datePicker, config.dateRange, activeDate, onDatePick);
     // Update the "This day" pill label when the active date changes.
     if (search && search.refreshScopeLabel) search.refreshScopeLabel();
     const filtered = filterByDateAndSearch();
