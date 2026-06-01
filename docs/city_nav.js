@@ -13,8 +13,8 @@
   var STORAGE_KEY = 'sh_city';
 
   var CITIES = [
-    { id: 'boston', label: 'Tech Week Boston', sub: 'Boston · May 26–31',     url: './events_map_boston.html', remember: true },
     { id: 'nyc',    label: 'Tech Week NYC',    sub: 'New York · Jun 1–7',      url: './events_map_nyc.html',    remember: true },
+    { id: 'boston', label: 'Tech Week Boston', sub: 'Boston · May 26–31',     url: './events_map_boston.html', remember: true },
     { id: 'sf',     label: 'Tech Week SF',     sub: 'Coming soon!',            comingSoon: true },
     { id: 'nola',   label: 'NOLA Jazz Fest',   sub: 'New Orleans',             url: 'https://nolajazzfest.stagehopper.app', external: true, remember: false }
   ];
