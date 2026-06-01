@@ -10,6 +10,24 @@
   <link rel="apple-touch-icon" href="./apple-touch-icon.svg">
   <meta name="theme-color" content="#e8543e">
 
+  <!-- Native apps only (iOS/Android Capacitor shell): show the streamlined
+       landing menu instead of the full website, and — if a city was already
+       chosen — skip the menu and jump straight to it. The flag is set on
+       <html> before paint so there's no flash. EVERY browser (desktop AND
+       mobile web) sees the normal website unchanged. -->
+  <script>
+    (function () {
+      try {
+        var native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+        if (!native) return;
+        document.documentElement.classList.add('sh-native');
+        var saved = localStorage.getItem('sh_city');
+        var dest = { boston: './events_map_boston.html', nyc: './events_map_nyc.html' };
+        if (saved && dest[saved]) location.replace(dest[saved]);
+      } catch (e) {}
+    })();
+  </script>
+
   <meta property="og:title" content="Stagehopper — Map-first event guides">
   <meta property="og:description" content="Maps, galleries, and chatbots for Tech Week Boston, Tech Week NYC, SF — and music festivals.">
   <meta property="og:url" content="https://stagehopper.app/">
@@ -531,7 +549,97 @@
     .reveal:nth-child(4) { animation-delay: 0.35s; }
     .reveal:nth-child(5) { animation-delay: 0.45s; }
 
-    /* ────────────── MOBILE ────────────── */
+    /* ────────────── NATIVE-APP LANDING MENU ────────────── */
+    /* Shown ONLY inside the iOS/Android Capacitor shell (html.sh-native).
+       In every browser — desktop or mobile web — the full homepage
+       (.desktop-home) shows instead and this menu stays hidden. */
+    .mobile-home { display: none; }
+    html.sh-native .desktop-home { display: none; }
+    html.sh-native .mobile-home {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: calc(env(safe-area-inset-top, 0px) + 30px) 22px calc(env(safe-area-inset-bottom, 0px) + 22px);
+    }
+
+    .mh-brand { margin-bottom: 26px; }
+    .mh-word {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 144, 'SOFT' 30;
+      font-weight: 700;
+      font-size: clamp(44px, 15vw, 76px);
+      line-height: 0.82;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+    .mh-hop {
+      color: var(--vermillion);
+      font-style: italic;
+      font-variation-settings: 'opsz' 144, 'SOFT' 80;
+    }
+    .mh-tag {
+      display: block;
+      margin-top: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ink-soft);
+    }
+    .mh-list { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+    .mh-btn {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 22px 56px 22px 22px;
+      background: var(--paper-deep);
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .mh-btn:active { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+    .mh-btn.hot { background: var(--vermillion); color: var(--paper); border-color: var(--ink); }
+    .mh-btn-label {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 60;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .mh-btn-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      opacity: 0.75;
+    }
+    .mh-arrow {
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 26px;
+    }
+    .mh-btn.soon { border-style: dashed; opacity: 0.6; cursor: default; }
+    .mh-foot {
+      margin-top: 22px;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+    }
+    .mh-foot a { border-bottom: 1px solid currentColor; }
+
+    /* ────────────── MOBILE WEB (narrow browsers — normal site) ────────────── */
     @media (max-width: 720px) {
       .strip { padding: 12px 20px; font-size: 10px; }
       .strip .right-meta { display: none; }
@@ -551,6 +659,41 @@
   </style>
 </head>
 <body>
+
+  <!-- ════════ MOBILE LANDING MENU (≤720px / native app) ════════ -->
+  <div class="mobile-home">
+    <div class="mh-brand">
+      <span class="mh-word">Stage<span class="mh-hop">hopper</span></span>
+      <span class="mh-tag">Pick your event ↓</span>
+    </div>
+    <div class="mh-list">
+      <a class="mh-btn hot" href="./events_map_boston.html" data-city="boston">
+        <span class="mh-btn-label">Tech Week Boston</span>
+        <span class="mh-btn-sub">Boston · May 26–31</span>
+        <span class="mh-arrow">→</span>
+      </a>
+      <a class="mh-btn" href="./events_map_nyc.html" data-city="nyc">
+        <span class="mh-btn-label">Tech Week NYC</span>
+        <span class="mh-btn-sub">New York · Jun 1–7</span>
+        <span class="mh-arrow">→</span>
+      </a>
+      <button class="mh-btn soon" type="button" disabled aria-disabled="true">
+        <span class="mh-btn-label">Tech Week SF</span>
+        <span class="mh-btn-sub">Coming soon!</span>
+      </button>
+      <a class="mh-btn" href="https://nolajazzfest.stagehopper.app" data-city="nola">
+        <span class="mh-btn-label">NOLA Jazz Fest</span>
+        <span class="mh-btn-sub">New Orleans · Fair Grounds</span>
+        <span class="mh-arrow">↗</span>
+      </a>
+    </div>
+    <div class="mh-foot">
+      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+    </div>
+  </div>
+
+  <!-- ════════ DESKTOP HOMEPAGE (unchanged, >720px) ════════ -->
+  <div class="desktop-home">
 
   <div class="strip">
     <div><span class="dot"></span>Stagehopper · live</div>
@@ -719,6 +862,24 @@
       <a href="./terms.html">Terms</a>
     </div>
   </footer>
+
+  </div><!-- /.desktop-home -->
+
+  <!-- Remember the chosen city so the mobile app skips the menu next launch.
+       Only the in-app cities (Boston/NYC) are remembered; NOLA opens an
+       external site, so we don't trap the user there on relaunch. -->
+  <script>
+    (function () {
+      var REMEMBER = { boston: 1, nyc: 1 };
+      var btns = document.querySelectorAll('.mh-btn[data-city]');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () {
+          var c = this.getAttribute('data-city');
+          try { if (REMEMBER[c]) localStorage.setItem('sh_city', c); } catch (e) {}
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
