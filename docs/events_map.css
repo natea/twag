@@ -1,6 +1,11 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-body { display: flex; flex-direction: column; }
+/* min-height:100dvh makes the column fill the viewport even when the iOS
+   WKWebView (with contentInset:'always') computes html/body height:100% as 0 —
+   otherwise #map-stage's flex:1 collapses and the Mapbox canvas renders
+   0-height (blank map until a reflow). 100dvh is viewport-relative, not a
+   %-chain, so it survives the webview's late layout. */
+body { display: flex; flex-direction: column; min-height: 100dvh; }
 
 header {
   padding: 12px 16px;
@@ -37,8 +42,10 @@ header h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
 @media (max-width: 640px) {
   .date-btn-long { display: none; }
   .date-btn-short { display: inline; }
-  #date-picker { gap: 4px; padding: 8px 12px; }
-  .date-btn { padding: 6px 10px; }
+  /* Keep all 7 day pills on one row (Sun was wrapping to a 2nd line):
+     no wrap, equal-width pills that shrink to fit the viewport. */
+  #date-picker { gap: 4px; padding: 8px 10px; flex-wrap: nowrap; }
+  .date-btn { padding: 6px 4px; flex: 1 1 0; min-width: 0; text-align: center; }
 
   /* Hide the top tab nav on mobile — the bottom bar takes over. */
   .tab-nav:not(.bottom-tab-bar) { display: none; }

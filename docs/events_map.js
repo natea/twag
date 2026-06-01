@@ -514,6 +514,17 @@ async function initEventMap(config) {
     window.addEventListener("resize", nudgeResize);
     window.addEventListener("orientationchange", () => setTimeout(nudgeResize, 250));
     window.addEventListener("pageshow", nudgeResize);
+    // The webview can establish the map container's real height *after* the
+    // timed nudges above (late navigation/inset settle). Re-measure whenever
+    // the container box actually changes size so the map paints as soon as it
+    // gets a non-zero height — no manual sidebar toggle needed.
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(nudgeResize);
+      const stageEl = document.getElementById("map-stage");
+      const mapEl = document.getElementById("map");
+      if (stageEl) ro.observe(stageEl);
+      if (mapEl) ro.observe(mapEl);
+    }
 
     // Deep link from a tapped notification: #date=…&event=<id>. Fly to the
     // event, open its popup, and select it in the sidebar.
