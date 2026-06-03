@@ -24,7 +24,7 @@
   bar.innerHTML =
     '<button class="app-teaser-open" type="button">' +
       '<span class="app-teaser-emoji" aria-hidden="true">📱</span>' +
-      '<span><strong>iOS &amp; Android apps coming soon</strong> — your location on the map + a reminder when your events start. <span class="app-teaser-cta">Learn more</span></span>' +
+      '<span><strong>iOS app coming soon</strong> — your location on the map + a reminder when your events start. <span class="app-teaser-cta">Learn more</span></span>' +
     '</button>' +
     '<button class="app-teaser-close" type="button" aria-label="Dismiss">×</button>';
   document.body.insertBefore(bar, document.body.firstChild);
@@ -33,13 +33,13 @@
   var modal = document.createElement("div");
   modal.className = "app-teaser-modal";
   modal.innerHTML =
-    '<div class="app-teaser-card" role="dialog" aria-modal="true" aria-label="StageHopper mobile apps coming soon">' +
+    '<div class="app-teaser-card" role="dialog" aria-modal="true" aria-label="StageHopper iOS app coming soon">' +
       '<button class="app-teaser-modal-close" type="button" aria-label="Close">×</button>' +
       '<div class="app-teaser-grid">' +
         '<img class="app-teaser-img" src="./app-teaser.png" alt="StageHopper mobile app preview">' +
         '<div class="app-teaser-copy">' +
           '<div class="app-teaser-kicker">Coming soon</div>' +
-          '<h2>StageHopper for iOS &amp; Android</h2>' +
+          '<h2>StageHopper for iOS</h2>' +
           '<p>The same Tech Week maps you love, now native on your phone:</p>' +
           '<ul>' +
             '<li><span aria-hidden="true">📍</span> <strong>See where you are</strong> — your live location on the map so you know what’s happening right around you.</li>' +
