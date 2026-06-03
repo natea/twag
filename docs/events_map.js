@@ -193,6 +193,10 @@ function makeLocateControl(map, citySlug) {
 }
 
 async function initEventMap(config) {
+  // Map page only: lets CSS give the body a definite viewport height so the
+  // Mapbox container (#map-stage flex:1) doesn't collapse to 0 in the iOS
+  // WKWebView. The gallery deliberately doesn't get this (see events_map.css).
+  document.body.classList.add("twag-map-view");
   mapboxgl.accessToken = config.token;
   const map = new mapboxgl.Map({
     container: "map",

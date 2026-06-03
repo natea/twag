@@ -1,11 +1,15 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-/* min-height:100dvh makes the column fill the viewport even when the iOS
-   WKWebView (with contentInset:'always') computes html/body height:100% as 0 —
-   otherwise #map-stage's flex:1 collapses and the Mapbox canvas renders
-   0-height (blank map until a reflow). 100dvh is viewport-relative, not a
-   %-chain, so it survives the webview's late layout. */
-body { display: flex; flex-direction: column; min-height: 100dvh; }
+body { display: flex; flex-direction: column; }
+
+/* MAP PAGE ONLY (events_map.js adds .twag-map-view): force the column to fill
+   the viewport so #map-stage's flex:1 gets a real height in the iOS WKWebView
+   (otherwise the empty Mapbox container collapses to 0-height → blank map).
+   The GALLERY must NOT get this: its content already gives the body height, and
+   min-height:100dvh over-extends the body in the contentInset:'always' webview,
+   which pushes the fixed bottom tab bar off-screen. (The gallery grid is its own
+   flex:1 scroller, so the page itself shouldn't grow past the viewport.) */
+body.twag-map-view { min-height: 100dvh; }
 
 header {
   padding: 12px 16px;
