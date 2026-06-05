@@ -20,6 +20,7 @@ except ImportError as exc:  # pragma: no cover - exercised only when deps missin
 
 from .client import ClickHouseService
 from .config import ClickHouseConfig
+from .recommend import EventRecommender, RecommenderConfig
 from .senso import SensoConfig, SensoService, sleep_before_next_sync, sync_senso_kb
 from .subconscious_agent import add_default_limit, validate_nytw_query
 
@@ -32,6 +33,20 @@ class QueryRequest(BaseModel):
     sql: str = Field(
         ...,
         description="One read-only SQL statement against nytw_* or synced senso_* ClickHouse tables.",
+    )
+
+
+class RecommendRequest(BaseModel):
+    query: str = Field(
+        ...,
+        description="Natural-language query describing the kind of events to recommend.",
+        min_length=1,
+    )
+    top_k: int = Field(
+        default=10,
+        description="Number of recommendations to return.",
+        ge=1,
+        le=50,
     )
 
 
@@ -131,6 +146,35 @@ def query(
         "sql": sql,
         "row_count": len(rows),
         "rows": rows,
+    }
+
+
+@app.post("/recommend")
+def recommend(
+    request: RecommendRequest,
+    x_tool_token: Annotated[str | None, Header()] = None,
+) -> dict[str, Any]:
+    """Semantic event recommendation via OpenAI embeddings + FAISS."""
+    _check_token(x_tool_token)
+
+    try:
+        index_dir = os.path.join(
+            os.getenv("TEMP", "/tmp"), "twag_event_index"
+        )
+        config = RecommenderConfig(
+            index_dir=index_dir,
+            top_k=request.top_k,
+        )
+        recommender = EventRecommender(config)
+        results = recommender.recommend(request.query, top_k=request.top_k)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+    return {
+        "ok": True,
+        "query": request.query,
+        "result_count": len(results),
+        "results": [r.to_dict() for r in results],
     }
 
 

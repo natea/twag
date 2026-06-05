@@ -10,6 +10,10 @@ dependencies = [
   "uvicorn>=0.30.0",
   "playwright>=1.48.0",
   "pillow>=10.0.0",
+  "wandb>=0.18.0",
+  "faiss-cpu>=1.14.0",
+  "openai>=2.0.0",
+  "pandas>=2.0.0",
 ]
 
 [project.scripts]
@@ -17,6 +21,7 @@ twag = "twag_clickhouse.cli:main"
 twag-clickhouse = "twag_clickhouse.cli:main"
 twag-nytw-tool-server = "twag_clickhouse.tool_server:main"
 twag-telegram-agent = "twag_clickhouse.telegram_agent:main"
+twag-recommend = "twag_clickhouse.recommend:main"
 
 [build-system]
 requires = ["setuptools>=68"]
