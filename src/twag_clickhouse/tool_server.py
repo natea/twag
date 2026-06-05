@@ -10,6 +10,9 @@ try:
 except ImportError:
     load_dotenv = None
 
+if load_dotenv:
+    load_dotenv(".env", override=False)
+
 try:
     from fastapi import FastAPI, Header, HTTPException
     from pydantic import BaseModel, Field
@@ -179,9 +182,6 @@ def recommend(
 
 
 def main() -> None:
-    if load_dotenv:
-        load_dotenv(".env", override=False)
-
     import uvicorn
 
     uvicorn.run(
