@@ -208,6 +208,122 @@
       to { transform: translateX(-50%); }
     }
 
+    /* ────────────── WORLD CUP PROMO (top, live) ────────────── */
+    .wc-promo {
+      display: block;
+      background: var(--vermillion);
+      color: var(--paper);
+      border-bottom: 2px solid var(--ink);
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .wc-promo:hover { background: var(--vermillion-deep); }
+    .wc-promo-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 44px 32px;
+      display: grid;
+      grid-template-columns: 300px 1fr auto;
+      align-items: center;
+      gap: 36px;
+    }
+    .wc-figure {
+      position: relative;
+      align-self: stretch;
+      min-height: 200px;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      overflow: hidden;
+    }
+    .wc-figure img {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05) contrast(1.02);
+      transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+    }
+    .wc-promo:hover .wc-figure img { transform: scale(1.04); }
+    .wc-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+    }
+    .wc-live .dot {
+      display: inline-block; width: 8px; height: 8px;
+      background: var(--paper); border-radius: 50%;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    .wc-promo h2 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 72, 'SOFT' 20;
+      font-weight: 800;
+      font-size: clamp(32px, 5.2vw, 68px);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+    .wc-promo h2 em {
+      font-style: italic;
+      font-variation-settings: 'opsz' 72, 'SOFT' 80;
+    }
+    .wc-promo p {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 24;
+      font-style: italic;
+      font-size: clamp(16px, 2vw, 22px);
+      line-height: 1.3;
+      max-width: 620px;
+      margin: 0;
+      opacity: 0.95;
+    }
+    .wc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 26px;
+      background: var(--ink);
+      color: var(--paper);
+      border: 2px solid var(--ink);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      transition: background 0.18s, color 0.18s;
+    }
+    .wc-promo:hover .wc-cta { background: var(--paper); color: var(--ink); }
+    .wc-cta .arrow {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 24px;
+      transition: transform 0.2s;
+    }
+    .wc-promo:hover .wc-cta .arrow { transform: translateX(4px); }
+    /* Soccer-ball glyph beside watch-party CTAs */
+    .ball {
+      width: 1.05em;
+      height: 1.05em;
+      flex-shrink: 0;
+      vertical-align: -0.16em;
+    }
+    @media (max-width: 940px) {
+      .wc-promo-inner { grid-template-columns: 220px 1fr; }
+      .wc-cta { grid-column: 1 / -1; width: 100%; justify-content: space-between; }
+    }
+    @media (max-width: 720px) {
+      .wc-promo-inner { grid-template-columns: 1fr; padding: 32px 20px; gap: 22px; }
+      .wc-figure { min-height: 0; aspect-ratio: 16 / 9; }
+      .wc-figure img { min-height: 0; }
+      .wc-cta { grid-column: auto; width: 100%; justify-content: space-between; }
+    }
+
     /* ────────────── SECTIONS ────────────── */
     .section {
       padding: 80px 32px 40px;
@@ -239,6 +355,19 @@
       letter-spacing: 0.15em;
       color: var(--ink-soft);
       white-space: nowrap;
+    }
+
+    .festivals-soon {
+      margin: 28px 0 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+    }
+    .festivals-soon::before {
+      content: '◆ ';
+      color: var(--vermillion);
     }
 
     /* ────────────── EVENT CARDS ────────────── */
@@ -686,14 +815,19 @@
       <span class="mh-tag">Pick your event ↓</span>
     </div>
     <div class="mh-list">
-      <a class="mh-btn hot" href="./events_map_nyc.html" data-city="nyc">
+      <a class="mh-btn hot" href="https://worldcup.stagehopper.app" data-city="worldcup">
+        <span class="mh-btn-label">World Cup 2026</span>
+        <span class="mh-btn-sub">Massachusetts · Live · Jun 11 – Jul 19</span>
+        <span class="mh-arrow">↗</span>
+      </a>
+      <a class="mh-btn" href="./events_map_nyc.html" data-city="nyc">
         <span class="mh-btn-label">Tech Week NYC</span>
-        <span class="mh-btn-sub">New York · Jun 1–7</span>
+        <span class="mh-btn-sub">New York · Jun 1–7 · Wrapped</span>
         <span class="mh-arrow">→</span>
       </a>
       <a class="mh-btn" href="./events_map_boston.html" data-city="boston">
         <span class="mh-btn-label">Tech Week Boston</span>
-        <span class="mh-btn-sub">Boston · May 26–31</span>
+        <span class="mh-btn-sub">Boston · May 26–31 · Wrapped</span>
         <span class="mh-arrow">→</span>
       </a>
       <button class="mh-btn soon" type="button" disabled aria-disabled="true">
@@ -716,7 +850,7 @@
 
   <div class="strip">
     <div><span class="dot"></span>Stagehopper · live</div>
-    <div class="right-meta">EST. 2026 · Map-first event guides · Boston / NYC / SF / NOLA</div>
+    <div class="right-meta">EST. 2026 · Map-first event guides · World Cup / Tech Weeks / Jazz Fests</div>
     <div>v0.1</div>
   </div>
 
@@ -728,17 +862,19 @@
   </header>
 
   <div class="meta-row reveal">
+    <span>World Cup watch parties live</span>
+    <span>Three event categories</span>
     <span>1,300+ events plotted</span>
-    <span>Two cities live</span>
-    <span>Built in 24 hours</span>
   </div>
 
   <div class="marquee">
     <div class="marquee-track">
+      <span>World Cup 2026</span>
       <span>Boston Tech Week</span>
       <span>NY Tech Week</span>
       <span>SF Tech Week</span>
       <span>New Orleans Jazz Fest</span>
+      <span>World Cup 2026</span>
       <span>Boston Tech Week</span>
       <span>NY Tech Week</span>
       <span>SF Tech Week</span>
@@ -746,20 +882,82 @@
     </div>
   </div>
 
+  <!-- ════════ WORLD CUP PROMO (live now, top of page) ════════ -->
+  <a class="wc-promo reveal" href="https://worldcup.stagehopper.app" aria-label="Open the World Cup 2026 watch-party finder">
+    <div class="wc-promo-inner">
+      <figure class="wc-figure">
+        <img src="https://images.unsplash.com/photo-1681351605771-a07893306fda?w=900&q=80&auto=format&fit=crop" alt="Fenway Park, Boston — packed stands under the lights" loading="lazy" decoding="async">
+        <div class="photo-credit">Photo · Sean Doherty / Unsplash</div>
+      </figure>
+      <div>
+        <div class="wc-live"><span class="dot"></span>Live now · June 11 – July 19, 2026</div>
+        <h2>World Cup&nbsp;2026<br><em>Watch&nbsp;Parties</em></h2>
+        <p>Every place to watch the FIFA Men's World Cup across Massachusetts — the Boston City Hall Fan Festival, soccer bars by national team, brewery &amp; waterfront screenings, and free municipal watch parties. Schedule, map, and by-team views over one dataset.</p>
+      </div>
+      <span class="wc-cta">
+        <svg class="ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.4l3.5 2.55-1.34 4.12H9.84L8.5 9.95z"/><path d="M12 7.4V3.6M15.5 9.95l3.2-1.05M14.16 14.07l2.05 2.95M9.84 14.07l-2.05 2.95M8.5 9.95l-3.2-1.05"/></svg>
+        Find a watch party <span class="arrow">↗</span>
+      </span>
+    </div>
+  </a>
+
+  <!-- ════════ SECTION 01 · SPORTING EVENTS ════════ -->
   <section class="section">
     <div class="section-head">
-      <h2>Tech<br>conferences</h2>
-      <div class="count">Section 01 / Three venues</div>
+      <h2>Sporting<br>events</h2>
+      <div class="count">Section 01 / Live now</div>
     </div>
     <div class="cards">
 
       <article class="card featured">
         <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=900&q=80&auto=format&fit=crop" alt="Soccer ball on the pitch under stadium lights" loading="lazy" decoding="async">
+          <div class="photo-credit">Photo · Emilio Garcia / Unsplash</div>
+        </div>
+        <div class="card-body">
+          <div class="stamp">In session</div>
+          <div class="card-label">World Cup · 01</div>
+          <h3>World Cup Watch Parties</h3>
+          <div class="city-mono">Massachusetts · Gillette &amp; statewide</div>
+          <div class="dates">June 11 – July 19, 2026</div>
+          <div class="btn-stack">
+            <a class="btn" href="https://worldcup.stagehopper.app"><span class="btn-inner"><span class="kind">Map · Schedule · Teams</span><span class="btn-label"><svg class="ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.4l3.5 2.55-1.34 4.12H9.84L8.5 9.95z"/><path d="M12 7.4V3.6M15.5 9.95l3.2-1.05M14.16 14.07l2.05 2.95M9.84 14.07l-2.05 2.95M8.5 9.95l-3.2-1.05"/></svg> Find a watch party</span></span><span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card coming-soon">
+        <div class="card-body">
+          <div class="card-label">Sports · 02</div>
+          <h3>More sports?</h3>
+          <div class="city-mono">Any league · Any city</div>
+          <div class="coming-soon-inner">
+            <div class="big" style="font-size:40px;">More<br>matchups<br>soon</div>
+            <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfquYPMCzn2q1HoZDf2z1ugysQblb8qlbCv27BmnuRkYYnAPg/viewform" target="_blank" rel="noopener" style="border-bottom:1px solid;">Suggest an event →</a>
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ════════ SECTION 02 · AI & TECH CONFERENCES ════════ -->
+  <section class="section">
+    <div class="section-head">
+      <h2>AI &amp; Tech<br>conferences</h2>
+      <div class="count">Section 02 / Three venues</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-media">
           <img src="https://images.unsplash.com/photo-1452796651103-7c07fca7a2c1?w=900&q=80&auto=format&fit=crop" alt="Brooklyn Bridge with Manhattan skyline beyond" loading="lazy" decoding="async">
           <div class="photo-credit">Photo · Hannes Richter / Unsplash</div>
         </div>
         <div class="card-body">
-          <div class="stamp">In session</div>
+          <div class="stamp">Wrapped</div>
           <div class="card-label">Tech Week · 01</div>
           <h3>Tech Week NYC</h3>
           <div class="city-mono">40.75°N · 73.98°W</div>
@@ -813,10 +1011,26 @@
     </div>
   </section>
 
+  <!-- App lives next to Tech Week NYC/Boston — the only guides it currently supports -->
+  <section class="apps-teaser reveal" aria-label="StageHopper for iOS">
+    <div>
+      <div class="apps-teaser-icons" aria-hidden="true">
+        <svg class="apps-icon" viewBox="0 0 24 24" fill="currentColor"><title>Apple</title><path d="M17.05 12.04c-.03-2.43 1.99-3.6 2.08-3.66-1.13-1.66-2.89-1.89-3.52-1.92-1.5-.15-2.93.88-3.69.88-.76 0-1.94-.86-3.19-.84-1.64.02-3.15.95-3.99 2.42-1.7 2.95-.44 7.32 1.22 9.72.81 1.18 1.78 2.5 3.05 2.45 1.22-.05 1.68-.79 3.16-.79 1.47 0 1.89.79 3.18.76 1.31-.02 2.14-1.2 2.95-2.39.93-1.37 1.31-2.7 1.33-2.77-.03-.01-2.55-.98-2.58-3.89zM14.62 4.84c.67-.82 1.13-1.95 1-3.09-.97.04-2.15.65-2.85 1.46-.62.72-1.17 1.88-1.02 2.99 1.08.08 2.19-.55 2.87-1.36z"/></svg>
+      </div>
+      <div class="kicker">Now available · Tech Week NYC &amp; Boston</div>
+      <h3>StageHopper for iPhone &amp; iPad</h3>
+      <p>The Tech Week NYC &amp; Boston guides, in your pocket &middot; see yourself on the map and get pinged before your next event starts.</p>
+    </div>
+    <a class="app-store-badge" href="https://apps.apple.com/us/app/stagehopper/id6775234849" target="_blank" rel="noopener" aria-label="Download StageHopper on the App Store">
+      <img src="./app-store-badge.svg" alt="Download on the App Store" width="160" height="53" loading="lazy">
+    </a>
+  </section>
+
+  <!-- ════════ SECTION 03 · MUSIC FESTIVALS ════════ -->
   <section class="section">
     <div class="section-head">
       <h2>Music<br>festivals</h2>
-      <div class="count">Section 02 / First of many</div>
+      <div class="count">Section 03 / First of many</div>
     </div>
     <div class="cards">
 
@@ -840,10 +1054,22 @@
       <article class="card coming-soon">
         <div class="card-body">
           <div class="card-label">Festival · 02</div>
+          <h3>Copenhagen Jazz</h3>
+          <div class="city-mono">København · Citywide stages</div>
+          <div class="coming-soon-inner">
+            <div class="big">Coming<br>soon</div>
+            <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">Copenhagen Jazz Festival</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card coming-soon">
+        <div class="card-body">
+          <div class="card-label">Festival · 03</div>
           <h3>Your event?</h3>
           <div class="city-mono">Any city · Any stage</div>
           <div class="coming-soon-inner">
-            <div class="big" style="font-size:36px;">Multi-venue<br>conference<br>organizer?</div>
+            <div class="big" style="font-size:36px;">Multi-venue<br>festival<br>organizer?</div>
             <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; opacity:0.7;">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfquYPMCzn2q1HoZDf2z1ugysQblb8qlbCv27BmnuRkYYnAPg/viewform" target="_blank" rel="noopener" style="border-bottom:1px solid;">Get in touch →</a>
             </p>
@@ -852,25 +1078,12 @@
       </article>
 
     </div>
-  </section>
-
-  <section class="apps-teaser reveal" aria-label="StageHopper for iOS">
-    <div>
-      <div class="apps-teaser-icons" aria-hidden="true">
-        <svg class="apps-icon" viewBox="0 0 24 24" fill="currentColor"><title>Apple</title><path d="M17.05 12.04c-.03-2.43 1.99-3.6 2.08-3.66-1.13-1.66-2.89-1.89-3.52-1.92-1.5-.15-2.93.88-3.69.88-.76 0-1.94-.86-3.19-.84-1.64.02-3.15.95-3.99 2.42-1.7 2.95-.44 7.32 1.22 9.72.81 1.18 1.78 2.5 3.05 2.45 1.22-.05 1.68-.79 3.16-.79 1.47 0 1.89.79 3.18.76 1.31-.02 2.14-1.2 2.95-2.39.93-1.37 1.31-2.7 1.33-2.77-.03-.01-2.55-.98-2.58-3.89zM14.62 4.84c.67-.82 1.13-1.95 1-3.09-.97.04-2.15.65-2.85 1.46-.62.72-1.17 1.88-1.02 2.99 1.08.08 2.19-.55 2.87-1.36z"/></svg>
-      </div>
-      <div class="kicker">Now available</div>
-      <h3>StageHopper for iPhone &amp; iPad</h3>
-      <p>See yourself on the map &middot; get pinged before your next event starts.</p>
-    </div>
-    <a class="app-store-badge" href="https://apps.apple.com/us/app/stagehopper/id6775234849" target="_blank" rel="noopener" aria-label="Download StageHopper on the App Store">
-      <img src="./app-store-badge.svg" alt="Download on the App Store" width="160" height="53" loading="lazy">
-    </a>
+    <p class="festivals-soon">Also on the way: Montreal Jazz Festival · Newport Jazz Festival · Monterey Jazz Festival</p>
   </section>
 
   <footer>
     <div class="colophon">
-      Stagehopper is a small experiment in making conferences <strong>navigable</strong>. Maps, galleries, and chatbots for multi-venue events — the thing the official sites tend to forget.
+      Stagehopper is a small experiment in making conferences, festivals and sporting events <strong>navigable</strong>. Maps, galleries, and chatbots for multi-venue events — the thing the official sites tend to forget.
     </div>
     <div class="credits">
       Built by<br>
