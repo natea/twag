@@ -3,4 +3,24 @@
 from .client import ClickHouseService
 from .config import ClickHouseConfig
 
-__all__ = ["ClickHouseConfig", "ClickHouseService"]
+from .recommend import (
+    EventDataLoader,
+    EmbeddingGenerator,
+    EventRecord,
+    EventRecommender,
+    FAISSIndexBuilder,
+    Recommendation,
+    RecommenderConfig,
+)
+
+__all__ = [
+    "ClickHouseConfig",
+    "ClickHouseService",
+    "EventDataLoader",
+    "EmbeddingGenerator",
+    "EventRecord",
+    "EventRecommender",
+    "FAISSIndexBuilder",
+    "Recommendation",
+    "RecommenderConfig",
+]
